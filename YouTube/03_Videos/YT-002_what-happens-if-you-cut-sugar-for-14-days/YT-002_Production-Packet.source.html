@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Go Happy Belly — Video 1 Production Packet</title>
+<style>
+  :root{
+    --navy:#1B2D4F; --sage:#7BA987; --terracotta:#C67B5C;
+    --cream:#FAF6F0; --white:#FFFFFF; --body:#374151; --gray:#6B7280;
+    --border:#E5E7EB; --testi:#F5F1EA;
+  }
+  @page { size: Letter; margin: 0.85in 0.8in 0.9in 0.8in; }
+  * { box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--body); font-size: 12pt; line-height: 1.6;
+    background: var(--white);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1,h2,h3,h4{ font-family: Georgia, serif; color: var(--navy); line-height:1.25; }
+  .section{ page-break-before: always; }
+  .section:first-of-type{ page-break-before: avoid; }
+
+  /* keep callouts, headers, and rows from splitting across pages */
+  .beat, .overlay, .note, .aha, .flag, .paste, .group, tr, .sec-head, .signoff{
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .sec-head{ break-after: avoid; page-break-after: avoid; }
+  h3, h4{ break-after: avoid; page-break-after: avoid; }
+
+  /* COVER */
+  .cover{ page-break-after: always; padding-top: 1.1in; text-align:center; }
+  .cover .kicker{ color:var(--terracotta); font-size:11pt; letter-spacing:.28em; text-transform:uppercase; font-weight:bold; }
+  .cover h1{ font-size:34pt; margin:.35in .2in .1in; line-height:1.15; }
+  .cover .vtitle{ font-size:15.5pt; color:var(--body); font-style:italic; margin:.15in .5in .1in; }
+  .cover .rule{ width:70px; height:4px; background:var(--sage); border:0; margin:.35in auto; }
+  .cover .meta{ color:var(--gray); font-size:11pt; margin-top:.15in; }
+  .cover .brand{ margin-top:.7in; color:var(--navy); font-size:13pt; font-weight:bold; letter-spacing:.02em; }
+  .cover .brand small{ display:block; color:var(--gray); font-weight:normal; font-size:10pt; letter-spacing:.14em; text-transform:uppercase; margin-top:4px; }
+  .cover .whatfor{
+    margin:.7in auto 0; max-width:5.4in; background:var(--cream);
+    border-left:4px solid var(--terracotta); text-align:left;
+    padding:16px 20px; font-size:10.5pt; color:var(--body); border-radius:2px;
+  }
+  .cover .whatfor b{ color:var(--navy); }
+
+  /* TOC */
+  .toc{ max-width:5.2in; margin:.1in auto 0; }
+  .toc h2{ font-size:14pt; text-transform:uppercase; letter-spacing:.12em; border-bottom:2px solid var(--border); padding-bottom:8px; }
+  .toc ol{ list-style:none; padding:0; margin:.2in 0 0; }
+  .toc li{ display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dotted var(--border); font-size:12pt; }
+  .toc li b{ color:var(--navy); }
+  .toc li span{ color:var(--gray); }
+
+  /* SECTION HEADERS */
+  .sec-head{ border-bottom:3px solid var(--sage); padding-bottom:8px; margin-bottom:6px; }
+  .sec-head .num{ color:var(--terracotta); font-size:11pt; letter-spacing:.2em; text-transform:uppercase; font-weight:bold; }
+  .sec-head h2{ font-size:21pt; margin:2px 0 0; }
+  .metabar{ font-size:9.5pt; color:var(--gray); margin:6px 0 14px; }
+  .metabar b{ color:var(--navy); }
+
+  /* SCRIPT */
+  .beat{ margin: 14px 0 4px; }
+  .beat .ts{
+    display:inline-block; background:var(--navy); color:var(--white);
+    font-family: Georgia, serif; font-size:9.5pt; font-weight:bold;
+    padding:3px 10px; border-radius:3px; letter-spacing:.03em;
+  }
+  .beat .bt{ color:var(--navy); font-weight:bold; font-size:13pt; margin-left:8px; }
+  .spoken{ font-size:12.5pt; line-height:1.7; margin:9px 0; }
+  .overlay{
+    display:inline-block; background:var(--terracotta); color:var(--white);
+    font-weight:bold; font-size:10pt; letter-spacing:.06em; text-transform:uppercase;
+    padding:4px 12px; border-radius:3px; margin:6px 0;
+  }
+  .note{
+    background:var(--cream); border-left:3px solid var(--sage);
+    padding:8px 14px; margin:8px 0; font-size:10pt; color:var(--gray); font-style:italic;
+    border-radius:2px;
+  }
+  .note b{ color:var(--sage); font-style:normal; text-transform:uppercase; font-size:8.5pt; letter-spacing:.08em; }
+  .aha{
+    background:var(--testi); border-left:4px solid var(--terracotta);
+    padding:12px 16px; margin:10px 0; border-radius:2px;
+  }
+  .aha .spoken{ font-size:14pt; color:var(--navy); font-style:italic; margin:0; }
+  .divider{ border:0; border-top:1px solid var(--border); margin:18px 0; }
+
+  /* generic content */
+  p{ margin:8px 0; }
+  h3{ font-size:14pt; margin:18px 0 4px; }
+  h4{ font-size:12pt; color:var(--terracotta); margin:14px 0 2px; text-transform:uppercase; letter-spacing:.05em; }
+  ul{ margin:6px 0 10px; padding-left:20px; }
+  li{ margin:5px 0; }
+  .lede{ font-size:11pt; color:var(--gray); font-style:italic; margin-bottom:10px; }
+
+  /* tables */
+  table{ border-collapse:collapse; width:100%; font-size:9.5pt; margin:10px 0; }
+  th{ background:var(--navy); color:var(--white); text-align:left; padding:7px 9px; font-size:9pt; }
+  td{ border:1px solid var(--border); padding:7px 9px; vertical-align:top; }
+  tr:nth-child(even) td{ background:var(--cream); }
+
+  /* checklist */
+  .check{ list-style:none; padding:0; margin:8px 0; }
+  .check li{ padding:5px 0 5px 26px; position:relative; font-size:11pt; }
+  .check li::before{
+    content:""; position:absolute; left:0; top:5px; width:13px; height:13px;
+    border:2px solid var(--sage); border-radius:3px;
+  }
+  .group{ margin:10px 0 4px; }
+  .group h4{ color:var(--navy); border-bottom:1px solid var(--border); padding-bottom:4px; }
+
+  /* code / paste box */
+  .paste{
+    background:#20334f; color:#eef2f7; border-radius:6px; padding:14px 16px;
+    font-family: 'Courier New', monospace; font-size:9pt; line-height:1.5;
+    white-space:pre-wrap; margin:10px 0; overflow-wrap:anywhere;
+  }
+  .paste .lbl{ color:var(--sage); }
+  .flag{
+    background:#fdf4ef; border:1px solid var(--terracotta); border-left:5px solid var(--terracotta);
+    padding:10px 14px; margin:12px 0; font-size:10pt; border-radius:3px;
+  }
+  .flag b{ color:var(--terracotta); text-transform:uppercase; font-size:9pt; letter-spacing:.06em; }
+  .signoff{ margin-top:16px; color:var(--navy); font-style:italic; }
+</style>
+</head>
+<body>
+
+<!-- ======================= COVER ======================= -->
+<div class="cover">
+  <div class="kicker">Video 1 &nbsp;&middot;&nbsp; Production Packet</div>
+  <h1>What Happens If You Cut Sugar For 14 Days</h1>
+  <div class="vtitle">A shoot-ready packet: script, thumbnail, clips, and a shoot-day checklist</div>
+  <hr class="rule">
+  <div class="meta">Prepared for Alina Nazari, FDN-P &nbsp;&middot;&nbsp; Solo, 17 to 19 minutes</div>
+  <div class="brand">GO HAPPY BELLY<small>Root-cause gut health</small></div>
+
+  <div class="whatfor">
+    <b>Alina, start here.</b> Section 1 is your script, written the way you would say it. Read it through twice before filming. You do not need to memorize it, just get familiar. The three lines marked as key moments are the ones worth saying word for word. Everything after the script (thumbnail, clips, checklist) is for Steve and the editor, so you can skip it unless you are curious.
+  </div>
+</div>
+
+<!-- ======================= TOC ======================= -->
+<div class="toc">
+  <h2>What's inside</h2>
+  <ol>
+    <li><span><b>1.</b>&nbsp; The Script</span><span>your part</span></li>
+    <li><span><b>2.</b>&nbsp; Thumbnail Brief</span><span>for the designer</span></li>
+    <li><span><b>3.</b>&nbsp; Repurposing Plan</span><span>for the editor</span></li>
+    <li><span><b>4.</b>&nbsp; Shoot Day Checklist &amp; Upload Copy</span><span>for Steve</span></li>
+  </ol>
+</div>
+
+<!-- ======================= 1. SCRIPT ======================= -->
+<div class="section">
+  <div class="sec-head"><div class="num">Section 1</div><h2>The Script</h2></div>
+  <div class="metabar"><b>Length:</b> 17 to 19 min &nbsp;&middot;&nbsp; <b>Format:</b> solo to camera &nbsp;&middot;&nbsp; <b>One idea:</b> the hardest part of cutting sugar is not willpower, it is that gut microbes have been driving the cravings.</div>
+  <div class="lede">Delivery: conversational and warm. This one is a story, a 14-day timeline, so keep it moving. The small side-notes and colored labels are for editing, do not read them aloud.</div>
+
+  <div class="beat"><span class="ts">0:00 &ndash; 0:35</span><span class="bt">Hook</span></div>
+  <p class="spoken">What actually happens inside your body if you cut sugar for fourteen days. Not one day, not a "sugar detox" weekend, a full two weeks. Because the answer is stranger than "you lose a little weight," and most people quit on day three before they ever find out.</p>
+  <div class="overlay">On screen: 14 days. No sugar.</div>
+  <p class="spoken">I am going to walk you through it day by day, what happens to your cravings, your energy, your bloating, and the part almost nobody talks about, which is what your gut is doing behind the scenes the whole time. And I will tell you the exact day most women say something finally clicks. Stay with me for that one, because it is not the day you would guess.</p>
+  <div class="note"><b>Editor</b> &nbsp;Open the "day it clicks" loop now, pay it off at Point 4. B-roll: a calendar, a hand pushing away a dessert, a cup of tea.</div>
+
+  <div class="beat"><span class="ts">0:35 &ndash; 1:15</span><span class="bt">Credential moment</span></div>
+  <p class="spoken">Quick hello, because you should know who is walking you through this. I am Alina Nazari, I am a Functional Diagnostic Nutrition Practitioner, and I work with women who feel like sugar has a strange amount of power over them, women who eat well all day and then cannot explain the three o'clock raid on the pantry.</p>
+  <p class="spoken">And here is the first thing I want you to hear. If sugar feels like it runs you, that is not a character flaw. By the end of this you are going to understand exactly why, and it is going to take a lot of the shame off the table.</p>
+  <div class="note"><b>Visual</b> &nbsp;Warm, direct to camera. Lower third with name and FDN-P appears here.</div>
+
+  <div class="beat"><span class="ts">1:15 &ndash; 3:00</span><span class="bt">The 3 o'clock loop</span></div>
+  <p class="spoken">Let me describe the loop, and tell me if this is you. You are good all day. Breakfast is solid, lunch is fine. And then late afternoon hits and something in you goes looking for sugar, and it is not a gentle suggestion, it is loud. So you have the thing, and for twenty minutes you feel better, and then an hour later you are foggy and tired and a little annoyed at yourself, and the whole thing resets the next day.</p>
+  <p class="spoken">And the advice you get is always the same. Just have more willpower. Just eat more protein. And those are not wrong exactly, but they miss something huge, because you already have willpower, you run a whole life on willpower, and it still does not touch the three o'clock craving. So either you are uniquely weak, which I promise you are not, or something else is going on.</p>
+  <div class="overlay">On screen: It's not a willpower problem</div>
+  <p class="spoken">Something else is going on. And a fourteen-day sugar cut is one of the clearest ways to actually see it. So let me show you what happens, and why.</p>
+
+  <hr class="divider">
+  <div class="beat"><span class="ts">3:00 &ndash; 6:30</span><span class="bt">Point 1 &middot; Why the cravings aren't yours</span></div>
+  <p class="spoken">Here is the piece that reframes everything. Your gut is home to trillions of microbes, and they are not just sitting there quietly. They eat what you eat. And some of them, the ones that thrive on sugar and refined carbs, are very good at getting more of their favorite food.</p>
+  <p class="spoken">When those sugar-loving microbes are overgrown and running the show, they can actually influence your cravings. They send signals that nudge you toward the exact foods that feed them. Think of it like squatters who moved into your house and figured out how to make you keep stocking the fridge with their favorite snacks. The craving feels like it is coming from you. A lot of it is coming from them.</p>
+  <div class="overlay">On screen: The squatters are hungry</div>
+  <p class="spoken">This is what I call the Sugar-Driven pattern. And here is the line I want you to remember, because it is the whole video in one sentence.</p>
+  <div class="aha"><p class="spoken">"The cravings aren't yours. They're something else's, broadcasting through you."</p></div>
+  <div class="note"><b>Key line</b> &nbsp;Deliver this slowly, it reframes the entire experiment. B-roll: playful animation of "squatters" sending out signals. Keep it non-clinical, never imply a diagnosed disease.</div>
+
+  <div class="beat"><span class="ts">6:30 &ndash; 9:30</span><span class="bt">Point 2 &middot; Days 1 to 3, where people quit</span></div>
+  <p class="spoken">So now you cut sugar. What happens first? The squatters get loud.</p>
+  <p class="spoken">The first three days are usually the hardest, and now you know why. You just stopped delivering the food that a whole population of microbes depends on, and they do not go quietly. This is when the cravings spike, when you might feel irritable, headachy, low energy, a little foggy. People call this a sugar crash or sugar withdrawal, and they assume it means sugar is fine and they need it. It is the opposite. That intensity is the sign that something really was feeding on it.</p>
+  <p class="spoken">Here is what I tell my clients so they do not quit at the worst possible moment. The hardest three days are not a warning to turn back. They are the toll you pay at the start. If you can get a plan for these three days, and I will give you one at the end, you get to the good part.</p>
+  <div class="overlay">On screen: Days 1 to 3, the toll</div>
+  <div class="note"><b>Editor</b> &nbsp;On-screen day counter starts here (Day 1, Day 2, Day 3). Encouraging tone, not scary.</div>
+
+  <div class="beat"><span class="ts">9:30 &ndash; 12:30</span><span class="bt">Point 3 &middot; Days 4 to 7, the turn</span></div>
+  <p class="spoken">Somewhere around day four to seven, things shift, and this is the part that surprises people.</p>
+  <p class="spoken">Your energy stops doing the roller coaster. Instead of that hard crash in the afternoon, you get a flatter, steadier line, because you are not spiking and dropping your blood sugar every few hours. A lot of women notice they are sleeping a little deeper. And this is often when the bloating starts to settle, because you have stopped feeding the exact microbes that produce a lot of gas when they ferment sugar.</p>
+  <p class="spoken">The cravings are still there in this stretch, but they change character. They go from that loud, urgent, must-have-it feeling to something quieter, more like a passing thought you can actually let go of. That change is not you white-knuckling harder. That is the population of squatters starting to shrink because you stopped feeding them.</p>
+  <div class="overlay">On screen: Days 4 to 7, the roller coaster flattens</div>
+  <div class="note"><b>Visual</b> &nbsp;A jagged blood-sugar line smoothing into a gentle wave. Split screen: a tired afternoon versus a steady one.</div>
+
+  <div class="beat"><span class="ts">12:30 &ndash; 15:00</span><span class="bt">Point 4 &middot; Days 8 to 14, the day it clicks</span></div>
+  <p class="spoken">Now the second week, and this is the part I told you to stay for.</p>
+  <p class="spoken">The single most common thing women tell me happens somewhere around day ten. It is not a number on a scale. It is a moment. They walk past the thing that used to own them, the candy at the front desk, the pastry with their coffee, and for the first time they realize they genuinely do not want it. Not "I am resisting it." Just, it is not calling anymore. That is the day it clicks.</p>
+  <p class="spoken">And it clicks around day ten and not day two for a reason. It takes time to actually change who is living in your gut. The first few days you are just fighting the cravings. By the second week you have changed the environment enough that the cravings themselves quiet down. That is why willpower alone never worked. You were trying to out-discipline a biology problem. When you change the biology, the discipline gets easy.</p>
+  <div class="overlay">On screen: The day it stops calling</div>
+  <p class="spoken">By day fourteen most people describe feeling clearer, steadier, less bloated, and a little bit free, like they got something back.</p>
+  <div class="note"><b>Payoff</b> &nbsp;This closes the loop from the hook. Warm, hopeful. B-roll: a woman walking past a dessert display, unbothered.</div>
+
+  <div class="beat"><span class="ts">15:00 &ndash; 16:45</span><span class="bt">Point 5 &middot; How to do it without misery</span></div>
+  <p class="spoken">So if you want to actually try this, here is how to survive the first three days and not quit.</p>
+  <p class="spoken">One, do not go hungry. Cutting sugar and cutting calories at the same time is how people fail. Eat plenty of protein, fat, and real, cooked food, so your body is never running on empty. Two, get ahead of the three o'clock craving before it hits, with a real snack in the early afternoon, protein and fat, not a "healthy" sugar swap. Three, expect the first three days to be loud, and treat that as proof it is working, not a reason to stop.</p>
+  <p class="spoken">And one important thing. This is not about fearing sugar forever or never having dessert again. It is about taking back the steering wheel so that sugar is a choice you make, not a voice that makes you. After fourteen days, a lot of women find they can have a treat and simply move on, which is the whole point.</p>
+  <p class="spoken">If the cravings come roaring right back the second you reintroduce anything, that is useful information too. It usually means the pattern runs a little deeper, and that is exactly the kind of thing worth looking at more closely rather than just trying harder.</p>
+  <div class="note"><b>Visual</b> &nbsp;Practical and warm. Show a simple protein-and-fat afternoon snack on camera (also a clip).</div>
+
+  <hr class="divider">
+  <div class="beat"><span class="ts">16:45 &ndash; 17:30</span><span class="bt">Bridge / Call to action</span></div>
+  <p class="spoken">If this gave you a completely different way to see your cravings, do one thing for me, subscribe, because I break down this kind of root-cause stuff every week for women who were told to just eat less and try harder.</p>
+  <p class="spoken">And if you are sitting there going okay, this is definitely me, which pattern is actually driving it, I made a short quiz that walks you through it. It is free, it is in the description, no pressure. It will point you to which gut pattern fits what you are feeling.</p>
+  <div class="note"><b>Grow-first</b> &nbsp;Subscribe is the main ask. Quiz is a soft mention only, link in the description and pinned comment. No call or paid offer in this video.</div>
+
+  <div class="beat"><span class="ts">17:30 &ndash; 18:00</span><span class="bt">Outro</span></div>
+  <p class="spoken">And if the afternoon energy crash is a big part of your day, there is another piece to this that has nothing to do with sugar and everything to do with stress, and how it quietly changes your digestion. I made a whole video on it, I will put it right here, go watch that one next.</p>
+  <p class="spoken">You are not weak, and the cravings were never really the whole you. Now you know what to actually change.</p>
+  <div class="overlay">On screen: The cravings weren't the whole you</div>
+  <div class="flag"><b>Heads up for Steve</b> &nbsp;This outro points to the stress-and-bloating video (YT-005), which is packaged but not filmed yet. If YT-005 is video 2, film it soon so you can link it. If it is not live for this first upload, soften the outro to a plain subscribe ask and add the end-screen link once video 2 is up. See the checklist.</div>
+</div>
+
+<!-- ======================= 2. THUMBNAIL ======================= -->
+<div class="section">
+  <div class="sec-head"><div class="num">Section 2</div><h2>Thumbnail Brief</h2></div>
+  <div class="lede">For the designer. Modeled on the proven pattern (face + strong expression + a 2 to 4 word overlay + high contrast), rebuilt in the Go Happy Belly palette.</div>
+
+  <h4>The one glance</h4>
+  <p>A no-sugar experiment with a payoff. The viewer should feel "wait, what does happen?" and want the answer.</p>
+
+  <h4>Text on the thumbnail</h4>
+  <ul>
+    <li><b>Primary (4 words max):</b> 14 DAYS, NO SUGAR</li>
+    <li><b>Secondary (smaller, terracotta):</b> WHAT HAPPENS?</li>
+  </ul>
+
+  <h4>Visual concept</h4>
+  <ul>
+    <li><b>Subject:</b> close crop of Alina, shoulders up, an intrigued, slightly surprised "you are not going to believe this" expression, direct eye contact.</li>
+    <li><b>Background &amp; color:</b> solid navy (#1B2D4F) so face and text pop. Primary text in warm cream/white with a subtle dark outline. Secondary text in terracotta (#C67B5C). A thin sage (#7BA987) accent used sparingly.</li>
+    <li><b>Visual device (pick one):</b> a small "no" ring over a sugar cube or spoon of sugar, clean and bold, placed low and small. (Alt: a 14-day calendar strip with a few days crossed off.)</li>
+  </ul>
+
+  <h4>Layout</h4>
+  <ul>
+    <li>Face on the right ~45%, text stacked on the left third, device low and small.</li>
+    <li>Test at phone-thumbnail size first. If the words are not readable on a phone at a glance, cut a word.</li>
+    <li>Keep the same face framing, palette, and text style as YT-005 and future videos so the channel is recognizable in a grid.</li>
+  </ul>
+
+  <div class="flag"><b>Compliance</b> &nbsp;No condition named, no "candida," no "cure" or "treat." On-brand palette, not Ben's yellow and red. Next step: generate 2 to 3 concept mockups, pick a direction, then a designer finalizes with Alina's real photo. A/B idea for later: "14 DAYS, NO SUGAR" versus "NOT WILLPOWER / IT'S YOUR GUT."</div>
+</div>
+
+<!-- ======================= 3. REPURPOSING ======================= -->
+<div class="section">
+  <div class="sec-head"><div class="num">Section 3</div><h2>Repurposing Plan</h2></div>
+  <div class="lede">For the editor. Five clips cut from the long-form for Reels, TikTok, and YouTube Shorts. Pull the highest-retention moments.</div>
+
+  <table>
+    <thead><tr><th>#</th><th>Timestamp</th><th>Angle</th><th>Caption</th><th>Hook on screen</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>3:00&ndash;4:30</td><td>Your cravings might not be yours. "The cravings aren't yours. They're something else's, broadcasting through you."</td><td>The 3pm craving might not be a willpower problem. It might be who is living in your gut. Full video on the channel.</td><td>YOUR CRAVINGS AREN'T YOURS</td></tr>
+      <tr><td>2</td><td>6:30&ndash;7:45</td><td>Why the first 3 days of cutting sugar are the hardest, and why that is proof it is working.</td><td>If day 3 of cutting sugar feels awful, do not quit. Here is what that actually means.</td><td>DAYS 1 to 3 ARE THE TOLL</td></tr>
+      <tr><td>3</td><td>9:30&ndash;10:45</td><td>Around day 4 to 7 the energy roller coaster flattens and the bloating settles.</td><td>This is the day cutting sugar stops feeling hard.</td><td>THE DAY IT GETS EASIER</td></tr>
+      <tr><td>4</td><td>12:30&ndash;14:00</td><td>The day around day 10 when the craving just stops calling.</td><td>Save this if sugar feels like it owns you. Here is the day that changes.</td><td>THE DAY IT STOPS CALLING</td></tr>
+      <tr><td>5</td><td>15:00&ndash;16:00</td><td>3 rules to cut sugar without white-knuckling it.</td><td>Want to cut sugar without misery? Do these 3 things.</td><td>3 RULES, NO MISERY</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Distribution</h4>
+  <ul>
+    <li><b>Order &amp; spacing:</b> publish the long-form first, then one clip every 2 to 3 days over two weeks. Suggested order: Clip 1, Clip 4, Clip 2, Clip 3, Clip 5.</li>
+    <li><b>Cross-platform:</b> same clip to Reels, TikTok, and Shorts. Lead with Instagram (the warm 8K audience).</li>
+    <li><b>Clip 1</b> (the "cravings aren't yours" reframe) is the strongest, post it first.</li>
+    <li><b>CTA (grow-first):</b> "Full video on the channel, subscribe." Pinned comment: soft quiz mention, "free quiz in bio." No paid offer yet.</li>
+    <li>Burn in captions (most watch on mute) and keep the first 2 seconds to the hook line above.</li>
+  </ul>
+</div>
+
+<!-- ======================= 4. CHECKLIST ======================= -->
+<div class="section">
+  <div class="sec-head"><div class="num">Section 4</div><h2>Shoot Day Checklist &amp; Upload Copy</h2></div>
+  <div class="lede">For Steve. Everything to film it and upload it.</div>
+
+  <div class="group"><h4>1. Before the shoot</h4>
+  <ul class="check">
+    <li>Alina reads the script out loud twice. Familiarity, not memorization.</li>
+    <li>Lock the 3 word-for-word lines: the hook, the aha line ("The cravings aren't yours..."), and the close ("You are not weak, and the cravings were never really the whole you.").</li>
+    <li>Wardrobe: solid warm tones (cream, sage, terracotta, navy). No busy patterns, no pure white or black, no big logos.</li>
+    <li>Location: quiet room, soft daylight or a key light, warm non-clinical background.</li>
+    <li>Water nearby, phone silent, notifications off.</li>
+  </ul></div>
+
+  <div class="group"><h4>2. Gear &amp; setup</h4>
+  <ul class="check">
+    <li>Camera at eye level, framed chest-up, eyes on the top third.</li>
+    <li>Light in front and slightly to one side, softened. Avoid overhead-only light.</li>
+    <li>Audio is the priority: lav or shotgun mic close to her, not the built-in mic. Record 10 seconds of room tone.</li>
+    <li>Teleprompter app just under or over the lens so her eyeline stays on camera. Slow scroll.</li>
+    <li>Do a 20-second test: focus, exposure, audio levels.</li>
+  </ul></div>
+
+  <div class="group"><h4>3. Delivery notes for Alina</h4>
+  <ul class="check">
+    <li>Talk to one person, not an audience (someone who raids the pantry at 3pm).</li>
+    <li>This is a story, a 14-day timeline. Keep it moving, let the day counter carry momentum.</li>
+    <li>Slow down on the hook and the aha line. Pauses read as confidence.</li>
+    <li>Energy slightly higher than feels natural (camera flattens it ~20%).</li>
+    <li>Fine to restart a sentence: pause, clap once (helps the editor), redo the line.</li>
+    <li>Take the shame off the table, that is the emotional job of this video.</li>
+  </ul></div>
+
+  <div class="group"><h4>4. Shot list</h4>
+  <p><b>A-roll:</b> film each section as its own take: Hook, Credential, Problem, Points 1 to 5, Bridge/CTA, Outro.</p>
+  <p><b>B-roll (10 to 20 sec each, silent):</b></p>
+  <ul class="check">
+    <li>A hand pushing away a dessert or pastry (hook).</li>
+    <li>An afternoon office scene, a candy drawer, coffee with a pastry (problem).</li>
+    <li>A woman walking past a dessert display, unbothered (Point 4 payoff).</li>
+    <li>A simple protein-and-fat afternoon snack being made (Point 5, also a clip).</li>
+    <li>Optional: a calendar with days crossed off, a cup of tea, warm cozy cues.</li>
+  </ul></div>
+
+  <div class="group"><h4>5. On-screen text (for the editor)</h4>
+  <ul>
+    <li>0:00 &mdash; 14 DAYS. NO SUGAR. &nbsp;|&nbsp; 2:15 &mdash; IT'S NOT A WILLPOWER PROBLEM</li>
+    <li>4:00 &mdash; THE SQUATTERS ARE HUNGRY &nbsp;|&nbsp; 7:00 &mdash; DAYS 1 to 3, THE TOLL</li>
+    <li>10:00 &mdash; DAYS 4 to 7, THE ROLLER COASTER FLATTENS &nbsp;|&nbsp; 13:00 &mdash; THE DAY IT STOPS CALLING &nbsp;|&nbsp; 17:45 &mdash; THE CRAVINGS WEREN'T THE WHOLE YOU</li>
+  </ul></div>
+
+  <div class="group"><h4>6. Upload copy (paste into YouTube)</h4>
+  <div class="paste"><span class="lbl">TITLE</span>
+What Happens If You Cut Sugar For 14 Days
+
+<span class="lbl">DESCRIPTION</span>
+What actually happens if you cut sugar for two full weeks? In this video I walk through it day by day, your cravings, your energy, your bloating, and the part almost nobody talks about, which is what your gut microbes are doing behind the scenes the whole time. If sugar feels like it runs you, this will give you a completely different way to see why, and it takes the shame off the table.
+
+If this helped, subscribe. I break down root-cause gut health every week for women who were told to just eat less and try harder.
+
+Curious which gut pattern fits what you are feeling? Take the free quiz: https://gut-pattern-quiz.scoreapp.com
+
+Chapters:
+0:00 What happens if you cut sugar for 14 days
+0:35 Who I am
+1:15 The 3 o'clock craving loop
+3:00 Why the cravings aren't really yours
+6:30 Days 1 to 3, the part where people quit
+9:30 Days 4 to 7, the turn
+12:30 Days 8 to 14, the day it clicks
+15:00 How to do it without misery
+16:45 What to do next
+
+Alina Nazari, FDN-P
+Go Happy Belly
+
+<span class="lbl">PINNED COMMENT</span>
+The reframe that changes everything: some gut microbes thrive on sugar and can actually nudge your cravings toward the foods that feed them. So the 3pm craving is not just willpower. What day of a sugar cut do you usually quit on? If you want to know which gut pattern is driving yours, the free quiz is in the description.
+
+<span class="lbl">TAGS</span>
+cut sugar, quit sugar, no sugar 14 days, sugar cravings, why do I crave sugar, sugar detox, gut health, blood sugar crashes, functional nutrition, gut microbiome, how to stop sugar cravings</div></div>
+
+  <div class="flag"><b>First-video note</b> &nbsp;The outro teases the stress-and-bloating video (YT-005). If that is your video 2, film it soon so you can link it on the end screen. If it is not live for this first upload, change the outro to a plain "subscribe so you don't miss it" and add the end-screen link once video 2 is up.</div>
+
+  <div class="group"><h4>7. After the shoot</h4>
+  <ul class="check">
+    <li>Back up the footage in two places before leaving the room.</li>
+    <li>Send footage + this packet to the editor.</li>
+    <li>Generate thumbnail concept mockups, pick a direction, have a designer finalize with Alina's real photo.</li>
+    <li>Do not upload publicly until Steve reviews the edit. Nothing gets posted without Steve's confirmation.</li>
+  </ul></div>
+
+  <div class="signoff">In Gut Health,<br>Alina Nazari<br>FDN-P</div>
+</div>
+
+</body>
+</html>
