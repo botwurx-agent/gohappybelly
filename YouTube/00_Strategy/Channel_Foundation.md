@@ -8,6 +8,8 @@
 
 ## 1. Channel Name / Handle Options
 
+> **SELECTED (Steve, 2026-08-04): "Go Happy Belly", target handle @GoHappyBelly (Option 2).** Pure business brand, consistent with the existing Instagram, quiz, email, and offer names. Alina's personal-brand pull is carried by her face and name on every thumbnail and in the banner subtitle ("with Alina Nazari, FDN-P"), per the playbook's creator-channel finding. Confirm @GoHappyBelly availability at channel-creation time; fallbacks: @GoHappyBellyGut, @GoHappyBellyFDNP.
+
 Handles below are **target handles only**. None have been checked against YouTube's live availability. Confirm availability at channel-creation time and have a backup ready for each, since a clean single-word handle at this length is often taken.
 
 | # | Display Name | Target Handle | Positioning Tradeoff |
