@@ -12,15 +12,17 @@ Synthesized 2026-08-04. Two sources studied: the Ben Azadi (Keto Kamp) channel t
 
 ## 1. Title Formulas
 
-Each formula below is proven on Ben Azadi's channel (real title, real view count, per `ben-azadi.md`) and translated into a non-diagnostic gut-health version in Alina's voice. Gut-health versions never name a condition as something the viewer "has." They use pattern language and, where relevant, one of the five locked archetypes.
+Each formula below is proven on Ben Azadi's channel (real title, real view count, per `ben-azadi.md`) and translated into a non-diagnostic gut-health version in Alina's voice. Gut-health versions never name a condition as something the viewer "has."
+
+**Driving rule, stated plainly: titles are driven by proven-topic modeling, not by the quiz archetypes.** Topic selection starts from a proven outlier (Section 1 examples below, and the categories in Section 5), adapted to gut health. Never put an archetype name (Wired-and-Tired, Reactive, Sugar-Driven, Underactive, Bloated-and-Backed-Up) or a "Gut Pattern" label, or any other quiz/funnel jargon, in a public title. A cold viewer scrolling YouTube has never taken the quiz. Every example title below must read as broad and mass-appeal, the way a cold viewer would click it, exactly like Ben's real titles. The archetype an example happens to relate to is noted separately, outside the title string, as an internal note only, never inside the title itself.
 
 ### "What Happens When/If You [X]" (curiosity experiment)
 - **Ben example:** "What Happens When You Stop Eating For 36 Hours" (2.6M views) / "What Happens If You ONLY Drink WATER For 72 Hours?" (2.3M views). *Per ben-azadi.md.*
-- **Gut-health example:** "What Happens If You Stop Eating Sugar for 14 Days (Sugar-Driven Gut Pattern)"
+- **Gut-health example:** "What Happens If You Stop Eating Sugar for 14 Days" *(internal note: relates to the Sugar-Driven pattern)*
 
 ### Numbered list ("[N] things to avoid / signs / rules")
 - **Ben example:** "5 Butter Brands To AVOID At ALL Costs! (And 2 That WON'T Poison You)" (1.1M) / "7 Signs You're Losing Belly Fat (Even If the Scale Isn't Moving)" (263K). *Per ben-azadi.md.*
-- **Gut-health example:** "7 Signs Your Bloating Keeps Coming Back for a Reason (Bloated-and-Backed-Up Gut Pattern)"
+- **Gut-health example:** "7 Signs Your Bloating Keeps Coming Back for a Reason" *(internal note: relates to the Bloated-and-Backed-Up pattern)*
 
 ### "STOP [doing X]" imperative warning
 - **Ben example:** "STOP Drinking These 5 Coffees, They're Quietly DESTROYING Your Gut & Hormones" (1.2M). *Per ben-azadi.md.*
@@ -32,11 +34,11 @@ Each formula below is proven on Ben Azadi's channel (real title, real view count
 
 ### Personal-experiment "I [did X] for [N] days"
 - **Ben example:** "I Drank 30 TBSP of Olive Oil in 10 Days... Here's What Happened (Day 3 Wasn't Normal)" (1.4M) / "I Took 5g of Creatine for 30 Days... I Was Shocked by What Happened Next" (321K). *Per ben-azadi.md.*
-- **Gut-health example:** "I Tried a 14-Day Digestion Support Protocol (Underactive Gut Pattern) - Here's What Happened"
+- **Gut-health example:** "I Tried a 14-Day Digestion Support Protocol, Here's What Happened" *(internal note: relates to the Underactive pattern)*
 
 ### News-jacking (tying content to a live news event)
 - **Ben example:** "36 Shocking Foods RFK Jr Just Banned" (4M) / "BREAKING: The FDA Just Recalled These Lettuce Products (Don't Eat Them!)" (574K). *Per ben-azadi.md.*
-- **Gut-health example:** "The FDA Just Flagged These Additives, Here's What They Do to a Reactive Gut Pattern"
+- **Gut-health example:** "The FDA Just Flagged These Additives, Here's What They Do to Your Gut" *(internal note: relates to the Reactive pattern)*
 
 ### Specific-percentage / specific-number claim
 - **Ben example:** "You're Taking Creatine WRONG... This Shrinks Fat Cells by 30%" (1.8M) / "Blood Sugar Spikes Drop 52% If You Do THIS After Eating" (390K). *Per ben-azadi.md.*
@@ -132,11 +134,14 @@ Sourced from `jeremy-stickney-method.md`. Attribution note up front: everything 
 
 Run this checklist on every new video idea before it gets scripted or filmed.
 
+**Reminder: titles are driven by proven-topic modeling, not by the quiz archetypes.** Never put archetype names or funnel jargon in a public title; archetype is an internal tag only. See Section 1.
+
 - [ ] **Title uses a proven formula** (curiosity-experiment, numbered list, STOP, authority-hijack, personal-experiment, news-jacking, or specific-percentage), per Section 1.
+- [ ] **Title is broad and mass-appeal with no quiz/funnel jargon.** No archetype name (Wired-and-Tired, Reactive, Sugar-Driven, Underactive, Bloated-and-Backed-Up), no "Gut Pattern" label, nothing a cold viewer who has never taken the quiz would need explained. Read the title on its own; if it needs funnel context to make sense, rewrite it.
 - [ ] **Any number, percentage, or day-count in the title is real** and traceable to a client outcome, a cited study, or an actual Alina trial, not invented to fit the formula.
 - [ ] **Thumbnail plan includes a face with a clear expression, a 2-4 word ALL-CAPS overlay, and the locked brand palette** (navy #1B2D4F, terracotta #C67B5C, sage #7BA987, warm cream/white for text contrast, per Section 2), reviewed at mobile-thumbnail size before finalizing.
-- [ ] **One clear idea.** The video fully answers one question, mapped to one archetype or avatar, no scope creep into a second topic.
-- [ ] **Maps to an archetype and/or avatar.** Named explicitly in the planning notes (for example, "Bloated-and-Backed-Up Gut, Avatar 4 The Frustrated Dieter") so the locked analogy and aha line can be used consistently.
+- [ ] **One clear idea.** The video fully answers one question, no scope creep into a second topic.
+- [ ] **Archetype and/or avatar tagged internally, if a clean fit exists.** This is a quiet reference note for later funnel use only (for example, "internal note: relates to the Bloated-and-Backed-Up pattern, Avatar 4 The Frustrated Dieter"), never a driver of the topic and never part of the title. Leave blank rather than force a fit.
 - [ ] **Topic sits in a proven-demand category** from Section 5, or is a deliberate, clearly-labeled test outside those categories.
 - [ ] **Format is solo, 16-27 minutes.** No guest-interview format, per the locked cadence decision in Section 3.
 - [ ] **Non-diagnostic language check.** No "you have [condition]," no "cure," no "treat." Only "your pattern suggests," "this often shows up when," "the [Archetype] pattern," "address" or "work with" the pattern.

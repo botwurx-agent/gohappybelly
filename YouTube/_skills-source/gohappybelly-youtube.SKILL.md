@@ -29,7 +29,7 @@ If `Content_Strategy.md` is still a stub, proceed using the locked archetype/ava
 
 **The seven avatars:** Dismissed Patient, Burned-Out Professional, Postpartum Rebuilder, Frustrated Dieter, Health-Conscious Optimizer, Post-Menopausal Woman, Caregiver Who Finally Put Herself Last.
 
-Every topic, script, thumbnail, and repurposing plan below maps to one archetype and one avatar. Confirm both before producing anything if Steve hasn't specified them; a video with no named avatar has no one to hook in the first 3 seconds.
+**These archetypes and avatars are a quiet internal tag only, never the driver.** Topic and title selection is driven by proven outlier topics (see Function A below), not by archetype/avatar mapping. An archetype or avatar may be noted internally on a backlog row or in planning notes for later funnel reference (for example, matching a video to a quiz result), but it never decides which topic gets made, never gates production, and must never appear in a public title.
 
 This skill has four functions plus a batch mode. Run the one Steve is asking for; do not run all four unprompted.
 
@@ -37,17 +37,23 @@ This skill has four functions plus a batch mode. Run the one Steve is asking for
 
 **Input:** nothing (pull from playbook cold), or a seed topic/symptom Steve names.
 
+**The driver of this function is a proven outlier topic, not the archetype/avatar system.** Start from a topic that already worked (an outlier on Ben Azadi's channel or another studied channel, per `Reference_Playbook.md` Section 1 and Section 5), adapt the underlying topic to gut health, then write a broad, mass-appeal title using one of the proven formulas. Any archetype/avatar tag comes last, is optional, and stays out of the title entirely.
+
+**Hard rule: no quiz/funnel jargon in a public title.** Never put an archetype name (Wired-and-Tired, Reactive, Sugar-Driven, Underactive, Bloated-and-Backed-Up) or a "Gut Pattern" label in a title. A cold viewer scrolling YouTube has never taken the quiz and doesn't know what a "Gut Pattern" is; a title like "...(Sugar-Driven Gut Pattern)" reads as internal jargon, not a click. Titles must read the way the studied channels' titles do: broad, curiosity- or benefit-driven, understandable with zero funnel context.
+
 **Steps:**
 
 1. Pull title formulas and overperforming topic categories from `Reference_Playbook.md`.
-2. Generate topic candidates by applying those formulas to gut health, adapting each to one archetype and one avatar (never copy a source video's content, adapt its packaging).
-3. For each candidate, name the source signal: which studied channel's outlier, or which strategist principle, the formula is modeled on. A topic with no source signal is a guess, not packaging.
-4. Optionally score the strongest candidates with Higgsfield `virality_predictor` before committing them to the backlog (sanity-check hook strength, not a requirement to proceed).
-5. Assign priority: P1 (film next batch), P2 (soon), P3 (parking lot).
-6. Append one row per topic to `YouTube/02_Backlog/Video_Backlog.md` using its exact columns, in this order: `ID | Working Title | Angle / Hook | Archetype | Avatar | Priority | Source Signal | Status`.
+2. Generate topic candidates by starting from a proven outlier topic or category (Section 1 and Section 5 of the playbook) and adapting it to gut health (never copy a source video's content, adapt its underlying question and packaging).
+3. Write each title using a proven formula, broad and mass-appeal, with no archetype name or "Gut Pattern" language in the title string itself.
+4. For each candidate, name the source signal: which studied channel's outlier, or which strategist principle, the formula is modeled on. A topic with no source signal is a guess, not packaging.
+5. Optionally, tag the candidate internally with the archetype and avatar it happens to fit best, for Steve's own funnel reference later. This tag is quiet metadata only: it never drives which topic gets picked, never gates whether a candidate can be produced, and never appears in the title.
+6. Optionally score the strongest candidates with Higgsfield `virality_predictor` before committing them to the backlog (sanity-check hook strength, not a requirement to proceed).
+7. Assign priority: P1 (film next batch), P2 (soon), P3 (parking lot).
+8. Append one row per topic to `YouTube/02_Backlog/Video_Backlog.md` using its exact columns, in this order: `ID | Working Title | Angle / Hook | Archetype | Avatar | Priority | Source Signal | Status`. Archetype and Avatar are internal-reference columns only; leave them blank if no clean fit exists rather than forcing one.
    - **ID:** next sequential `YT-###`, zero-padded to 3 digits. Determine the next number by scanning existing IDs in `Video_Backlog.md` and folder names under `YouTube/03_Videos/`, and using one higher than the highest found (start at `YT-001` if none exist).
    - **Status:** `backlog` for a freshly added row.
-7. Show Steve the rows added. Do not create a video package folder in this function; that happens in Function B once a topic is greenlit for production.
+9. Show Steve the rows added. Do not create a video package folder in this function; that happens in Function B once a topic is greenlit for production.
 
 ## Function B: Long-form Script
 
@@ -55,7 +61,7 @@ This skill has four functions plus a batch mode. Run the one Steve is asking for
 
 **Steps:**
 
-1. Confirm archetype, avatar, and target length (8-15 min) from the backlog row.
+1. Confirm the target length (8-15 min) from the backlog row. Note the archetype/avatar tag if the row has one; it is internal reference only, used to keep the avatar's language consistent in the script, never a gate on whether the video gets made.
 2. Create the package folder `YouTube/03_Videos/YT-###_slug/`, where `slug` is the working title in lowercase with hyphens.
 3. Fill `YouTube/_Templates/script-template.md` completely, no placeholders left in the saved copy:
    - **Hook (first 30 sec):** open on the viewer's problem and the payoff. No Alina intro yet.
@@ -116,6 +122,7 @@ Default to Phase 1 unless Steve explicitly says to switch. If unsure which phase
 
 ## Guardrails
 
+- No quiz/funnel jargon in a public title. Never put an archetype name or "Gut Pattern" language in a video title; titles stay broad and mass-appeal, modeled on the proven source titles in `Reference_Playbook.md`. Archetype/avatar are a quiet internal tag only, never part of the title.
 - No em dashes anywhere. Use commas, parentheses, or rewrite the sentence.
 - No banned words: transform, journey, empower, authentic, passionate, innovative, creative (in the marketing sense), unique, elevate, synergy.
 - Pattern/archetype language only, never diagnostic. "This pattern suggests," "this often shows up when," "the [Archetype] pattern," never "you have SIBO" or any named condition. Never "cure" or "treat."
