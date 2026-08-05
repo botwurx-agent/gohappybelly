@@ -12,6 +12,10 @@ Stand up Alina's YouTube channel as the **central content hub** for Go Happy Bel
 
 The goal is a repeatable, sustainable engine, not a one-off content dump.
 
+## 1a. North-Star Goal
+
+**Grow to at least 100,000 subscribers within one year** (target ~2026-08). This is aggressive and requires disciplined topic selection and packaging, not volume alone. Every decision in this system serves that goal. Alina's on-camera charisma is the retention multiplier; the system's job is to get the click and pick topics with proven demand.
+
 ## 2. Success Criteria
 
 - A local `YouTube/` workspace exists at the project root with a clear, package-per-video structure.
@@ -76,7 +80,8 @@ YouTube/
 Three functions:
 1. **Teardown** — input a channel URL, output a structured analysis using `channel-teardown-template.md`: title formulas, thumbnail style, upload cadence, video length distribution, series/playlist structure, hook patterns, top-performing videos, topic categories. Saved to `01_Research/teardowns/`.
 2. **Discover** — input the niche (gut health, functional medicine, perimenopause/hormones, functional nutrition), find other successful channels worth studying, add to `Reference_Channels.md`. On-demand only.
-3. **Synthesize** — roll all teardowns into `00_Strategy/Reference_Playbook.md`, the cross-channel pattern distillation the production engine consumes. Common teardown format keeps channels comparable.
+3. **Strategist / methodology research** — study documented YouTube-growth *methods*, not just channels. Priority target: **Jeremy Stickney** (Ben Azadi's strategist, Evan Carmichael's business partner, 2M+ subscribers grown) and the **Evan Carmichael system** he descends from. His method lives mostly in audio/video (talks, podcast appearances), so teardown requires transcribing that content + mapping Carmichael's documented framework. Output saved alongside teardowns and folded into the playbook. NOTE: research public content only; do NOT contact Jeremy or anyone else without explicit instruction from Steve. Do NOT commit personal contact details (e.g. private emails) to the repo.
+4. **Synthesize** — roll all teardowns + methodology research into `00_Strategy/Reference_Playbook.md`, the pattern distillation the production engine consumes. Common format keeps sources comparable.
 
 ### 5.2 `gohappybelly-youtube` (production engine)
 Consumes `Reference_Playbook.md` and `Content_Strategy.md`. Owns:
@@ -86,6 +91,26 @@ Consumes `Reference_Playbook.md` and `Content_Strategy.md`. Owns:
 - **Repurposing** — break each long-form into Shorts/Reels/TikTok scripts + captions + distribution plan.
 
 **Separation rationale:** research feeds production. Running "find new channels" shouldn't drag in the production engine, and vice versa. Each skill stays focused and independently usable.
+
+## 5.3 Viral Topic Acquisition — Tooling & Method
+
+The research skill does not guess topics. It reverse-engineers what has already gone viral in the niche, using real data.
+
+**Tools:**
+- **Claude-in-Chrome (browser automation)** — open competitor channels, sort by "Popular," read actual view counts to surface proven winners. Requires YouTube site permission on the extension.
+- **Firecrawl (search/scrape/extract)** — pull structured video data (titles, views, dates) across many channels at scale; later powers competitor monitoring.
+- **WebSearch / WebFetch** — search-demand and trend signals in gut health.
+- **Higgsfield `virality_predictor`** — score our own candidate titles + thumbnail concepts before committing film time.
+- **deep-research skill** — periodic wide deep-dives on a topic cluster.
+
+**The Outlier Framework (method):**
+1. Find outliers (videos with views far above their channel average), not averages.
+2. Reverse-engineer the packaging: title formula + thumbnail + angle. Packaging goes viral, not raw topics.
+3. Adapt, don't copy — re-cut proven outliers through Alina's gut-health authority + archetype framing.
+4. Score candidate packaging with the virality predictor before batch film days.
+5. Double down on Alina's own outliers once they emerge.
+
+**Dependencies to confirm at build time:** Firecrawl access active; Claude-in-Chrome YouTube site permission granted.
 
 ## 6. Channel Foundation Kit (one-time, built first)
 - Channel name / handle options
@@ -113,7 +138,7 @@ Consumes `Reference_Playbook.md` and `Content_Strategy.md`. Owns:
 - GI-MAP framing: optional clinical recommendation after initial consult.
 
 ## 10. Build Order
-1. Research Ben's channel live → draft `ben-azadi.md` teardown + first `Reference_Playbook.md`; Steve corrects with firsthand knowledge. (Steve provides Ben's channel URL + any other seed channels.)
+1. Research the anchor: (a) Ben's channel live (`@KetoKamp`, URL provided) → `ben-azadi.md` teardown; (b) Jeremy Stickney / Evan Carmichael methodology → strategist teardown. Roll into first `Reference_Playbook.md`; Steve corrects with firsthand knowledge from having worked with Ben.
 2. Build the `YouTube/` folder structure + all `_Templates/`.
 3. Write `gohappybelly-youtube-research` skill.
 4. Write `gohappybelly-youtube` skill.
