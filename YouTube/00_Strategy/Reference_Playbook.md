@@ -42,7 +42,7 @@ Each formula below is proven on Ben Azadi's channel (real title, real view count
 
 ### Specific-percentage / specific-number claim
 - **Ben example:** "You're Taking Creatine WRONG... This Shrinks Fat Cells by 30%" (1.8M) / "Blood Sugar Spikes Drop 52% If You Do THIS After Eating" (390K). *Per ben-azadi.md.*
-- **Gut-health example:** "This One Change Cut My Client's Bloating in Half in 3 Weeks"
+- **Gut-health example:** "This One Change Cut My Client's Bloating in Half in 3 Weeks"  *(NEEDS REAL SOURCE: the number must be a real, consented, de-identified client result, never invented.)*
 
 **Rule for all formulas:** the number, percentage, or day-count must be real and traceable to an actual client outcome, a cited study, or Alina's own trial. Never invent a statistic to fit a formula.
 
