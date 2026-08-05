@@ -10,7 +10,7 @@
 - Long-form length range: two distinct formats coexist. (1) Solo educational videos, roughly 16 to 27 minutes, make up the majority of uploads and are the high performers. (2) Long-form guest interviews, roughly 50 to 63 minutes, feature named experts (Dave Asprey, a Peter Attia reference, Izabella Wentz, Kiran Krishnan) and consistently underperform, landing at 6.9K to 13K views even at 2 to 4 weeks old, versus 50K to 500K+ for solo uploads in the same window.
 - Shorts usage: not captured in this data pull. The Videos tab sorts used (Popular, Latest) did not surface a separate Shorts shelf, so no conclusion can be drawn either way.
 
-## Outlier Videos (sorted by views, top 15)
+## Outlier Videos (sorted by views, top 30)
 
 Baseline used for the outlier ratio: the recent-30 average, computed directly from the "Recent Videos" list in the data file. Sum of the 30 most recent uploads' view counts = 6,458,900 views. Divided by 30 videos = **215,300 views** (rounded). This number is reproducible from the data file and is the baseline for every ratio below. Note this average is pulled upward by one recent breakout upload (1.4M views, "First 60 Minutes After Waking...") that also appears in the all-time top 30, so it leans toward an upper-bound recent average rather than a strict typical week. For context, the median of the same 30 recent videos is about 86.5K views, roughly 2.5x lower than the mean, which is the expected shape for a channel where one or two uploads a month go big and the rest cluster much lower.
 
@@ -31,6 +31,21 @@ Baseline used for the outlier ratio: the recent-30 average, computed directly fr
 | STOP Drinking These 5 Coffees, They're Quietly DESTROYING Your Gut & Hormones | 1.2M | ~Oct 2025 (captured age: 10 months) | 5.57x | Face + bold caps overlay, red arrow/warning framing per channel pattern |
 | This 1 Cup Drink Helps Keep Your Arteries Clear | 1.2M | ~Dec 2025 (captured age: 8 months) | 5.57x | Face + organ graphic (artery/heart) per channel pattern |
 | Your Body Warns You MONTHS Before Pancreatic Cancer (Most Ignore It) | 1.2M | ~Jun 2026 (captured age: 2 months) | 5.57x | Face + organ graphic (pancreas) per channel pattern |
+| A Surprisingly Effective Way to Burn Fat | 1.2M | ~Aug 2025 (captured age: 1 year) | 5.57x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| 5 Butter Brands To AVOID At ALL Costs! (And 2 That WON'T Poison You) | 1.1M | ~Nov 2025 (captured age: 9 months) | 5.11x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| The World's Easiest Diet For Visceral Fat Reduction | 1.1M | ~Aug 2025 (captured age: 1 year) | 5.11x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| Scientists Tested Every Fasting Window, This One MELTED the Most Fat | 1.1M | ~Feb 2026 (captured age: 6 months) | 5.11x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| Doctors Can't Explain This, What Fasting 16 Hours a Day Does to Your Body | 1M | ~Oct 2025 (captured age: 10 months) | 4.64x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| World's Easiest FAST For Visceral Fat Reduction | 1M | ~Oct 2025 (captured age: 10 months) | 4.64x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| What 3 Days of Water Fasting Does to Visceral Fat! (Nobody Told You This) | 1M | ~Sep 2025 (captured age: 11 months) | 4.64x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| Always Waking Up at Night? 1 TBSP Helps Lower Cortisol Naturally | 1M | ~Nov 2025 (captured age: 9 months) | 4.64x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| Why Your Belly Fat Won't Disappear... & The Simple 14-Day Protocol To Fix It | 1M | ~Aug 2025 (captured age: 1 year) | 4.64x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| If You're Walking to Burn Visceral Fat, Watch This First | 1M | ~Apr 2026 (captured age: 4 months) | 4.64x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| The Drink That Helps Regrow Stem Cells & Melts Fat (Shocking Results) | 952K | ~Dec 2025 (captured age: 8 months) | 4.42x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| The Best Way To Lose Flabby Skin Naturally (Skin Tightening Protocol) | 919K | ~Aug 2024 (captured age: 2 years) | 4.27x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| How to Get Rid of Loose Flabby Skin after Weight Loss (5 Simple Steps) | 916K | ~2020 (captured age: 6 years, evergreen) | 4.25x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| If Your Body Does THIS, Your Liver Is In Trouble! DON'T Ignore It | 915K | ~Oct 2025 (captured age: 10 months) | 4.25x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
+| These Keto Egg Rules Helped Me Lose Weight | 892K | ~Aug 2025 (captured age: 1 year) | 4.14x | Face + bold caps overlay, high-contrast text (channel-general pattern) |
 
 Note on punctuation: three of these real titles used dash characters in the source data ("WTF Happened to Our Food!", "STOP Drinking These 5 Coffees", "Your Body Warns You MONTHS Before Pancreatic Cancer"); they are reproduced above with the dash replaced by a comma or parentheses to match this document's no-em-dash house style. No words, numbers, or claims were altered.
 
