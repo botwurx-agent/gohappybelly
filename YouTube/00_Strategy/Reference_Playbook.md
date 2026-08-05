@@ -46,6 +46,15 @@ Each formula below is proven on Ben Azadi's channel (real title, real view count
 
 **Rule for all formulas:** the number, percentage, or day-count must be real and traceable to an actual client outcome, a cited study, or Alina's own trial. Never invent a statistic to fit a formula.
 
+### Title length and punch rules (measured from real data, see `Title_Analysis.md`)
+
+Ben Azadi's all-time biggest hits run a median of 10 words and about 54 to 62 characters, and among his proven winners, shorter titles clearly correlate with more views (correlation -0.40). YouTube truncates a title with "..." around 60 characters in the mobile feed and the suggested-video sidebar, which is where most views come from. So:
+
+- **Target 6 to 11 words and 60 characters or fewer.** Hard ceiling about 65. Always check the character count, not just the word count.
+- **Front-load the hook in the first 5 words** so it survives truncation.
+- **Cut hedge words** (might, could, may, simple, a few, some, helps). Be declarative and specific while staying non-diagnostic: make a curiosity or benefit claim, never a medical claim. "STOP Drinking These 5 Coffees" and "Blood Sugar Spikes Drop 52%" are hard curiosity claims, not diagnoses, and that is the register to write in.
+- **Prefer a specific number or a concrete noun** over a soft description.
+
 ---
 
 ## 2. Thumbnail Rules
