@@ -85,13 +85,15 @@ Non-diagnostic. Alina's voice: nurturing and direct, analogy-driven, validates w
 
 ### Archetype playlists (all 5 required)
 
+Public playlist titles use plain, viewer-facing language only. No archetype names and no "Gut Pattern" labels appear in the title itself. The parenthetical "internal" note is for our own reference when assigning videos and is not meant to be published as part of the title text.
+
 | Playlist Title | Description |
 |---|---|
-| **The Wired-and-Tired Gut Pattern** | For the days your body feels like it's running on a bad engine timing. Videos on stress, cortisol, sleep, and how a dysregulated nervous system shows up as gut symptoms. |
-| **The Reactive Gut Pattern** | When the foods aren't the problem and the barrier is. Videos on inflammation, food reactions, and what actually protects (or doesn't protect) your gut lining. |
-| **The Sugar-Driven Gut Pattern** | For cravings that don't feel like yours. Videos on blood sugar, sugar and carb cravings, and the microbial side of the story nobody explains. |
-| **The Underactive Gut Pattern** | When the stove isn't hot enough to cook the meal. Videos on low stomach acid, sluggish digestion, and why food seems to just sit there. |
-| **The Bloated-and-Backed-Up Gut Pattern** | For bloating that keeps coming back no matter what you try. Videos on bacterial relocation, recurrence, and why the same fix doesn't hold. |
+| **Stress, Sleep and Your Gut** (internal: Wired-and-Tired pattern) | For the days your body feels like it's running on a bad engine timing. Videos on stress, cortisol, sleep, and how a dysregulated nervous system shows up as gut symptoms. |
+| **Food Sensitivities and Gut Inflammation** (internal: Reactive pattern) | When the foods aren't the problem and the barrier is. Videos on inflammation, food reactions, and what actually protects (or doesn't protect) your gut lining. |
+| **Cravings, Blood Sugar and Your Gut** (internal: Sugar-Driven pattern) | For cravings that don't feel like yours. Videos on blood sugar, sugar and carb cravings, and the microbial side of the story nobody explains. |
+| **Digestion and Breaking Down Food** (internal: Underactive pattern) | When the stove isn't hot enough to cook the meal. Videos on low stomach acid, sluggish digestion, and why food seems to just sit there. |
+| **Bloating That Keeps Coming Back** (internal: Bloated-and-Backed-Up pattern) | For bloating that keeps coming back no matter what you try. Videos on bacterial relocation, recurrence, and why the same fix doesn't hold. |
 
 ### Avatar / theme playlists
 
