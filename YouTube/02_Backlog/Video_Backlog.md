@@ -3,6 +3,8 @@
 Prioritized topics with proven-demand packaging. Fuel for batch film days.
 Priority: P1 (film next batch), P2 (soon), P3 (parking lot).
 
+**First batch locked (Steve, 2026-08-04):** YT-002, YT-005, YT-007, YT-010, YT-012, YT-016, YT-018. Ready for the production skill to build full scripts, thumbnail briefs, and repurposing plans on command.
+
 **Column legend.** ID: sequential YT-0NN. Working Title: broad, mass-appeal, no quiz or funnel jargon, built from one of the playbook's proven formulas (curiosity-experiment, numbered-list, STOP, authority-hijack, personal-experiment, news-jacking, specific-percentage) and modeled directly on a specific outlier from Ben Azadi's channel. Topic selection is driven entirely by the Ben outlier named in Source Signal, never by the quiz archetypes. Archetype: a quiet internal tag only, one of the 5 locked archetypes (Wired-and-Tired, Reactive, Sugar-Driven, Underactive, Bloated-and-Backed-Up) or "General." It never appears in the title and never drives which topic gets made; it exists purely for later funnel-matching reference. Avatar: internal tag, one of the 7 avatars by number and name, assigned wherever a natural fit exists, not forced for even coverage. Priority: P1, P2, or P3. Source Signal: the specific Ben Azadi video this idea is modeled on, its real view count from the task-5 teardown data, and the adaptation angle. Status: idea, scripted, filmed, or published.
 
 | ID | Working Title | Angle / Hook | Archetype | Avatar | Priority | Source Signal | Status |
