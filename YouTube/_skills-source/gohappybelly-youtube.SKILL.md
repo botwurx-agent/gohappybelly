@@ -1,6 +1,6 @@
 ---
 name: gohappybelly-youtube
-description: Produce Go Happy Belly YouTube content — topic/title ideas, long-form scripts, thumbnail briefs, and repurposing packages — modeled on the reference playbook. Use when Steve wants YouTube video topics or titles, a long-form YouTube script, a thumbnail concept, a repurposing plan, or wants to run a batch. Trigger phrases: "YouTube video ideas", "YouTube titles", "long-form script", "let's do a batch", "thumbnail concept for", "repurpose this video", "add to the backlog". Reads YouTube/00_Strategy/Reference_Playbook.md and Content_Strategy.md as source of truth. Writes per-video package folders. No em dashes, no diagnostic language, grow-first CTAs by default.
+description: Produce Go Happy Belly YouTube content: topic/title ideas, long-form scripts, thumbnail briefs, and repurposing packages, modeled on the reference playbook. Use when Steve wants YouTube video topics or titles, a long-form YouTube script, a thumbnail concept, a repurposing plan, or wants to run a batch. Trigger phrases: "YouTube video ideas", "YouTube titles", "long-form script", "let's do a batch", "thumbnail concept for", "repurpose this video", "add to the backlog". Reads YouTube/00_Strategy/Reference_Playbook.md and Content_Strategy.md as source of truth. Writes per-video package folders. No em dashes, no diagnostic language, grow-first CTAs by default.
 ---
 
 # GoHappyBelly YouTube Production
