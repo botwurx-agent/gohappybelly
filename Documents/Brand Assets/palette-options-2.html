@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoHappyBelly — Palette Set 2 (Soft Garden Variations)</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #F0EDE6; padding: 48px 28px 80px; }
+
+  .page-header { text-align: center; margin-bottom: 52px; }
+  .page-header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 34px; font-weight: 400; color: #1A2E1A;
+    margin-bottom: 8px;
+  }
+  .page-header p { font-size: 13px; color: #7A8C7A; letter-spacing: 0.05em; }
+  .page-header .reference-note {
+    display: inline-block; margin-top: 16px;
+    background: #EDF4EE; border: 1px solid #A8C4AD;
+    border-radius: 3px; padding: 8px 16px;
+    font-size: 11px; color: #4A7A52; letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 32px; max-width: 1200px; margin: 0 auto;
+  }
+
+  .palette-card {
+    border-radius: 5px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(30,46,30,0.10);
+  }
+
+  .palette-label {
+    padding: 12px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .palette-label strong {
+    font-size: 12px; letter-spacing: 0.15em;
+    text-transform: uppercase; font-weight: 500;
+  }
+  .palette-label span { font-size: 10px; opacity: 0.6; letter-spacing: 0.06em; }
+
+  .palette-preview { padding: 30px 26px 26px; }
+
+  .preview-eyebrow {
+    font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; margin-bottom: 9px; display: block; font-weight: 500;
+  }
+  .preview-headline {
+    font-size: 24px; line-height: 1.15; margin-bottom: 11px; font-weight: 400;
+  }
+  .preview-headline em { font-style: italic; }
+  .preview-body {
+    font-size: 13px; line-height: 1.72; margin-bottom: 20px; font-weight: 300;
+  }
+  .preview-btn {
+    display: inline-block; font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; padding: 10px 22px;
+    border-radius: 2px; font-weight: 500;
+    margin-right: 8px; margin-bottom: 8px; font-family: 'DM Sans', sans-serif;
+    cursor: default;
+  }
+  .preview-card {
+    margin-top: 18px; border-radius: 3px;
+    padding: 16px 14px; font-size: 13px;
+    line-height: 1.65; font-style: italic;
+  }
+  .preview-card-name {
+    font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-top: 10px;
+    display: block; font-style: normal; font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .swatches {
+    display: flex; gap: 8px; padding: 14px 18px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+  }
+  .swatch-wrap { text-align: center; }
+  .swatch {
+    width: 30px; height: 30px; border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  }
+  .swatch-label {
+    font-size: 8px; margin-top: 3px; color: #8A8A8A;
+    font-family: monospace; letter-spacing: 0.02em;
+  }
+
+  /* ── REFERENCE (Option 4 from Set 1) ── */
+  .ref .palette-label { background: #1A2E1A; color: #EDF4EE; }
+  .ref .palette-preview { background: #FAFAF7; }
+  .ref .preview-eyebrow { color: #7A9E7E; }
+  .ref .preview-headline { font-family: 'EB Garamond', serif; color: #1A2E1A; }
+  .ref .preview-headline em { color: #C47B6A; }
+  .ref .preview-body { color: #3D4D3D; }
+  .ref .btn-p { background: #4A7A52; color: #fff; }
+  .ref .btn-s { background: transparent; color: #1A2E1A; border: 1.5px solid #7A9E7E; }
+  .ref .preview-card { background: #EDF4EE; border-left: 3px solid #7A9E7E; color: #3D4D3D; }
+  .ref .preview-card-name { color: #7A9E7E; }
+  .ref .swatches { background: #F3F8F3; }
+
+  /* ── VARIATION A: Meadow & Rose ── */
+  .va .palette-label { background: #2A3D22; color: #F5F7EF; }
+  .va .palette-preview { background: #F8FAF4; }
+  .va .preview-eyebrow { color: #8BAC78; }
+  .va .preview-headline { font-family: 'EB Garamond', serif; color: #1E2E18; }
+  .va .preview-headline em { color: #B5607A; }
+  .va .preview-body { color: #3A4832; }
+  .va .btn-p { background: #B5607A; color: #fff; }
+  .va .btn-s { background: transparent; color: #1E2E18; border: 1.5px solid #8BAC78; }
+  .va .preview-card { background: #F0F6EB; border-left: 3px solid #8BAC78; color: #3A4832; }
+  .va .preview-card-name { color: #8BAC78; }
+  .va .swatches { background: #EFF5EA; }
+
+  /* ── VARIATION B: Seafoam & Terracotta ── */
+  .vb .palette-label { background: #1E3835; color: #EBF5F2; }
+  .vb .palette-preview { background: #F6FAF9; }
+  .vb .preview-eyebrow { color: #5E9E90; }
+  .vb .preview-headline { font-family: 'Lora', serif; color: #162E28; }
+  .vb .preview-headline em { color: #C07A5A; }
+  .vb .preview-body { color: #304540; }
+  .vb .btn-p { background: #C07A5A; color: #fff; }
+  .vb .btn-s { background: transparent; color: #162E28; border: 1.5px solid #5E9E90; }
+  .vb .preview-card { background: #E8F5F2; border-left: 3px solid #5E9E90; color: #304540; }
+  .vb .preview-card-name { color: #5E9E90; }
+  .vb .swatches { background: #E8F4F1; }
+
+  /* ── VARIATION C: Sage & Honey ── */
+  .vc .palette-label { background: #2C3A20; color: #F4F6EE; }
+  .vc .palette-preview { background: #FAFAF5; }
+  .vc .preview-eyebrow { color: #8A9E6A; }
+  .vc .preview-headline { font-family: 'Cormorant Garamond', serif; color: #1A2614; }
+  .vc .preview-headline em { color: #C09A4A; }
+  .vc .preview-body { color: #3A4430; }
+  .vc .btn-p { background: #C09A4A; color: #fff; }
+  .vc .btn-s { background: transparent; color: #1A2614; border: 1.5px solid #8A9E6A; }
+  .vc .preview-card { background: #EEF3E6; border-left: 3px solid #8A9E6A; color: #3A4430; }
+  .vc .preview-card-name { color: #8A9E6A; }
+  .vc .swatches { background: #EBF2E2; }
+
+  /* ── VARIATION D: Fern & Blush ── */
+  .vd .palette-label { background: #243222; color: #EEF5EE; }
+  .vd .palette-preview { background: #F8FAF8; }
+  .vd .preview-eyebrow { color: #7AAE86; }
+  .vd .preview-headline { font-family: 'Playfair Display', serif; color: #182818; }
+  .vd .preview-headline em { color: #C4876E; }
+  .vd .preview-body { color: #344834; }
+  .vd .btn-p { background: #C4876E; color: #fff; }
+  .vd .btn-s { background: transparent; color: #182818; border: 1.5px solid #7AAE86; }
+  .vd .preview-card { background: #EAF5EC; border-left: 3px solid #7AAE86; color: #344834; }
+  .vd .preview-card-name { color: #7AAE86; }
+  .vd .swatches { background: #E8F4EB; }
+
+  /* ── VARIATION E: Soft Olive & Lavender ── */
+  .ve .palette-label { background: #2E3428; color: #F3F4EE; }
+  .ve .palette-preview { background: #F9FAF6; }
+  .ve .preview-eyebrow { color: #7E8E72; }
+  .ve .preview-headline { font-family: 'DM Serif Display', serif; color: #202818; }
+  .ve .preview-headline em { color: #8E7EAA; }
+  .ve .preview-body { color: #3C4438; }
+  .ve .btn-p { background: #8E7EAA; color: #fff; }
+  .ve .btn-s { background: transparent; color: #202818; border: 1.5px solid #7E8E72; }
+  .ve .preview-card { background: #EDF0E8; border-left: 3px solid #7E8E72; color: #3C4438; }
+  .ve .preview-card-name { color: #7E8E72; }
+  .ve .swatches { background: #EAEEE4; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Soft Garden Variations</h1>
+  <p>All inspired by Option 4 — pastel, botanical, nature-forward.</p>
+  <div class="reference-note">Option 4 shown first as reference</div>
+</div>
+
+<div class="palette-grid">
+
+  <!-- REFERENCE -->
+  <div class="palette-card ref">
+    <div class="palette-label"><strong>Option 4 — Reference</strong><span>original soft garden</span></div>
+    <div class="palette-preview ref">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right, you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-p">Take the Free Quiz</a>
+      <a class="preview-btn btn-s">Book a Call</a>
+      <div class="preview-card ref">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches ref">
+      <div class="swatch-wrap"><div class="swatch" style="background:#FAFAF7;border:1px solid #ccc;"></div><div class="swatch-label">#FAFAF7</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#1A2E1A;"></div><div class="swatch-label">#1A2E1A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#4A7A52;"></div><div class="swatch-label">#4A7A52</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#7A9E7E;"></div><div class="swatch-label">#7A9E7E</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C47B6A;"></div><div class="swatch-label">#C47B6A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#EDF4EE;border:1px solid #ccc;"></div><div class="swatch-label">#EDF4EE</div></div>
+    </div>
+  </div>
+
+  <!-- VARIATION A: Meadow & Rose -->
+  <div class="palette-card va">
+    <div class="palette-label va"><strong>A — Meadow & Rose</strong><span>green base · dusty rose button</span></div>
+    <div class="palette-preview va">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right, you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-p">Take the Free Quiz</a>
+      <a class="preview-btn btn-s">Book a Call</a>
+      <div class="preview-card va">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches va">
+      <div class="swatch-wrap"><div class="swatch" style="background:#F8FAF4;border:1px solid #ccc;"></div><div class="swatch-label">#F8FAF4</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#1E2E18;"></div><div class="swatch-label">#1E2E18</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#B5607A;"></div><div class="swatch-label">#B5607A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#8BAC78;"></div><div class="swatch-label">#8BAC78</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#B5607A;"></div><div class="swatch-label">#B5607A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#F0F6EB;border:1px solid #ccc;"></div><div class="swatch-label">#F0F6EB</div></div>
+    </div>
+  </div>
+
+  <!-- VARIATION B: Seafoam & Terracotta -->
+  <div class="palette-card vb">
+    <div class="palette-label vb"><strong>B — Seafoam & Terracotta</strong><span>teal-green · warm clay button</span></div>
+    <div class="palette-preview vb">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right, you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-p">Take the Free Quiz</a>
+      <a class="preview-btn btn-s">Book a Call</a>
+      <div class="preview-card vb">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches vb">
+      <div class="swatch-wrap"><div class="swatch" style="background:#F6FAF9;border:1px solid #ccc;"></div><div class="swatch-label">#F6FAF9</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#162E28;"></div><div class="swatch-label">#162E28</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C07A5A;"></div><div class="swatch-label">#C07A5A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#5E9E90;"></div><div class="swatch-label">#5E9E90</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C07A5A;"></div><div class="swatch-label">#C07A5A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#E8F5F2;border:1px solid #ccc;"></div><div class="swatch-label">#E8F5F2</div></div>
+    </div>
+  </div>
+
+  <!-- VARIATION C: Sage & Honey -->
+  <div class="palette-card vc">
+    <div class="palette-label vc"><strong>C — Sage & Honey</strong><span>yellow-green · warm gold button</span></div>
+    <div class="palette-preview vc">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right, you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-p">Take the Free Quiz</a>
+      <a class="preview-btn btn-s">Book a Call</a>
+      <div class="preview-card vc">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches vc">
+      <div class="swatch-wrap"><div class="swatch" style="background:#FAFAF5;border:1px solid #ccc;"></div><div class="swatch-label">#FAFAF5</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#1A2614;"></div><div class="swatch-label">#1A2614</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C09A4A;"></div><div class="swatch-label">#C09A4A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#8A9E6A;"></div><div class="swatch-label">#8A9E6A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C09A4A;"></div><div class="swatch-label">#C09A4A</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#EEF3E6;border:1px solid #ccc;"></div><div class="swatch-label">#EEF3E6</div></div>
+    </div>
+  </div>
+
+  <!-- VARIATION D: Fern & Blush -->
+  <div class="palette-card vd">
+    <div class="palette-label vd"><strong>D — Fern & Blush</strong><span>cool green · warm peach button</span></div>
+    <div class="palette-preview vd">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right, you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-p">Take the Free Quiz</a>
+      <a class="preview-btn btn-s">Book a Call</a>
+      <div class="preview-card vd">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches vd">
+      <div class="swatch-wrap"><div class="swatch" style="background:#F8FAF8;border:1px solid #ccc;"></div><div class="swatch-label">#F8FAF8</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#182818;"></div><div class="swatch-label">#182818</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C4876E;"></div><div class="swatch-label">#C4876E</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#7AAE86;"></div><div class="swatch-label">#7AAE86</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C4876E;"></div><div class="swatch-label">#C4876E</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#EAF5EC;border:1px solid #ccc;"></div><div class="swatch-label">#EAF5EC</div></div>
+    </div>
+  </div>
+
+  <!-- VARIATION E: Soft Olive & Lavender -->
+  <div class="palette-card ve">
+    <div class="palette-label ve"><strong>E — Soft Olive & Lavender</strong><span>muted olive · soft purple button</span></div>
+    <div class="palette-preview ve">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right, you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-p">Take the Free Quiz</a>
+      <a class="preview-btn btn-s">Book a Call</a>
+      <div class="preview-card ve">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches ve">
+      <div class="swatch-wrap"><div class="swatch" style="background:#F9FAF6;border:1px solid #ccc;"></div><div class="swatch-label">#F9FAF6</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#202818;"></div><div class="swatch-label">#202818</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#8E7EAA;"></div><div class="swatch-label">#8E7EAA</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#7E8E72;"></div><div class="swatch-label">#7E8E72</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#8E7EAA;"></div><div class="swatch-label">#8E7EAA</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#EDF0E8;border:1px solid #ccc;"></div><div class="swatch-label">#EDF0E8</div></div>
+    </div>
+  </div>
+
+</div>
+
+<p style="text-align:center; margin-top:52px; font-size:12px; color:#8A9A8A; letter-spacing:0.06em; line-height:1.8;">
+  All variations share Option 4's soft-background, deep-green-heading structure.<br>
+  The main difference in each is the CTA button color and the green accent tone.<br>
+  Tell me which one (or mix) feels right and we'll rebuild the homepage.
+</p>
+
+</body>
+</html>

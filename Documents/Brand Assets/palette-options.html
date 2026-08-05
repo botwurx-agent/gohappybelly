@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoHappyBelly — Palette Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&family=DM+Sans:wght@300;400&family=Nunito:wght@300;400;500&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #F5F0EB; padding: 48px 32px; }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 400;
+    color: #2C2018; text-align: center;
+    margin-bottom: 8px;
+  }
+  .page-sub {
+    text-align: center; font-size: 14px; color: #7A6E64;
+    margin-bottom: 56px; letter-spacing: 0.04em;
+  }
+
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 36px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .palette-card {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+
+  .palette-label {
+    padding: 14px 20px;
+    background: #2C2018;
+    color: #F5F0EB;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .palette-label span { font-size: 10px; opacity: 0.55; letter-spacing: 0.1em; }
+
+  .palette-preview {
+    padding: 32px 28px 28px;
+  }
+
+  .preview-eyebrow {
+    font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; margin-bottom: 10px; display: block;
+  }
+  .preview-headline {
+    font-size: 26px; line-height: 1.15;
+    margin-bottom: 12px; font-weight: 400;
+  }
+  .preview-body {
+    font-size: 13px; line-height: 1.75;
+    margin-bottom: 22px; font-weight: 300;
+  }
+  .preview-btn {
+    display: inline-block;
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; padding: 11px 26px;
+    border-radius: 2px; font-weight: 500;
+    margin-right: 10px; margin-bottom: 10px;
+    font-family: inherit;
+  }
+  .preview-card {
+    margin-top: 20px;
+    border-radius: 3px;
+    padding: 18px 16px;
+    font-size: 13px; line-height: 1.65;
+    font-style: italic;
+  }
+  .preview-card-name {
+    font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; margin-top: 10px;
+    display: block; font-style: normal;
+  }
+
+  .swatches {
+    display: flex; gap: 6px; padding: 16px 20px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .swatch {
+    width: 32px; height: 32px; border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .swatch-label {
+    font-size: 8px; text-align: center; margin-top: 4px;
+    color: #7A6E64; letter-spacing: 0.05em;
+    font-family: monospace;
+  }
+  .swatch-wrap { text-align: center; }
+
+  /* ── PALETTE 1: Warm Apothecary ── */
+  .p1 { background: #FBF7F1; }
+  .p1 .preview-eyebrow { color: #8B6C3E; }
+  .p1 .preview-headline { font-family: 'Cormorant Garamond', serif; color: #2E1F0E; }
+  .p1 .preview-headline em { color: #A67C52; font-style: italic; }
+  .p1 .preview-body { color: #5C4A36; }
+  .p1 .btn-primary { background: #A67C52; color: #FBF7F1; }
+  .p1 .btn-secondary { background: transparent; color: #2E1F0E; border: 1.5px solid #A67C52; }
+  .p1 .preview-card { background: #F2EBE0; border-left: 3px solid #B8956A; color: #5C4A36; }
+  .p1 .preview-card-name { color: #8B6C3E; }
+
+  /* ── PALETTE 2: Coastal Linen ── */
+  .p2 { background: #F8F5EF; }
+  .p2 .preview-eyebrow { color: #6B8F71; }
+  .p2 .preview-headline { font-family: 'Lora', serif; color: #1E3A2F; }
+  .p2 .preview-headline em { color: #C4845A; font-style: italic; }
+  .p2 .preview-body { color: #4A5A50; }
+  .p2 .btn-primary { background: #C4845A; color: #FFF; }
+  .p2 .btn-secondary { background: transparent; color: #1E3A2F; border: 1.5px solid #1E3A2F; }
+  .p2 .preview-card { background: #EAF0EA; border-left: 3px solid #6B8F71; color: #3A4A40; }
+  .p2 .preview-card-name { color: #6B8F71; }
+
+  /* ── PALETTE 3: Desert Bloom ── */
+  .p3 { background: #FDF6EE; }
+  .p3 .preview-eyebrow { color: #B5775A; }
+  .p3 .preview-headline { font-family: 'Playfair Display', serif; color: #2A1A0E; }
+  .p3 .preview-headline em { color: #D4956B; font-style: italic; }
+  .p3 .preview-body { color: #5A4535; }
+  .p3 .btn-primary { background: #D4956B; color: #FFF; }
+  .p3 .btn-secondary { background: transparent; color: #2A1A0E; border: 1.5px solid #D4956B; }
+  .p3 .preview-card { background: #F5ECE2; border-left: 3px solid #D4956B; color: #5A4535; }
+  .p3 .preview-card-name { color: #B5775A; }
+
+  /* ── PALETTE 4: Soft Garden ── */
+  .p4 { background: #FAFAF7; }
+  .p4 .preview-eyebrow { color: #7A9E7E; }
+  .p4 .preview-headline { font-family: 'EB Garamond', serif; color: #1A2E1A; }
+  .p4 .preview-headline em { color: #C47B6A; font-style: italic; }
+  .p4 .preview-body { color: #3D4D3D; }
+  .p4 .btn-primary { background: #4A7A52; color: #FFF; }
+  .p4 .btn-secondary { background: transparent; color: #1A2E1A; border: 1.5px solid #7A9E7E; }
+  .p4 .preview-card { background: #EDF4EE; border-left: 3px solid #7A9E7E; color: #3D4D3D; }
+  .p4 .preview-card-name { color: #7A9E7E; }
+
+  /* ── PALETTE 5: Warm Neutral Studio ── */
+  .p5 { background: #F9F5EE; }
+  .p5 .preview-eyebrow { color: #9E8C74; }
+  .p5 .preview-headline { font-family: 'DM Serif Display', serif; color: #1C1410; }
+  .p5 .preview-headline em { color: #C2785A; font-style: italic; }
+  .p5 .preview-body { color: #4E4038; }
+  .p5 .btn-primary { background: #C2785A; color: #FFF; }
+  .p5 .btn-secondary { background: transparent; color: #1C1410; border: 1.5px solid #9E8C74; }
+  .p5 .preview-card { background: #EEE8DE; border-left: 3px solid #B89E84; color: #4E4038; }
+  .p5 .preview-card-name { color: #9E8C74; }
+</style>
+</head>
+<body>
+
+<h1>GoHappyBelly — Palette Options</h1>
+<p class="page-sub">5 directions. Each one a distinct feel. Pick the one that says "this is Alina."</p>
+
+<div class="palette-grid">
+
+  <!-- PALETTE 1: Warm Apothecary -->
+  <div class="palette-card">
+    <div class="palette-label">1 — Warm Apothecary <span>earthy · herbal · handmade</span></div>
+    <div class="palette-preview p1">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right — you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-primary p1">Take the Free Quiz</a>
+      <a class="preview-btn btn-secondary p1">Book a Call</a>
+      <div class="preview-card p1">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch-wrap"><div class="swatch" style="background:#FBF7F1;border:1px solid #ddd;"></div><div class="swatch-label">BG</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#2E1F0E;"></div><div class="swatch-label">Text</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#A67C52;"></div><div class="swatch-label">CTA</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#8B6C3E;"></div><div class="swatch-label">Accent</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#F2EBE0;"></div><div class="swatch-label">Card</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#B8956A;"></div><div class="swatch-label">Border</div></div>
+    </div>
+  </div>
+
+  <!-- PALETTE 2: Coastal Linen -->
+  <div class="palette-card">
+    <div class="palette-label">2 — Coastal Linen <span>calm · airy · eucalyptus</span></div>
+    <div class="palette-preview p2">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right — you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-primary p2">Take the Free Quiz</a>
+      <a class="preview-btn btn-secondary p2">Book a Call</a>
+      <div class="preview-card p2">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch-wrap"><div class="swatch" style="background:#F8F5EF;border:1px solid #ddd;"></div><div class="swatch-label">BG</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#1E3A2F;"></div><div class="swatch-label">Text</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C4845A;"></div><div class="swatch-label">CTA</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#6B8F71;"></div><div class="swatch-label">Accent</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#EAF0EA;"></div><div class="swatch-label">Card</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#6B8F71;"></div><div class="swatch-label">Border</div></div>
+    </div>
+  </div>
+
+  <!-- PALETTE 3: Desert Bloom -->
+  <div class="palette-card">
+    <div class="palette-label">3 — Desert Bloom <span>warm · clay · sun-dried</span></div>
+    <div class="palette-preview p3">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right — you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-primary p3">Take the Free Quiz</a>
+      <a class="preview-btn btn-secondary p3">Book a Call</a>
+      <div class="preview-card p3">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch-wrap"><div class="swatch" style="background:#FDF6EE;border:1px solid #ddd;"></div><div class="swatch-label">BG</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#2A1A0E;"></div><div class="swatch-label">Text</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#D4956B;"></div><div class="swatch-label">CTA</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#B5775A;"></div><div class="swatch-label">Accent</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#F5ECE2;"></div><div class="swatch-label">Card</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#D4956B;"></div><div class="swatch-label">Border</div></div>
+    </div>
+  </div>
+
+  <!-- PALETTE 4: Soft Garden -->
+  <div class="palette-card">
+    <div class="palette-label">4 — Soft Garden <span>fresh · botanical · gentle</span></div>
+    <div class="palette-preview p4">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right — you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-primary p4">Take the Free Quiz</a>
+      <a class="preview-btn btn-secondary p4">Book a Call</a>
+      <div class="preview-card p4">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch-wrap"><div class="swatch" style="background:#FAFAF7;border:1px solid #ddd;"></div><div class="swatch-label">BG</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#1A2E1A;"></div><div class="swatch-label">Text</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#4A7A52;"></div><div class="swatch-label">CTA</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#7A9E7E;"></div><div class="swatch-label">Accent</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#EDF4EE;"></div><div class="swatch-label">Card</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#7A9E7E;"></div><div class="swatch-label">Border</div></div>
+    </div>
+  </div>
+
+  <!-- PALETTE 5: Warm Neutral Studio -->
+  <div class="palette-card">
+    <div class="palette-label">5 — Warm Neutral Studio <span>refined · quiet · natural linen</span></div>
+    <div class="palette-preview p5">
+      <span class="preview-eyebrow">Functional Nutrition</span>
+      <h2 class="preview-headline">Your symptoms are real.<br>The patterns are <em>findable.</em></h2>
+      <p class="preview-body">If your labs came back normal but you still don't feel right — you haven't been imagining it. You've just been looking in the wrong place.</p>
+      <a class="preview-btn btn-primary p5">Take the Free Quiz</a>
+      <a class="preview-btn btn-secondary p5">Book a Call</a>
+      <div class="preview-card p5">
+        "I had seen four doctors and tried every elimination diet. Within three weeks of Alina's protocol, the bloating I'd lived with for years started clearing up."
+        <span class="preview-card-name">Linda, Former Client</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch-wrap"><div class="swatch" style="background:#F9F5EE;border:1px solid #ddd;"></div><div class="swatch-label">BG</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#1C1410;"></div><div class="swatch-label">Text</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#C2785A;"></div><div class="swatch-label">CTA</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#9E8C74;"></div><div class="swatch-label">Accent</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#EEE8DE;"></div><div class="swatch-label">Card</div></div>
+      <div class="swatch-wrap"><div class="swatch" style="background:#B89E84;"></div><div class="swatch-label">Border</div></div>
+    </div>
+  </div>
+
+</div>
+
+<p style="text-align:center; margin-top:52px; font-size:13px; color:#9E8C74; letter-spacing:0.05em;">
+  Each palette uses a different heading font. Let Steve know which number feels right, or mix and match (e.g., "palette 2 colors with palette 5 fonts").
+</p>
+
+</body>
+</html>
