@@ -18,18 +18,16 @@
     background: var(--white);
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  /* running footer repeated on every printed page */
-  .footer{
-    position: fixed; bottom: -0.62in; left:0; right:0;
-    font-size: 8.5pt; color: var(--gray); letter-spacing:.03em;
-    border-top: 1.5px solid var(--sage); padding-top: 5px;
-    display:flex; justify-content:space-between;
-  }
-  .footer .b{ color: var(--navy); font-weight:bold; }
-
   h1,h2,h3,h4{ font-family: Georgia, serif; color: var(--navy); line-height:1.25; }
   .section{ page-break-before: always; }
   .section:first-of-type{ page-break-before: avoid; }
+
+  /* keep callouts, headers, and rows from splitting across pages */
+  .beat, .overlay, .note, .aha, .flag, .paste, .group, tr, .sec-head, .signoff{
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .sec-head{ break-after: avoid; page-break-after: avoid; }
+  h3, h4{ break-after: avoid; page-break-after: avoid; }
 
   /* COVER */
   .cover{ page-break-after: always; padding-top: 1.1in; text-align:center; }
@@ -129,8 +127,6 @@
 </style>
 </head>
 <body>
-
-<div class="footer"><span class="b">Go Happy Belly</span><span>Video 1 Production Packet &nbsp;|&nbsp; Confidential</span></div>
 
 <!-- ======================= COVER ======================= -->
 <div class="cover">
