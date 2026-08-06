@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Go Happy Belly: Video 12 Production Packet</title>
+<style>
+  :root{
+    --navy:#1B2D4F; --sage:#7BA987; --terracotta:#C67B5C;
+    --cream:#FAF6F0; --white:#FFFFFF; --body:#374151; --gray:#6B7280;
+    --border:#E5E7EB; --testi:#F5F1EA;
+  }
+  @page { size: Letter; margin: 0.85in 0.8in 0.9in 0.8in; }
+  * { box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--body); font-size: 12pt; line-height: 1.6;
+    background: var(--white);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1,h2,h3,h4{ font-family: Georgia, serif; color: var(--navy); line-height:1.25; }
+  .section{ page-break-before: always; }
+  .section:first-of-type{ page-break-before: avoid; }
+
+  /* keep callouts, headers, and rows from splitting across pages */
+  .beat, .overlay, .note, .aha, .flag, .paste, .group, tr, .sec-head, .signoff{
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .sec-head{ break-after: avoid; page-break-after: avoid; }
+  h3, h4{ break-after: avoid; page-break-after: avoid; }
+
+  /* COVER */
+  .cover{ page-break-after: always; padding-top: 1.1in; text-align:center; }
+  .cover .kicker{ color:var(--terracotta); font-size:11pt; letter-spacing:.28em; text-transform:uppercase; font-weight:bold; }
+  .cover h1{ font-size:34pt; margin:.35in .2in .1in; line-height:1.15; }
+  .cover .vtitle{ font-size:15.5pt; color:var(--body); font-style:italic; margin:.15in .5in .1in; }
+  .cover .rule{ width:70px; height:4px; background:var(--sage); border:0; margin:.35in auto; }
+  .cover .meta{ color:var(--gray); font-size:11pt; margin-top:.15in; }
+  .cover .brand{ margin-top:.7in; color:var(--navy); font-size:13pt; font-weight:bold; letter-spacing:.02em; }
+  .cover .brand small{ display:block; color:var(--gray); font-weight:normal; font-size:10pt; letter-spacing:.14em; text-transform:uppercase; margin-top:4px; }
+  .cover .whatfor{
+    margin:.7in auto 0; max-width:5.4in; background:var(--cream);
+    border-left:4px solid var(--terracotta); text-align:left;
+    padding:16px 20px; font-size:10.5pt; color:var(--body); border-radius:2px;
+  }
+  .cover .whatfor b{ color:var(--navy); }
+
+  /* TOC */
+  .toc{ max-width:5.2in; margin:.1in auto 0; }
+  .toc h2{ font-size:14pt; text-transform:uppercase; letter-spacing:.12em; border-bottom:2px solid var(--border); padding-bottom:8px; }
+  .toc ol{ list-style:none; padding:0; margin:.2in 0 0; }
+  .toc li{ display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px dotted var(--border); font-size:12pt; }
+  .toc li b{ color:var(--navy); }
+  .toc li span{ color:var(--gray); }
+
+  /* SECTION HEADERS */
+  .sec-head{ border-bottom:3px solid var(--sage); padding-bottom:8px; margin-bottom:6px; }
+  .sec-head .num{ color:var(--terracotta); font-size:11pt; letter-spacing:.2em; text-transform:uppercase; font-weight:bold; }
+  .sec-head h2{ font-size:21pt; margin:2px 0 0; }
+  .metabar{ font-size:9.5pt; color:var(--gray); margin:6px 0 14px; }
+  .metabar b{ color:var(--navy); }
+
+  /* SCRIPT */
+  .beat{ margin: 14px 0 4px; }
+  .beat .ts{
+    display:inline-block; background:var(--navy); color:var(--white);
+    font-family: Georgia, serif; font-size:9.5pt; font-weight:bold;
+    padding:3px 10px; border-radius:3px; letter-spacing:.03em;
+  }
+  .beat .bt{ color:var(--navy); font-weight:bold; font-size:13pt; margin-left:8px; }
+  .spoken{ font-size:12.5pt; line-height:1.7; margin:9px 0; }
+  .overlay{
+    display:inline-block; background:var(--terracotta); color:var(--white);
+    font-weight:bold; font-size:10pt; letter-spacing:.06em; text-transform:uppercase;
+    padding:4px 12px; border-radius:3px; margin:6px 0;
+  }
+  .note{
+    background:var(--cream); border-left:3px solid var(--sage);
+    padding:8px 14px; margin:8px 0; font-size:10pt; color:var(--gray); font-style:italic;
+    border-radius:2px;
+  }
+  .note b{ color:var(--sage); font-style:normal; text-transform:uppercase; font-size:8.5pt; letter-spacing:.08em; }
+  .aha{
+    background:var(--testi); border-left:4px solid var(--terracotta);
+    padding:12px 16px; margin:10px 0; border-radius:2px;
+  }
+  .aha .spoken{ font-size:14pt; color:var(--navy); font-style:italic; margin:0; }
+  .divider{ border:0; border-top:1px solid var(--border); margin:18px 0; }
+
+  /* generic content */
+  p{ margin:8px 0; }
+  h3{ font-size:14pt; margin:18px 0 4px; }
+  h4{ font-size:12pt; color:var(--terracotta); margin:14px 0 2px; text-transform:uppercase; letter-spacing:.05em; }
+  ul{ margin:6px 0 10px; padding-left:20px; }
+  li{ margin:5px 0; }
+  .lede{ font-size:11pt; color:var(--gray); font-style:italic; margin-bottom:10px; }
+
+  /* tables */
+  table{ border-collapse:collapse; width:100%; font-size:9.5pt; margin:10px 0; }
+  th{ background:var(--navy); color:var(--white); text-align:left; padding:7px 9px; font-size:9pt; }
+  td{ border:1px solid var(--border); padding:7px 9px; vertical-align:top; }
+  tr:nth-child(even) td{ background:var(--cream); }
+
+  /* checklist */
+  .check{ list-style:none; padding:0; margin:8px 0; }
+  .check li{ padding:5px 0 5px 26px; position:relative; font-size:11pt; }
+  .check li::before{
+    content:""; position:absolute; left:0; top:5px; width:13px; height:13px;
+    border:2px solid var(--sage); border-radius:3px;
+  }
+  .group{ margin:10px 0 4px; }
+  .group h4{ color:var(--navy); border-bottom:1px solid var(--border); padding-bottom:4px; }
+
+  /* code / paste box */
+  .paste{
+    background:#20334f; color:#eef2f7; border-radius:6px; padding:14px 16px;
+    font-family: 'Courier New', monospace; font-size:9pt; line-height:1.5;
+    white-space:pre-wrap; margin:10px 0; overflow-wrap:anywhere;
+  }
+  .paste .lbl{ color:var(--sage); }
+  .flag{
+    background:#fdf4ef; border:1px solid var(--terracotta); border-left:5px solid var(--terracotta);
+    padding:10px 14px; margin:12px 0; font-size:10pt; border-radius:3px;
+  }
+  .flag b{ color:var(--terracotta); text-transform:uppercase; font-size:9pt; letter-spacing:.06em; }
+  .signoff{ margin-top:16px; color:var(--navy); font-style:italic; }
+</style>
+</head>
+<body>
+
+<!-- ======================= COVER ======================= -->
+<div class="cover">
+  <div class="kicker">Video 12 &nbsp;&middot;&nbsp; Production Packet</div>
+  <h1>The Easiest Way to Reduce Bloating Without a Restrictive Diet</h1>
+  <div class="vtitle">A shoot-ready packet: script, thumbnail, clips, and a shoot-day checklist</div>
+  <hr class="rule">
+  <div class="meta">Prepared for Alina Nazari, FDN-P &nbsp;&middot;&nbsp; Solo, 17 to 19 minutes</div>
+  <div class="brand">GO HAPPY BELLY<small>Root-cause gut health</small></div>
+
+  <div class="whatfor">
+    <b>Alina, start here.</b> Section 1 is your script, written the way you would say it. Read it through twice before filming. You do not need to memorize it, just get familiar. The three lines marked as key moments are the ones worth saying word for word. Everything after the script (thumbnail, clips, checklist) is for Steve and the editor, so you can skip it unless you are curious.
+  </div>
+</div>
+
+<!-- ======================= TOC ======================= -->
+<div class="toc">
+  <h2>What's inside</h2>
+  <ol>
+    <li><span><b>1.</b>&nbsp; The Script</span><span>your part</span></li>
+    <li><span><b>2.</b>&nbsp; Thumbnail Brief</span><span>for the designer</span></li>
+    <li><span><b>3.</b>&nbsp; Repurposing Plan</span><span>for the editor</span></li>
+    <li><span><b>4.</b>&nbsp; Shoot Day Checklist &amp; Upload Copy</span><span>for Steve</span></li>
+  </ol>
+</div>
+
+<!-- ======================= 1. SCRIPT ======================= -->
+<div class="section">
+  <div class="sec-head"><div class="num">Section 1</div><h2>The Script</h2></div>
+  <div class="metabar"><b>Length:</b> 17 to 19 min &nbsp;&middot;&nbsp; <b>Format:</b> solo to camera &nbsp;&middot;&nbsp; <b>One idea:</b> bloating usually is not about which food to cut next, it is about where bacteria are living and whether your gut ever gets a real gap to clean itself out.</div>
+  <div class="lede">Delivery: warm, direct, a little relieved-sounding, like you are finally handing her the thing nobody handed her. This is the "good news" video after a lot of restriction. The small side-notes and colored labels are for editing, do not read them aloud.</div>
+
+  <div class="beat"><span class="ts">0:00 &ndash; 0:35</span><span class="bt">Hook</span></div>
+  <p class="spoken">If you have finished a meal and looked five months pregnant by the time you clear the table, and you have already tried keto, and Whole30, and cutting gluten, and cutting dairy, and cutting sugar, and you are still bloated by two in the afternoon, I need you to hear this. The fix is probably not another restriction. It might be one simple habit you are not doing yet, and it has nothing to do with cutting out another food group.</p>
+  <div class="overlay">On screen: One habit. No new diet.</div>
+  <p class="spoken">In the next few minutes I am going to show you the single easiest change that helps chronic bloating settle down, why almost none of the diets you have already tried actually touch it, and one line that is going to make the whole thing click for you. Stay for that line, it changes how you see every diet you have ever tried.</p>
+  <div class="note"><b>Editor</b> &nbsp;Open the "one line that makes it click" loop now, pay it off at the end of Point 1. B-roll: a hand pushing a plate away, pants feeling tighter by afternoon, a stack of past "elimination diet" grocery lists.</div>
+
+  <div class="beat"><span class="ts">0:35 &ndash; 1:15</span><span class="bt">Credential moment</span></div>
+  <p class="spoken">I am Alina Nazari, I am a Functional Diagnostic Nutrition Practitioner, and I work with women who have already done the work. You have read the labels. You have kept the food journal. You have cut things out for weeks at a time and white-knuckled through it. You are not the problem here, and I want to say that up front.</p>
+  <p class="spoken">And that matters, because here is the thing. If this were purely a food problem, cutting the food would have fixed it by now. So today I want to hand you the piece almost nobody hands you before they send you off to eliminate one more thing.</p>
+  <div class="note"><b>Visual</b> &nbsp;Warm, direct to camera. Lower third with name and FDN-P appears here.</div>
+
+  <div class="beat"><span class="ts">1:15 &ndash; 3:00</span><span class="bt">Why elimination diets keep getting harder</span></div>
+  <p class="spoken">Let me describe the cycle, and tell me if this sounds familiar. You start a new plan. No gluten. No dairy. No sugar. No nightshades. You feel a little better for the first week or two, so you think you found it. And then, without changing anything, the bloating creeps back in. So you assume you must have missed a trigger food, and you go cut something else. Bread was fine, now it is not. Coffee was fine, now it is not. Your list of "safe foods" gets smaller and smaller, and you are still bloated by the afternoon.</p>
+  <p class="spoken">And the exhausting part is not even the bloating. It is that you have started to feel like you cannot trust your own body around food, like eating is a gamble every single time. That is a heavy way to live, and I do not think it is fixable by cutting the next thing off the list.</p>
+  <div class="overlay">On screen: It's not another food to cut</div>
+  <p class="spoken">Because here is what almost nobody explains to you. So let me show you what is actually going on, and the one habit that addresses it directly.</p>
+
+  <hr class="divider">
+  <div class="beat"><span class="ts">3:00 &ndash; 6:00</span><span class="bt">Point 1 &middot; Where the bacteria actually live</span></div>
+  <p class="spoken">Here is the piece that reframes everything. Your gut is supposed to have bacteria living in it, that part is completely normal and healthy. The problem is not that bacteria exist. The problem is where they end up.</p>
+  <p class="spoken">Your large intestine is supposed to be the neighborhood where most of that bacterial population lives and does its fermenting. Your small intestine, right above it, is supposed to stay comparatively quiet, mostly focused on absorbing your food. When bacteria that belong in the large intestine end up relocating into the small intestine, you get gas and bloating produced in a space that was never built to handle that much fermentation, right where it presses against everything around it. That is why it can feel like the bloating shows up almost the moment you eat, and why it can feel so much bigger than "a normal amount of gas" should feel.</p>
+  <div class="overlay">On screen: Wrong neighborhood, not wrong food</div>
+  <p class="spoken">This is what I call the Bloated-and-Backed-Up pattern, and I want you to remember one line, because it is the whole video in one sentence.</p>
+  <div class="aha"><p class="spoken">"The bacteria aren't the problem. The location is."</p></div>
+  <div class="note"><b>Key line</b> &nbsp;Deliver this slowly, it closes the loop from the hook and reframes the entire video. B-roll: simple, non-clinical animation of a "map" of the gut with a cluster relocating from the large intestine up into the small intestine. Never imply a diagnosed disease.</div>
+
+  <div class="beat"><span class="ts">6:00 &ndash; 8:30</span><span class="bt">Point 2 &middot; Why elimination diets keep failing you</span></div>
+  <p class="spoken">So now you can see why cutting out food after food never fully solves this. When you remove a trigger food, you are removing some of the fuel those relocated bacteria ferment, so you often do feel a little better for a while. But you have not moved the bacteria back to where they belong. You have just changed what you are feeding them in the wrong location.</p>
+  <p class="spoken">Think of it like a flooded basement with a leak that never got repaired. You can mop up the water, and the floor looks dry for a few days, and you feel like you handled it. But if the leak itself is still there, the water is going to come back, usually when you least expect it, and you are right back to mopping. That is the recurrence problem so many women run into. The diet "worked," and then a few weeks or months later, it stopped working, and it was never really about that food to begin with.</p>
+  <div class="overlay">On screen: Mopping the floor, not fixing the leak</div>
+  <p class="spoken">This is why you can eliminate an entire aisle of the grocery store and still end up bloated. You were addressing the water on the floor. Nobody showed you the leak.</p>
+  <div class="note"><b>Editor</b> &nbsp;Split screen, a woman mopping a floor while water keeps trickling in behind her. Keep it visual and a little wry, not alarming.</div>
+
+  <div class="beat"><span class="ts">8:30 &ndash; 11:30</span><span class="bt">Point 3 &middot; Your gut has a built-in cleanup crew</span></div>
+  <p class="spoken">Here is the good news, and it is the part that actually gets you somewhere. Your digestive system has its own built-in housekeeping wave. Between meals, once your stomach and small intestine are done processing what you just ate, they run a strong sweeping motion that pushes leftover food particles and bacteria down and out, back toward where they belong. Think of it as a cleanup crew that comes through the hallway once everyone has gone home for the night.</p>
+  <p class="spoken">The catch is that this cleanup crew only comes out when the hallway is actually empty. The moment you eat or drink anything with calories, even a "healthy" snack, that sweeping motion stops and digestion starts back up again. So if you are grazing all day, a few nuts at ten, a protein bar at noon, crackers at three, dinner at six, a little something at eight, the cleanup crew never gets a real shift to work. It keeps getting sent home the second it clocks in.</p>
+  <div class="overlay">On screen: The cleanup crew needs an empty hallway</div>
+  <p class="spoken">And this is the part that connects everything back to the leak from a minute ago. That housekeeping wave is one of the main ways your body naturally keeps bacteria from relocating and building up where they should not be. When it never runs, the "leak" stays unrepaired, no matter how carefully you eat.</p>
+  <div class="note"><b>Visual</b> &nbsp;Simple animation, a hallway light sweeping through and clearing debris, interrupted every time a small icon of food appears. Keep it light and non-clinical.</div>
+
+  <div class="beat"><span class="ts">11:30 &ndash; 14:30</span><span class="bt">Point 4 &middot; The one habit, give your gut a real gap</span></div>
+  <p class="spoken">So here is the single easiest change, and I want you to notice what it is not. It is not a new food you have to cut. It is not a new supplement. It is timing.</p>
+  <p class="spoken">Give your gut a real gap between meals, somewhere around four to five hours, with nothing but water or plain herbal tea in between. No grazing, no "just a little something" to hold you over, no healthy snack squeezed in at three o'clock. Three real meals, spaced out, with genuine gaps in between, is often enough to let that cleanup crew actually finish its shift instead of getting interrupted over and over.</p>
+  <div class="overlay">On screen: Eat meals. Stop grazing.</div>
+  <p class="spoken">And this is why I keep saying this is not a restrictive diet. You are not narrowing what you are allowed to eat. If anything, this usually means you get to eat a wider variety of foods again, because you are addressing the actual location problem instead of removing one more suspect from the list. You are simply changing when you eat, not what.</p>
+  <p class="spoken">This is the habit that made the whole video click into place for a lot of my clients, because it is the first thing that actually goes after the leak instead of mopping the floor one more time.</p>
+  <div class="note"><b>Payoff</b> &nbsp;This closes the loop from Point 3, "what do I actually do about it." Warm, simple. B-roll: a clock or a clean, uncluttered plate with clear time markers between meals, not a food-restriction graphic.</div>
+
+  <div class="beat"><span class="ts">14:30 &ndash; 16:45</span><span class="bt">Point 5 &middot; How to actually do this without misery</span></div>
+  <p class="spoken">A few things make this easy instead of miserable, because "just stop snacking" alone can backfire if you are not set up for it.</p>
+  <p class="spoken">One, build real meals around protein and fat, not just carbohydrates, so you are genuinely full for four to five hours instead of white-knuckling hunger. A meal with eggs or chicken, some healthy fat, and vegetables holds you far longer than toast alone. Two, if you truly need something between meals in the beginning, make it water or a plain tea, and give yourself grace, this is a habit you build over a couple of weeks, not a rule you have to nail perfectly on day one. Three, a short walk after a meal can help that cleanup wave along even more, so a ten minute walk after dinner is a nice add-on, not a requirement.</p>
+  <p class="spoken">Most women notice less afternoon bloating within the first one to two weeks of giving their gut real gaps between meals. It is not instant, but it tends to be steady, and it keeps working instead of quietly stopping working the way a lot of elimination diets do.</p>
+  <p class="spoken">And if you do this consistently and the bloating still is not budging, that is genuinely useful information too. It usually means this pattern runs a little deeper than timing alone can fix, and that is exactly the kind of thing worth looking at more closely with an actual practitioner rather than trying yet another diet on your own.</p>
+  <div class="note"><b>Visual</b> &nbsp;Practical and warm. Show a simple protein-and-fat plate, a glass of water, a clock. Also a strong clip candidate.</div>
+
+  <hr class="divider">
+  <div class="beat"><span class="ts">16:45 &ndash; 17:30</span><span class="bt">Bridge / Call to action</span></div>
+  <p class="spoken">If this gave you a completely different way to think about your bloating, do one thing for me, subscribe, because I break down this kind of root-cause gut health every week for women who are tired of being handed one more elimination diet.</p>
+  <p class="spoken">And if you are sitting there wondering whether this pattern is actually the one driving your bloating, I made a short quiz that walks you through it. It is free, it is in the description, no pressure. It will point you toward which gut pattern fits what you are feeling.</p>
+  <div class="note"><b>Grow-first</b> &nbsp;Subscribe is the main ask. Quiz is a soft mention only, link in the description and pinned comment. No call or paid offer in this video.</div>
+
+  <div class="beat"><span class="ts">17:30 &ndash; 18:00</span><span class="bt">Outro</span></div>
+  <p class="spoken">And if you have a feeling that stress has something to do with your bloating too, you are probably right, and it works through a completely different mechanism than what we covered today. I made a whole video walking through the stress and bloating connection, I will put it right here, go watch that one next.</p>
+  <p class="spoken">You do not need one more thing to cut out. You needed the gap. Now you have it.</p>
+  <div class="overlay">On screen: You didn't need another rule. You needed the gap.</div>
+  <div class="flag"><b>Heads up for Steve</b> &nbsp;This outro points to the stress-and-bloating video (YT-005). Confirm YT-005 is filmed and live before YT-012 goes up so the end-screen link and the spoken tease both resolve to a real video. If it is not live yet, soften the outro to a plain subscribe ask and add the end-screen link once YT-005 is up. See the checklist.</div>
+</div>
+
+<!-- ======================= 2. THUMBNAIL ======================= -->
+<div class="section">
+  <div class="sec-head"><div class="num">Section 2</div><h2>Thumbnail Brief</h2></div>
+  <div class="lede">For the designer. Modeled on the proven pattern (face + strong expression + a 2 to 4 word overlay + high contrast), rebuilt in the Go Happy Belly palette.</div>
+
+  <h4>The one glance</h4>
+  <p>Bloating relief without another restrictive diet. The viewer should feel relief, "wait, I don't have to cut anything else out?" and click to find out what the one habit is.</p>
+
+  <h4>Text on the thumbnail</h4>
+  <ul>
+    <li><b>Primary (4 words max):</b> BLOAT-FREE, NO DIET</li>
+    <li><b>Secondary (smaller, terracotta):</b> ONE SIMPLE HABIT</li>
+  </ul>
+
+  <h4>Visual concept</h4>
+  <ul>
+    <li><b>Subject:</b> close crop of Alina, shoulders up, warm and relieved, an "I've got good news" half-smile, direct eye contact. Lighter and more upbeat than a "shocking discovery" expression.</li>
+    <li><b>Background &amp; color:</b> solid navy (#1B2D4F) so face and text pop. Primary text in warm cream/white with a subtle dark outline. Secondary text in terracotta (#C67B5C). A thin sage (#7BA987) accent used sparingly, for example a small checkmark under the primary text.</li>
+    <li><b>Visual device (pick one):</b> a plate icon with a small clock or timer beside it, simple line art, communicating "when you eat" not "what you eat." (Alt: a crossed-out food restriction clipboard icon.)</li>
+  </ul>
+
+  <h4>Layout</h4>
+  <ul>
+    <li>Face on the right ~45%, text stacked on the left third, device low and small.</li>
+    <li>Test at phone-thumbnail size first. If the words are not readable on a phone at a glance, cut a word.</li>
+    <li>Keep the same face framing, palette, and text style as YT-002 and YT-005 so the channel is recognizable in a grid.</li>
+    <li>Avoid a "before/after body" style graphic, that reads as weight loss, not bloating relief.</li>
+  </ul>
+
+  <div class="flag"><b>Compliance</b> &nbsp;No condition named, no "SIBO," no "cure" or "treat." On-brand palette, not Ben's yellow and red. Next step: generate 2 to 3 concept mockups, pick a direction, then a designer finalizes with Alina's real photo. A/B idea for later: "BLOAT-FREE, NO DIET" versus "STOP DIETING FOR BLOATING."</div>
+</div>
+
+<!-- ======================= 3. REPURPOSING ======================= -->
+<div class="section">
+  <div class="sec-head"><div class="num">Section 3</div><h2>Repurposing Plan</h2></div>
+  <div class="lede">For the editor. Five clips cut from the long-form for Reels, TikTok, and YouTube Shorts. Pull the highest-retention moments.</div>
+
+  <table>
+    <thead><tr><th>#</th><th>Timestamp</th><th>Angle</th><th>Caption</th><th>Hook on screen</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>3:00&ndash;4:15</td><td>Bloating is not about the food, it is about where bacteria end up. "The bacteria aren't the problem. The location is."</td><td>You don't have a food problem. You might have a location problem. Full video on the channel.</td><td>WRONG NEIGHBORHOOD, NOT WRONG FOOD</td></tr>
+      <tr><td>2</td><td>6:00&ndash;7:30</td><td>Why elimination diets keep "working" for a few weeks and then stop.</td><td>If your elimination diet worked for a few weeks and then stopped, this is probably why.</td><td>MOPPING THE FLOOR, NOT FIXING THE LEAK</td></tr>
+      <tr><td>3</td><td>8:30&ndash;10:00</td><td>Your gut has a built-in cleanup wave, and grazing all day shuts it off.</td><td>Snacking all day might be the reason your bloating never fully settles.</td><td>YOUR GUT HAS A CLEANUP CREW</td></tr>
+      <tr><td>4</td><td>11:30&ndash;13:00</td><td>The actual habit: real gaps between meals, no new food rules.</td><td>The easiest bloating fix isn't a new diet. It's a gap.</td><td>EAT MEALS. STOP GRAZING.</td></tr>
+      <tr><td>5</td><td>14:30&ndash;16:00</td><td>3 practical tips to make meal spacing actually doable.</td><td>Want to try this without being miserable? Do these 3 things.</td><td>3 RULES, NO WHITE-KNUCKLING</td></tr>
+    </tbody>
+  </table>
+
+  <h4>Distribution</h4>
+  <ul>
+    <li><b>Order &amp; spacing:</b> publish the long-form first, then one clip every 2 to 3 days over two weeks. Suggested order: Clip 1, Clip 4, Clip 2, Clip 3, Clip 5.</li>
+    <li><b>Cross-platform:</b> same clip to Reels, TikTok, and Shorts. Lead with Instagram (the warm 8K audience).</li>
+    <li><b>Clip 1</b> (the "wrong neighborhood" aha line) is the strongest, post it first.</li>
+    <li><b>CTA (grow-first):</b> "Full video on the channel, subscribe." Pinned comment: soft quiz mention, "free quiz in bio." No paid offer yet.</li>
+    <li>Burn in captions (most watch on mute) and keep the first 2 seconds to the hook line above.</li>
+  </ul>
+</div>
+
+<!-- ======================= 4. CHECKLIST ======================= -->
+<div class="section">
+  <div class="sec-head"><div class="num">Section 4</div><h2>Shoot Day Checklist &amp; Upload Copy</h2></div>
+  <div class="lede">For Steve. Everything to film it and upload it.</div>
+
+  <div class="group"><h4>1. Before the shoot</h4>
+  <ul class="check">
+    <li>Alina reads the script out loud twice. Familiarity, not memorization.</li>
+    <li>Lock the 3 word-for-word lines: the hook, the aha line ("The bacteria aren't the problem..."), and the close ("You do not need one more thing to cut out. You needed the gap. Now you have it.").</li>
+    <li>Wardrobe: solid warm tones (cream, sage, terracotta, navy). No busy patterns, no pure white or black, no big logos.</li>
+    <li>Location: quiet room, soft daylight or a key light, warm non-clinical background.</li>
+    <li>Water nearby, phone silent, notifications off.</li>
+  </ul></div>
+
+  <div class="group"><h4>2. Gear &amp; setup</h4>
+  <ul class="check">
+    <li>Camera at eye level, framed chest-up, eyes on the top third.</li>
+    <li>Light in front and slightly to one side, softened. Avoid overhead-only light.</li>
+    <li>Audio is the priority: lav or shotgun mic close to her, not the built-in mic. Record 10 seconds of room tone.</li>
+    <li>Teleprompter app just under or over the lens so her eyeline stays on camera. Slow scroll.</li>
+    <li>Do a 20-second test: focus, exposure, audio levels.</li>
+  </ul></div>
+
+  <div class="group"><h4>3. Delivery notes for Alina</h4>
+  <ul class="check">
+    <li>Talk to one person, not an audience (someone who has tried every elimination diet and is still bloated by mid-afternoon).</li>
+    <li>This one is "good news" energy, the video that finally hands her something that is not another restriction.</li>
+    <li>Slow down on the hook and the aha line. Pauses read as confidence.</li>
+    <li>Energy slightly higher than feels natural (camera flattens it ~20%).</li>
+    <li>Fine to restart a sentence: pause, clap once (helps the editor), redo the line.</li>
+    <li>Take the "I've tried everything, what's wrong with me" shame off the table, that is the emotional job of this video.</li>
+  </ul></div>
+
+  <div class="group"><h4>4. Shot list</h4>
+  <p><b>A-roll:</b> film each section as its own take: Hook, Credential, Problem, Points 1 to 5, Bridge/CTA, Outro.</p>
+  <p><b>B-roll (10 to 20 sec each, silent):</b></p>
+  <ul class="check">
+    <li>A hand pushing a plate away, a pair of pants feeling tighter by afternoon (hook).</li>
+    <li>A stack of past "elimination diet" grocery lists, a kitchen counter with food lists (problem).</li>
+    <li>A simple protein-and-fat plate, a glass of water, a clock or timer (Point 4 and Point 5, also a clip).</li>
+    <li>A short walk after a meal (Point 5, also a clip).</li>
+  </ul></div>
+
+  <div class="group"><h4>5. On-screen text (for the editor)</h4>
+  <ul>
+    <li>0:00: ONE HABIT. NO NEW DIET. &nbsp;|&nbsp; 2:15: IT'S NOT ANOTHER FOOD TO CUT</li>
+    <li>4:30: WRONG NEIGHBORHOOD, NOT WRONG FOOD &nbsp;|&nbsp; 7:00: MOPPING THE FLOOR, NOT FIXING THE LEAK</li>
+    <li>9:30: THE CLEANUP CREW NEEDS AN EMPTY HALLWAY &nbsp;|&nbsp; 12:15: EAT MEALS. STOP GRAZING. &nbsp;|&nbsp; 17:45: YOU DIDN'T NEED ANOTHER RULE. YOU NEEDED THE GAP.</li>
+  </ul></div>
+
+  <div class="group"><h4>6. Upload copy (paste into YouTube)</h4>
+  <div class="paste"><span class="lbl">TITLE</span>
+The Easiest Way to Reduce Bloating Without a Restrictive Diet
+
+<span class="lbl">DESCRIPTION</span>
+If you have already tried keto, Whole30, cutting gluten, dairy, and sugar, and you are still bloated by the afternoon, this video is for you. In it I walk through why bloating usually is not about which food to cut next, it is about where certain bacteria are living and whether your gut ever gets a real gap to clean itself out. Then I show you the single easiest habit that gives your gut that gap, no new elimination list required.
+
+If this helped, subscribe. I break down root-cause gut health every week for women who are tired of being handed one more restrictive diet.
+
+Curious which gut pattern fits what you are feeling? Take the free quiz: https://gut-pattern-quiz.scoreapp.com
+
+Chapters:
+0:00 The easiest way to reduce bloating without a restrictive diet
+0:35 Who I am
+1:15 Why elimination diets keep getting harder
+3:00 Where the bacteria actually live
+6:00 Why elimination diets keep failing you
+8:30 Your gut has a built-in cleanup crew
+11:30 The one habit, give your gut a real gap
+14:30 How to do this without misery
+16:45 What to do next
+
+Alina Nazari, FDN-P
+Go Happy Belly
+
+<span class="lbl">PINNED COMMENT</span>
+The reframe that changes everything: bloating often isn't about which food to cut, it's about where bacteria end up and whether your gut ever gets a real break to clean itself out. The one habit in this video is timing, not restriction. Have you noticed your bloating easing when you go longer between meals? If you want to know which gut pattern is driving yours, the free quiz is in the description.
+
+<span class="lbl">TAGS</span>
+how to reduce bloating, bloating relief, bloated after eating, why am I always bloated, stop bloating without dieting, gut health, bacterial overgrowth bloating, meal timing digestion, functional nutrition, gut reset, elimination diet not working, chronic bloating</div></div>
+
+  <div class="flag"><b>Caveat for Steve</b> &nbsp;The outro teases the stress-and-bloating video (YT-005). Confirm YT-005 is filmed and live before this video is uploaded, so the end-screen link and spoken tease both resolve to a real video. If it is not live yet, soften the outro to a plain "subscribe so you don't miss what's next" and add the end-screen link once YT-005 is up.</div>
+
+  <div class="group"><h4>7. After the shoot</h4>
+  <ul class="check">
+    <li>Back up the footage in two places before leaving the room.</li>
+    <li>Send footage + this packet to the editor.</li>
+    <li>Generate thumbnail concept mockups, pick a direction, have a designer finalize with Alina's real photo.</li>
+    <li>Do not upload publicly until Steve reviews the edit. Nothing gets posted without Steve's confirmation.</li>
+  </ul></div>
+
+  <div class="signoff">In Gut Health,<br>Alina Nazari<br>FDN-P</div>
+</div>
+
+</body>
+</html>

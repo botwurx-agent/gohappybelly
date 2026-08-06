@@ -4,7 +4,7 @@
 > Snapshot: 2026-08-06. Source of truth is `02_Backlog/Video_Backlog.md`.
 > A designed PDF version is here too: `YouTube_Video_Board.pdf`. Ask me to refresh either anytime the backlog changes.
 
-**Totals:** 20 ideas &nbsp;|&nbsp; 2 fully packaged &nbsp;|&nbsp; 5 shoot-now P1s &nbsp;|&nbsp; 4 challenge videos (need lead time)
+**Totals:** 20 ideas &nbsp;|&nbsp; 5 fully packaged &nbsp;|&nbsp; 4 ready to shoot now (YT-005, 010, 012, 016) &nbsp;|&nbsp; 4 challenge videos (need lead time)
 
 **Status meaning:** `idea` = topic only. `packaged` = full script + thumbnail brief + repurposing plan + shoot PDF all built. `scripted` / `filmed` / `published` come later.
 
@@ -18,7 +18,10 @@ Both have a shoot-ready script, thumbnail brief, repurposing plan, and a designe
 
 | ID | Title | Note |
 |----|-------|------|
-| **YT-005** | The Uncomfortable Truth About Stress and Bloating Nobody Tells You | Pure solo teach, shoot immediately. Strong launch candidate. |
+| **YT-005** | The Uncomfortable Truth About Stress and Bloating Nobody Tells You | Pure teach, shoot now. Strong launch candidate. |
+| **YT-010** | STOP Drinking Your Coffee Like This If You Bloat | Pure teach, shoot now. |
+| **YT-012** | The Easiest Way to Reduce Bloating Without a Restrictive Diet | Pure teach, shoot now. |
+| **YT-016** | The Real Reason Your Bloating Won't Go Away | Pure teach, shoot now. |
 | **YT-002** | What Happens If You Cut Sugar For 14 Days | Challenge video: film after running the 14-day cut (BTS), not an immediate shoot. |
 
 ---
@@ -28,9 +31,9 @@ Both have a shoot-ready script, thumbnail brief, repurposing plan, and a designe
 | ID | Title | Status |
 |----|-------|--------|
 | YT-005 | The Uncomfortable Truth About Stress and Bloating Nobody Tells You | packaged |
-| YT-010 | STOP Drinking Your Coffee Like This If You Bloat | idea |
-| YT-012 | The Easiest Way to Reduce Bloating Without a Restrictive Diet | idea |
-| YT-016 | The Real Reason Your Bloating Won't Go Away | idea |
+| YT-010 | STOP Drinking Your Coffee Like This If You Bloat | packaged |
+| YT-012 | The Easiest Way to Reduce Bloating Without a Restrictive Diet | packaged |
+| YT-016 | The Real Reason Your Bloating Won't Go Away | packaged |
 | YT-018 | 7 Signs Your Bloating Is Finally Improving | idea |
 
 ---
@@ -48,13 +51,13 @@ Both have a shoot-ready script, thumbnail brief, repurposing plan, and a designe
 | YT-007 | I Ate Fermented Foods Every Day For 30 Days | P1 | idea | I Drank 30 TBSP of Olive Oil in 10 Days (1.4M) |
 | YT-008 | The First Hour Awake Decides Your Whole Gut Day | P2 | idea | First 60 Minutes After Waking Decides Whether You Burn Or Store Fat (1.4M) |
 | YT-009 | The Bedtime Drink That Calms Bloating and Stress | P2 | idea | This Liquid Helps Melt Belly Fat & Lowers Cortisol (1.4M) |
-| YT-010 | STOP Drinking Your Coffee Like This If You Bloat | P1 | idea | STOP Drinking These 5 Coffees (1.2M) |
+| YT-010 | STOP Drinking Your Coffee Like This If You Bloat | P1 | packaged | STOP Drinking These 5 Coffees (1.2M) |
 | YT-011 | 5 Cooking Oil Brands That Might Be Working Against Your Gut | P2 | idea | 5 Butter Brands To AVOID At ALL Costs (1.1M) |
-| YT-012 | The Easiest Way to Reduce Bloating Without a Restrictive Diet | P1 | idea | The World's Easiest Diet For Visceral Fat Reduction (1.1M) |
+| YT-012 | The Easiest Way to Reduce Bloating Without a Restrictive Diet | P1 | packaged | The World's Easiest Diet For Visceral Fat Reduction (1.1M) |
 | YT-013 | I Tried 3 Eating Windows for Bloating (One Won) | P2 | idea | Scientists Tested Every Fasting Window (1.1M) |
 | YT-014 | What A 16-Hour Eating Window Does For Chronic Bloating | P2 | idea | Doctors Can't Explain This... Fasting 16 Hours a Day (1M) |
 | YT-015 | What 3 Days of Bone Broth Only Did to My Digestion | P2 | idea | What 3 Days of Water Fasting Does to Visceral Fat (1M) |
-| YT-016 | The Real Reason Your Bloating Won't Go Away | P1 | idea | Why Your Belly Fat Won't Disappear... 14-Day Protocol (1M) |
+| YT-016 | The Real Reason Your Bloating Won't Go Away | P1 | packaged | Why Your Belly Fat Won't Disappear... 14-Day Protocol (1M) |
 | YT-017 | Always Waking Up at 3 AM? This Might Be Why | P2 | idea | Always Waking Up at Night? 1 TBSP Lowers Cortisol (1M) |
 | YT-018 | 7 Signs Your Bloating Is Finally Improving | P1 | idea | 7 Signs You're Losing Belly Fat (263K) |
 | YT-019 | The After-Meal Habit That Stops Blood Sugar Crashes | P2 | idea | Blood Sugar Spikes Drop 52% If You Do THIS (390K) *(needs a real client number before scripting)* |
