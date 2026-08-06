@@ -14,7 +14,7 @@
 
 ## Ready to film now (full package built)
 
-Both have a shoot-ready script, thumbnail brief, repurposing plan, and a designed PDF packet. Folders under `03_Videos/`.
+Each has a shoot-ready script, thumbnail brief, repurposing plan, and a designed PDF packet. Folders under `03_Videos/`.
 
 | ID | Title | Note |
 |----|-------|------|
