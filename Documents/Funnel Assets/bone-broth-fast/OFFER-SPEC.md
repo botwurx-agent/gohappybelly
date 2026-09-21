@@ -1,7 +1,8 @@
 # Offer Spec: 3-Day Bone Broth Fast
 
-**Status:** Draft, not built. Nothing has been created in Kajabi, SamCart, or Mailchimp.
+**Status:** Landing page BUILT as a draft in Kajabi. SamCart and Mailchimp not yet built.
 **Created:** 2026-09-21
+**Price updated:** 2026-09-21, $87 to $47 (Alina's decision)
 **Stack decision (Steve, 2026-09-21):** Content, courses, and landing pages live on Kajabi.
 Checkout runs through SamCart, surfaced from the Kajabi page. Mailchimp keeps email. ScoreApp
 keeps the quiz. Calendly keeps call booking.
@@ -14,8 +15,8 @@ keeps the quiz. Calendly keeps call booking.
 |---|---|
 | Public name | The 3-Day Gut Reset: Bone Broth Fast |
 | Internal name | BBF-[COHORT-MONTH] (e.g. BBF-2026-10) |
-| Price | $87 |
-| Early-bird | $67, first [X] seats or first 48 hours |
+| Price | $47 |
+| Early-bird | None. Flat $47, urgency comes from the capped seat count |
 | Format | Live cohort, 3 days, capped seats |
 | Delivery | 2 Zoom calls, private group, 3 daily check-ins, written guide |
 | Position in suite | Entry / ascension offer. Sits above Guthub ($13/mo), below Gut Reset Course ($147) |
@@ -27,7 +28,7 @@ The suite now contains three products using "Gut Reset":
 
 - **3-Month Gut Reset** ($1,497) flagship
 - **Gut Reset Course** ($147)
-- **3-Day Gut Reset** ($87) this offer
+- **3-Day Gut Reset** ($47) this offer
 
 "3-Day" and "3-Month" are one character apart in most contexts and will get confused in subject
 lines, ad copy, DMs, and support questions. Refund disputes are the real risk: someone who
@@ -70,19 +71,45 @@ This is the important bit. Because SamCart owns checkout, the Kajabi Offer is **
 customers buy. It exists purely as the access token that SamCart grants after payment. Do not
 publish a Kajabi checkout for it, or you create a second buyable path at the wrong price.
 
-### 2.3 Landing page
+### 2.3 Landing page: BUILT (draft)
 
-Build from `landing-page.html` in this folder. Every CTA points to the SamCart checkout URL,
-not a Kajabi checkout.
+| Field | Value |
+|---|---|
+| Site | Go Happy Belly (`2148204891`) |
+| Landing page ID | `2152286720` |
+| Theme ID | `2167624377` (Encore) |
+| Slug | `broth-reset` |
+| Public URL (once published) | https://go-happy-belly.mykajabi.com/broth-reset |
+| Builder | https://app.kajabi.com/admin/themes/2167624377/settings/edit |
+| Page settings | https://app.kajabi.com/admin/landing_pages/2152286720/edit |
+| Status | Draft. Publish from the Kajabi admin. |
+
+Eleven sections: Hero, The Problem, The Shift, What's Included, How It Runs, Pattern Fit,
+About Alina, Testimonials, FAQ, Screening and Final CTA.
+
+Style Guide tokens were set from the `landing-page.html` reference rather than Encore's
+defaults: Playfair Display headings, DM Sans body, heading `#162E28`, body `#2E4438`,
+secondary `#6A8278`, primary `#7AAE86`, buttons `#C07A5A` at 2px radius, page background
+`#F8FAF8`.
+
+**Two placeholders must be replaced before publishing:**
+
+1. Both CTA buttons point at `https://REPLACE-WITH-SAMCART-CHECKOUT-URL`. Swap for the real
+   SamCart URL once the product exists.
+2. The About Alina image block is empty. Upload her photo in the builder (the local file is
+   `Documents/Funnel Assets/Alina_Fence.jpg`). MCP cannot upload images.
+
+Also fill in `[DATE]`, `[TIME]`, and `[X]` seats throughout, and replace the three testimonial
+placeholders or delete that section.
 
 ---
 
 ## 3. SamCart build
 
 **Product name:** 3-Day Gut Reset: Bone Broth Fast
-**Price:** $87 one-time
-**Early-bird:** either a coupon code (`EARLYBIRD67`) with a seat/time cap, or a separate $67
-product on a dedicated URL that you swap out when the window closes. Coupon is less error-prone.
+**Price:** $47 one-time
+**Early-bird:** none currently. If you later want a launch discount, add a SamCart coupon code
+rather than a second product, so there is only ever one buyable URL.
 
 ### Integration rules (SamCart to Kajabi)
 
@@ -178,7 +205,7 @@ you buy and then realize you fall into a screening category.
 - [ ] Create Kajabi Product and populate modules
 - [ ] Create Kajabi Offer as access grant, no public checkout
 - [ ] Build Kajabi landing page from `landing-page.html`
-- [ ] Create SamCart product at $87 plus early-bird coupon
+- [ ] Create SamCart product at $47
 - [ ] Wire SamCart to Kajabi integration rules (grant + revoke)
 - [ ] Build SamCart to Mailchimp zap for `bbf-purchased` tag
 - [ ] Load 5-email sequence in Mailchimp
