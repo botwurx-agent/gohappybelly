@@ -122,11 +122,21 @@ SamCart's App Marketplace supports Kajabi rules directly, no Zapier needed:
 
 | Trigger | Action |
 |---|---|
-| Product Purchased | Grant Kajabi Offer `BBF-[COHORT-MONTH] Access` |
-| Product Refunded | Revoke Kajabi Offer `BBF-[COHORT-MONTH] Access` |
+| Product Purchased | Grant Kajabi Offer `BBF Cohort 01 Access` |
+| Product Purchased | Add Kajabi tag `bbf-purchased` |
+| Product Purchased | Add Kajabi tag `bbf-cohort-01` |
+| Product Refunded | Revoke Kajabi Offer `BBF Cohort 01 Access` |
+| Product Refunded | Remove Kajabi tags `bbf-purchased`, `bbf-cohort-01` |
 
-If the native integration misbehaves, Zapier has a prebuilt SamCart "New Order" to Kajabi
-"Grant Access to Offer" zap as a fallback.
+**Why the tags and not just the offer grant.** The purchase happens in SamCart. Kajabi only
+ever sees an offer *grant* arriving through an integration, never a native checkout. Neither
+Kajabi's nor SamCart's documentation confirms whether a granted offer fires Kajabi's
+`offer_purchased` automation trigger. If it does not, the automation silently never runs and
+buyers receive nothing. Triggering the automation on a tag that SamCart applies removes that
+dependency entirely and is testable in a minute with a $1 test product.
+
+If SamCart's native Kajabi app cannot apply tags, use Zapier: SamCart "New Order" to Kajabi
+"Add Tag", alongside the existing "Grant Access to Offer" action.
 
 ### Thank-you page
 
@@ -138,29 +148,93 @@ Redirect to a Kajabi thank-you page that includes:
 
 ---
 
-## 4. Mailchimp
+## 4. Email (Kajabi): BUILT
 
-Email stays in Mailchimp. Add:
+Decision, 2026-09-22: purchaser email runs in **Kajabi**, not Mailchimp. Mailchimp still owns
+the five archetype quiz sequences. See the conflict note at the end of this section.
 
-| Tag | Applied when |
-|---|---|
-| `bbf-purchased` | SamCart order (via Zapier, mirroring the existing Calendly to Mailchimp zap) |
-| `bbf-[cohort]` | Cohort identifier, e.g. `bbf-2026-10` |
+### 4.1 Tags and segment (built)
 
-**Sequence (5 emails):**
+| Object | Name | ID |
+|---|---|---|
+| Tag | `bbf-purchased` | 2150360706 |
+| Tag | `bbf-cohort-01` | 2150360707 |
+| Segment | BBF Cohort 01 (active participants) | 2148726573 |
 
-1. **Pre-call** (immediately on purchase): welcome, what to expect, grocery/broth sourcing list, kickoff call time + group link, screening disclaimer repeated
-2. **Day 1**: "The hardest day is today, it gets easier." Hydration reminder, one tip, group prompt
-3. **Day 2**: "This is where it starts to shift." Normalize the cravings dip and energy change, encourage a group check-in, tomorrow's call time
-4. **Day 3**: "You made it, here's how to finish strong." Breaking-the-fast prep, closing call reminder
-5. **Day 5 follow-up**: how it went, soft next step (Gut Pattern quiz if they haven't taken it, or Breakthrough Call)
+The segment is `has_tag_id: bbf-cohort-01` AND `subscribed: true`. Each new cohort gets its own
+tag (`bbf-cohort-02`, etc.) and its own segment, so broadcasts never reach a past cohort.
 
-Use the locked email template: beige `#FAF6F0` wrapper, white `#FFFFFF` inner card, Georgia 17px,
-logo at 180px, sage accent line, one bold navy aha line, terracotta CTA button.
+### 4.2 The timing split (important)
 
-**Journey exit:** exits on `booked-call` tag, matching the archetype sequences.
+Kajabi sequences drip on **day offsets from subscription**. This offer's check-ins are tied to
+**fixed cohort dates**. Someone who buys ten days before kickoff would get "the hardest day is
+today" ten days before the fast starts. So only the welcome email is a sequence. Everything
+else is a date-scheduled broadcast.
 
----
+| # | Email | Timing | Mechanism | ID | Theme ID |
+|---|---|---|---|---|---|
+| 01 | Pre-call welcome | On purchase | Sequence, day 0 | 2151436189 | 2167627810 |
+| 02 | Day 1 check-in | Fixed date | Broadcast | 2158576121 | 2167627811 |
+| 03 | Day 2 check-in | Fixed date | Broadcast | 2158576122 | 2167627812 |
+| 04 | Day 3 check-in | Fixed date | Broadcast | 2158576123 | 2167627813 |
+| 05 | Day 5 follow-up | Fixed date | Broadcast | 2158576124 | 2167627814 |
+
+**Sequence:** Bone Broth Fast, Purchaser Onboarding (`2148892278`).
+All five are DRAFTS. Sending and publishing are done in the Kajabi admin.
+
+Per cohort, duplicate the four broadcasts, repoint them at the new cohort segment, and set four
+send dates. The sequence email is evergreen and never needs touching.
+
+### 4.3 The automation (NOT built, build by hand)
+
+Kajabi's automations MCP tools are not enabled on this account yet, so this one step cannot be
+created programmatically. Build it in the Kajabi admin:
+
+```
+Trigger:  Contact tag added  ->  bbf-purchased
+Action:   Subscribe to email sequence  ->  Bone Broth Fast, Purchaser Onboarding
+```
+
+Leave it as a draft until the SamCart product is live, then publish. Publishing is what arms it.
+
+### 4.4 Email styling
+
+All five use Kajabi's Encore Email theme with tokens set to the locked brand design: beige
+`#FAF6F0` outer background, white `#FFFFFF` content card, Georgia at 17px, line height 1.7,
+navy `#1B2D4F` headings, body `#374151`, sage `#7BA987` accent rule and quote borders,
+terracotta `#C67B5C` buttons at 2px radius, grey `#6B7280` P.S. and footer.
+
+Personalization uses flat Liquid handles: `{{ first_name | default: 'there' }}`. Dotted paths
+like `{{ contact.first_name }}` resolve to empty in Kajabi and must not be used. Single quotes
+inside the filter, not double, or the Liquid validator rejects the save.
+
+The logo currently hotlinks the Mailchimp CDN URL. Worth re-uploading to Kajabi's media library
+at some point so the emails do not depend on the Mailchimp account staying open.
+
+### 4.5 Placeholders to fill before sending
+
+Every one of these appears in square brackets in the email bodies:
+
+- `[KICKOFF DATE]`, `[KICKOFF TIME]` (email 01)
+- `[GROUP LINK]` (emails 01, 02, 03)
+- `[GUIDE LINK]` (email 01)
+- `[CLOSING CALL DATE]`, `[CLOSING CALL TIME]` (emails 03, 04)
+- `[CLOSING CALL ZOOM LINK]` (email 04)
+
+### 4.6 Conflict with the Mailchimp archetype sequences
+
+The five archetype sequences in Mailchimp exit on the `booked-call` tag. They do **not** exit on
+purchasing this reset. A contact mid-way through, say, the Reactive Gut sequence who buys the
+reset will receive archetype nurture emails and daily fast check-ins on the same days, from two
+different systems.
+
+Fix before launch, one of:
+
+1. Add a purchase-based exit condition to each Mailchimp journey (needs the purchase to reach
+   Mailchimp, so a SamCart to Mailchimp Zap applying a `bbf-purchased` tag there too), or
+2. Pause archetype sends for anyone in the cohort segment for those four days manually.
+
+Option 1 is the durable fix. This is tracked in the build checklist.
 
 ## 5. Funnel integration
 
@@ -209,11 +283,17 @@ you buy and then realize you fall into a screening category.
 - [ ] Record or write the written guide (broth ratios, hydration plan, symptom guide)
 - [ ] Create Kajabi Product and populate modules
 - [ ] Create Kajabi Offer as access grant, no public checkout
-- [ ] Build Kajabi landing page from `landing-page.html`
+- [x] Build Kajabi landing page from `landing-page.html` (draft, /broth-reset)
 - [ ] Create SamCart product at $47
 - [ ] Wire SamCart to Kajabi integration rules (grant + revoke)
-- [ ] Build SamCart to Mailchimp zap for `bbf-purchased` tag
-- [ ] Load 5-email sequence in Mailchimp
+- [ ] Confirm SamCart can apply Kajabi tags natively; fall back to Zapier if not
+- [x] Build the 5 purchaser emails in Kajabi (1 sequence email + 4 broadcasts)
+- [x] Create Kajabi tags and cohort segment
+- [ ] Build the tag-triggered automation by hand in Kajabi admin (MCP automations not enabled)
+- [ ] Fill the date, time, group, guide and Zoom placeholders in all 5 emails
+- [ ] Schedule the 4 broadcasts to real cohort dates
+- [ ] Fix the Mailchimp archetype overlap (see section 4.6)
+- [ ] Re-upload the logo to Kajabi media so emails stop hotlinking the Mailchimp CDN
 - [ ] Set up private group (Kajabi Community or existing channel)
 - [x] Swap real testimonials into the page (Tiffani, Hanna, Linda, sourced from the live site)
 - [ ] Collect reset-specific testimonials after cohort 1 and replace the 1:1 quotes
