@@ -187,42 +187,82 @@ in the launch sequence.
 
 ---
 
-## 3. SamCart build
+## 3. Checkout (Kajabi native): BUILT
 
-**Product name:** 3-Day Gut Reset: Bone Broth Fast
-**Price:** $47 one-time
-**Early-bird:** none currently. If you later want a launch discount, add a SamCart coupon code
-rather than a second product, so there is only ever one buyable URL.
+**Decision, 2026-09-22:** this offer sells through Kajabi's own checkout. SamCart is not in the
+path. Steve is testing Kajabi checkout on this offer before deciding whether to drop SamCart
+across the whole business.
 
-### Integration rules (SamCart to Kajabi)
+The deciding argument was not feature parity. It was that the entire automation design existed
+to work around one unverified assumption: whether a SamCart-granted offer fires Kajabi's
+`offer_purchased` trigger. Neither vendor documents it. Native checkout deletes the question.
+With six days to kickoff, removing an untested integration beat any checkout feature delta.
 
-SamCart's App Marketplace supports Kajabi rules directly, no Zapier needed:
+Secondary reasons: the payment step now sits on Alina's own domain instead of
+`mystore2429.mysamcart.com`; this offer uses none of SamCart's differentiators (no bump, no
+upsell, no payment plan, and A/B testing 50 transactions is meaningless); and Kajabi offers
+have a post-purchase page, which retires the welcome-email timing risk in section 4.3.
 
-| Trigger | Action |
+What Kajabi genuinely still lacks versus SamCart: native checkout A/B testing. That matters if
+checkout optimization becomes a growth lever in the Phase 3 paid-ads plan. It does not matter
+at current organic scale. Most "SamCart wins" comparisons online are SamCart's own marketing
+pages and should be discounted.
+
+**Keep the SamCart subscription running one more billing cycle** as fallback. The product and
+URL still exist there.
+
+### The offer
+
+| Field | Value |
 |---|---|
-| Product Purchased | Grant Kajabi Offer `BBF Cohort 01 Access` |
-| Product Purchased | Add Kajabi tag `bbf-purchased` |
-| Product Purchased | Add Kajabi tag `bbf-cohort-01` |
-| Product Refunded | Revoke Kajabi Offer `BBF Cohort 01 Access` |
-| Product Refunded | Remove Kajabi tags `bbf-purchased`, `bbf-cohort-01` |
+| Offer ID | `2151405804` |
+| Title | The 3-Day Bone Broth Reset |
+| Price | $47.00 USD, one-time |
+| Status | **DRAFT.** Publish in the Kajabi admin. |
+| Checkout URL | https://go-happy-belly.mykajabi.com/offers/F9gERGKo/checkout |
+| Admin | https://app.kajabi.com/admin/offers/2151405804/edit |
+| Products attached | **NONE.** See the blocker below. |
 
-**Why the tags and not just the offer grant.** The purchase happens in SamCart. Kajabi only
-ever sees an offer *grant* arriving through an integration, never a native checkout. Neither
-Kajabi's nor SamCart's documentation confirms whether a granted offer fires Kajabi's
-`offer_purchased` automation trigger. If it does not, the automation silently never runs and
-buyers receive nothing. Triggering the automation on a tag that SamCart applies removes that
-dependency entirely and is testable in a minute with a $1 test product.
+All five landing page CTAs point at `/offers/F9gERGKo/checkout`.
 
-If SamCart's native Kajabi app cannot apply tags, use Zapier: SamCart "New Order" to Kajabi
-"Add Tag", alongside the existing "Grant Access to Offer" action.
+### BLOCKER: the account is at its product limit
 
-### Thank-you page
+`create_course` failed with "Your account has reached the product limit." The site already
+carries seven products, all created in 2024 and none updated since November 2024:
 
-Redirect to a Kajabi thank-you page that includes:
-- Kickoff call date, time, and Zoom link
-- Private group join link
-- "Check your email for the prep guide"
-- The screening disclaimer, repeated
+| Product | Type |
+|---|---|
+| Go Happy Belly Course | Course |
+| 3 Month Private 1 on 1 Coaching Package | CoachingProgram |
+| 6 Month Private 1 on 1 Coaching Package | CoachingProgram |
+| 12 Month Private 1 on 1 Coaching Package | CoachingProgram |
+| Members | AccessGroup |
+| E-Book: Making Your Way To A Happier Belly | DigitalDownload |
+| Happier Belly Gut Reset Program | AccessGroup |
+
+So the offer currently grants **no product access**. A buyer is charged $47 and Kajabi hands
+them nothing automatically. Three ways forward:
+
+1. **Ship without a product (works for cohort 01).** Everything this offer actually delivers is
+   external to a Kajabi product anyway: two Zoom calls, a group, daily emails, and a guide
+   file. The post-purchase message and the emails carry all the links. Zero cost, works today.
+   Cost: no member library page, and call replays live in the community rather than a product.
+2. **Free a slot.** Several 2024 products look dormant, particularly the two unused coaching
+   packages and the two AccessGroups. Steve's call entirely; nothing was deleted.
+3. **Upgrade the Kajabi plan.** Cleanest long term, costs money, and is a decision that should
+   not be forced by a six-day launch.
+
+Recommendation: ship cohort 01 on option 1, decide 2 or 3 afterwards.
+
+### Post-purchase message: BUILT
+
+The offer uses `thank_you_preference: custom_message`. It renders immediately on purchase and
+carries the kickoff call date and time, the group link, the guide link, the full three-day
+schedule, the screening disclaimer, and the refund line. This is the reliable delivery path;
+the welcome email is the backup.
+
+Three placeholders in it need real URLs before publishing: `[ADD ZOOM LINK]`,
+`[ADD GROUP LINK]`, `[ADD GUIDE LINK]`.
 
 ---
 
@@ -269,11 +309,17 @@ Kajabi's automations MCP tools are not enabled on this account yet, so this one 
 created programmatically. Build it in the Kajabi admin:
 
 ```
-Trigger:  Contact tag added  ->  bbf-purchased
+Trigger:  Offer purchased  ->  The 3-Day Bone Broth Reset (2151405804)
+Action:   Add tag  ->  bbf-purchased
+Action:   Add tag  ->  bbf-cohort-01
 Action:   Subscribe to email sequence  ->  Bone Broth Fast, Purchaser Onboarding
 ```
 
-Leave it as a draft until the SamCart product is live, then publish. Publishing is what arms it.
+Simpler than the original tag-triggered design. With native Kajabi checkout, `offer_purchased`
+is a first-class event that definitely fires, so the tags become actions rather than the
+trigger. They still do the cohort segmentation the broadcasts target.
+
+Leave it as a draft until the offer is published, then publish. Publishing is what arms it.
 
 ### 4.4 Email styling
 
@@ -361,14 +407,14 @@ you buy and then realize you fall into a screening category.
 - [x] Set kickoff call time (10:00 AM PT) and closing call (Sat Oct 3, 10:00 AM PT)
 - [ ] Fix the day-0 send time so the welcome email cannot land after the kickoff call
 - [ ] Publish the BBF 01 sequence email (currently draft)
-- [ ] Build the SamCart thank-you page carrying call time, Zoom link and group link
+- [ ] Add the Zoom, group and guide links to the post-purchase message
 - [ ] Record or write the written guide (broth ratios, hydration plan, symptom guide)
-- [ ] Create Kajabi Product and populate modules
-- [ ] Create Kajabi Offer as access grant, no public checkout
+- [ ] Create Kajabi Product (BLOCKED: account at product limit, see section 3)
+- [x] Create Kajabi Offer at $47 one-time (draft, checkout URL live on all 5 CTAs)
+- [x] Build the post-purchase thank-you message
+- [ ] Publish the offer in the Kajabi admin
 - [x] Build Kajabi landing page from `landing-page.html` (draft, /broth-reset)
-- [x] Create SamCart product at $47 (checkout URL live, wired into all 5 CTAs)
-- [ ] Wire SamCart to Kajabi integration rules (grant + revoke)
-- [ ] Confirm SamCart can apply Kajabi tags natively; fall back to Zapier if not
+- [x] ~~SamCart product~~ superseded by native Kajabi checkout, 2026-09-22
 - [x] Build the 5 purchaser emails in Kajabi (1 sequence email + 4 broadcasts)
 - [x] Create Kajabi tags and cohort segment
 - [ ] Build the tag-triggered automation by hand in Kajabi admin (MCP automations not enabled)
