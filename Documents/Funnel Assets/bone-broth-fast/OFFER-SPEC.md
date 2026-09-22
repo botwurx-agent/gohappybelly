@@ -13,7 +13,7 @@ keeps the quiz. Calendly keeps call booking.
 
 | Field | Value |
 |---|---|
-| Public name | The 3-Day Gut Reset: Bone Broth Fast |
+| Public name | The 3-Day Bone Broth Reset |
 | Internal name | BBF-[COHORT-MONTH] (e.g. BBF-2026-10) |
 | Price | $47 |
 | Early-bird | None. Flat $47, urgency comes from the capped seat count |
@@ -22,25 +22,18 @@ keeps the quiz. Calendly keeps call booking.
 | Position in suite | Entry / ascension offer. Sits above Guthub ($13/mo), below Gut Reset Course ($147) |
 | Ascension path | Closing call soft-pitches 1:1 coaching and GI-MAP as optional next steps |
 
-### Naming conflict to resolve before build
+### Naming conflict: RESOLVED 2026-09-22
 
-The suite now contains three products using "Gut Reset":
+The offer was originally "The 3-Day Gut Reset: Bone Broth Fast", which sat one character from
+the "3-Month Gut Reset" ($1,497) and risked refund disputes from buyers who thought they had
+bought the flagship. It also meant the page's biggest headline never said what the offer
+actually was.
 
-- **3-Month Gut Reset** ($1,497) flagship
-- **Gut Reset Course** ($147)
-- **3-Day Gut Reset** ($47) this offer
+Renamed to **The 3-Day Bone Broth Reset** across the page H1, SEO title, Kajabi landing page
+title, and this spec. The slug `broth-reset` was already rename-proof and did not change.
 
-"3-Day" and "3-Month" are one character apart in most contexts and will get confused in subject
-lines, ad copy, DMs, and support questions. Refund disputes are the real risk: someone who
-believes they bought the $1,497 program.
-
-Alternatives that keep the reset framing without the collision:
-- **The Broth Reset** (clearest, no numeral clash)
-- **3 Days of Broth**
-- **The Bone Broth Reset**
-
-Recommendation: **The Broth Reset**. Steve's call. Page and spec currently use the original
-"3-Day Gut Reset: Bone Broth Fast" name until he decides.
+Current ladder: Guthub ($13/mo), Bone Broth Reset ($47), Gut Reset Course ($147),
+3-Month Gut Reset ($1,497).
 
 ---
 
@@ -82,10 +75,35 @@ publish a Kajabi checkout for it, or you create a second buyable path at the wro
 | Public URL (once published) | https://go-happy-belly.mykajabi.com/broth-reset |
 | Builder | https://app.kajabi.com/admin/themes/2167624377/settings/edit |
 | Page settings | https://app.kajabi.com/admin/landing_pages/2152286720/edit |
-| Status | Draft. Publish from the Kajabi admin. |
+| Status | **PUBLISHED** (Steve published it 2026-09-22). Theme edits go live immediately, there is no draft layer. |
 
-Eleven sections: Hero, The Problem, The Shift, What's Included, How It Runs, Pattern Fit,
+Ten sections: Hero, The Problem, The Shift, What's Included, How It Runs, Pattern Fit,
 About Alina, Testimonials, FAQ, Screening and Final CTA.
+
+**Conversion pass, 2026-09-22.** Four changes applied to both the Kajabi page and the local
+reference:
+
+1. **Five buy CTAs, up from one.** Previously only the hero and the final section had buy
+   buttons, and the single mid-page button sent readers off to the ScoreApp quiz. Buy CTAs now
+   sit after What's Included, after How It Runs, and in Pattern Fit. The quiz link is demoted
+   to an inline text link inside Pattern Fit.
+2. **H1 says what the offer is.** "The 3-Day Gut Reset" became "The 3-Day Bone Broth Reset".
+3. **Guarantee surfaced.** "Not right for you? Reply and we'll refund you in full." now sits
+   directly under every CTA. It previously appeared only once, buried in the screening block
+   at the bottom of the page.
+4. **Pattern Fit no longer routes buyers away.** The Wired-and-Tired entry used to end with
+   "start with the Gut Reset Course instead", selling a different product mid-page. It now
+   points at the kickoff call, which is where Alina would screen them anyway. The caution
+   itself is unchanged and should stay.
+
+Deliberately NOT changed: the screening block still sits directly above the final CTA, per the
+source launch kit. It costs some momentum at the last decision point, but screening before
+purchase is the right call for a fasting protocol, and the earlier CTAs mean it no longer gates
+every path to checkout.
+
+Still on the table from the conversion review, not yet applied: an offer recap beside the final
+CTA, reordering the FAQ so "what if I have to stop partway through" leads, and moving one
+testimonial up near the hero.
 
 Style Guide tokens were set from the `landing-page.html` reference rather than Encore's
 defaults: Playfair Display headings, DM Sans body, heading `#162E28`, body `#2E4438`,
