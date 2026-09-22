@@ -116,10 +116,13 @@ secondary `#6A8278`, primary `#7AAE86`, buttons `#C07A5A` at 2px radius, page ba
 All five CTAs point at it. Note the SamCart slug still carries the old offer name; harmless,
 but worth renaming the SamCart product for consistency at some point.
 
-**Kickoff:** Tuesday, September 29. **Seats:** 50. **Doors close:** Monday, September 28.
+**Kickoff call:** Tuesday, September 29 at 10:00 AM PT. **Seats:** 50.
+**Doors close:** Monday, September 28.
 
-Derived calendar, ASSUMING September 29 is the kickoff call and Day 1 is the day after.
-Confirm before scheduling the broadcasts:
+Note on the timezone: September 29 falls inside daylight saving, so Pacific is PDT, not PST.
+All copy says "PT" rather than "PST" so nobody converting timezones lands an hour early.
+
+Confirmed calendar:
 
 | Step | Date |
 |---|---|
@@ -128,13 +131,42 @@ Confirm before scheduling the broadcasts:
 | Day 1 | Wed, September 30 |
 | Day 2 | Thu, October 1 |
 | Day 3 | Fri, October 2 |
-| Closing Zoom call | Sat, October 3 |
+| Closing Zoom call | Sat, October 3, 10:00 AM PT (assumed, matches kickoff time) |
 | Day 5 follow-up email | Mon, October 5 |
 
-If September 29 is meant to be Day 1 instead, everything shifts back one day, the kickoff call
-lands Monday September 28, and the closing call moves off the weekend to Friday October 2.
-That variant keeps the whole fast inside the work week, which is easier for adherence since
-most social eating happens at weekends.
+### Broadcast send schedule to set in the Kajabi admin
+
+| Broadcast | ID | Send |
+|---|---|---|
+| BBF 02 Day 1 check-in | 2158576121 | Wed, Sept 30, 7:00 AM PT |
+| BBF 03 Day 2 check-in | 2158576122 | Thu, Oct 1, 7:00 AM PT |
+| BBF 04 Day 3 check-in | 2158576123 | Fri, Oct 2, 7:00 AM PT |
+| BBF 05 Day 5 follow-up | 2158576124 | Mon, Oct 5, 9:00 AM PT |
+
+Morning sends so the check-in lands before the day starts rather than after it.
+
+### CRITICAL: the welcome email can arrive after the kickoff call
+
+The sequence email `BBF 01` is set to day 0 at `send_time_in_minutes: 660`, which is 11:00 AM
+Pacific. The sequence itself has `send_hour: 11`.
+
+That means a contact who buys at, say, 2:00 PM on Monday September 28 (the day doors close)
+would receive their prep email at 11:00 AM on Tuesday September 29, which is **one hour after
+the kickoff call has already started**. They get the grocery list, the group link and the call
+time too late to use any of it.
+
+Two fixes, do both:
+
+1. **In the Kajabi admin**, open the sequence and set `BBF 01` to send immediately on
+   subscription rather than at 11:00 AM. This cannot be changed through MCP; there is no
+   update tool for sequence send timing.
+2. **Put the same information on the SamCart thank-you page**: kickoff call date, time and
+   Zoom link, the group link, and "your prep guide is in your inbox". A thank-you page renders
+   instantly and does not depend on email timing at all. This is the reliable path and the
+   email becomes the backup.
+
+Also note `BBF 01` has `publication_status: draft`. Publish it in the admin or it will not
+send at all.
 
 **Copy note:** the scarcity line originally read "seats are capped so the group stays personal."
 At 50 seats that claim strains, so it now reads "50 seats, and doors close Monday, September 28."
@@ -142,10 +174,10 @@ Harder deadline, no credibility risk.
 
 **Still outstanding:**
 
-1. `[TIME]` for the kickoff call, on the page in two places and in email 01.
-2. The About Alina image block is empty. Upload her photo in the builder (the local file is
+1. The About Alina image block is empty. Upload her photo in the builder (the local file is
    `Documents/Funnel Assets/Alina_Fence.jpg`). MCP cannot upload images.
-3. Closing call date and time in emails 03 and 04, and the Zoom links in emails 01 and 04.
+2. Link placeholders still in the emails: `[GROUP LINK]` (emails 01, 02, 03), `[GUIDE LINK]`
+   (email 01), `[CLOSING CALL ZOOM LINK]` (email 04).
 
 **Testimonials:** now carry the three real quotes from the live site (Tiffani, Hanna, Linda).
 These are 1:1 coaching clients, not reset participants, and the section subhead says so
@@ -326,7 +358,10 @@ you buy and then realize you fall into a screening category.
 
 - [ ] Decide final offer name (naming conflict above)
 - [x] Set kickoff date (Sept 29) and seat cap (50)
-- [ ] Set kickoff call TIME and closing call date/time
+- [x] Set kickoff call time (10:00 AM PT) and closing call (Sat Oct 3, 10:00 AM PT)
+- [ ] Fix the day-0 send time so the welcome email cannot land after the kickoff call
+- [ ] Publish the BBF 01 sequence email (currently draft)
+- [ ] Build the SamCart thank-you page carrying call time, Zoom link and group link
 - [ ] Record or write the written guide (broth ratios, hydration plan, symptom guide)
 - [ ] Create Kajabi Product and populate modules
 - [ ] Create Kajabi Offer as access grant, no public checkout
@@ -337,7 +372,7 @@ you buy and then realize you fall into a screening category.
 - [x] Build the 5 purchaser emails in Kajabi (1 sequence email + 4 broadcasts)
 - [x] Create Kajabi tags and cohort segment
 - [ ] Build the tag-triggered automation by hand in Kajabi admin (MCP automations not enabled)
-- [ ] Fill the time, group, guide and Zoom placeholders in all 5 emails
+- [ ] Fill the remaining group, guide and Zoom link placeholders in the emails
 - [ ] Schedule the 4 broadcasts to real cohort dates
 - [ ] Fix the Mailchimp archetype overlap (see section 4.6)
 - [ ] Re-upload the logo to Kajabi media so emails stop hotlinking the Mailchimp CDN
