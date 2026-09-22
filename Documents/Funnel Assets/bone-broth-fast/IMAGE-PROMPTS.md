@@ -54,3 +54,26 @@ https://app.kajabi.com/admin/sites/2148204891/media_library?open_uploader=image
 
 So the flow is: download from the Higgsfield widget, upload through that link, then the asset can
 be placed into theme slots programmatically with `place_media`.
+
+## What is live
+
+| Field | Value |
+|---|---|
+| Media ID | `3919299` |
+| Dimensions | 1024 x 688 |
+| Source | Concept A, first (low/1k) batch, job `e9fbde0d` |
+| Placed on | Offer checkout theme `2167629368`, section `1744906803654`, block `1744906803654_0` |
+
+Uploaded 2026-09-22. Note this is the **low-quality 1k** render, not one of the 2048 x 1360
+versions. It is fine on the checkout page, where the image column renders around 460px wide so
+1024px still covers a retina display. It is **too small for a full-width landing page hero**,
+which would want the 2k file.
+
+The block's `image_width` had been set to 120 for the logo that previously sat there; cleared so
+the photo fills its column.
+
+To upgrade later: upload a 2k render, then `replace_media` swaps it everywhere the old asset is
+used in a single action. No need to re-place it slot by slot.
+
+Kajabi has no MCP tool for renaming a media asset, so the file keeps its generated hash name.
+Rename it in the admin if the library gets crowded.
