@@ -99,8 +99,13 @@ secondary `#6A8278`, primary `#7AAE86`, buttons `#C07A5A` at 2px radius, page ba
 2. The About Alina image block is empty. Upload her photo in the builder (the local file is
    `Documents/Funnel Assets/Alina_Fence.jpg`). MCP cannot upload images.
 
-Also fill in `[DATE]`, `[TIME]`, and `[X]` seats throughout, and replace the three testimonial
-placeholders or delete that section.
+Also fill in `[DATE]`, `[TIME]`, and `[X]` seats throughout.
+
+**Testimonials:** now carry the three real quotes from the live site (Tiffani, Hanna, Linda).
+These are 1:1 coaching clients, not reset participants, and the section subhead says so
+outright. Do not delete that line unless you are replacing these with quotes from an actual
+cohort. Swap in real reset testimonials after the first round finishes, which is also reel 7
+in the launch sequence.
 
 ---
 
@@ -210,6 +215,7 @@ you buy and then realize you fall into a screening category.
 - [ ] Build SamCart to Mailchimp zap for `bbf-purchased` tag
 - [ ] Load 5-email sequence in Mailchimp
 - [ ] Set up private group (Kajabi Community or existing channel)
-- [ ] Swap real testimonials into the page (placeholders are marked in the HTML)
+- [x] Swap real testimonials into the page (Tiffani, Hanna, Linda, sourced from the live site)
+- [ ] Collect reset-specific testimonials after cohort 1 and replace the 1:1 quotes
 - [ ] Record launch reels 1 through 6
 - [ ] Test end to end with a $1 test product before opening doors
