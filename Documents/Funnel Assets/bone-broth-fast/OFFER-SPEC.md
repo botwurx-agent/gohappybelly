@@ -287,6 +287,33 @@ six, and push notifications on a phone beat a web feed nobody has notifications 
 A Kajabi `chat`-type channel narrows that gap; a dormant `feed` channel does not. B is likely
 better for engagement, A is better for automation and for keeping everything in one place.
 
+### Checkout page: BUILT
+
+Theme `2167629368`. It shipped as Kajabi's untouched boilerplate: an empty image block and a
+text block still reading `[Offer title]`, `[ Insert value 1 ]`, `[ Insert value 2 ]`. Three
+things were wrong and all three are fixed:
+
+1. **Placeholder copy.** Replaced with the offer name, the cohort dates, the five inclusions,
+   the refund line in a sage callout, the screening disclaimer, and Alina's credential.
+2. **Broken layout.** Both content blocks were `width: 8` while the payment form takes
+   `checkout_block_column_width: 5`. Eight plus five exceeds the twelve-column grid, so the
+   content wrapped below the form. Both are now `width: 7`.
+3. **Wrong brand.** The theme carried the generic site Style Guide (Raleway / Roboto, `#2d3331`
+   dark grey, outline buttons at 50px radius), so the checkout looked nothing like the page the
+   buyer just came from. Now matches the landing page: Playfair Display headings, DM Sans body,
+   forest `#162E28`, sage `#7AAE86`, terracotta `#C07A5A` buttons at 2px radius, page
+   background `#F8FAF8`. The checkout block itself also picked up the terracotta button and a
+   light sage border.
+
+The site logo now sits above the copy at 120px. Header and footer stay hidden on this page,
+which is correct for checkout: no nav, no escape routes.
+
+`sync_checkout_block_to_offer` is true, so the form pulls the title and $47 price from the offer
+record rather than duplicating them in the copy.
+
+**Not visually verified.** The sandbox cannot reach the Kajabi domain and the offer is still a
+draft. Preview it from the admin before publishing.
+
 ### Post-purchase message: BUILT
 
 The offer uses `thank_you_preference: custom_message`. It renders immediately on purchase and
@@ -447,6 +474,8 @@ you buy and then realize you fall into a screening category.
 - [ ] Revisit the Kajabi product limit after cohort 01
 - [x] Create Kajabi Offer at $47 one-time (draft, checkout URL live on all 5 CTAs)
 - [x] Build the post-purchase thank-you message
+- [x] Build the checkout page (was Kajabi placeholder boilerplate)
+- [ ] Preview the checkout page before publishing the offer
 - [ ] Publish the offer in the Kajabi admin
 - [x] Build Kajabi landing page from `landing-page.html` (draft, /broth-reset)
 - [x] ~~SamCart product~~ superseded by native Kajabi checkout, 2026-09-22
