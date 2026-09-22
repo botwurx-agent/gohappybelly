@@ -252,7 +252,40 @@ them nothing automatically. Three ways forward:
 3. **Upgrade the Kajabi plan.** Cleanest long term, costs money, and is a decision that should
    not be forced by a six-day launch.
 
-Recommendation: ship cohort 01 on option 1, decide 2 or 3 afterwards.
+**DECIDED 2026-09-22 (Steve): option 1.** Cohort 01 ships with no product attached. Every
+deliverable is external to Kajabi anyway. Revisit the product limit after the launch.
+
+### What "no product" means for the private group
+
+Kajabi gates its Community with an **access group**, and access groups consume product slots.
+So with no product attached, a buyer does not automatically get Kajabi Community access.
+
+The site already has a community (`Go Happy Belly Community`, id 561052) with two access
+groups, both dormant since 2024 and both holding zero posts:
+
+| Access group | Kajabi ID | Channel | State |
+|---|---|---|---|
+| Members | 808267 | Q&A (feed) | 0 posts, stale since Aug 2024 |
+| Happier Belly Gut Reset Program | 907663 | Q&A (feed) | 0 posts, stale since Nov 2024 |
+
+**These two are not spare product slots. Do not delete them.** They are what gates the
+community; removing either would break it. If a slot ever needs freeing, look at the unused
+6-month and 12-month coaching packages instead.
+
+Two ways to run the private group for cohort 01:
+
+**A. Reuse the dormant `Happier Belly Gut Reset Program` access group.** Attach it to the offer,
+rename it and its channel for this cohort. Costs no product slot, grants access automatically
+on purchase, revokes automatically on refund, and keeps buyers inside Kajabi where replays can
+live. Confirm nothing else depends on that access group first.
+
+**B. Run the group off-platform** (WhatsApp, Facebook, Circle) and link it from the
+post-purchase message and emails. Manual add and remove, no auto-revoke.
+
+Worth weighing honestly: this is a three-day intensive where people need reassurance at hour
+six, and push notifications on a phone beat a web feed nobody has notifications turned on for.
+A Kajabi `chat`-type channel narrows that gap; a dormant `feed` channel does not. B is likely
+better for engagement, A is better for automation and for keeping everything in one place.
 
 ### Post-purchase message: BUILT
 
@@ -409,7 +442,9 @@ you buy and then realize you fall into a screening category.
 - [ ] Publish the BBF 01 sequence email (currently draft)
 - [ ] Add the Zoom, group and guide links to the post-purchase message
 - [ ] Record or write the written guide (broth ratios, hydration plan, symptom guide)
-- [ ] Create Kajabi Product (BLOCKED: account at product limit, see section 3)
+- [x] Decided: ship cohort 01 with no product attached (Steve, 2026-09-22)
+- [ ] Decide how the private group runs: reuse the dormant access group, or go off-platform
+- [ ] Revisit the Kajabi product limit after cohort 01
 - [x] Create Kajabi Offer at $47 one-time (draft, checkout URL live on all 5 CTAs)
 - [x] Build the post-purchase thank-you message
 - [ ] Publish the offer in the Kajabi admin
@@ -422,7 +457,7 @@ you buy and then realize you fall into a screening category.
 - [ ] Schedule the 4 broadcasts to real cohort dates
 - [ ] Fix the Mailchimp archetype overlap (see section 4.6)
 - [ ] Re-upload the logo to Kajabi media so emails stop hotlinking the Mailchimp CDN
-- [ ] Set up private group (Kajabi Community or existing channel)
+- [ ] Create the group and get its link into the post-purchase message and emails
 - [x] Swap real testimonials into the page (Tiffani, Hanna, Linda, sourced from the live site)
 - [ ] Collect reset-specific testimonials after cohort 1 and replace the 1:1 quotes
 - [ ] Record launch reels 1 through 6
