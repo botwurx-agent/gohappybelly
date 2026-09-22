@@ -17,7 +17,7 @@ keeps the quiz. Calendly keeps call booking.
 | Internal name | BBF-[COHORT-MONTH] (e.g. BBF-2026-10) |
 | Price | $47 |
 | Early-bird | None. Flat $47, urgency comes from the capped seat count |
-| Format | Live cohort, 3 days, capped seats |
+| Format | Live cohort, 3 days, 50 seats |
 | Delivery | 2 Zoom calls, private group, 3 daily check-ins, written guide |
 | Position in suite | Entry / ascension offer. Sits above Guthub ($13/mo), below Gut Reset Course ($147) |
 | Ascension path | Closing call soft-pitches 1:1 coaching and GI-MAP as optional next steps |
@@ -110,14 +110,42 @@ defaults: Playfair Display headings, DM Sans body, heading `#162E28`, body `#2E4
 secondary `#6A8278`, primary `#7AAE86`, buttons `#C07A5A` at 2px radius, page background
 `#F8FAF8`.
 
-**Two placeholders must be replaced before publishing:**
+### Cohort 01 schedule and checkout
 
-1. Both CTA buttons point at `https://REPLACE-WITH-SAMCART-CHECKOUT-URL`. Swap for the real
-   SamCart URL once the product exists.
+**Checkout URL (live):** `https://mystore2429.mysamcart.com/checkout/the-3-day-gut-reset`
+All five CTAs point at it. Note the SamCart slug still carries the old offer name; harmless,
+but worth renaming the SamCart product for consistency at some point.
+
+**Kickoff:** Tuesday, September 29. **Seats:** 50. **Doors close:** Monday, September 28.
+
+Derived calendar, ASSUMING September 29 is the kickoff call and Day 1 is the day after.
+Confirm before scheduling the broadcasts:
+
+| Step | Date |
+|---|---|
+| Doors close | Mon, September 28 |
+| Kickoff Zoom call | Tue, September 29 |
+| Day 1 | Wed, September 30 |
+| Day 2 | Thu, October 1 |
+| Day 3 | Fri, October 2 |
+| Closing Zoom call | Sat, October 3 |
+| Day 5 follow-up email | Mon, October 5 |
+
+If September 29 is meant to be Day 1 instead, everything shifts back one day, the kickoff call
+lands Monday September 28, and the closing call moves off the weekend to Friday October 2.
+That variant keeps the whole fast inside the work week, which is easier for adherence since
+most social eating happens at weekends.
+
+**Copy note:** the scarcity line originally read "seats are capped so the group stays personal."
+At 50 seats that claim strains, so it now reads "50 seats, and doors close Monday, September 28."
+Harder deadline, no credibility risk.
+
+**Still outstanding:**
+
+1. `[TIME]` for the kickoff call, on the page in two places and in email 01.
 2. The About Alina image block is empty. Upload her photo in the builder (the local file is
    `Documents/Funnel Assets/Alina_Fence.jpg`). MCP cannot upload images.
-
-Also fill in `[DATE]`, `[TIME]`, and `[X]` seats throughout.
+3. Closing call date and time in emails 03 and 04, and the Zoom links in emails 01 and 04.
 
 **Testimonials:** now carry the three real quotes from the live site (Tiffani, Hanna, Linda).
 These are 1:1 coaching clients, not reset participants, and the section subhead says so
@@ -297,18 +325,19 @@ you buy and then realize you fall into a screening category.
 ## 7. Build checklist
 
 - [ ] Decide final offer name (naming conflict above)
-- [ ] Set cohort dates, kickoff call time, closing call time, seat cap
+- [x] Set kickoff date (Sept 29) and seat cap (50)
+- [ ] Set kickoff call TIME and closing call date/time
 - [ ] Record or write the written guide (broth ratios, hydration plan, symptom guide)
 - [ ] Create Kajabi Product and populate modules
 - [ ] Create Kajabi Offer as access grant, no public checkout
 - [x] Build Kajabi landing page from `landing-page.html` (draft, /broth-reset)
-- [ ] Create SamCart product at $47
+- [x] Create SamCart product at $47 (checkout URL live, wired into all 5 CTAs)
 - [ ] Wire SamCart to Kajabi integration rules (grant + revoke)
 - [ ] Confirm SamCart can apply Kajabi tags natively; fall back to Zapier if not
 - [x] Build the 5 purchaser emails in Kajabi (1 sequence email + 4 broadcasts)
 - [x] Create Kajabi tags and cohort segment
 - [ ] Build the tag-triggered automation by hand in Kajabi admin (MCP automations not enabled)
-- [ ] Fill the date, time, group, guide and Zoom placeholders in all 5 emails
+- [ ] Fill the time, group, guide and Zoom placeholders in all 5 emails
 - [ ] Schedule the 4 broadcasts to real cohort dates
 - [ ] Fix the Mailchimp archetype overlap (see section 4.6)
 - [ ] Re-upload the logo to Kajabi media so emails stop hotlinking the Mailchimp CDN
