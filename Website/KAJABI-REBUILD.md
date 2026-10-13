@@ -223,3 +223,49 @@ cutover.
 - That 62 is also the reminder that ~50 orphaned 2024 sections are still in the
   `sections` map. They are not in `content_for_index` so nothing renders them.
 - Encore values are strings: `"width": "2"`, `"make_block": "true"`.
+
+### Header and footer chrome (2026-10-13)
+
+Steve reported the top nav was "some sort of lime green". It was: the `header`
+and `footer` fixed sections were **untouched leftovers from the 2024 Kajabi
+site**. The twelve-section rebuild only ever wrote dynamic sections, so the
+chrome had never been looked at.
+
+They are also easy to miss on a read. `header` and `footer` always exist in
+`settings.sections` but they are not in `content_for_index`, and on this theme
+a `full_settings: true` read truncates before reaching them, so they looked
+absent. `section_filter: ["header","footer"]` is how to see them.
+
+| | Was (2024 leftover) | Now (live value) |
+|---|---|---|
+| Header background | **`#9acdaa` lime** | `#F8FAF8` |
+| Header text | unset | `#2E4438` |
+| Header layout | `horizontal: left` | `between` (logo left, nav and CTA right) |
+| Header sticky | `false` | `true`, with matching sticky colors |
+| Header CTA | "Book a call" → `/resource_redirect/landing_pages/2150005710` | "Take the Free Quiz" → the quiz, terracotta |
+| Footer background | **`#76a685` green** | `#162E28` forest |
+| Footer copyright | "Go Happy Belly" | the full three-line legal and disclaimer text |
+| Footer social | **Kajabi's own Facebook, Twitter and Instagram** | Alina's Instagram only |
+| Footer links | Main Menu (Home, Private Coaching) | the `footer` navbar: Free Quiz, Book a Call, Instagram, Guthub.ai |
+
+The header's **User Menu block was removed from `block_order`**, not deleted,
+because the live nav has no "Log In". Put `1555988487706` back in `block_order`
+if a member login is ever wanted there.
+
+The `footer` navbar (`2148458014`, a default menu) was empty and is now
+populated with the four links the live footer carries, as PathLinks to their
+real URLs. The footer `link_list` was repointed from `main-menu` to `footer`.
+
+**The header nav links are still wrong and were deliberately left alone.**
+Main Menu (`2148458013`) holds "Home" → landing page `2150005693` and "Private
+Coaching" → landing page `2150005719`, both 2024 pages. The live site's nav is
+"About" and "Work With Me", which are **in-page anchors** (`#about`, `#offers`).
+Encore has no per-section HTML id setting (its "anchor sections" are a different
+concept entirely), so those two anchors cannot be reproduced. Pointing the
+labels at nothing would be worse than leaving links that at least resolve.
+Decide this when the real inner pages exist.
+
+Other chrome deviations: the live nav's 1px bottom border and `backdrop-filter:
+blur(10px)` have no Encore header setting, and the nav font size is a select
+whose allowed values are not documented, so it stays at 18px against the live
+13px.
