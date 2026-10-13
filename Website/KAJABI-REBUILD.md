@@ -468,3 +468,52 @@ two shorter quotes while running full height on Linda's.
 Same editor-round-trip fragility as the archetype accents: these wrappers are
 rich-text markup, and opening the section in the Kajabi builder and saving may
 strip them.
+
+### Section-by-section pass: 09 Work With Alina (2026-10-13)
+
+Two structural misses, not just styling.
+
+**The featured offer was two boxes, not one.** The live `.offers__featured` is a
+single forest panel (`grid-template-columns: 1fr auto`, radius 4, padding
+42/38, a deep shadow) holding the includes on the left and the price plus CTA
+on the right. The build had them as two separate width-7 and width-5 blocks,
+each with its own dark background, so Encore's column gutter cut a visible gap
+straight down the middle.
+
+Rebuilt as **one width-12 block** with an internal flex layout. Block
+`1791900000010_2` is orphaned out of `block_order` rather than deleted.
+
+That forces one compromise: the Book a Free Call button is now an inline
+styled `<a>` inside the rich text, which the Encore guide explicitly calls an
+antipattern. There is no alternative here, because a `cta` block renders at
+block level and cannot sit inside the right-hand column of a flex layout that
+lives in another block. **Consequence: that button will not appear in the
+builder's button controls**, and its URL has to be edited in the rich text.
+
+**The bullets were the wrong mark.** The live list uses a 14px sage filled
+circle via `::before`, not a checkmark. Replaced.
+
+**The risk-reversal line was missing entirely** — "The call is a real
+conversation…", 12px italic Playfair at 48% white, capped at 180px under the
+button. Added.
+
+| | Live | Was | Now |
+|---|---|---|---|
+| Featured panel | one box, radius 4, padding 42/38, deep shadow | two boxes with a gutter | one box, matched |
+| Bullets | 14px sage circle | `✓` glyph | matched |
+| Title | Playfair 28px | 30px | 28px |
+| Includes text | 13px, 76% white, 8px gap | default | matched |
+| Price | Playfair 50px | 44px | 50px |
+| Risk line | 12px italic, 180px cap | absent | added |
+| Offer cards | `border-left: 3px solid #A8CAB2` | 1px box border | left accent |
+| Offer cards | no button, whole card links | terracotta ORDER buttons | buttons removed, title links |
+| Card name | Playfair 16px | 18px | 16px |
+| Card note | 11px | 14px | 11px |
+| Card price | 18px sage | 22px `#A8CAB2` | 18px `#7AAE86` |
+| Section padding | 96px | 90px | 96px |
+
+**Grid deviation:** the live `.offers__grid` is `auto-fit, minmax(180px, 1fr)`,
+which lands on 5 per row in a 1044px container and wraps the sixth onto its own
+line. Encore's 12-column grid cannot express 5 equal columns (12/5 is not an
+integer), so the six cards sit at width 2 and fill one row of six. Arguably
+tidier than a lone orphan card, but it is a difference.
