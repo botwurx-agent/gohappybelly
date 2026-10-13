@@ -438,3 +438,33 @@ track, and capping the row at 900px would have squeezed the columns to ~311px,
 *narrower* than the original. Left at 5/2/5 inside the 1100px container, which
 yields ~371px per column, within about 5% of the live measure. The divider
 column is correspondingly wider than the live 68px.
+
+### Section-by-section pass: 08 Testimonials (2026-10-13)
+
+| | Live | Was | Now |
+|---|---|---|---|
+| Card accent | `border-left: 3px solid #7AAE86` | 1px `#C8DDD0` box border | 3px sage left bar |
+| Card shadow | `0 2px 12px rgba(22,46,40,0.06)` | none | `box_shadow: small` |
+| Quote mark | Playfair 60px sage at **0.18 opacity, absolutely positioned** top 10 / left 18 | 48px at 0.25, in normal flow | matched, absolute |
+| Quote text | 15px, lh 1.8, **italic**, weight 300, `#2E4438` | inherited 16px, upright | matched |
+| Attribution | 10px, 0.18em, **`#7AAE86` sage**, weight 500 | 12px, 0.14em, `#6A8278` grey | matched |
+| Card padding | 28px 24px | 32px 28px | 28px 24px |
+| Heading | `clamp(26px, 3.4vw, 38px)`, 52px below | 38px fixed, 32px below | matched |
+| Section padding | 96px | 90px | 96px |
+
+Same constraint as the archetype cards: Encore's `feature` block border is all
+four sides, so a left-only accent is not reachable from settings. Each card's
+content is wrapped in a div carrying the left border, with `margin: -28px -24px`
+cancelling the block padding and the padding re-applied inside, so the bar sits
+flush at the card edge. The quote mark is absolutely positioned inside that
+wrapper, with the text at `z-index: 1`, so it reads as a watermark behind the
+first lines exactly as the live card does.
+
+The wrapper also carries `height: 100%; box-sizing: border-box`. Without it, the
+section's `equal_height: "true"` stretches the card boxes but not the
+content-height wrapper, so the accent bar would stop short of the bottom on the
+two shorter quotes while running full height on Linda's.
+
+Same editor-round-trip fragility as the archetype accents: these wrappers are
+rich-text markup, and opening the section in the Kajabi builder and saving may
+strip them.
