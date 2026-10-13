@@ -517,3 +517,27 @@ which lands on 5 per row in a 1044px container and wraps the sixth onto its own
 line. Encore's 12-column grid cannot express 5 equal columns (12/5 is not an
 integer), so the six cards sit at width 2 and fill one row of six. Arguably
 tidier than a lone orphan card, but it is a difference.
+
+### Offer cards: equal height and 3-up (2026-10-13)
+
+Steve asked whether the "Other ways to start" cards could be made the same
+size. Two separate causes were in play:
+
+1. **Ragged heights.** Encore has a section-level `equal_height` setting that
+   stretches every block in a row to the tallest. The Archetypes and
+   Testimonials sections already used it; this section did not, because it was
+   not carried through when the section was rebuilt. Now `"true"`.
+2. **Cramped titles.** At width 2 (six across) each card is ~174px wide, about
+   138px of usable text after padding, so "Food Sensitivity Test" and
+   "GI-MAP Stool Test" wrapped to two lines, which was most of the apparent
+   size difference. Cards are now **width 4, three per row, two rows**, giving
+   ~312px of text so every title sits on one line.
+
+`equal_height` works because the card wrappers already carry
+`height: 100%; box-sizing: border-box` from the testimonial fix. Without that
+the column stretches but the wrapper does not, and the left accent bar stops
+short of the card bottom.
+
+This moves further from the live `auto-fit` grid (5 across plus an orphan), but
+that layout was already unreachable in a 12-column grid. Two clean rows of three
+is the closest tidy equivalent.
