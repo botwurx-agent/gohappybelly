@@ -269,3 +269,69 @@ Other chrome deviations: the live nav's 1px bottom border and `backdrop-filter:
 blur(10px)` have no Encore header setting, and the nav font size is a select
 whose allowed values are not documented, so it stays at 18px against the live
 13px.
+
+### Sizing pass (2026-10-13)
+
+Steve sent a side-by-side screenshot: the Kajabi build read roughly a fifth
+larger than the live site, with the hero portrait running past the fold and
+shoving the headline down the page.
+
+**Root cause: container width.** Encore caps section content at **1260px**;
+the Netlify site caps at **1100px** with 28px gutters, so 1044px of real
+content. Every column, card, gap and portrait scales off that number. Measuring
+the two screenshots confirmed it: Kajabi's content band was ~1.2x wider, and
+1260/1044 = 1.21.
+
+Fixed with one rule in the theme's `settings.css`:
+
+```css
+.container { max-width: 1100px; padding-left: 28px; padding-right: 28px; }
+```
+
+The narrower cap always wins over Encore's outer wrapper, so capping
+`.container` is enough and the wrapper's own selector is not needed.
+
+**The portraits needed two separate fixes.** Encore renders an image at its
+natural aspect ratio and has no crop setting, while the live site crops both
+with `aspect-ratio` + `object-fit: cover`. So the photo was both too wide and
+far too tall.
+
+| | Live | Now |
+|---|---|---|
+| Hero photo | `max-width: 380px`, 3/4, `object-position: 72% center` | `image_width: "380"` + CSS crop |
+| About photo | ~486px column, 4/5, `object-position: center top` | `image_width: "486"` + CSS crop |
+
+`image_width` (a real Encore image-block setting, px, blank = 100% of column)
+does the width; the crop has to be CSS because no setting exposes it.
+
+Also: body type 17px → **16px** desktop, 15px mobile (live base is 16px); the
+hero sub-paragraph was 18px in `#6A8278` and is now 16px in `#2E4438` with the
+live 460px measure; the eyebrow regained its 22px sage rule; `findable.` is
+terracotta italic again; and the header logo went **200px → 90px**.
+
+### Correction: the portraits are no longer hotlinked
+
+An earlier note here warned that referencing the photos by their Netlify URLs
+was interim and would break at DNS cutover. **That is wrong.** Kajabi
+side-loaded both images into its own storage when the URLs were saved. They now
+read:
+
+- `file-uploads/themes/2156348838/settings_images/3a0315a-…_IMG_8247.jpg`
+- `file-uploads/themes/2156348838/settings_images/c38abe-…_Alina_Fence.jpg`
+
+No upload step is outstanding and nothing breaks when the domain moves.
+
+### Nav links: anchors are possible, but the validator blocks the useful form
+
+An earlier note said Encore cannot reproduce the live nav's `#about` /
+`#offers` anchors. That was too strong: Encore renders every section as
+`#section-<id>`, which the decorative CSS above already relies on.
+
+The real blocker is the navbar validator, which rejects a bare `#fragment`:
+*"Url must be a URL or a path"*. A `/`-rooted `/#section-1791900000008` would
+satisfy it, but `/` currently serves the old 2024 Home landing page, so those
+links would leave the page and land nowhere useful. They stay as they are until
+the homepage override is resolved, at which point they become:
+
+- About → `/#section-1791900000008`
+- Work With Me → `/#section-1791900000010`
