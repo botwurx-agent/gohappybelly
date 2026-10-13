@@ -410,3 +410,31 @@ Everything else in the section was oversized or missing:
 | Card padding | 26px 22px | 26px 20px | 26px 22px |
 | CTA label | em dash | comma | em dash |
 | CTA note | 11px | 13px | 11px |
+
+### Section-by-section pass: 06 What Changes (2026-10-13)
+
+The visible miss was the middle divider. The live site is not a bare arrow: it
+is a 36px circle in sage-pale `#EAF5EC` with a 1px `#C8DDD0` border and a sage
+arrow, flanked above and below by 1px x 60px rules in `#C8DDD0`. Rebuilt in
+rich text as nested flex divs, verified present after the write, and set
+`hide_on_mobile` to match the live `display: none` below 768px.
+
+| | Live | Was | Now |
+|---|---|---|---|
+| Heading | `clamp(26px, 3.6vw, 42px)`, `max-width: 600px` | Style Guide 38px, full width | matched |
+| Sub | 15px, `max-width: 460px` | 17px, full width | matched |
+| Column padding | `0 32px` | none | `0 32px` |
+| Column label | 10px, 0.22em, mb 24; muted / sage | 11px, 0.2em | matched |
+| List items | 15px, lh 1.65, weight 300, 14px gap | inherited 16px | matched |
+| Before marker | `—` in `#C8DDD0` at 13px | `—` in `#C8DDD0` | sized to 13px |
+| After marker | `✓` in `#7AAE86` at 13px / 500 | `✓` in `#7AAE86` | sized and weighted |
+| Before text | `#6A8278` | `#6A8278` | unchanged |
+| After text | `#2E4438` | default | `#2E4438` |
+| Section padding | 96px | 90px | 96px |
+
+**Deliberately not matched:** the live grid is `1fr auto 1fr` capped at 900px,
+which gives ~352px of text per column. Encore's 12-column grid has no `auto`
+track, and capping the row at 900px would have squeezed the columns to ~311px,
+*narrower* than the original. Left at 5/2/5 inside the 1100px container, which
+yields ~371px per column, within about 5% of the live measure. The divider
+column is correspondingly wider than the live 68px.
