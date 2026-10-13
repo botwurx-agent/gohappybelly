@@ -363,3 +363,50 @@ schema has no `text-transform`, and no setting produces an `rgba()` border.
 (nine times) and matching the live site is the current instruction. Flagged to
 Steve; if he prefers, they come out of both the Encore build and the Nova one
 together.
+
+### Section-by-section pass: 05 The Five Gut Patterns (2026-10-13)
+
+Steve called out the thin accent line on each card. On the live site that is
+`border-top: 3px solid` with a **different colour per card**, set by
+`:nth-child()`, and card three is deliberately terracotta:
+
+| # | Card | Accent |
+|---|---|---|
+| 1 | The Wired-and-Tired Gut | `#7AAE86` |
+| 2 | The Reactive Gut | `#8EBF9A` |
+| 3 | The Sugar-Driven Gut | `#C07A5A` (terracotta) |
+| 4 | The Underactive Gut | `#6A9E78` |
+| 5 | The Bloated and Backed-Up Gut | `#9AC8A6` |
+
+Encore's `feature` block only exposes a whole-box `border_type` / `border_width`
+/ `border_color`, so a top-only rule in brand-varying colours is not reachable
+from settings. The accent is instead a flush bar as the first element of each
+card's rich text:
+
+```html
+<div style="height: 3px; background-color: #7AAE86; margin: -26px -22px 22px;"></div>
+```
+
+The negative margins cancel the block's 26px/22px padding so the bar sits hard
+against the card edge. Verified present on all five after the write.
+
+**This is the fragile bit.** The sanitizer that strips markup runs on *editor
+round-trips*, not API writes. If someone opens this section in the Kajabi
+builder and saves, these empty `<div>`s may be dropped and the accents vanish
+silently. If that happens, re-apply from here, or move the accents into
+`settings.css` keyed on `#section-1791900000006` column `:nth-child()`.
+
+Everything else in the section was oversized or missing:
+
+| | Live | Was | Now |
+|---|---|---|---|
+| Heading | `clamp(26px, 3.8vw, 42px)`, `max-width: 560px` | Style Guide 38px, full width | matched |
+| Sub | 15px, `max-width: 480px` | 17px, full width | matched |
+| Card box | no border, soft shadow | 1px `#C8DDD0` border, no shadow | border none, shadow small |
+| Icon | 20px | 24px | 20px |
+| Card title | Playfair 18px / 500 | 20px | 18px / 500 |
+| Card body | 13px | inherited 16px | 13px |
+| Aha line | 13px italic **+ 1px top divider** | 16px italic, no divider | matched |
+| Card padding | 26px 22px | 26px 20px | 26px 22px |
+| CTA label | em dash | comma | em dash |
+| CTA note | 11px | 13px | 11px |
