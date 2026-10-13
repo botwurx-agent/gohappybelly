@@ -335,3 +335,31 @@ the homepage override is resolved, at which point they become:
 
 - About → `/#section-1791900000008`
 - Work With Me → `/#section-1791900000010`
+
+### Section-by-section pass: 02 Validation (2026-10-13)
+
+| | Live | Was | Now |
+|---|---|---|---|
+| Heading | italic, `clamp(22px, 3.2vw, 34px)` | upright, Style Guide 38px | italic, same clamp |
+| Heading text | has the em dash | dash removed | dash restored |
+| Label | 10px, 0.24em | 11px, 0.22em | 10px, 0.24em |
+| Bullet grid | `max-width: 840px` | full 1044px | capped 840px |
+| Bullet text | 15px, `rgba(255,255,255,0.78)`, weight 300 | default body | matched |
+| Bullet marker | 5px sage circle | `&#9679;` glyph at text size | 5px inline-block circle |
+| Quote | `max-width: 540px` | uncapped, one line | capped 540px |
+| CTA | `btn--outline-light` | solid terracotta | outline, white 45% border |
+| All buttons | 12px uppercase, 0.13em | sentence case | matched globally |
+
+The 840px cap uses `#section-1791900000003 .row:has(> .col-4)`. That works
+because the guide confirms **`make_block` forces a block onto its own row**, so
+the heading, quote and CTA are each in their own row and `:has()` reaches only
+the row holding the six width-4 bullets. Capping `.row` outright would have
+squeezed the heading too.
+
+The outline button and the global uppercase both had to be CSS: Encore's button
+schema has no `text-transform`, and no setting produces an `rgba()` border.
+
+**Em dashes restored here.** CLAUDE.md forbids them, but the live site uses them
+(nine times) and matching the live site is the current instruction. Flagged to
+Steve; if he prefers, they come out of both the Encore build and the Nova one
+together.
