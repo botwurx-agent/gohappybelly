@@ -112,3 +112,25 @@ pages. That is brand consistency rather than a bug, but it is wider than the hom
 The ~70 sections from the 2024 Kajabi site are still in the `sections` map. They are no longer
 in `content_for_index`, so nothing renders them. Harmless, but they will clutter the builder
 sidebar until someone deletes them.
+
+---
+
+## Correction (2026-10-13): the port is not a transcription job
+
+"Outstanding" above says to port the twelve sections into a landing page theme and
+that "the block vocabulary is identical, so it is a transcription job rather than a
+redesign." **That is wrong.**
+
+New landing pages on this site are created on **Nova v0.2.7**, a Tailwind-first theme,
+not Encore. Confirmed by building the Private Coaching page (`2152330511`, theme
+`2167878184`). Nova and Encore share almost no setting names, so the port is a
+re-authoring job.
+
+The trade is worth taking anyway. Nova runs Tailwind v4 with the browser JIT, so
+arbitrary utilities and arbitrary-variant selectors work straight from a block's
+`custom_classes`. The six pseudo-element effects that had to live in Encore's Style
+Guide CSS field, and the section-ID-targeted rules that go dormant without warning
+when a section is deleted and recreated, are simply unnecessary there. Nova should
+beat the ~90% fidelity Encore reached.
+
+See `Website/PRIVATE-COACHING.md` for the Nova authoring notes.

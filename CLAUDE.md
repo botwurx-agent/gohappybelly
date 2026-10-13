@@ -81,7 +81,7 @@ These are the segmentation categories from the ScoreApp quiz ("What's Your Gut P
 
 | Offer | Price | Details |
 |-------|-------|---------|
-| 3-Month Gut Reset | $1,497 | (1) 60-min initial consult, (1) 30-min follow-up/month, gut-type meal + supplement plans, private community access, 3-month Gut Reset Course access, 3-month Guthub access |
+| 3-Month Gut Reset | $1,497 | (1) 60-min initial consult, (1) 30-min follow-up/month, **GI-MAP Stool Test with full results reading included**, gut-type meal + supplement plans, private community access, 3-month Gut Reset Course access, 3-month Guthub access |
 | Gut Reset Course | $147 | Standalone digital course |
 | Guthub.ai | $13/month | AI gut health platform, downsell/entry offer |
 | GI-MAP Stool Test | $497 | Includes reading/consultation |
@@ -90,7 +90,7 @@ These are the segmentation categories from the ScoreApp quiz ("What's Your Gut P
 | OAT Test | $497 | Includes reading/consultation |
 | Food Sensitivity Test | $639 | Includes reading/consultation |
 
-GI-MAP is an optional clinical recommendation decided after the initial consultation — not a hard upsell.
+The GI-MAP Stool Test is included in the 3-Month Gut Reset, with its results reading. It is also sold standalone at $497 to people who are not in the program. The other four tests (H. Pylori, SIBO, OAT, Food Sensitivity) are not included in the Reset and remain optional clinical recommendations decided after the initial consultation, not hard upsells.
 
 ---
 
@@ -234,7 +234,7 @@ Alina is NOT a doctor and cannot diagnose conditions. All language uses pattern/
 - NO em dashes anywhere in copy — use commas, parentheses, or rewrite the sentence
 - No: transform, journey, empower, authentic, passionate, innovative, creative (marketing sense), unique, elevate, synergy
 - Pattern/archetype language only — never diagnostic
-- GI-MAP framing: always "optional clinical recommendation" decided after initial consultation
+- GI-MAP framing: included in the 3-Month Gut Reset, and sold standalone at $497. The other four tests are always framed as an "optional clinical recommendation" decided after the initial consultation
 
 ---
 
