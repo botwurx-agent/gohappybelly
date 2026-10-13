@@ -134,3 +134,92 @@ when a section is deleted and recreated, are simply unnecessary there. Nova shou
 beat the ~90% fidelity Encore reached.
 
 See `Website/PRIVATE-COACHING.md` for the Nova authoring notes.
+
+---
+
+## Colour and alignment pass (2026-10-13)
+
+Steve reported this build looks better than the Nova one but that section colours
+and some alignment did not match the live site. Audited all 12 sections against
+`Website/index.html` and fixed the following.
+
+### Three wrong section backgrounds
+
+| Section | Was | Now (live value) |
+|---|---|---|
+| Validation `…003` | `#EFF7F1` light | **`#162E28` forest** |
+| Early Testimonial `…004` | `#162E28` forest | **`#EFF7F1` light** |
+| Work With Alina `…010` | `#162E28` forest | **`#EFF7F1` light** |
+
+Validation and Early Testimonial were straight **swapped**: on the live site
+Validation is the dark forest block and Early Testimonial is the light one. Both
+sections' text colours had to be swapped with them (`validation__heading` is
+white on forest, `early-testi__text` is `#162E28` on light).
+
+Work With Alina was wrong for a subtler reason: on the live site only the
+**featured offer card** is forest (`.offers__featured`), while the section around
+it is light `--bg-alt`. The build had painted the whole section dark. Fixed by
+lightening the section and giving the two featured blocks their own `#162E28`
+card background, then recolouring the six test cards back to white with
+`#162E28` headings, `#6A8278` notes and `#7AAE86` prices (live `.offer-card`).
+
+The other nine backgrounds were already correct.
+
+### Grid widths that did not match
+
+The live site uses `repeat(auto-fit, minmax(Npx, 1fr))`, which fits as many
+columns as will go. Encore has a fixed 12-column grid, so the column count has
+to be chosen deliberately.
+
+| Section | Live columns | Was | Now |
+|---|---|---|---|
+| Five Gut Patterns | 5 (`minmax(196px)` in 1100px) | width 4 → 3 then 2 | **width 2 → 5 across** |
+| Work With Alina test cards | 6 (`minmax(180px)`) | width 4 → 3 then 3 | **width 2 → 6 across** |
+| Hero | `1fr 1fr` | text 6 + image 5 = 11 | **6 + 6 = 12** |
+| About Alina | `1fr 1fr` | image 5 + text 6 = 11 | **6 + 6 = 12** |
+
+Validation (3 across), Testimonials (3 across), What Changes (5+2+5) and FAQ
+(width 8, close to the live 760px cap) were already right.
+
+### Both portraits are now in place, without an upload
+
+The hero and About image blocks were empty, which is why those two sections
+looked unbalanced: the text sat in half the row with blank space beside it.
+
+The Kajabi API cannot upload files, **but Encore image blocks accept a URL, and
+the photos are already served publicly by the live site**:
+
+- `https://gohappybelly.com/IMG_8247.jpg` (hero)
+- `https://gohappybelly.com/Alina_Fence.jpg` (About)
+
+Both verified HTTP 200, `image/jpeg`. They are referenced directly.
+
+**This is interim and will break.** Those URLs are served by Netlify. If the
+domain moves to Kajabi, they die and both sections lose their photo. Upload the
+two files to the Kajabi media library and repoint the blocks **before** any DNS
+cutover.
+
+### Still different from the live site
+
+- Validation's CTA is solid terracotta; live uses an outline-light button.
+  Encore's outline colour semantics were not worth guessing against a possibly
+  invisible button.
+- The six test cards carry small "Order" buttons. On the live site the whole
+  card is a link, which an Encore `text` block cannot do, so the buttons are how
+  the SamCart links survive.
+- The five-pattern row is 10 of 12 columns wide (5 × width 2), centred, rather
+  than filling the container as the live `auto-fit` does.
+- Scroll-reveal animations still not applied.
+
+### Gotchas worth keeping
+
+- **`get_theme_content` with `full_settings: true` silently truncates on this
+  theme.** It returned "38 of 62 sections" with `truncated: true` and the rest in
+  `remaining_section_ids`. A section missing from that payload reads as absent,
+  which looks exactly like data loss. It cost one wrong diagnosis here: section
+  `…010` appeared to have lost its settings when it had not. **Always check the
+  `truncated` flag before concluding anything from a full read**, and confirm a
+  specific section with `section_filter` instead.
+- That 62 is also the reminder that ~50 orphaned 2024 sections are still in the
+  `sections` map. They are not in `content_for_index` so nothing renders them.
+- Encore values are strings: `"width": "2"`, `"make_block": "true"`.
