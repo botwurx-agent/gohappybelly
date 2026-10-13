@@ -13,12 +13,37 @@ separate decision, deliberately deferred.
 | Site theme | `2156348838` (Encore **Site** v1.4.3) |
 | Template | `index` (Class A, pure dynamic) |
 | Render array | `content_for_index` |
-| Live at | https://go-happy-belly.mykajabi.com |
+| Live at | **NOT LIVE.** See "Built on the wrong surface" below. |
 | Builder | https://app.kajabi.com/admin/themes/2156348838/settings/edit |
 
 Note the Site surface is a different theme and a different version from the Bone Broth Reset
 landing page (`2167624377`, Encore **LandingPage** v2.14.8). They have separate `sections` maps
 and separate settings files. Editing one does not affect the other.
+
+## Built on the wrong surface (2026-10-13)
+
+The twelve sections below are correctly stored and `content_for_index` holds exactly them, with
+the old 2024 sections orphaned out. But **nothing renders them**, because this site does not
+serve its homepage from the theme's `index` template.
+
+The root URL is served by a **published landing page called "Home"** (`2150005693`, theme
+`2156348907`, page title "Go Happy Belly - Gut Reset Program", one attached opt-in form, last
+updated June 2025). The theme `index` sections it replaced are all from 2024, which fits:
+the homepage was rebuilt as a landing page and the theme template was abandoned.
+
+The Encore Site skill file's template map says `index.liquid` renders `content_for_index`, and
+that is true. What it cannot tell you is whether a given site actually uses that template, or
+overrides the homepage with a landing page. That has to be checked against the site itself, and
+was not.
+
+**What is still worth keeping:** the Style Guide tokens on this theme (Playfair Display, DM
+Sans, forest/sage/terracotta) did take effect and do apply to the Site templates that render
+from this theme: login, library, blog, store, member directory. Those are now on brand.
+
+**What to do:** port the twelve sections into a landing page theme instead. The block
+vocabulary is identical, so it is a transcription job rather than a redesign. Safest route is a
+new landing page, reviewed at its own URL, then switch the homepage setting to point at it,
+leaving the current live Home untouched until the swap.
 
 ## Sections
 
