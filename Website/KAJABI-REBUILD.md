@@ -701,3 +701,44 @@ for whoever turns that button on later.
 Not touched: the featured 3-Month Gut Reset panel still goes to Calendly. The
 call is the current sales mechanism per CLAUDE.md, and offer 2149705539
 ($1,497, published) is there whenever that changes.
+
+---
+
+## Every content link now opens in a new tab
+
+Audited by parsing the rendered page rather than the settings, so inline
+rich-text anchors and schema buttons were both caught. Sixteen links on the
+page, split two ways.
+
+**Schema buttons** (`cta` blocks and the header CTA) have a `new_tab` setting,
+now `"true"`:
+
+| Block | Link |
+|---|---|
+| `header/1612902775268` | Take the Free Quiz |
+| `1791900000003_8` | Validation CTA |
+| `1791900000006_6` | Five Gut Patterns CTA |
+| `1791900000012_1` | Final CTA |
+
+**Inline rich-text anchors** have no setting behind them, so each one took
+`target="_blank" rel="noopener"` written into the markup:
+
+| Block | Link |
+|---|---|
+| `1791900000001_0` | Hero quiz button, and the "Book a free call" link |
+| `1791900000010_1` | Featured panel, Book a Free Call |
+| `1791900000010_4` to `_9` | All six offer cards |
+
+`rel="noopener"` goes with every one. Without it the opened tab gets a handle
+on `window.opener` and can navigate the original tab out from under the
+visitor.
+
+The footer links (quiz, Calendly, Instagram, Guthub) were already `_blank` and
+were left alone.
+
+**Deliberately not changed: the four site-navigation links.** The header logo,
+the two header menu items (Home, Private Coaching) and the footer logo all
+still open in the same tab. A site whose own nav spawns tabs stacks up a new
+window every time someone moves around it, and the back button stops working
+the way people expect. One word and they flip; the menu items live in the
+navbar record rather than the theme, so they are a separate edit.
