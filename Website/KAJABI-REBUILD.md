@@ -541,3 +541,118 @@ short of the card bottom.
 This moves further from the live `auto-fit` grid (5 across plus an orphan), but
 that layout was already unreachable in a 12-column grid. Two clean rows of three
 is the closest tidy equivalent.
+
+---
+
+## 01 Hero, and the sizing bug underneath it
+
+### The container cap: why the first fix did nothing
+
+The earlier sizing pass added `.container { max-width: 1100px }` to the theme
+CSS and it had no effect at all. The note left behind said "the narrower cap
+always wins over Encore's outer wrapper", which was wrong.
+
+Reading the rendered page settles it. Encore does not style sections from a
+shared stylesheet. Every section prints its **own `<style>` tag** just above
+its markup:
+
+```css
+#section-1791900000001 .container {
+  max-width: calc(1260px + 40px + 40px);
+  padding-right: 40px;
+  padding-left: 40px;
+}
+```
+
+That selector carries an id, so it outranks any plain `.container` rule no
+matter where the rule sits or how late it loads. The site base `.container` in
+`stylesheets/components/container.scss` is 1340px, but section content never
+reaches it. All 12 sections print the same literal 1260px; there is no setting
+behind it.
+
+The fix is the one thing that beats an id-scoped rule we do not control:
+
+```css
+.section .container:not(.container--full) {
+  max-width: 1100px !important;
+  padding-left: 28px !important;
+  padding-right: 28px !important;
+}
+```
+
+`.container--full` is excluded so a `full_width: "true"` section can still run
+edge to edge. Measured after: container 1100px, content 1044px, matching the
+live site exactly. Every section on the page narrowed with it, which is what
+the "overall sizing is incorrect, Kajabi is too big" note was about.
+
+### Hero differences, live vs Kajabi
+
+| Element | Live | Kajabi before | Now |
+|---|---|---|---|
+| Content band | 1044px | 1260px | 1044px |
+| Text column | 492px | 507px | 492px |
+| Headline | 58px Playfair, breaks after "symptoms" | 58px, broke after "are" | matches |
+| Button label | "...Yours — Free" | "...Yours, Free" | matches |
+| Trust note | 11px, `#6A8278` | missing | added |
+| "Book a free call" link | 13px underlined | missing | added |
+| Portrait | 380px, 3/4 crop, soft drop shadow | 380px photo inside a full-column white card | matches |
+| Credential badge | forest card on the lower left corner | missing | added |
+| Logo | 64 x 40 at x=198 | 90 x 56 at x=210 | 64 x 40 at x=198 |
+| Nav font | 13px, 0.04em | 18px, none | 13px, 0.04em |
+| Header height | 73px | 99px | 75px |
+
+### The button had to come out of the schema
+
+Encore's `text` block renders its rich text first and the `use_btn` button
+after it, always. The live hero puts the trust note and the "Book a free call"
+link **below** the button, which that order cannot express. The alternatives
+were a third block (flex-wraps onto its own line, leaving a gap under the
+button) or a flex `order` trick on `.block` (which breaks the paragraph widths).
+
+So `use_btn` is now `false` and the button is an inline `<a>` in the rich text,
+styled to the live `.btn--terra`: 12px, 500, 0.13em, uppercase, 14px/34px
+padding, 2px radius, `#C07A5A`. This is the same antipattern already accepted
+for the featured offer panel. It costs the Style Guide link, but that link was
+already broken here: the block carried an explicit `btn_background_color`.
+
+### The portraits were wearing their shadow in the wrong place
+
+`box_shadow` is a **block** setting, and Encore hangs it on `.block`, which is
+the whole six-column cell. With the photo capped at 380px inside a ~492px
+column, the medium shadow drew a white card around the photo rather than under
+it. Visible in the before screenshot as a pale rectangle wider than the image.
+
+Both portraits are now `box_shadow: "none"`, with the shadow moved onto
+`.image`, which is the photo's own box. The crop moved there too:
+
+```css
+#block-1791900000001_1 .image { aspect-ratio: 3 / 4; box-shadow: 0 24px 60px rgba(22,46,40,0.14); }
+#block-1791900000008_0 .image { aspect-ratio: 4 / 5; box-shadow: 0 16px 48px rgba(22,46,40,0.1); }
+```
+
+The About portrait's 486px is not a guess: the live About grid is `1fr 1fr` at
+a 72px gap inside 1044px, so (1044 - 72) / 2 = 486 exactly.
+
+### The credential badge
+
+No Encore block can overlap another block, so the badge is two pseudo-elements
+on `.image`: `::after` is the forest card carrying "FDN-P", `::before` is the
+"CREDENTIAL" label sitting on top of it. The label offsets are derived from the
+card's own padding (30/18/14 around a 20px line), so the two move together if
+that padding is ever changed.
+
+Two overflow traps had to be released for it. `.image` has `overflow: hidden`
+so the crop clips, and **`.block` clips too** and is exactly as tall as the
+photo, so the first attempt rendered the badge hanging correctly off the left
+edge but sliced off flat at the bottom.
+
+### Still open on the hero
+
+- Nav reads "Home" and "Private Coaching" pointing at the 2024 landing pages.
+  The live nav is "About" and "Work With Me", which are in-page anchors. Encore
+  renders every section as `#section-<id>`, so the anchors exist, but the
+  navbar validator rejects a bare `#fragment`. The full path form
+  (`/#section-1791900000008`) only works once root is served by this theme, and
+  root is still overridden by the published landing page `2150005693`.
+- The button label now carries the live site's em dash, against the CLAUDE.md
+  rule. Flagged, not decided.
