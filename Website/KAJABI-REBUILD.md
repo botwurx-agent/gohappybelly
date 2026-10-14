@@ -656,3 +656,48 @@ edge but sliced off flat at the bottom.
   root is still overridden by the published landing page `2150005693`.
 - The button label now carries the live site's em dash, against the CLAUDE.md
   rule. Flagged, not decided.
+
+---
+
+## 10 Other ways to start: cards now point at Kajabi checkout
+
+The six cards carried the live site's SamCart links
+(`mystore2429.mysamcart.com/checkout/...`), and the Gut Reset Course card had
+no link at all. All six have a published Kajabi offer behind them already, at
+prices that match CLAUDE.md exactly.
+
+| Card | Kajabi offer | Offer id | Price | Checkout path |
+|---|---|---|---|---|
+| Gut Reset Course | Happier Belly Gut Reset Program | 2149370663 | $147 | `/offers/jmFpFL5m/checkout` |
+| GI-MAP Stool Test | GI MAP STOOL TEST | 2149722769 | $497 | `/offers/3GQbFKiS/checkout` |
+| SIBO Test | SIBO BREATH TEST | 2149722775 | $425 | `/offers/2nD5jeRz/checkout` |
+| Food Sensitivity Test | FOOD SENSITIVITY TEST | 2149722672 | $639 | `/offers/eSqyvf9S/checkout` |
+| OAT Test | ORGANIC ACIDS TEST (OAT) | 2149722771 | $497 | `/offers/LFzVoPte/checkout` |
+| H. Pylori Test | H. PYLORI ONLY | 2149722778 | $250 | `/offers/MMmzKX3D/checkout` |
+
+Each checkout was fetched and confirmed to return 200 with the matching offer
+title and price on the page. Zero SamCart references remain anywhere in the
+theme.
+
+Three deliberate choices:
+
+- **Root-relative paths, not absolute.** `/offers/<token>/checkout` keeps
+  working after the DNS cutover, when the site is served from
+  gohappybelly.com instead of go-happy-belly.mykajabi.com. An absolute
+  mykajabi.com URL would bounce buyers off the custom domain mid-purchase.
+- **The whole card is the link.** The card wrapper `<div>` became an `<a>` with
+  `display: block` and `color: inherit`, matching how the live site wraps its
+  offer cards. Previously only the title text was clickable. The
+  `height: 100%; box-sizing: border-box` that makes `equal_height` work on the
+  left accent bar carried over unchanged, and the rendered cards still line up.
+- **Same tab, not a new one.** The live site opens SamCart in a new tab because
+  it is a different domain. Kajabi checkout is the same site now, so a new tab
+  buys nothing and breaks the back button.
+
+The unused `btn_action` on each card was also repointed. `use_btn` is `false`
+so no button renders, but a stale SamCart URL sitting in the setting is a trap
+for whoever turns that button on later.
+
+Not touched: the featured 3-Month Gut Reset panel still goes to Calendly. The
+call is the current sales mechanism per CLAUDE.md, and offer 2149705539
+($1,497, published) is there whenever that changes.
