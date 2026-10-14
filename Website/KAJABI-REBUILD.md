@@ -742,3 +742,56 @@ still open in the same tab. A site whose own nav spawns tabs stacks up a new
 window every time someone moves around it, and the back button stops working
 the way people expect. One word and they flip; the menu items live in the
 navbar record rather than the theme, so they are a separate edit.
+
+---
+
+## Course checkout: text size matched to the GI-MAP page
+
+Theme `2167629154` (offer 2149370663, Happier Belly Gut Reset Program), against
+theme `2167629155` (offer 2149722769, GI-MAP).
+
+The two themes compile to **byte-identical stylesheets**: same Raleway/Roboto,
+same 48/36/30/24/20/16 heading scale, same 18px body. So nothing in the Style
+Guide was at fault. The difference was entirely in the rich text of the course
+page's text block (`1746107473790`):
+
+- Every `<li>` and two `<p>` elements carried `style="font-size: 2rem"`, which
+  is **32px** against the theme's 18px body. That is the whole complaint: the
+  body copy was nearly twice the size of the GI-MAP page's.
+- "Gut Health Made Easy" was a second `<h1>`, so it rendered at 48px, the same
+  size as the page title.
+- "With this program, you'll get:" was an `<h2>` at 36px.
+
+Retagged to the GI-MAP page's own hierarchy, with the wording untouched:
+
+| Line | Was | Now | GI-MAP equivalent |
+|---|---|---|---|
+| Program name | h1, 48px | h1, 48px | h1 page title |
+| Gut Health Made Easy | h1, 48px | h3, 30px | h3 "Client Pricing: $497.00" |
+| With this program, you'll get: | h2, 36px | h4, 24px | h4 card title |
+| All list items | 32px inline | 18px body | body paragraphs |
+| Total Value = ($4200) | h3, 30px | h5, 20px | h5 free-consultation line |
+| Join Today For Just: $147 | h2, 36px | h4, 24px | h4 card title |
+| Subscription note, support line | 32px inline | 18px body | body paragraphs |
+
+Measured after: both pages now render h1 48, h3 30, h4 24, h5 20, body 18.
+
+### Two things found on that page, not changed
+
+**1. The order bump headline is still oversized.** "Exclusive Limited-Time
+Offer: Join our monthly Happy Belly Essentials Club" renders at 48px inside a
+~330px column, so it wraps to six lines. It is an `<h1>` at the top of the
+**Happy Belly Essentials Club offer description** (offer 2149750878), not
+anything in this checkout theme. Dropping it to `<h4>` fixes it, but that
+description renders anywhere that offer appears, including its own checkout at
+`/offers/4xLPe5Pj/checkout`, so it is a wider change than the page asked about.
+
+**2. The subscription note contradicts the offer.** It reads "This is a
+subscription membership is a *1 year subscription*. The full **$197** is
+charged upon purchase and is non-refundable." The offer record is
+`payment_type: single` at **$147**, the checkout panel shows $147.00, and the
+heading directly above says "Join Today For Just: $147". So the note promises a
+different price and a different billing model than the buyer is actually
+agreeing to, and carries a grammar error in its first clause. Left alone per
+the CLAUDE.md rule against changing pricing or offer details unasked, but this
+one is worth Steve's attention: it is live copy on a page that takes money.
