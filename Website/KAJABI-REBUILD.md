@@ -795,3 +795,58 @@ different price and a different billing model than the buyer is actually
 agreeing to, and carries a grammar error in its first clause. Left alone per
 the CLAUDE.md rule against changing pricing or offer details unasked, but this
 one is worth Steve's attention: it is live copy on a page that takes money.
+
+---
+
+## Header logo enlarged, footer rebuilt
+
+### Logo
+
+Both logo assets are 1000 x 625, so a 1.6 ratio. The header logo was matched to
+the live site's 64 x 40 earlier in the build, and at that size the wordmark
+under the mark was unreadable. Now `logo_width: "104"`, which renders 104 x 65.
+The header grows from 75px to 100px to carry it. This is a deliberate
+divergence from the live site, not a match; one number changes it again.
+
+### Footer
+
+The Kajabi footer was Encore's default horizontal media row, which put the logo
+hard left, squeezed the four links into a narrow vertical column, and ran the
+copyright off the right edge of the viewport. Five separate problems:
+
+| Problem | Fix |
+|---|---|
+| Row layout, left-aligned | `vertical_layout: "true"` plus a flex-column `.footer__container` |
+| "© 2026 © 2026 Go Happy Belly" | Kajabi prints its own `&copy; <year>` ahead of the stored string. The setting now holds only `Go Happy Belly. All rights reserved.` |
+| Legal text ran as one long line | The other two lines come from `.copyright::after` with `\A` and `white-space: pre-line` |
+| Tagline missing entirely | `#block-1602193175296::before`, so it lands between the logo and the link row |
+| Instagram appeared twice, as an icon and a text link | The `social_icons` block is now `hidden: "true"`; the live footer has no icon row |
+| "Powered by Kajabi" | `.powered-by { display: none }` |
+
+**Why pseudo-elements again.** Encore's footer schema accepts exactly four
+block types: `logo`, `link_list`, `copyright` and `social_icons`. There is no
+`text` block, so the tagline has nothing to live in, and the `copyright` block
+renders a single `<span>` that cannot carry a line break. Both are drawn in CSS
+for that reason, not by preference.
+
+**Spacing.** Encore gives `.footer__content` 20px of vertical padding, every
+`.footer__block` a 10px vertical margin, and the link list a 15px column
+gutter, which roughly doubled every gap against the live design. All zeroed, so
+the only spacing left is the live rhythm: 18px under the logo, 24px under the
+tagline, 24px above the legal block.
+
+**Background.** The footer was `#162E28`, the same colour as the Final CTA
+section directly above it, so the two read as one unbroken dark field with a
+200px void in the middle. The live site uses `#112420` for the footer, one step
+darker, which is what separates them. Changed to match.
+
+**Logo treatment.** The footer mark is a dark lockup on a dark panel. The live
+site renders it `filter: brightness(0) invert(1)` at 75% opacity; here it is
+the same filter at 80%. The mark flattens to a solid white disc either way,
+which is what the live site does too.
+
+### Flagged
+
+`.powered-by { display: none }` hides the badge rather than switching it off.
+Kajabi has a real toggle for this under Settings, and on some plans it is not
+removable at all. Turning it off there is the clean way; the CSS is a stopgap.
