@@ -208,6 +208,18 @@ reach the same design by different means:
 | Type scale | Style Guide tokens | Style Guide tokens (same values) |
 | Custom CSS | `settings.css` | `settings.css` |
 
+### Nova traps that cost a render cycle each
+
+| Trap | Symptom | Fix |
+|---|---|---|
+| Footer takes no `text` block | Whole write rejected | Draw the tagline as a `::before` |
+| Section gutters sit INSIDE the width cap | Content 56px narrow | Cap at 1100, not 1044 |
+| Every block has a default 10px/20px padding | Columns 20px narrow | Zero it only on blocks still on the defaults |
+| `image-wrapper` does not hug its image | Portrait cannot centre, badge lands on the column corner | `width: fit-content !important` |
+| Deep-merging a nested block needs the full path | Edit silently creates an orphan, API still returns success | Address the real depth, then verify in the rendered page |
+| `custom_classes` land on the block wrapper, not the flex row | `.hook > *` sizes an intermediate div; children stack | Reach through with `.hook .nova-group > *` |
+| The `feature` block hides an `<article>` in its flex chain | `margin-top: auto` resolves to zero, buttons unaligned | Give the `<article>` `flex: 1 1 auto` too |
+
 **Setting up a new Nova page:** copy the Style Guide tokens in §2 and §3 into
 the new theme first, then build sections, then port only the CSS the page
 actually needs. Do not copy the home page's `settings.css` wholesale — most of
