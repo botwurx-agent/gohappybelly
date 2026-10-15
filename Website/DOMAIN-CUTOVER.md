@@ -127,3 +127,60 @@ unauthenticated for this domain and show as "via mcsv.net" to recipients.
 This is already true today and will behave identically after the move. It is
 worth fixing for deliverability, along with the missing DMARC record, but as
 its own job. Do not bundle either into the cutover.
+
+---
+
+## Outcome (2026-10-15)
+
+The move was done with the nameserver method. Nameservers are now
+`jermaine.ns.cloudflare.com` / `joyce.ns.cloudflare.com`.
+
+Verified after the cutover:
+
+| Check | Result |
+|---|---|
+| `www.gohappybelly.com` | 200, valid SSL |
+| `gohappybelly.com` | 301 to `https://www.gohappybelly.com/` |
+| Build serving | theme `2156348838`, all 12 new Encore sections |
+| `/private-coaching`, `/shop` | 200 |
+| MX | all five Google records imported |
+| `google-site-verification` TXT | imported |
+
+### One record did not import
+
+The apex SPF record came across, but the subdomain it depends on did not:
+
+```
+gohappybelly.com                      TXT  v=spf1 include:dc-aa8e722993._spfm.gohappybelly.com ~all   present
+dc-aa8e722993._spfm.gohappybelly.com  TXT  (none)                                                     MISSING
+```
+
+SPF therefore pointed at a non-existent domain, which is a permerror on
+outbound Google Workspace mail. It was valid before the move, so this was a
+regression introduced by Cloudflare's zone import. This is the exact failure
+mode the runbook predicted: the record is on a subdomain rather than the apex,
+which is why an import drops it.
+
+Fixed by collapsing the chain into a single apex TXT record, which is what it
+resolved to anyway:
+
+```
+v=spf1 include:_spf.google.com ~all
+```
+
+The `_spfm` indirection was a GoDaddy "SPF merge" artifact and had no purpose
+once DNS left GoDaddy. Nothing references it now.
+
+**Lesson for any future registrar move on this domain:** check subdomain TXT
+records by name after an import. A zone import reliably carries apex records
+and MX; it is the records hanging off a subdomain that go missing, and they
+fail silently because nothing stops resolving, it just stops validating.
+
+### Still outstanding
+
+- Repoint outbound links: Instagram link in bio, ScoreApp quiz, Mailchimp
+  templates and the 35 sequence emails, Calendly, Guthub.
+- Add `www.gohappybelly.com` as a Google Search Console property.
+- Mailchimp has no DKIM on this domain and the domain has no DMARC record.
+  Both predate the move and are unchanged by it. Worth doing for sequence
+  deliverability, as their own job.
