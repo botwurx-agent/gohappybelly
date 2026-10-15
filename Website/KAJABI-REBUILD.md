@@ -850,3 +850,75 @@ which is what the live site does too.
 `.powered-by { display: none }` hides the badge rather than switching it off.
 Kajabi has a real toggle for this under Settings, and on some plans it is not
 removable at all. Turning it off there is the clean way; the CSS is a stopgap.
+
+---
+
+## Home link and logo were landing on the old home page (2026-10-15)
+
+Steve: "The home button and when clicking on the gohappybelly logo are going to
+the old home page. it needs to go to the new home page."
+
+There were two separate causes, not one.
+
+### Cause 1: the Home nav link pointed at the old landing page (fixed)
+
+Navbar `main-menu` (2148458013), link **2149405317 "Home"** was a
+`LandingPageLink` to `gid://kajabi-portals/LandingPage/2150005693`, i.e. the
+2024 `/Home` landing page. Repointed to a `PathLink` at `/`, which is where the
+logo already goes, so the two can never drift apart again.
+
+Verified live in the rendered nav on `/shop`:
+
+```html
+<a href='https://go-happy-belly.mykajabi.com/' data-nova-role='menu-link'
+   target='_blank' rel='noopener'>Home</a>
+```
+
+### Cause 2: the site root itself still serves the old landing page (blocked)
+
+This is the one that matters, and it is not a link problem.
+
+| Record | Value |
+|---|---|
+| Site `active_theme_id` | **2156348838** (Encore, holds the new 12-section home) |
+| Website page 2154501976 "Home" | `path: ""`, published, `public_url` = site root |
+| Landing page 2150005693 "Home" | `path: "Home"`, published, `active_theme_id` **2156348907** |
+
+What the live HTML shows:
+
+- `GET /` returns 181,404 bytes, references `themes/2156348907`, and contains
+  **zero** occurrences of `section-1791900000001`.
+- `GET /Home` returns 181,414 bytes and is byte-identical to `/` once the CSRF
+  token, reCAPTCHA widget id and canonical/`og:url` are normalised away.
+- `GET /admin_index_preview?preview_theme_id=2156348838` returns 213,593 bytes
+  and contains all 12 new sections.
+
+So the new home build is intact on the active site theme, and the only public
+URL it can ever render at is `/`. The old landing page is occupying `/` through
+Kajabi's site-level homepage setting: no landing page has `path: ""`, so the
+binding is by record id, not by slug.
+
+**No API surface exposes it.** `update_landing_page` writes only title, slug,
+SEO fields and `publish_at`. There is no `update_website_page` tool and no
+site-settings write tool at all. Confirmed against the loaded schemas, not
+assumed.
+
+The only lever the API does give is unpublishing landing page 2150005693 so
+root falls through to the website home page. That was attempted and **denied by
+the permission layer** (Unrequested Commit in a Connected App). It was not
+retried. Its `publish_at` is `2024-06-13T22:34:40Z` if it ever needs restoring.
+
+Worth noting for risk: `gohappybelly.com` is served by Netlify (301 from
+`www`, `server: Netlify`), entirely separate from `go-happy-belly.mykajabi.com`.
+No public traffic reaches the Kajabi root, so changing what it serves does not
+touch the live site.
+
+### What still has to happen
+
+One dropdown in Kajabi admin, Settings → Site Details → Home page: point it at
+the website **Home** page (2154501976) instead of the **Home** landing page
+(2150005693). The moment that flips, both the nav link and the logo land on the
+new build with no further changes, because both already point at `/`.
+
+Alternatively, granting the unpublish of landing page 2150005693 achieves the
+same fall-through from here.
