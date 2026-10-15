@@ -27,28 +27,47 @@ copy of it.
 
 ## Sections
 
-| ID | Section | Background |
-|---|---|---|
-| 1791960000001 | Hero | `#F8FAF8` |
-| 1791960000002 | Validation | `#162E28` |
-| 1791960000003 | Early Testimonial | `#EFF7F1` |
-| 1791960000004 | What Is Included | `#F8FAF8` |
-| 1791960000005 | How It Works | `#EFF7F1` |
-| 1791960000006 | Who It Is For | `#F8FAF8` |
-| 1791960000007 | About Alina | `#EFF7F1` |
-| 1791960000008 | Testimonials | `#F8FAF8` |
-| 1791960000009 | Investment | `#EFF7F1` |
-| 1791960000010 | FAQ | `#F8FAF8` |
-| 1791960000011 | Final CTA | `#162E28` |
+| # | Section | Background | Job on the page |
+|---|---|---|---|
+| 001 | Hero | `#F8FAF8` | The promise, the price-free ask, the call |
+| 002 | Why Normal Labs Miss It | `#EFF7F1` | Teaches the reference-range gap |
+| 003 | The Five Patterns | `#162E28` | Connects to the core IP and the quiz |
+| 012 | What The GI-MAP Shows | `#F8FAF8` | Justifies the $497 that is bundled |
+| 005 | Your Three Months | `#EFF7F1` | Month-by-month, removes the unknown |
+| 004 | What Is Included | `#F8FAF8` | The deliverables |
+| 013 | Honest Comparison | `#EFF7F1` | Handles "why not do it myself" |
+| 006 | Who It Is For | `#F8FAF8` | Qualifies in and out |
+| 007 | Who You Are Working With | `#EFF7F1` | Credibility and scope of practice |
+| 008 | Testimonials | `#F8FAF8` | Proof |
+| 009 | Investment | `#EFF7F1` | The number and the CTA |
+| 010 | FAQ | `#F8FAF8` | Residual objections |
+| 011 | Final CTA | `#162E28` | Close |
 
-Same banding and the same vertical rhythm as the home page. Every CTA goes to
-Calendly, because the free call is still the sales mechanism for the $1,497
-program. The testimonials are the three real ones from the live site (Linda,
-Hanna, Tiffani), all 1:1 coaching clients. Nothing was invented.
+### What changed after the first build, and why
 
-The "not a fit" card is deliberate. It qualifies out people wanting a
-diagnosis or a two-week fix, which protects Alina's time and reinforces that
-she is an FDN-P rather than a physician.
+The first version of this page reused the home page's section list with the
+copy swapped. Steve's read was right: it was nearly a copy. The design system
+is meant to be shared; the **content architecture is not**. A home page
+introduces a practice. A sales page has to answer, in order, the questions
+somebody asks before spending $1,497.
+
+| Dropped | Reason |
+|---|---|
+| Validation band | Re-sold a problem the visitor had already read on the home page. Replaced by **Why Normal Labs Miss It**, which explains *why* their results came back fine instead of listing their symptoms back at them. |
+| Early Testimonial | Two testimonial moments on one page is the home page's pattern, not a sales page's. Linda's stronger four-doctors quote was promoted into the main testimonial block instead. |
+| Home page About copy | Was verbatim. Rewritten as positioning: why Alina works this way, what functional diagnostics actually is, and an explicit statement that she is not a physician. |
+| One FAQ | "How is this different from a doctor" is now a whole section, so the question was redundant. |
+
+| Added | Reason |
+|---|---|
+| **What The GI-MAP Shows** | The single biggest omission. A $497 test is bundled and the page never said what it looks at. Six marker groups in plain language, plus the point that the reading is a consultation and not an emailed PDF. |
+| **Honest Comparison** | Answers "why not just do it myself" head-on, with the real alternatives priced: free, $497 for the test alone, $1,497 with the test inside. Frames the actual delta as $1,000 for three months of interpretation. |
+| **The Five Patterns** | The offer is built on the archetype framework and the first build never mentioned it. Deliberately a compact forest band rather than the home page's five-card grid, so it reads as a different treatment of the same IP. |
+| **Your Three Months** | Replaced a generic three-step "how it works" with a month-by-month arc: find it, work it, keep it. Removes the fear of an open-ended commitment. |
+
+Compliance note: the GI-MAP section describes **markers**, never diagnoses.
+"Yeast overgrowth patterns", not "you have candida". The comparison section
+names a price delta but makes no outcome promise.
 
 ## Measured against the home page
 
