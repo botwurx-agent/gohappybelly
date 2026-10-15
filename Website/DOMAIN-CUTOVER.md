@@ -53,13 +53,19 @@ points at nothing.
 1. **Kajabi** → Settings → Site settings → Domain → **Set up custom domain** →
    **Connect domain to Kajabi**. Enter `gohappybelly.com`. Kajabi shows two
    nameservers, unique to this domain.
-2. **GoDaddy** → gohappybelly.com → Nameservers → **Change** → *I'll use my own
+2. **Check the imported records BEFORE touching GoDaddy.** Adding the domain
+   creates the zone and auto-imports the current records. Open Kajabi's DNS
+   settings and confirm all five MX records and all three TXT records above
+   are there. Add any that are missing.
+
+   Doing this before the nameserver change is what removes the risk entirely:
+   there is then no window in which mail could resolve to a zone that has no
+   MX records.
+3. **GoDaddy** → gohappybelly.com → Nameservers → **Change** → *I'll use my own
    nameservers* → paste Kajabi's two, replacing `ns29`/`ns30.domaincontrol.com`.
    Screenshot the DNS record list first.
-3. Back in Kajabi, click **Done, verify domain**.
-4. **Check the email records imported.** In Kajabi's DNS settings, confirm all
-   five MX records and all three TXT records above are present. Add any that
-   are missing. Then send yourself an email at the domain and reply to it.
+4. Back in Kajabi, click **Done, verify domain**. Then send yourself an email
+   at the domain and reply to it.
 5. Wait for SSL. Kajabi issues it through Cloudflare automatically. Most
    connections finish within 24 hours; DNS can take up to 48.
 
@@ -91,3 +97,33 @@ which is slower than a record-level rollback.
 
 The domain has no DMARC record. SPF is fine. Adding DMARC would help
 deliverability on the Mailchimp sequences, but it is a separate job.
+
+## What this move does not affect
+
+The quiz funnel does not run through this domain's DNS, so none of it is at
+risk:
+
+| Step | Runs on | Affected |
+|---|---|---|
+| Quiz | `gut-pattern-quiz.scoreapp.com` | no |
+| ScoreApp to Mailchimp | API | no |
+| The 7 archetype emails | Mailchimp's servers | no |
+| Zapier tagging `booked-call` from Calendly | API | no |
+
+The records that change are the apex `A` and the `www` `CNAME`, which only
+decide which server answers a browser. Campaign email never consults them.
+
+MX is the one record that matters, and it is a separate concern from the quiz
+flow: MX is inbound mail **to** `@gohappybelly.com`, Alina's own inbox. Step 2
+above covers it.
+
+## Pre-existing, not caused by the move
+
+The domain has no Mailchimp authentication: no DKIM records (`k1`, `k2`,
+`k3._domainkey` and `mandrill._domainkey` are all empty) and the SPF chain
+authorises Google only, not Mailchimp. The sequence emails therefore send
+unauthenticated for this domain and show as "via mcsv.net" to recipients.
+
+This is already true today and will behave identically after the move. It is
+worth fixing for deliverability, along with the missing DMARC record, but as
+its own job. Do not bundle either into the cutover.
