@@ -39,7 +39,7 @@ copy of it.
 | 006 | Who It Is For | `#F8FAF8` | Qualifies in and out |
 | 007 | Who You Are Working With | `#EFF7F1` | Credibility and scope of practice |
 | 008 | Testimonials | `#F8FAF8` | Proof |
-| 009 | Investment | `#EFF7F1` | The number and the CTA |
+| 009 | Investment | `#EFF7F1` | The number and the only commerce CTA on the site |
 | 010 | FAQ | `#F8FAF8` | Residual objections |
 | 011 | Final CTA | `#162E28` | Close |
 
@@ -112,6 +112,23 @@ Trap 5 left four orphan blocks (`1791960000004_c2`, `_c5`,
 `block_order`, so they do not render and do not appear in the builder sidebar.
 There is no delete primitive on this API; they are harmless but worth knowing
 about if the JSON is ever read directly.
+
+## The Investment CTA goes to checkout
+
+The button in the Investment panel is the one place on the site that takes
+money directly. It points at the **3 Month Private 1 on 1 Coaching Package**
+offer (`2149705539`, $1,497, published) via the root-relative checkout path
+`/offers/442eXHU6/checkout`, so it survives the DNS cutover. The checkout was
+loaded and confirmed to show the right offer at $1,497 before it was wired.
+
+It uses a heavier variant than the house button (`.gh-cta-strong`) because it
+is doing a different job: 13px instead of 12px, wider tracking, 18px/38px
+padding and a terracotta lift. One per page.
+
+The risk-reversal line underneath used to read "the call is a real
+conversation" which no longer made sense above a checkout button. It now reads
+as a checkout reassurance, with a secondary **"Rather talk first? Book a free
+call"** link below it so the Calendly path stays open for anyone not ready.
 
 ## Open
 

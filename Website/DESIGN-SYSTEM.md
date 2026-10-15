@@ -164,8 +164,15 @@ No social icon row, no Kajabi badge.
   navigation (logos, menu items) stays in the same tab.
 - Offer links use **root-relative Kajabi checkout paths**
   (`/offers/<token>/checkout`) so they survive the DNS cutover.
-- The free call is the sales mechanism for the $1,497 program. Its CTAs go to
-  Calendly, not to checkout.
+- **CTA routing.** The free call is the sales mechanism everywhere except the
+  Investment panel on the Private Coaching page, which goes straight to the
+  Kajabi checkout for the $1,497 offer (`/offers/442eXHU6/checkout`). Someone
+  who has read that far has already had the call offered to them four times.
+  A secondary "Rather talk first? Book a free call" link sits under that
+  button so the call path is never closed off.
+- **The commerce CTA is its own variant** (`.gh-cta-strong`): 13px, `0.14em`,
+  18px/38px padding, with a terracotta lift shadow. One per page, maximum.
+  Every other button on the site is the standard house button.
 
 ## 8. Compliance, inherited from CLAUDE.md
 
