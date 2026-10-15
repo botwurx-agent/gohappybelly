@@ -48,22 +48,52 @@ higher-ticket offers from being undercut by a ten dollar product.
 
 ## Checkout
 
-The CTA still goes to SamCart. Moving the sale onto Kajabi needs two things
-this build could not supply:
+A draft Kajabi offer now exists alongside the SamCart one.
 
-1. A Kajabi offer at $10. The existing ebook offer, `2149818047`
-   "E-Book: Making Your Way To A Happier Belly" at $9.97, is a **different
-   book** (leaky gut, H. pylori, smoothie recipes, meal plans). It is not The
-   Gut Fix and must not be reused for it.
-2. The ebook file itself, attached to a DigitalDownload product. The theme API
-   cannot upload files, only reference existing URLs.
+| | |
+|---|---|
+| Offer | `2151452007` "The Gut Fix", **draft**, $10.00 USD one time |
+| Product | `2149603425` "The Gut Fix", DigitalDownload, collection `428349` |
+| Checkout URL | `https://www.gohappybelly.com/offers/JnHcWPaw/checkout` |
+| Checkout theme | `2167910104` (Encore 2.14.8) |
 
-Say the word and the offer can be created as a draft, ready for the file.
+The checkout page is styled to the design system: Playfair and DM Sans, forest
+headings, terracotta submit button at a 2px radius, a 3px card radius, sage
+bullets, and header and footer hidden so the page is a checkout and nothing
+else. The preset's placeholder copy (`[Offer title]`, `[ Insert value 1 ]`) is
+replaced with real copy carrying the FDN-P credential and the same compliance
+note as the sales page. The empty image block is hidden rather than deleted, so
+the ebook cover drops straight into it later.
 
-Worth knowing: offer `2149818047`'s description has its own compliance
-problems, naming "Leaky Gut" as a condition and using "heal your gut",
-"transform" and "journey". It is live on that offer's checkout page. Not
-touched here.
+### The sales page CTA still points at SamCart, deliberately
+
+A draft offer's checkout is **not purchasable**: `GET` on it returns `302`,
+where a published offer's checkout returns `200`. Repointing the live sales
+page at it would have replaced a working buy button with a dead one, so the
+CTA was left on SamCart.
+
+Flipping it is a one-line change once the offer is published. Both CTAs on
+`/the-gut-fix` (`1791990000001_c` and `1791990000006_c`) take
+`btn_action: "/offers/JnHcWPaw/checkout"`.
+
+### Before publishing
+
+1. Upload the ebook PDF to download collection `428349`, or the buyer pays and
+   receives nothing.
+2. Publish offer `2151452007` in the Kajabi admin. MCP-created offers are
+   always drafts and cannot be published through the API.
+3. Confirm a payment processor is connected for a $10 charge.
+4. Then the two CTAs can be repointed.
+
+### Not verified visually
+
+The checkout page could not be rendered. A draft checkout 302s to anonymous
+requests, and the only way to see it would be to publish the offer, which would
+make it purchasable and contradicts the instruction to keep it a draft. The
+settings were read back and confirmed saved, but **the rendered page has not
+been looked at.** Worth one glance once it is published, particularly the h1
+size, which is set to 44px here rather than the site's 58px because the
+checkout's left column is narrower than a page.
 
 ## Nova traps hit on this page
 
@@ -104,5 +134,5 @@ regex was too loose, not the copy.
   refuses its own asset URLs from outside (every `_assets` request returns a
   1.4KB error), and the theme API cannot upload files. Send the cover and it
   goes in the hero.
-- Whether to move checkout off SamCart, per above.
+- Publishing the Kajabi offer, per above, and then repointing the two CTAs.
 - The page is not in the main menu. `/links` card 2 now points at it.
