@@ -136,3 +136,50 @@ call"** link below it so the Calendly path stays open for anyone not ready.
   the home page's "findable". Worth Steve's eye as copy, not layout.
 - The page is published but carries no SEO title or description yet.
 - CLAUDE.md still lists the 3-Month Gut Reset sales page under "Not Yet Built".
+
+---
+
+## Credential badge was clipped against the photo (2026-10-15)
+
+Steve: the FDN-P block on this page did not match the home page's.
+
+The badge CSS was already byte-identical to the home page's: same `-14px`
+offsets, same `30px 18px 14px` padding, same Playfair 20px value, same
+`CREDENTIAL` label at `bottom: 27px / left: 4px`, same shadow. The rule was not
+the problem.
+
+Nova ships its image wrapper with Tailwind's `overflow-hidden` in the element's
+own class list:
+
+```html
+<div data-nova-role='image-wrapper' class='relative w-full overflow-hidden'>
+```
+
+`.gh-portrait [data-nova-role='image-wrapper']` set `position`, `display`,
+`width` and `line-height` but never touched `overflow`, so the badge's 14px
+overhang was cut off on the left and bottom. That is why it read as sitting
+inside the photo's corner instead of hanging off it. The Encore home page
+needed the identical release one level up, on `.block`; it was simply never
+ported across to Nova.
+
+Fix: `overflow: visible !important` added to that one rule. The `img` carries
+its own `border-radius`, so nothing depended on the wrapper to round corners.
+
+Verified by rendering both pages and reading the computed pseudo-element
+styles, rather than by eye:
+
+| | Private Coaching | Home |
+|---|---|---|
+| wrapper `overflow` | visible | visible |
+| photo | 380 x 507 | 380 x 507 |
+| card `bottom` / `left` | -14px / -14px | -14px / -14px |
+| card padding | 30px 18px 14px | 30px 18px 14px |
+| card font | Playfair Display 20px | Playfair Display 20px |
+| card shadow | `rgba(22,46,40,0.28) 0 8px 28px` | `rgba(22,46,40,0.28) 0 8px 28px` |
+| label `bottom` / `left` | 27px / 4px | 27px / 4px |
+| label font / tracking | DM Sans 9px / 1.62px | DM Sans 9px / 1.62px |
+
+Every value matches, and corner screenshots of the two pages agree.
+
+The Shop theme (2167898691) carries no `.gh-portrait` or `.gh-badge` rules and
+uses no portrait, so there was nothing to keep in sync there.

@@ -216,6 +216,7 @@ reach the same design by different means:
 | Section gutters sit INSIDE the width cap | Content 56px narrow | Cap at 1100, not 1044 |
 | Every block has a default 10px/20px padding | Columns 20px narrow | Zero it only on blocks still on the defaults |
 | `image-wrapper` does not hug its image | Portrait cannot centre, badge lands on the column corner | `width: fit-content !important` |
+| `image-wrapper` also ships Tailwind `overflow-hidden` | Anything hanging off the photo (the credential badge) is clipped flush to its edges | `overflow: visible !important` on the same rule; the `img` keeps its own radius |
 | Deep-merging a nested block needs the full path | Edit silently creates an orphan, API still returns success | Address the real depth, then verify in the rendered page |
 | `custom_classes` land on the block wrapper, not the flex row | `.hook > *` sizes an intermediate div; children stack | Reach through with `.hook .nova-group > *` |
 | The `feature` block hides an `<article>` in its flex chain | `margin-top: auto` resolves to zero, buttons unaligned | Give the `<article>` `flex: 1 1 auto` too |
