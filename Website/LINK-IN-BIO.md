@@ -27,13 +27,18 @@ design system in `Website/DESIGN-SYSTEM.md`; nothing new was invented for it.
 | # | Card | Destination | New tab |
 |---|---|---|---|
 | 1 | What's Your Gut Pattern? | `https://gut-pattern-quiz.scoreapp.com` | yes |
-| 2 | The Gut Fix Ebook | **`#` placeholder** | yes |
+| 2 | The Gut Fix Ebook | `https://mystore2429.mysamcart.com/the-gut-fix/` | yes |
 | 3 | My Favourite Products | `/shop` | no (internal) |
 | 4 | Free 7-Day Lifestyle Workbook | **`#` placeholder** | yes |
 | 5 | Watch Me on The Block, Season 17 | **`#` placeholder** | yes |
 
-Three destinations are still placeholders. The page should not go in the
+Two destinations are still placeholders. The page should not go in the
 Instagram bio until they are real.
+
+The Gut Fix link points at SamCart with the trailing slash. Without it the
+store 301s, and the Location header it returns is malformed
+(`https://mystore2429.mysamcart.com:/the-gut-fix/`, with a stray colon).
+Browsers tolerate it, but linking to the canonical form skips the hop.
 
 ## Decisions made while building
 
@@ -110,7 +115,29 @@ changes what the visitor experiences.
 
 ## Still needed from Steve
 
-1. The Gut Fix ebook file or its URL
+1. ~~The Gut Fix ebook URL~~ supplied, wired to SamCart
 2. The 7-day lifestyle workbook file or its URL
 3. The URL for the Block Season 17 segment
-4. Whether the two downloads should capture an email first
+4. Whether the workbook should capture an email first
+
+## The Gut Fix SamCart page
+
+`https://mystore2429.mysamcart.com/the-gut-fix/` is public and readable. It
+sells the ebook at **$10** with a 30 day refund guarantee, CTA "Beat the Bloat
+Now". The card copy on `/links` was corrected: it had said "Free to download",
+which was wrong.
+
+That page is not on the website design system and conflicts with CLAUDE.md in
+four ways. None of it is broken, and none of it was changed, but it is
+inconsistent with every other surface:
+
+| Issue | Detail |
+|---|---|
+| Credential | Calls Alina a "Certified Gut Health Specialist & Holistic Wellness Educator". Every other surface, and the locked sign-off, says FDN-P |
+| Banned word | "empowering" appears in the mission line |
+| Em dashes | Used throughout, against the hard style rule |
+| Offer suite | A $10 ebook is not in CLAUDE.md's offer table at all |
+
+Also worth checking before it gets more traffic: "has helped thousands of
+women" is a specific social-proof claim, and "Thousands of women silently
+struggle" is a second one.
