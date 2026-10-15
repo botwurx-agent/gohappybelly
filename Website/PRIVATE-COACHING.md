@@ -13,8 +13,8 @@ it predated the system and did not match the home page.
 | Builder | https://app.kajabi.com/admin/themes/2167882803/settings/edit |
 | Status | **Published.** Published so the build could be rendered and measured; a draft landing page 404s for anonymous requests, so there is no other way to verify one. |
 
-The header's "Private Coaching" link now points here instead of the 2024
-`/one-on-one-coaching` page.
+The header's "Private Coaching" link points here instead of the 2024
+`/one-on-one-coaching` page. The main menu is now Home, Private Coaching, Shop.
 
 ## Why Nova, not Encore
 

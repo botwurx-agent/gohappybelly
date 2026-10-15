@@ -10,7 +10,7 @@ is still live at `/Shop` and untouched.
 | Theme | `2167898691` (Nova v0.2.7) |
 | Slug | `/shop` |
 | Live | https://go-happy-belly.mykajabi.com/shop |
-| Status | **Published**, so the build could be rendered and measured. Not yet linked from the nav. |
+| Status | **Published** and in the main menu as **Shop**, after Home and Private Coaching. |
 
 ## Sections
 
@@ -81,8 +81,9 @@ Both are new, and both are now in `DESIGN-SYSTEM.md`:
 
 ## Open
 
-- `/shop` and the old `/Shop` are both live. Decide which to retire; if the new
-  one wins, add it to the main menu and redirect the old path.
+- `/shop` and the old `/Shop` are both live. The main menu now points at the
+  new one (`navbar_link` 2151206215); the old `/Shop` is orphaned but still
+  reachable by direct URL. Retire it or redirect the path when convenient.
 - No SEO title or description set yet.
 - The six Amazon storefront lists in `AFFILIATE-PRODUCTS.md` (one per gut
   pattern, from inside the course) are a separate catalogue and were **not**
