@@ -27,7 +27,7 @@ design system in `Website/DESIGN-SYSTEM.md`; nothing new was invented for it.
 | # | Card | Destination | New tab |
 |---|---|---|---|
 | 1 | What's Your Gut Pattern? | `https://gut-pattern-quiz.scoreapp.com` | yes |
-| 2 | The Gut Fix Ebook | `https://mystore2429.mysamcart.com/the-gut-fix/` | yes |
+| 2 | The Gut Fix Ebook | `/the-gut-fix` | no (internal) |
 | 3 | My Favourite Products | `/shop` | no (internal) |
 | 4 | Free 7-Day Lifestyle Workbook | **`#` placeholder** | yes |
 | 5 | Watch Me on The Block, Season 17 | **`#` placeholder** | yes |

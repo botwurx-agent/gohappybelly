@@ -212,6 +212,24 @@ FDN-P
 
 ---
 
+## Website Design System (standing rule)
+
+**Every page built on the Kajabi website follows `Website/DESIGN-SYSTEM.md`,
+automatically, without being asked.** Steve does not have to request it, and
+does not have to remind the agent of it. It applies to new pages, rebuilt
+pages, and pages ported in from another platform. The only exception is when
+Steve explicitly says otherwise for a specific page.
+
+The design system file is the source of truth for palette, type, buttons,
+layout, components and chrome. Read it before building, not after.
+
+Note that it is the **website** system. The "Brand Design System (Locked)"
+section above, with navy #1B2D4F and Georgia, is the **Mailchimp email**
+system. The two are different and must not be mixed.
+
+Pages built on it so far: Home, Private Coaching, Shop, Link in Bio, The Gut
+Fix. Each has its own notes file under `Website/`.
+
 ## Compliance Guardrails
 
 Alina is NOT a doctor and cannot diagnose conditions. All language uses pattern/archetype framing only.
