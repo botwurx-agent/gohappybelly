@@ -132,8 +132,25 @@ with Stripe card fields present.
 Disabled-state styling was added at the same time, so a button that cannot be
 pressed no longer looks pressable.
 
-Still open: the order summary shows a placeholder thumbnail, since no product
-image is set on the offer. The ebook cover (media `4541809`) would fill it.
+### Product thumbnail
+
+The checkout's product image slot is **16:9**, rendering at 256x144 at the top
+of the card and 98x54 in the order summary. The ebook cover is 1147x2000
+portrait, so placing it directly (media `4541809` on `Product` `2149603425`,
+attribute `thumbnail`) made Kajabi auto-crop a horizontal slab out of the
+middle: the top of the book and the "by Alina Nazari" line were cut off.
+
+`crop_media` cannot fix this. Its `clip` fit returned 370x645, the whole image
+scaled down but still portrait, because the tool fits inside the box without
+padding. There is no letterbox option, so the slot crops it again.
+
+The fix is a pre-composed 16:9 image: the book centred at 88% height on white,
+white because the checkout card behind it is white. That cannot be generated
+into Kajabi, since the API has no upload path, so it is built locally and
+uploaded by hand like the cover was.
+
+Leftovers from the attempts, both harmless and unused once the real thumbnail
+lands: media `4553622` ("the-gut-fix-cover (1147x645)", actually 370x645).
 
 ## Nova traps hit on this page
 
