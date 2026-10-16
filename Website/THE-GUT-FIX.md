@@ -154,23 +154,29 @@ The old top-level `_t` / `_c` / `_n` blocks are still defined on the section but
 are no longer in `block_order`, so they do not render. A deep merge cannot
 delete them.
 
-### Waiting on the cover file
+### The cover file
 
-Kajabi's API cannot upload files: `add_media` returns an uploader link for a
-person to open, nothing more. The cover is not in the media library yet (a
-search for it returns nothing, and the library holds only two PNGs, neither of
-them the cover). So the image block is **hidden** and the hero renders as a
-single left-aligned column, which is a clean state rather than a broken one.
+Media asset **`4541809`**, `the-gut-fix-cover.png`, 1147 x 2000, 1.06MB,
+transparent background. Steve uploaded it through the media library; Kajabi's
+API cannot upload files, so `add_media` only returns an uploader link.
 
-Uploader: `https://app.kajabi.com/admin/sites/2148204891/media_library?open_uploader=image`
+It is referenced by its **unsigned CDN URL**:
 
-Once the file is in the library, three things turn it on in one pass:
+```
+https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148204891/images/80374fa-d0e2-fda7-27c6-8448ef0fe504_the-gut-fix-cover.png
+```
 
-1. `place_media` the asset into `1791990000001_himg` / `image`
-2. Clear `hide_on_desktop` and `hide_on_mobile` on that block
-3. Add `gh-has-cover` to `1791990000001_hrow`'s `custom_classes`
+Not the `image_url` that `list_media` returns. That one is an S3 link signed
+with `X-Amz-Expires=604800`, so it would have stopped resolving after seven
+days. Both the s3.amazonaws.com and kajabi-cdn.com hosts serve the file
+unsigned; the CDN host is used because the rest of the themes use it.
 
-### Two traps found building this
+`place_media` could not do the placement: it only addresses blocks directly on
+a section, and this one is nested inside the hero group. It fails with "Block
+not found in section". The image was set through `update_theme_content`
+instead.
+
+### Traps found building this
 
 **An empty Nova image block is not invisible.** It renders a dashed
 placeholder box with an icon, about 400 x 225, which looked broken on the live
@@ -186,6 +192,28 @@ the card grids already use: force the widths in CSS on `.nova-group > *`, here
 `calc(50% - 30px)` so the 60px gap yields the design system's two 492px hero
 columns.
 
-That rule is deliberately gated behind `.gh-has-cover`. Ungated, it would halve
-the headline column while the cover is still hidden, leaving the copy stranded
-beside empty space.
+That rule is gated behind `.gh-has-cover`, which was useful while the cover was
+absent: ungated it would have halved the headline column with nothing beside it.
+
+**A descendant selector is wrong for a nested group.** The first version of the
+rule was `.gh-hero-row .nova-group > *`. The hero nests a vertical group inside
+the horizontal one and *both* carry `.nova-group`, so it matched the inner
+column's children too and halved 492 to **216**, squeezing the headline into a
+narrow ribbon. The row's own children need the child combinator:
+`.gh-hero-row.gh-has-cover > div > .nova-group > *`. The inner column then gets
+its own rule putting its children at 100%.
+
+**A cta block centres its button with `text-align`, not `justify-content`.**
+The button is an `inline-flex` anchor inside a `display: block` wrapper, so a
+`justify-content: flex-start` on the wrapper computed fine and did nothing at
+all. The button stayed 109px off the headline's left edge until the rule became
+`text-align: left`.
+
+### Verified
+
+| | 1440 | 390 |
+|---|---|---|
+| h1 | x 198, w 492 | x 20, w 350 |
+| CTA | x 198, flush with the headline | x 58, centred |
+| Cover | x 796, 400 x 697 | x 55, 280 x 488, stacked below |
+| Horizontal overflow | none | none |
