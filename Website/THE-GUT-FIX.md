@@ -65,16 +65,20 @@ replaced with real copy carrying the FDN-P credential and the same compliance
 note as the sales page. The empty image block is hidden rather than deleted, so
 the ebook cover drops straight into it later.
 
-### The sales page CTA still points at SamCart, deliberately
+### CTAs now point at the Kajabi checkout
 
-A draft offer's checkout is **not purchasable**: `GET` on it returns `302`,
-where a published offer's checkout returns `200`. Repointing the live sales
-page at it would have replaced a working buy button with a dead one, so the
-CTA was left on SamCart.
+The offer was published on 2026-10-16 and its checkout returns `200`, so both
+CTAs were repointed from SamCart to `/offers/JnHcWPaw/checkout`. Verified on
+the rendered page: both read that href, and the page contains zero SamCart
+references.
 
-Flipping it is a one-line change once the offer is published. Both CTAs on
-`/the-gut-fix` (`1791990000001_c` and `1791990000006_c`) take
-`btn_action: "/offers/JnHcWPaw/checkout"`.
+The ebook PDF is attached and confirmed byte-identical to the corrected file
+(sha256 `1b35306a…`), 18 pages, title "The Gut Fix", both Calendly links live.
+
+**Payments are paused on the site.** The rendered checkout shows "Payments are
+paused on this site. Contact site owner for assistance." and the pay button is
+disabled, so nothing can actually be bought yet. This is a site-level Kajabi
+setting, not an offer or page problem.
 
 ### Before publishing
 
@@ -85,15 +89,23 @@ Flipping it is a one-line change once the offer is published. Both CTAs on
 3. Confirm a payment processor is connected for a $10 charge.
 4. Then the two CTAs can be repointed.
 
-### Not verified visually
+### Checkout, now verified
 
-The checkout page could not be rendered. A draft checkout 302s to anonymous
-requests, and the only way to see it would be to publish the offer, which would
-make it purchasable and contradicts the instruction to keep it a draft. The
-settings were read back and confirmed saved, but **the rendered page has not
-been looked at.** Worth one glance once it is published, particularly the h1
-size, which is set to 44px here rather than the site's 58px because the
-checkout's left column is narrower than a page.
+Rendered once the offer was published. The design built blind is correct:
+
+| | |
+|---|---|
+| h1 | Playfair Display 44px, `rgb(22,46,40)` |
+| Body | DM Sans |
+| Page background | `rgb(248,250,248)` |
+| Preset placeholder copy | gone |
+| Price | $10 shown |
+| Horizontal overflow | none |
+
+Two things still open on it: the submit button could not be checked against the
+terracotta spec because it renders disabled while payments are paused, and the
+order summary shows a placeholder thumbnail, since no product image is set on
+the offer. The ebook cover (media `4541809`) would fill it.
 
 ## Nova traps hit on this page
 
