@@ -75,10 +75,8 @@ references.
 The ebook PDF is attached and confirmed byte-identical to the corrected file
 (sha256 `1b35306a…`), 18 pages, title "The Gut Fix", both Calendly links live.
 
-**Payments are paused on the site.** The rendered checkout shows "Payments are
-paused on this site. Contact site owner for assistance." and the pay button is
-disabled, so nothing can actually be bought yet. This is a site-level Kajabi
-setting, not an offer or page problem.
+Payments work. An earlier note here claimed they were paused site-wide. That
+was wrong, and the cause is worth recording.
 
 ### Before publishing
 
@@ -102,10 +100,40 @@ Rendered once the offer was published. The design built blind is correct:
 | Price | $10 shown |
 | Horizontal overflow | none |
 
-Two things still open on it: the submit button could not be checked against the
-terracotta spec because it renders disabled while payments are paused, and the
-order summary shows a placeholder thumbnail, since no product image is set on
-the offer. The ebook cover (media `4541809`) would fill it.
+### The "Payments are paused" false alarm
+
+The first render of the checkout showed "Payments are paused on this site.
+Contact site owner for assistance." with the pay button disabled, and that was
+reported as a live blocker. It was not. Kajabi Payments is connected and the
+checkout takes cards.
+
+The message is injected client side, not served in the HTML: `curl` on the
+checkout returns 52KB with no such phrase anywhere. It appeared because this
+container relays every browser request through a proxy, and Stripe's endpoints
+refuse it: `403` on `r.stripe.com`, `422` on `verify_apple_pay_domain`. With
+its payment scripts failing, the checkout falls back to that message. On a
+clean run it does not appear at all.
+
+**The lesson for this harness:** the Playwright relay is reliable for layout,
+geometry and computed styles, and unreliable for anything that depends on a
+third-party script completing a call. Before reporting a payment, analytics or
+embed problem seen through it, check whether the phrase exists in the raw HTML
+and whether the relay logged failures for that vendor's domain.
+
+### A real defect the same render did find
+
+The pay button rendered `rgb(52, 51, 50)`, Kajabi's default `#343332`, not the
+terracotta. The section's `checkout_block_btn_color` setting saves and reads
+back as `#C07A5A` but does not reach the button. The colour is now set in the
+theme's `css` alongside the casing and tracking, which were already landing
+there. Verified: `rgb(192, 122, 90)`, uppercase, 1.56px tracking, 12px, enabled,
+with Stripe card fields present.
+
+Disabled-state styling was added at the same time, so a button that cannot be
+pressed no longer looks pressable.
+
+Still open: the order summary shows a placeholder thumbnail, since no product
+image is set on the offer. The ebook cover (media `4541809`) would fill it.
 
 ## Nova traps hit on this page
 
