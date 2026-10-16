@@ -130,9 +130,62 @@ regex was too loose, not the copy.
 
 ## Open
 
-- The ebook cover image. There is no cover on the page because SamCart's CDN
-  refuses its own asset URLs from outside (every `_assets` request returns a
-  1.4KB error), and the theme API cannot upload files. Send the cover and it
-  goes in the hero.
+- The ebook cover image. See "Hero cover" below.
 - Publishing the Kajabi offer, per above, and then repointing the two CTAs.
 - The page is not in the main menu. `/links` card 2 now points at it.
+
+
+## Hero cover
+
+The hero was rebuilt as a two-column row ready for the ebook cover, which goes
+to the right of the copy.
+
+```
+1791990000001 (section)
+└── 1791990000001_hrow   group, horizontal, gap 60, class gh-hero-row
+    ├── 1791990000001_hleft   group, vertical
+    │   ├── 1791990000001_ht   text   eyebrow, h1, lead
+    │   ├── 1791990000001_hc   cta    Get The Gut Fix for $10
+    │   └── 1791990000001_hn   text   reassurance line
+    └── 1791990000001_himg   image  class gh-cover  (hidden until the cover exists)
+```
+
+The old top-level `_t` / `_c` / `_n` blocks are still defined on the section but
+are no longer in `block_order`, so they do not render. A deep merge cannot
+delete them.
+
+### Waiting on the cover file
+
+Kajabi's API cannot upload files: `add_media` returns an uploader link for a
+person to open, nothing more. The cover is not in the media library yet (a
+search for it returns nothing, and the library holds only two PNGs, neither of
+them the cover). So the image block is **hidden** and the hero renders as a
+single left-aligned column, which is a clean state rather than a broken one.
+
+Uploader: `https://app.kajabi.com/admin/sites/2148204891/media_library?open_uploader=image`
+
+Once the file is in the library, three things turn it on in one pass:
+
+1. `place_media` the asset into `1791990000001_himg` / `image`
+2. Clear `hide_on_desktop` and `hide_on_mobile` on that block
+3. Add `gh-has-cover` to `1791990000001_hrow`'s `custom_classes`
+
+### Two traps found building this
+
+**An empty Nova image block is not invisible.** It renders a dashed
+placeholder box with an icon, about 400 x 225, which looked broken on the live
+page. Hiding the block is the only way to stage an image slot ahead of its
+file.
+
+**A horizontal group's children do not size themselves on desktop.** Nova
+emitted only `max-md:flex-1` and `max-md:w-full` for the two children, so above
+the mobile breakpoint both sized to their content, reached the full 1044px and
+wrapped onto separate rows, because `.nova-group` carries `flex-wrap`. Setting
+`width: "fill"` on the children did not change this. The fix is the same one
+the card grids already use: force the widths in CSS on `.nova-group > *`, here
+`calc(50% - 30px)` so the 60px gap yields the design system's two 492px hero
+columns.
+
+That rule is deliberately gated behind `.gh-has-cover`. Ungated, it would halve
+the headline column while the cover is still hidden, leaving the copy stranded
+beside empty space.
