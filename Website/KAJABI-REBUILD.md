@@ -922,3 +922,72 @@ new build with no further changes, because both already point at `/`.
 
 Alternatively, granting the unpublish of landing page 2150005693 achieves the
 same fall-through from here.
+
+---
+
+## Get More Info link on the flagship panel (2026-10-16)
+
+Added a secondary link to the 3-Month Gut Reset panel on the home page
+(theme `2156348838`, section `1791900000010`, block `1791900000010_1`),
+pointing at `/private-coaching`.
+
+Placed in the **left** column, under the seven inclusion lines, not next to the
+price. The terracotta Book a Free Call button stays the only primary action in
+that panel, which keeps the free call as the sales mechanism and leaves the
+new link clearly subordinate to it.
+
+Styling, all inline (see the sanitizer note below): 11px, weight 500,
+letter-spacing 0.14em, uppercase, sage-light `#A8CAB2`, a 1px
+`rgba(168,202,178,0.45)` underline rule 3px below the text, and a `›`
+affordance. Same tab (no `target`), since it is site navigation.
+
+Measured on the live page: href `/private-coaching` (200), `target` null,
+`rgb(168, 202, 178)`, 11px/500, uppercase, left edge 236 at 1440, flush with
+the `<h3>` and the bullet list.
+
+### The panel was broken on mobile, and this is why it surfaced
+
+Verifying the new link at 390 showed a pre-existing defect: the panel's inner
+`display: flex` row had no wrap, and the right-hand column carried
+`white-space: nowrap`, so it could not shrink. At 390 the left column was
+crushed to its 101px min-content width (the inclusion list ran 895px tall) and
+the price column overflowed the card's right edge by 39px. It had nothing to
+do with the new link: measured with the link hidden, the geometry was
+identical.
+
+**The fix could not be CSS.** Kajabi's rich-text sanitizer strips `<style>`
+elements *and* `class` attributes from a `text` block's `text` setting. Both
+were written, both came back absent from the served HTML, while the inline
+`style` attributes survived. So a media query is not available inside a text
+block at all.
+
+Fixed with flex-wrap arithmetic instead, which needs no media query:
+
+| | Before | After |
+|---|---|---|
+| row | `display: flex; gap: 40px` | `display: flex; flex-wrap: wrap; gap: 40px` |
+| left col | `flex: 1` | `flex: 1 1 360px` |
+| right col | `text-align: center; white-space: nowrap` | `flex: 0 1 219px; margin: 0 auto; text-align: center` |
+
+`white-space: nowrap` moved off the column and onto the `$1,497` line alone,
+which is the only text that actually must not break.
+
+The basis sum is 360 + 40 + 219 = 619. Above that the row stays on one line and
+the left column absorbs all free space, so desktop is byte-for-byte the old
+geometry. Below it the row wraps and each column takes its own line.
+
+`margin: 0 auto` on the right column centres it **only** when wrapped: flex-grow
+resolves before auto margins, so on one line the growing left column leaves zero
+free space for the auto margins to absorb, and on its own line the 71px
+remainder splits evenly.
+
+Measured after the fix:
+
+| Viewport | Left col | Right col | Overflow |
+|---|---|---|---|
+| 1440 | 709 @ x236 | 219 @ x985 | none (right edge 1204 = content edge) |
+| 1024 | 633 | 219 | none |
+| 768 | 377 | 219 | none |
+| 390 | 290 (full width) | 219 @ x86, centred | none (right edge 305 < 340) |
+
+Panel height at 390 went 951 → 790.
