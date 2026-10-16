@@ -991,3 +991,59 @@ Measured after the fix:
 | 390 | 290 (full width) | 219 @ x86, centred | none (right edge 305 < 340) |
 
 Panel height at 390 went 951 → 790.
+
+---
+
+## Scroll animations turned on (2026-10-16)
+
+The home page had no motion anywhere. The cause was not a missing library:
+AOS ships with Encore, was already loaded, and had already initialised over
+all 57 animatable elements (`aos-init` on every one, `window.AOS` live, and a
+probe element given `data-aos="fade-up"` correctly picked up
+`opacity: 0; translate3d(0,100px,0); transition 0.4s`). Every block was simply
+saved with `animation_type: "none"`.
+
+Set on all 54 blocks across the 12 home sections:
+
+| | `animation_type` | `animation_direction` | `duration` | `delay` |
+|---|---|---|---|---|
+| Hero `…001` (2 blocks) | `fade` | `none` → renders `data-aos="fade"` | 500 | 0 |
+| Every other block (52) | `fade` | `up` → `data-aos="fade-up"` | 500 | 0 |
+
+The hero fades without travel because it is above the fold and animates on
+init, not on scroll; 100px of movement there reads as a page still loading.
+
+`delay` and `duration` are **selects**, not free numbers: the only values the
+schema offers are 0, 500, 1000, 1500, 2000, 2500, 3000 (ms). That rules out a
+per-card stagger, since the smallest step available is 500ms, which across a
+six-card row would run 2.5 seconds. Blocks in a row therefore reveal together,
+which is the better of the two options the schema allows.
+
+AOS's own travel distance (100px) is left alone. Changing it means overriding
+`[data-aos="fade-up"]` in the theme-wide `settings.css`, which is a 10,587-char
+full-string replace, and the default reads fine.
+
+Verified on the live page at 1440 and 390: all 54 attributes correct
+(2 × `fade`, 52 × `fade-up`, all 500ms/0 delay), **0 blocks left hidden after a
+full scroll**, no horizontal overflow at either width, and a mid-reveal frame
+captured showing the pattern cards rising into place. Scrolling back to the top
+and down again re-animates correctly (AOS runs with `once: false`), so nothing
+is ever left blank.
+
+### The inner pages cannot use this
+
+Nova does not load AOS at all, and its schemas have no animation settings by
+design. The four Nova pages (`/private-coaching`, `/the-gut-fix`, `/links`,
+`/shop`) serve zero `data-aos` attributes. Motion there has to be custom CSS:
+either `@keyframes` + `animation-timeline: view()` guarded by
+`@supports`/`prefers-reduced-motion` (Chrome/Edge 115+, Safari 26+; unsupported
+browsers simply show the content, never a blank page), or an
+IntersectionObserver in a `code` block.
+
+The blocker is mechanical, not technical: each Nova theme's `custom_css` is a
+**full-string replace**, and those files run to ~8.6KB of hand-tuned layout
+rules per page, so adding four lines means retransmitting all of it four times.
+A top-level block selector is already confirmed to exist for it:
+`section > div > .nova-block` picks out exactly the top-level blocks and
+excludes the ones nested inside groups. `CSS.supports('animation-timeline: view()')`
+returns true in the verification browser.
