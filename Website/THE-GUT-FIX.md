@@ -237,3 +237,55 @@ which also use `.gh-card`, stay plain. Verified: all three trimmed cards read
 `3px rgb(168, 202, 178)` and both panels read `0px`. Card widths (334) and
 equal heights (183) are unchanged, because Nova is border-box so the trim eats
 into padding rather than growing the card.
+
+## The ebook PDF
+
+The deliverable for download collection `428349`. Source of truth is a Google
+Doc, [The Gut Fix](https://docs.google.com/document/d/177HZhvea1-YhxCW1FWkR2J0cWnuq4PR_jCJYLVntwi0/edit),
+owned by `support@guthub.ai`. The PDF is an export of it, 18 pages, US Letter,
+Arial.
+
+### Fixed in the PDF
+
+**The back page sold an offer that does not exist.** Page 18 read "Book your
+Gut Reset Call now for just $97 (normally $197)". There is no $97 consultation
+in the offer suite or in Kajabi, and the documented funnel runs on the free 20
+minute Gut Breakthrough Call. Worse, the PDF contained **zero link
+annotations**, so even that dead offer had no way to be acted on.
+
+Page 18 was replaced with a new one: the free call, a terracotta button and a
+plain-text URL both carrying a real link annotation, the locked sign-off with
+the FDN-P credential, and a medical disclaimer the ebook previously had
+nowhere. Pages 1 to 17 are copied through byte for byte.
+
+The link is `https://calendly.com/gohappybelly/gut-breakthrough-call`, without
+the `?month=2026-10` parameter Steve supplied. That parameter pins Calendly to
+October 2026, which is wrong in an evergreen product someone may open a year
+from now.
+
+**Metadata.** `/Title` was `The Bloat Fix`, an earlier working name left by the
+Google Docs export, and it showed in the reader title bar. Now `The Gut Fix`,
+with `/Author` `Alina Nazari, FDN-P`.
+
+### NOT fixed, and why
+
+The body text still breaks house style: 27 em dashes, "transform" once,
+"journey" twice, the unsubstantiated "thousands of women", and no FDN-P
+credential anywhere in chapters 1 to 17.
+
+These cannot be fixed in the PDF. It is a Google Docs render, so the text is
+positioned glyph runs; swapping words in place reflows nothing and would leave
+visibly broken spacing. They have to be fixed in the Doc and re-exported.
+
+**There is no Google Docs connector on this account** (Drive, Gmail and
+Calendar only). Drive can read and export a Doc but cannot edit one, so the
+body edits need either that connector enabled or Steve editing the Doc by hand.
+
+If the Doc is edited and re-exported, **the page 18 replacement and the
+metadata fix are lost**, because they live in the PDF and not in the Doc. Fix
+the back page in the Doc at the same time, or re-apply both afterwards.
+
+### Also worth knowing
+
+The master Doc's sharing is `role: writer, type: anyone`: anyone with the link
+can edit the product being sold. Worth restricting.
