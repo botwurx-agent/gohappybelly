@@ -19,7 +19,7 @@ new page without being asked.
 |---|---|---|
 | `1791990000001` Hero | `#F8FAF8` | Headline, promise, price, first CTA |
 | `1791990000002` The Problem | Forest `#162E28` | Six symptom lines, then the aha line |
-| `1791990000003` What Is Inside | `#EFF7F1` | Three numbered cards |
+| `1791990000003` What Is Inside | `#EFF7F1` | Three numbered cards, sage-light left trim |
 | `1791990000004` Is And Is Not | `#F8FAF8` | Two panels, honest scope |
 | `1791990000005` Who Wrote It | `#EFF7F1` | Portrait with FDN-P badge, Alina's story |
 | `1791990000006` Final CTA | Forest | Guarantee, second CTA |
@@ -217,3 +217,23 @@ all. The button stayed 109px off the headline's left edge until the rule became
 | CTA | x 198, flush with the headline | x 58, centred |
 | Cover | x 796, 400 x 697 | x 55, 280 x 488, stacked below |
 | Horizontal overflow | none | none |
+
+
+## Card accent trim
+
+The What Is Inside cards carry the design system's offer-card left bar,
+`3px solid #A8CAB2` with the card's existing 3px radius. Checked against the
+live home page first rather than guessed: it uses exactly two left-bar
+accents, `#7AAE86` on the testimonial cards and `#A8CAB2` on the offer row,
+both at 3px, which is what the design system documents.
+
+`#A8CAB2` was the right one of the two here. These are a three-up row of
+equal informational cards, structurally the offer row rather than a quote, and
+it matches the link in bio cards already built on the same pattern. The
+stronger `#7AAE86` is reserved for testimonials, where the bar marks a voice.
+
+The rule is scoped `.gh-grid-3 .gh-card` so the is / is not panels below,
+which also use `.gh-card`, stay plain. Verified: all three trimmed cards read
+`3px rgb(168, 202, 178)` and both panels read `0px`. Card widths (334) and
+equal heights (183) are unchanged, because Nova is border-box so the trim eats
+into padding rather than growing the card.
