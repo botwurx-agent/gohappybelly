@@ -23,7 +23,7 @@ that look like relatives, not pages with the same skeleton. What differs here, a
 
 | Element | Elsewhere on the site | Here | Why |
 |---|---|---|---|
-| Hero | 50/50 split with a product image, or centred | 62/38 split, copy against a numeric rail | There is no product shot for a course, and the four numbers do more selling than a stock image would |
+| Hero | 50/50 split with a product image, or centred | 50/50, headline against a generated course mockup, with the four numbers pulled out into a thin forest stat bar beneath | A course has no product shot, so one is generated from the real UI. The numbers work harder as a rule between the hero and the first section than as a rail inside it |
 | The five patterns | Card grid | **Correspondence table**: her sentence left, the answer right | The product's whole claim is that these two columns differ per person. The page sets them side by side instead of asserting it |
 | The weeks | Three-up cards | **Vertical step spine** using the system's step divider | Four weeks are a sequence, not a set. The system already had this component and no page had used it |
 | About | Portrait + third-person bio | **A signed letter**, no portrait | The bio is on two other pages already. This answers a different question, and uses the locked sign-off, which no other page does |
@@ -61,6 +61,32 @@ still building it.
 | Offer panel | **`gh-cta-strong`**, the one per page |
 | Final CTA | standard |
 | Sticky mobile bar | standard, full width |
+
+## The hero mockup and stat bar
+
+The hero carries `Website/mockups/course-mockup-angled.png`, generated from the current
+course rather than photographed. See `Website/mockups/README.md`, including the warning to
+regenerate it whenever a module is renamed.
+
+Kajabi media URLs differ by type, which matters:
+
+- **Images** come back as a clean permanent CDN URL with no signing.
+- **Files** come back signed with a 7-day expiry, and the unsigned path is 403.
+
+So an image can be referenced directly in a theme; a PDF cannot, and has to be attached as a
+lesson download instead.
+
+The mockup is a flat PNG carrying its own drop shadow, rendered on `#F8FAF8`. It therefore
+needs no frame, and it **must** sit on a `#F8FAF8` section or its edges show.
+
+**It must not overrun its column.** An earlier version let it run 118% wide to read larger;
+the section clips at the content width, so the right edge, which in this composition is the
+phone, was simply cut off. The clip line read as a grey seam around the image.
+
+The stat bar is a deliberate deviation from the banding rule, which reserves forest for the
+validation band and the final CTA. This is chrome, 82px tall, acting as a rule between the
+hero and the first light section. On a phone four nowrap stats stacked to 326px, which is a
+block rather than a bar, so they go two-up with wrapping labels: 170px.
 
 ## Platform findings, the hard way
 
