@@ -29,6 +29,28 @@ Work through them in order. You can finish in an afternoon, but you will get
 more out of it spreading it across a week and paying attention to your own body
 in between.
 
+---
+
+## Lesson: Who Is Teaching This
+
+I trained as a Functional Diagnostic Nutrition Practitioner because I was tired
+of watching women get handed something for a symptom nobody had bothered to
+explain.
+
+Almost everyone I work with arrives having already been told their labs are
+normal. Several have been told it is stress, or hormones, or their age. A few
+have been told it is in their head.
+
+Functional diagnostics looks at how your systems are performing rather than
+whether you have crossed a disease threshold. That is a different question, and
+it needs different testing to answer. It is also why I will tell you plainly
+when something belongs with your doctor rather than with me. I am not a
+physician and I do not diagnose.
+
+What I do is find the pattern and build the work around it. This course is the
+first half of that: understanding the system well enough that the pattern, when
+you find it, actually means something to you.
+
 **In Gut Health,**
 **Alina Nazari**
 **FDN-P**
@@ -64,4 +86,12 @@ conversation, not a guess.
   share a personal story about why you are passionate about gut health") was
   instruction text to the practitioner, left in the deck. Removed. It also
   contained the banned word "passionate".
-- The bio slide needs Alina's actual bio. Flagged for Steve.
+- **Bio sourced from the live Private Coaching page** ("Why I work this way"),
+  not written fresh. Three of its four paragraphs are verbatim, so the voice is
+  already approved and already consistent with what a buyer reads elsewhere on
+  the site.
+- The fourth paragraph was adapted. The original continues "...build the
+  protocol around it, and stay with you while it does its work. Three months,
+  because that is honestly how long this takes." That describes the $1,497
+  service. Promising it inside a $27 course would be describing something the
+  buyer did not purchase, so it was rewritten to describe this course instead.
