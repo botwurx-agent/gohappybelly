@@ -1,4 +1,4 @@
-# Core 8 rewrite, source of truth
+# Course rewrite, source of truth
 
 Written 2026-10-21 from `Copy_of_Combined_Gut_Wellness.pdf` (87 slides).
 Nothing here is in Kajabi yet. Review first, then port.
@@ -19,12 +19,29 @@ Each file carries the lesson copy, a reflection prompt, and a table of every
 change made against FDN with the reason. The tables are the audit trail. Do not
 delete them when porting; port the copy above them.
 
+## Bonus modules
+
+Three of FDN's five specialty modules. Men and Kids & Teens were cut: neither
+matches an avatar, and a module on children's health on a list of women 28 to 65
+reads as recycled rather than as a bonus.
+
+| File | FDN source | Title change | Maps to |
+|---|---|---|---|
+| `B1-midlife.md` | Midlife Women, 13 slides | Midlife, Hormones And Digestion | Avatars 1 and 6 |
+| `B2-high-stress.md` | High-Stress Lifestyles, 13 slides | Digestion Under Pressure | Avatars 2 and 7, Wired-and-Tired |
+| `B3-system-on-alert.md` | **Autoimmune & Chronic Inflammation**, 13 slides | **When Your System Stays On Alert** | Avatars 1 and 5, Reactive Gut |
+
+`B3` is retitled on purpose and the reasoning is in the file. The autoimmune
+frame put a non-physician in the middle of a diagnosed condition and drew in the
+one buyer Alina cannot serve. The material underneath it was kept.
+
 ## Counts
 
-- FDN source: 2,229 words
-- This rewrite: ~5,300 words of body copy, excluding the change tables
-- All 19 compliance violations resolved
-- 9 reflection prompts added where FDN promised one and had none
+- FDN source, the parts used: 3,154 words (core 2,229 + three specialty 925)
+- This rewrite: 8,467 words of lesson copy, excluding the change tables
+- 11 modules: 8 core plus 3 bonus
+- All compliance violations resolved, across all six source decks
+- 12 reflection prompts added where FDN promised one and had none
 
 ## Verified
 
