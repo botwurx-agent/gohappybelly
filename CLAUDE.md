@@ -6,7 +6,7 @@ This agent is a full business co-pilot for **Go Happy Belly**, the functional nu
 
 **Steve Nazari** (Alina's husband) operates this agent. Steve runs all business operations: copywriting, funnel building, email marketing, social content strategy, landing pages, and growth. Alina works with clients directly and creates content — she does not use this agent.
 
-**Related business:** Steve also owns **Guthub.ai**, an AI-powered gut health platform (beta) that serves as the lower-priced entry offer in the GoHappyBelly ecosystem.
+**Related business:** Steve also owns **Guthub.ai**, an AI-powered gut health platform (beta). It is part of the ecosystem and is bundled into the 3-Month Gut Reset, but **it is not a funnel offer**. See "Guthub is not in the funnel" below.
 
 ---
 
@@ -83,7 +83,7 @@ These are the segmentation categories from the ScoreApp quiz ("What's Your Gut P
 |-------|-------|---------|
 | 3-Month Gut Reset | $1,497 | (1) 60-min initial consult, (1) 30-min follow-up/month, **GI-MAP Stool Test with full results reading included**, gut-type meal + supplement plans, private community access, 3-month Gut Reset Course access, 3-month Guthub access |
 | Gut Reset Course | $147 | Standalone digital course |
-| Guthub.ai | $13/month | AI gut health platform, downsell/entry offer |
+| Guthub.ai | $13/month | AI gut health platform. Bundled into the 3-Month Gut Reset. Not sold through any funnel (see below) |
 | GI-MAP Stool Test | $497 | Includes reading/consultation |
 | H. Pylori Test | $250 | Includes reading/consultation |
 | SIBO Test | $425 | Includes reading/consultation |
@@ -102,16 +102,33 @@ Instagram / TikTok / YouTube (organic content)
 Quiz: "What's Your Gut Pattern?" (ScoreApp)
   https://gut-pattern-quiz.scoreapp.com
         ↓
-Results page: 1 of 5 archetypes — dual CTA:
-  [Book a Gut Breakthrough Call]  OR  [Start Guthub Trial]
+Results page: 1 of 5 archetypes
         ↓
 7-email archetype-specific sequence (21 days, Mailchimp)
   Exit logic: contact exits if booked-call tag is applied
         ↓
 Gut Breakthrough Call (20 min, free) → 3-Month Gut Reset ($1,497)
-  OR
-Guthub.ai free trial → $13/month subscription
 ```
+
+### The value ladder (decided 2026-10-21)
+
+```
+$47 mini course  →  $147 Gut Reset Course  →  $1,497 3-Month Gut Reset
+```
+
+The $47 rung is being built from FDN's done-for-you gut wellness material.
+The Bone Broth Reset ($47) is a second offer at the same price, parked for now.
+
+### Guthub is not in the funnel
+
+Steve's decision, 2026-10-21. Guthub.ai **may be mentioned** anywhere it is a
+true statement: the site footer, the ecosystem, and the 3-Month Gut Reset
+inclusions, where three months of it is part of what the buyer gets.
+
+It is **not** a funnel offer. Do not make it the entry offer, do not place it
+as a downsell or an upsell, do not put its trial in a quiz results CTA, and do
+not sell it in any email. It will join the funnel when it is further along.
+Until Steve says otherwise, treat any funnel placement of Guthub as a mistake.
 
 ---
 
