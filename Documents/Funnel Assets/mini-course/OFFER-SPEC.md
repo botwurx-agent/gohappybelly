@@ -17,28 +17,55 @@ waits on the FDN deck.
 PENDING: name, promise, module structure, lesson count, whether $47 survives
 contact with what the deck actually teaches.
 
-## The upsell mechanic, and its one real constraint
+## The upsell mechanic
 
-Kajabi offers expose exactly one post-purchase behavior: `post_purchase`, set to
-either a custom thank-you `body` or a redirect to a Kajabi landing page. Read off
-offer `2149370663`, which already redirects to landing page `2150005720`
-("Course Thank You Page").
+**Kajabi has a full post-purchase upsell funnel, with downsells.** Per Kajabi's
+own docs:
 
-**There is no native one-click post-purchase upsell.** So $47 → $147 is:
+- Upsell pages are built once in the Builder and attached to offers. One upsell
+  page can serve several offers.
+- A purchase flow holds multiple steps, one upsell per step, no documented cap.
+- A **downsell** attaches beneath any step and fires when that step is declined.
+  Kajabi: no functional difference between the two, a downsell is just an upsell
+  shown after a decline.
+- The upsell bills as a separate transaction that "will use the same payment
+  method used for the Original Offer."
+
+That last point is the one that matters: the card is already on file, so the
+buyer accepts with a button, not a second checkout form. It is a one-click
+upsell. Kajabi's docs never use that phrase, which is how this got recorded
+wrong the first time.
 
 ```
-$47 checkout  →  post_purchase redirect  →  upsell landing page
-                                               ↓
-                                         $147 checkout (card entered again)
+$27 checkout  →  upsell step 1: $147 Gut Reset Course  →  accept = one click
+                      ↓ decline
+                 (optional downsell slot, unused for now)
+                      ↓
+                 post-purchase destination
 ```
 
-Two clicks and a second card entry, not one click. That costs conversion, and it
-is the platform's limit, not a design choice. Worth knowing before anyone promises
-a one-click bump.
+**An earlier version of this file said the opposite.** The error came from
+reading the offer object through the MCP, seeing that `post_purchase` exposes
+only a thank-you body or a landing page redirect, and concluding the platform
+could not do upsells. The MCP is a partial view of Kajabi, not a map of it.
+Do not infer a platform limit from a tool's surface area.
 
-SamCart is on the stack and unused. It does one-click upsells properly. If the
-$47 proves out and the second card entry is visibly costing sales, that is the
-argument for moving this one checkout to SamCart. Not before there is data.
+### Division of labor, because the MCP cannot reach purchase flows
+
+The commerce toolset is list/get/create/update for offers and purchases. There
+are no upsell tools.
+
+- **Agent builds** the upsell page. Upsell pages are Builder pages, so they go
+  through the same theme tools and the same `Website/DESIGN-SYSTEM.md` as every
+  other page.
+- **Steve attaches** it in the offer's Purchase Flow tab in the Kajabi admin.
+
+**Caveat from the docs:** editing an upsell page changes it for every offer it is
+attached to. A second entry offer wanting different copy needs its own upsell
+page. Name them for the offer they serve, not generically.
+
+SamCart stays unused. The reason to move checkout there was the second card
+entry, and that reason does not exist.
 
 ## What this breaks when it goes live
 
