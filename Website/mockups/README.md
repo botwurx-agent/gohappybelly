@@ -44,3 +44,31 @@ they show the real product.
 - In the angled composition the phone and sheet carry the same `rotateY`/`rotateX` as
   the monitor and are scaled down, because they sit on the receding side of the
   vanishing point. Without that they read as flat cutouts laid on top.
+
+---
+
+## 2026-10-21: rebuilt from a real screenshot
+
+The drawn facsimile was wrong in a way that mattered: it used the **website** fonts
+(Playfair / DM Sans) while the course actually runs the Momentum theme on Fira Sans
+Extra Condensed and Lato. It looked like the brand but not like the product.
+
+`course-ui.png` is now built from a real dashboard screenshot Steve supplied, with
+three things repainted:
+
+| Repainted | Why |
+|---|---|
+| The banner band | It carried "Happier Belly Gut Reset Program", the retired name, plus a marketing photo |
+| The welcome strip | It carried a real member's name |
+| Alina's panel | It said "Functional Nutritionist FDN-P" and "Happier Belly Gut Reset program" |
+
+**The panel was not simply doctored.** The live course dashboard was corrected first
+(theme `2156349489`, section `product_sidebar`, block `1614993875974`) and the image
+then redrawn to match what the course now says. A mockup that shows copy the product
+does not contain is a lie on a sales page.
+
+Build: `node render-hero.mjs` → `mock-E.png`, from `build-hero-mockup.html`.
+
+The phone was dropped. There is no real mobile screenshot to build it from, and a
+drawn one next to a real one looks like what it is. Desktop plus the printed tracker
+also leaves the desktop bigger, which is what the hero needed.

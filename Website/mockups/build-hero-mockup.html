@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#F8FAF8}
+.stage{display:inline-block;padding:0}
+.mon{background:#1a1a1a;border-radius:14px;padding:16px}
+.mon .bar{height:28px;display:flex;align-items:center;gap:7px;padding:0 5px 9px}
+.mon .bar i{width:10px;height:10px;border-radius:50%;background:#565656;display:block}
+.mon .scr{border-radius:6px;overflow:hidden;background:#fff;line-height:0}
+.mon .scr img{width:100%;display:block}
+#E{position:relative;width:1520px;height:960px;padding:40px;perspective:2200px}
+#E .mon{position:absolute;left:36px;top:24px;width:1250px;
+  transform:rotateY(-12deg) rotateX(2.5deg);transform-origin:left center;
+  filter:drop-shadow(0 30px 42px rgba(22,46,40,.26))}
+#E .sheet{position:absolute;right:46px;bottom:56px;width:430px;background:#fff;
+  border-radius:3px;overflow:hidden;line-height:0;
+  transform:rotateY(-12deg) rotateX(2.5deg) rotate(-5deg);transform-origin:right bottom;
+  filter:drop-shadow(0 18px 28px rgba(22,46,40,.26))}
+#E .sheet img{width:100%;display:block}
+</style></head><body>
+<div class="stage"><div id="E">
+  <div class="mon"><div class="bar"><i></i><i></i><i></i></div>
+    <div class="scr"><img src="course-ui.png"></div></div>
+  <div class="sheet"><img src="page1.png"></div>
+</div></div>
+</body></html>
