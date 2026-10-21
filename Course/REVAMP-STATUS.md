@@ -45,22 +45,37 @@ Review doc (plan + all drafts): https://claude.ai/code/artifact/ec1a7423-c6b3-4c
   quiz applies the tags that start the seven-email archetype welcome sequences, which would have
   sold the course, or the Reset, to people who had already bought it.
 
-## The quiz: what is left to do
-The lesson (2180146833) embedded a dead Typeform from Aug 2024, not ScoreApp. Removed on
-2026-10-21; members are routed to The 5 Gut Patterns meanwhile.
+## The quiz: done
+Live on 2026-10-21. The lesson (2180146833) embeds the course-only ScoreApp clone:
 
-On the ScoreApp clone:
-- No Mailchimp integration. No tags, no GUTPATTERN write, nothing connected.
-- No email capture step. They are already logged into the course.
-- Results CTA becomes "go back and read your pattern page" rather than the public version's
-  Book a Call / Start Guthub Trial pair. One soft line about the Breakthrough Call is fine.
-- The 12 questions and the scoring stay exactly as they are, so results still map to the five
-  patterns the course is built on.
+    https://alina-mcrvo6le.scoreapp.com   ("What's Your Gut Pattern? - Course Only")
 
-Then: **the clone's URL or embed code is needed** to put it back in the lesson. Guessing the
-subdomain does not work. ScoreApp serves a generic marketing page with a 200 for any unknown
-subdomain, so a probe cannot distinguish a wrong guess from a real quiz. The live public quiz
-returns the title "What's Your Gut Pattern?"; six guessed slugs all returned the generic page.
+**Embedded as an `<iframe>`, deliberately, not as a `<script>` snippet.** Neither ScoreApp URL
+sends `X-Frame-Options` or a `frame-ancestors` policy, so framing is allowed. The page it replaced
+used a `<script>` embed, and a script tag is exactly what a sanitizer is most likely to drop. A
+plain "open it in a new tab" link sits underneath as a fallback.
+
+What the old page actually had: a Typeform from Aug 2024 (`data-tf-live=01J4QWY0QE2D1X9JPHAKFW36NH`),
+not ScoreApp. Dead, and the wrong quiz regardless, since it predates the five-archetype model.
+
+### Verified
+- Published, not draft. 185,796 bytes against the public quiz's 185,790; the draft build was 5,677
+  bytes and served a password gate.
+- Title reads "What's Your Gut Pattern? - Course Only".
+- No Mailchimp or email-capture markers in the served HTML.
+- The iframe survived the write to Kajabi (re-read after saving).
+
+### Not verified, and worth Steve's eye
+ScoreApp renders the quiz client-side, so reading the served HTML says little about what happens
+**after** the twelve questions. An email step or an integration configured on the results stage
+would not show up in that markup. Confirming it means running the quiz through to the end, and
+doing that would have written a junk response into Steve's ScoreApp data, so it was left alone.
+
+Two things to check by taking it once:
+1. The result appears **on screen**. With email capture off, a quiz set to deliver results by email
+   would leave members with nothing.
+2. No tag or contact reaches Mailchimp. This is the one that matters, since the public quiz's tags
+   start the seven-email archetype welcome sequences.
 
 ## Style note for anyone picking this up
 US spellings and US vegetable names throughout (zucchini, eggplant, arugula, beets, celiac,
