@@ -72,3 +72,41 @@ Build: `node render-hero.mjs` → `mock-E.png`, from `build-hero-mockup.html`.
 The phone was dropped. There is no real mobile screenshot to build it from, and a
 drawn one next to a real one looks like what it is. Desktop plus the printed tracker
 also leaves the desktop bigger, which is what the hero needed.
+
+---
+
+## 2026-10-21 (later): the photoreal laptop
+
+`course-hero-laptop.png` (2400x1350) is the file for the course sales page hero.
+`course-hero-laptop-alt.png` is the second angle, further back and more side-on.
+
+The scene is generated, the screen is not. Higgsfield `gpt_image_2_5` rendered the
+laptop on a desk, with the prompt asking for the screen to be a **flat `#FF00FF`
+fill**. That magenta is a chroma key: `composite.py` finds it, reads its four corners,
+and perspective-warps the real `course-ui-v2.png` screenshot into the quad. So the
+scene is photoreal and the product on screen is pixel-exact. No generative model is
+ever asked to draw the course UI, because it would invent lesson names.
+
+Nano Banana is not in the Higgsfield catalog. What is: GPT Image 2.5, Seedream 5,
+Flux Kontext, OpenAI Hazel.
+
+    python3 composite.py scene1.png hero-scene-b.png
+    python3 demagenta.py scene1.png hero-scene-b.png hero-scene-b-fix.png
+
+Traps, both found by looking at the output rather than trusting the call:
+
+- **Dilate the key mask, do not erode it.** The warped screenshot has to *overfill*
+  the magenta, or the bicubic edge leaves a magenta ring around the screen. Eroding
+  makes the fringe worse, which is the opposite of the intuition. The quad is also
+  pushed out 1.8% from its centre for the same reason. Residual magenta after the fix:
+  0 pixels.
+- **Kill the spill.** A magenta screen lights the room it was rendered in, so the
+  generated laptop came back with plum-tinted keys. Once the screen is green that
+  reads as a mistake. `demagenta.py` pulls R and B down toward G wherever both exceed
+  it, everywhere except inside the key. 100,138 pixels on this scene; 1 on the other,
+  which is why only one of the two needed it.
+
+`course-ui-v2.png` is Steve's second screenshot with the welcome strip repainted (it
+carried a member name), the browser tab strip painted out, and the page heading redrawn
+in Fira Sans Extra Condensed Bold so it sits on one line. Fonts are matched by
+measuring the original string, not by eye.
