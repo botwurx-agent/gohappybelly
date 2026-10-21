@@ -28,11 +28,39 @@ Review doc (plan + all drafts): https://claude.ai/code/artifact/ec1a7423-c6b3-4c
 - Smoothie recipes re-tagged by pattern.
 
 ## Open decisions for Steve
-1. Four weeks or six. Week 4 now carries reintroduction, variety and maintenance, and the
-   reintroduction schedule runs 12 days past the end of a four-week course.
-2. Access terms, per the FAQ note above.
-3. The five Amazon affiliate lists: keep or drop. If kept they need an affiliate disclosure,
+1. **The seven videos.** The Week 4 transcript confirms the video advises eating dirt and frames it
+   as helping heal leaky gut, which is a treatment claim and a diagnosis term both. Week 4's page
+   now contradicts the video deliberately, so that one should come down whatever is decided about
+   the rest. The other six name sections and topics that have moved. All Wistia IDs are recorded in
+   REBUILD-2026-10-20.md, so pulling them is reversible.
+2. **The five Amazon affiliate lists:** keep or drop. If kept they need an affiliate disclosure,
    which the course does not have anywhere.
+
+## Resolved
+- **Four weeks or six** (2026-10-21): four weeks plus a separate Reintroduction Fortnight module.
+- **Access terms** (2026-10-20): one year with auto-renew, not lifetime. FAQ corrected.
+- **Supplement doses** (2026-10-20): published live. Still awaiting Alina's confirmation.
+- **The quiz** (2026-10-21): a course-only ScoreApp clone, "What's Your Gut Pattern? - Course Only",
+  with **no Mailchimp connection at all**. Steve's call, and it closes the real risk: the public
+  quiz applies the tags that start the seven-email archetype welcome sequences, which would have
+  sold the course, or the Reset, to people who had already bought it.
+
+## The quiz: what is left to do
+The lesson (2180146833) embedded a dead Typeform from Aug 2024, not ScoreApp. Removed on
+2026-10-21; members are routed to The 5 Gut Patterns meanwhile.
+
+On the ScoreApp clone:
+- No Mailchimp integration. No tags, no GUTPATTERN write, nothing connected.
+- No email capture step. They are already logged into the course.
+- Results CTA becomes "go back and read your pattern page" rather than the public version's
+  Book a Call / Start Guthub Trial pair. One soft line about the Breakthrough Call is fine.
+- The 12 questions and the scoring stay exactly as they are, so results still map to the five
+  patterns the course is built on.
+
+Then: **the clone's URL or embed code is needed** to put it back in the lesson. Guessing the
+subdomain does not work. ScoreApp serves a generic marketing page with a 200 for any unknown
+subdomain, so a probe cannot distinguish a wrong guess from a real quiz. The live public quiz
+returns the title "What's Your Gut Pattern?"; six guessed slugs all returned the generic page.
 
 ## Style note for anyone picking this up
 US spellings and US vegetable names throughout (zucchini, eggplant, arugula, beets, celiac,
