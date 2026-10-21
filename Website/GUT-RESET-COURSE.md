@@ -64,9 +64,14 @@ still building it.
 
 ## The hero mockup and stat bar
 
-The hero carries `Website/mockups/course-mockup-angled.png`, generated from the current
-course rather than photographed. See `Website/mockups/README.md`, including the warning to
-regenerate it whenever a module is renamed.
+The hero carries `Website/mockups/course-hero-laptop.png` (Kajabi media `4689230`), a
+photoreal laptop on a desk with the real course dashboard composited into the screen. The
+scene is generated; the screen is not. See `Website/mockups/README.md` for how the chroma
+key works, and for the warning to rebuild it whenever a module is renamed.
+
+It replaced `course-mockup-angled.png`, a drawn facsimile that read too small in the column
+and carried a phone and a printed tracker alongside the desktop, which split the attention
+the hero has to spend on one thing.
 
 Kajabi media URLs differ by type, which matters:
 
@@ -76,12 +81,18 @@ Kajabi media URLs differ by type, which matters:
 So an image can be referenced directly in a theme; a PDF cannot, and has to be attached as a
 lesson download instead.
 
-The mockup is a flat PNG carrying its own drop shadow, rendered on `#F8FAF8`. It therefore
-needs no frame, and it **must** sit on a `#F8FAF8` section or its edges show.
+The photo is opaque and carries no shadow of its own, so the page gives it the design
+system's hero image treatment: 3px radius, `0 24px 60px rgba(22,46,40,0.14)`. Nova's
+`image-wrapper` ships Tailwind `overflow-hidden`, which clips that shadow flush to the
+photo, so the wrapper needs `overflow: visible !important` on the same rule.
+
+The block's own padding is zeroed in its block settings, not in CSS, per the gutter finding
+below. At 1440 that leaves the image 659x371 against a 513px text column, so the graphic
+reads larger than the copy, which is what the hero needs.
 
 **It must not overrun its column.** An earlier version let it run 118% wide to read larger;
-the section clips at the content width, so the right edge, which in this composition is the
-phone, was simply cut off. The clip line read as a grey seam around the image.
+the section clips at the content width, so the right edge was simply cut off. The clip line
+read as a grey seam around the image.
 
 The stat bar is a deliberate deviation from the banding rule, which reserves forest for the
 validation band and the final CTA. This is chrome, 82px tall, acting as a rule between the
@@ -154,3 +165,21 @@ A renewing charge needs price, interval and cancellation route beside the button
 **Not mine to do:** the offer is titled "Happier Belly Gut Reset Program" while the site says Gut
 Reset Course, and the buyer meets that mismatch on the payment screen. `/happier-belly-gut-reset`
 now 404s and Kajabi redirects are not reachable through MCP. The page is not in the main menu.
+
+## 2026-10-21: hero image swapped
+
+`course-hero-laptop.png` is live. Rendered and measured at 1440 and 390 with a cache-buster,
+not asserted from the write returning `updated: true`:
+
+| | 1440 | 390 |
+|---|---|---|
+| Horizontal overflow | none (`scrollWidth` 1440 = `clientWidth`) | none (390 = 390) |
+| Image box | 659 x 371 at x 673 | 350 x 197 at x 20 |
+| Text column | 513 at x 108 | 350, stacked above |
+| Wrapper `overflow` | `visible` | `visible` |
+| Computed shadow / radius | `rgba(22,46,40,0.14) 0 24px 60px` / `3px` | same |
+
+The CSS was diffed line by line against the previously rendered page before and after the
+write: two hunks, both intended. `custom_css` is a single string setting, so a deep merge
+replaces the whole thing, and an edit made by retyping rather than diffing is how a page
+silently loses a rule.
