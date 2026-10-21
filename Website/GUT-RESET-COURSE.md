@@ -183,3 +183,22 @@ The CSS was diffed line by line against the previously rendered page before and 
 write: two hunks, both intended. `custom_css` is a single string setting, so a deep merge
 replaces the whole thing, and an edit made by retyping rather than diffing is how a page
 silently loses a rule.
+
+## 2026-10-21: in the main menu
+
+Added to the Kajabi **Main Menu** navbar (`2148458013`) as link `2151213502`, a
+`LandingPageLink` to `gid://kajabi-portals/LandingPage/2152348302`, then reordered to sit
+second: Home, Gut Reset Course, Private Coaching, Shop. Price order, ascending, which puts
+the cheapest paid offer where it gets scanned first.
+
+**One edit covers the whole site.** The Nova landing page headers read the same navbar as
+the Encore website header; they do not carry their own hardcoded menu. That is not obvious
+from the rendered markup, which inlines the items as plain `<li><a>` with no sign of where
+they came from, and a first grep for `>Gut Reset Course<` on one line found nothing because
+Nova breaks the anchor across lines. Checked properly, all five Nova pages and the home page
+picked it up with no further writes.
+
+Verified on the live pages: Home, Private Coaching, Shop, The Gut Fix, Link in Bio and the
+sales page itself all show four items. Header holds without wrapping at 1440 and at 1024,
+where it is tightest because the page's own terracotta CTA sits beside it. The mobile drawer
+lists it too.
