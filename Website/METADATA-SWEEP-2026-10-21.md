@@ -122,3 +122,66 @@ can still be bought.
 
 Worth a pass with Steve to mark each as current or retired, then bring the
 survivors into CLAUDE.md.
+
+---
+
+# Follow-up, same day
+
+## Done
+
+- Module `2160964491` renamed **The Reintroduction Fortnight → The Two-Week
+  Reintroduction**.
+- Course description: "Then a reintroduction fortnight" → "Then a two-week
+  reintroduction".
+
+## The sweep's own scope was wrong
+
+It scanned **titles and metadata only**, not lesson bodies. "Fortnight" is in
+**14 published lesson bodies** as well, found by `search_course_content` after
+the rename was requested:
+
+| Lesson | Module |
+|---|---|
+| Welcome: Start Here | Start Here |
+| How This Course Works | Start Here |
+| Working With The Reactive Gut | Your Pattern, In Detail |
+| Working With The Bloated And Backed-Up Gut | Your Pattern, In Detail |
+| Working With The Wired-And-Tired Gut | Your Pattern, In Detail |
+| Week 3: This Week For Your Pattern | Week 3 |
+| Week 4: Widen Your Range | Week 4 |
+| Week 4: This Week For Your Pattern | Week 4 |
+| How Reintroduction Works | The Two-Week Reintroduction |
+| Your Reintroduction Tracker | The Two-Week Reintroduction |
+| Reintroducing For Your Pattern | The Two-Week Reintroduction |
+| When You Have Finished | The Two-Week Reintroduction |
+| Shopping List: The Bloated And Backed-Up Gut | Your Reference Shelf |
+| Three Days Of Meals: The Underactive Gut | Your Reference Shelf |
+
+So the true count was 16, not 2. **A title-and-metadata sweep is not a content
+sweep.** Any future sweep has to run `search_course_content` over bodies as
+well, or it will report a fraction of what is there and someone will make a
+decision on the wrong number.
+
+Not fixed, pending Steve's call. Each needs a contextual replacement rather than
+a find-and-replace ("settle for a fortnight" and "the reintroduction fortnight"
+want different wording), and it is 14 writes to a live course with members on it.
+
+## The home page metadata cannot be fixed through the MCP
+
+Established by elimination:
+
+- `get_website_page` on the Home page (`2154501976`) returns
+  `page_title: "Home"` and `page_description: null`, so the live strings are not
+  set there.
+- There is **no `update_website_page` tool**. The pages toolset covers landing
+  pages for writes and website pages for reads only.
+- There is no site-settings write tool. `get_site_summary` is read-only and does
+  not return these fields.
+- The site theme (`2156348838`) has no SEO section.
+
+The strings are Kajabi's site-level SEO defaults, set in the admin under
+Settings, and they are inherited by every page that does not override them.
+That is also why they show up on a page whose own record is empty.
+
+**Steve has to paste this one in.** Replacement text is in the main findings
+above; the rewrite is below.
