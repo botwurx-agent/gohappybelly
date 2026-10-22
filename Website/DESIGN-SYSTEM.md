@@ -221,6 +221,14 @@ reach the same design by different means:
 | `custom_classes` land on the block wrapper, not the flex row | `.hook > *` sizes an intermediate div; children stack | Reach through with `.hook .nova-group > *` |
 | The `feature` block hides an `<article>` in its flex chain | `margin-top: auto` resolves to zero, buttons unaligned | Give the `<article>` `flex: 1 1 auto` too |
 
+### A Kajabi-wide trap, both engines
+
+Dropping a section id from `content_for_index` **deletes that section**, it does
+not merely unrender it. Confirmed 2026-10-22 on the course thank-you page: two
+ids removed from the array came back `not_found` on the next read, and their
+content was gone. Transcribe anything worth keeping before you shorten that
+array.
+
 **Setting up a new Nova page:** copy the Style Guide tokens in §2 and §3 into
 the new theme first, then build sections, then port only the CSS the page
 actually needs. Do not copy the home page's `settings.css` wholesale — most of

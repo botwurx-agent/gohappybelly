@@ -100,3 +100,105 @@ comparable number of writes:
 Point the course buyer at the course. Unlike the coaching page there is no
 consultation to book and no lab kit to order, so the page has one job: get them
 into the course, and into the group.
+
+---
+
+# Revamp, 2026-10-22
+
+Rebuilt on `Website/DESIGN-SYSTEM.md`. The page is now header, one section, footer.
+
+## The two heroes are gone
+
+`content_for_index` went from `["", "1606334594241", "1621849782478",
+"1620723450151"]` to `["", "1606334594241"]`, and section `1606334594241` was
+rebuilt as a single responsive section shown on both devices. The mobile-only
+hero and the hidden "Are You Ready" section are no longer on the page.
+
+**Worth knowing for next time:** dropping a section id from `content_for_index`
+does not merely stop it rendering, it **deletes the section**. Both dropped ids
+came back `not_found` on the verifying read, and `sections_index` now lists only
+`1606334594241`, `header`, `footer`, `exit_pop` and `two_step`. The old mobile
+copy is not recoverable from the theme; what it said is transcribed in the audit
+above.
+
+## Structure now
+
+One section, `#F8FAF8`, padding 88/100 desktop and 56/64 mobile, everything
+centred and capped at 560px. Five text blocks, all full width, all visible on
+both devices:
+
+| Block | What |
+|---|---|
+| `1762000000001` | Sage eyebrow, `<h1>` "You're in.", lead line |
+| `1762000000002` | "First step" / Open your course, terracotta **Go to my course** button to `/library` |
+| `1762000000003` | "Your community" / Join the private group, terracotta **Join the group** button, new tab |
+| `1762000000004` | "Check your inbox too", plus the support address |
+| `1762000000005` | The locked sign-off |
+
+The course button is root-relative (`/library`, not
+`https://www.gohappybelly.com/library`) so it survives the DNS cutover, per §7.
+It stays in the same tab, since it is navigation within the site; the Facebook
+link opens in a new one, since it leaves.
+
+## Copy
+
+The job of this page is narrower than the coaching one: no consultation, no lab
+kit. Get them into the course, and into the group.
+
+The one piece of real guidance is in the first step, and it is there because the
+course is built sequentially:
+
+> Start at the beginning rather than skipping ahead to the part that sounds most
+> like you. The first few lessons set up everything that comes after them, and
+> the week-by-week work will not make much sense without them.
+
+A course buyer who lands in Week 2 looking for her own pattern will not have met
+the pattern framing yet.
+
+Gone: "Thank you...", "You're In!", both `♡` characters, "-Alina" in place of
+the locked sign-off, and the inline `#2b5d45` and `#000000`.
+
+## Chrome
+
+| | Was | Now |
+|---|---|---|
+| Fonts | Poppins, + Handlee on `h6`, + Caramella `.ttf` from site 24410 | Playfair Display / DM Sans |
+| Type scale | h1 64 / **h2 72** / h5 24 / **h6 30** | 58 / 38 / 26 / 20 / 17 / 15 |
+| Primary + button | `#a9d7db` | `#7AAE86` / `#C07A5A` |
+| Header logo | 200px, stretched | 104px, sticky, `#C8DDD0` rule |
+| Header CTA | "MEMBER LOGIN", outline, radius 100 | "Member login", terracotta, radius 2 |
+| Hello bar | "Taking New 1:1 Clients for 2025", `#9acdaa` | Hidden |
+| Footer | `#76a685`, "Balanced by Alina Nazari ♡" | `#112420`, FDN-P disclaimer |
+| Footer socials | facebook/twitter/instagram **.com/kajabi** | Hidden, per §6 |
+
+`settings.css` was replaced rather than edited. It had carried the two font
+imports, a `.piyp-block` rule from the Penny In Your Pocket template, header
+width overrides and `z-index` swaps for an overlap this layout no longer has.
+
+## Deliberate omissions
+
+**No portrait.** The coaching page has Alina's circular PNG because that theme
+already held it. This theme does not, and its only candidates were a `giphy.gif`
+and a background image both referenced out of other sites' theme directories,
+which is the exact antipattern this rebuild removed. A portrait can be added
+once there is a real image in this theme's own uploads.
+
+**The hello bar is hidden rather than rewritten.** It was stale, off-palette,
+and selling to somebody who has just bought. If it should sell the $1,497 at
+this moment, that is a deliberate upsell decision and belongs in the body, not
+in a site-wide bar with a hardcoded year.
+
+## Verification
+
+Section, block and chrome state verified by read. `sections_index` confirms the
+page is down to one content section.
+
+**Not visually verified.** Cloudflare still returns 403 to this container for
+`www.gohappybelly.com`. Open `/course-thank-you-page` and check, **on a phone as
+well as a desktop**, since device-specific rendering is the bug this rebuild
+exists to fix:
+
+- Both buttons appear and work, on both devices.
+- Playfair Display and DM Sans load, and no Handlee or Caramella survives.
+- The header hairline renders (`#section-header`, still an unverified selector).
+- The footer shows no social icons.
