@@ -258,17 +258,26 @@ screenshot and dispute.
 belongs to no palette in this business. Changing it is styling rather than copy
 and was not asked for. Worth a decision.
 
-## The order bump is still there
+## The order bump: removed by Steve, 2026-10-22
 
-**Not removed. The MCP cannot do it**, for the reasons traced above. It is
-offer-level configuration exposed nowhere in the commerce toolset, and
-`update_offer` has no field for it.
+**The MCP cannot touch order bumps.** They are offer-level configuration
+exposed nowhere in the commerce toolset, and `update_offer` has no field for
+them. Not readable either, so the removal cannot be verified from here. Steve
+confirmed it visually.
 
-Steve removes it here:
-`https://app.kajabi.com/admin/cofounder/deep_link?offer_id=2149705539&resource_type=Offer&view=checkout`
+**Where it actually lives, corrected.** The agent guessed the offer's
+**Checkout** tab. Wrong. It is under **Settings** on that offer's checkout
+page:
 
-Note it is configured on the **$1,497 offer**, not on the Happy Belly
-Essentials Club offer, which is the likely reason it was hard to find.
+`https://app.kajabi.com/admin/cofounder/deep_link?offer_id=2149705539&resource_type=Offer&view=settings`
 
-Unpublishing the Essentials Club would also clear it, but that offer is a live
-$9.97/month subscription and may have subscribers, so that is the wrong lever.
+Two things made this hard to find, worth remembering:
+
+1. It is configured on the **offer whose checkout displays it**, the $1,497,
+   not on the Happy Belly Essentials Club offer being bumped
+2. It is under Settings, not under Checkout, even though it is a checkout
+   element
+
+Unpublishing the Essentials Club would also have cleared it, but that offer is
+a live $9.97/month subscription that may have subscribers, so that was the
+wrong lever.
