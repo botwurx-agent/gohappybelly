@@ -281,3 +281,29 @@ Two things made this hard to find, worth remembering:
 Unpublishing the Essentials Club would also have cleared it, but that offer is
 a live $9.97/month subscription that may have subscribers, so that was the
 wrong lever.
+
+## The empty image slot on the $1,497 checkout, 2026-10-22
+
+Steve spotted an empty image placeholder at the top of the left column and
+asked whether it should match the photo on the right. They are two separate
+things:
+
+| | What it is | Set where |
+|---|---|---|
+| **Right**, the small photo in the order summary card | the **offer's own image**, rendered by Kajabi's checkout block | the offer record, not the theme |
+| **Left**, the empty placeholder | theme image block `1744906803654_0`, with `image: ""` | theme `2167629152` |
+
+The left one is a leftover slot someone added and never filled. Hidden rather
+than filled, for two reasons: a second photo of Alina six inches from the first
+is noise, and nothing else in the media library belongs at the top of a
+checkout. Reversible by setting `hidden` back to `"false"` on that block.
+
+**Likely only visible in the builder.** The pale blue box with an image icon is
+Kajabi's editor affordance for an empty image block. An Encore image block with
+an empty `image` setting normally renders nothing on the live page. Not
+confirmed, since the live page cannot be loaded from here. Open
+`/offers/442eXHU6/checkout` in a private window to see what a buyer actually
+gets.
+
+If that slot is ever wanted, the thing most worth putting there on a $1,497
+page is a client testimonial rather than another photograph.
