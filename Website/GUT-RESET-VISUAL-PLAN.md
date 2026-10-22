@@ -231,3 +231,60 @@ each outcome, which was three separate paragraphs.
   `#C07A5A` for the one thing that matters most on the page.
 - **Verified by search, not by eye.** The agent cannot open a members-only page,
   so these are confirmed present in the body rather than confirmed to render.
+
+## All ten graphics built, 2026-10-22
+
+| # | Graphic | Lesson |
+|---|---|---|
+| 1 | The shape of the course | How This Course Works |
+| 2 | Twelve days, four foods + three verdicts | How Reintroduction Works |
+| 3 | Your starting scores | Where You Are Starting From |
+| 4 | The seven types | Bowel Movements: What Is Normal |
+| 5 | The five, at a glance | The 5 Gut Patterns |
+| 6 | The five tests, and what each answers | Testing, And When It Is Worth It |
+| 7 | How a filled row looks, plus blank rows | Your Reintroduction Tracker |
+| 8 | Supplement tables, palette corrected | The Supplement Reference |
+| 9 | Your plant count | Week 4: Widen Your Range |
+| 10 | Four weeks, not four days | Five Foods That Support The Gut Barrier |
+
+### Three of these were already tables, just not styled ones
+
+**Where You Are Starting From**, **Bowel Movements** and **Testing** each already
+had a `<table>` with no attributes at all, rendering as raw browser default
+against a carefully styled course. So the graphic work there was styling what
+was already there, not inventing something new.
+
+The stool table gained something the prose could not do: the normal band, three
+to five, is shaded, and **four is marked as the target**. The lesson said so in
+a sentence afterwards; now the table says it.
+
+**Testing** gained a "the broadest" marker on the GI-MAP row, so a reader
+choosing between five tests can see where to start.
+
+**Bowel Movements** also got its safety section pulled out of a prose paragraph
+into a bordered, terracotta-marked block. A list of reasons to see a doctor
+should not be the fourth sentence of a paragraph.
+
+### A palette leak that was bigger than the mini course
+
+The agent fixed `#DDD8CE` and `#F5F1EA`, the email system's colors, in the mini
+course this morning and reported them gone. **That sweep was scoped to the mini
+course**, so the Gut Reset was never checked. Seven lessons here carried them.
+
+Two are now fixed as part of the graphics work: **Your Reintroduction Tracker**
+and **The Supplement Reference**.
+
+**Five remain**, all in Your Pattern, In Detail:
+
+- Working With The Reactive Gut
+- Working With The Bloated And Backed-Up Gut
+- Working With The Sugar-Driven Gut
+- Working With The Underactive Gut
+- Working With The Wired-And-Tired Gut
+
+These are pure palette corrections, `#DDD8CE` to `#C8DDD0` and `#F5F1EA` to
+`#EFF7F1`, with no content change. They are also the five pages the pattern
+portraits will land on, so they are worth doing in the same pass as those.
+
+**The rule, again:** search the whole site, not the course in front of you. This
+is the second time the same scoping mistake has produced a false all-clear.
