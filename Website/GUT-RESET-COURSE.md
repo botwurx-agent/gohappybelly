@@ -443,3 +443,22 @@ diagnostic language, published and in position.
 The mini course had a full gut-liver module while the $147 course had none. Both
 now cover it, from their own angle: Gut Foundations explains the connection,
 the Gut Reset explains why daily clearance is the thing to act on.
+
+---
+
+## Tier 1 images placed, 2026-10-22
+
+Fourteen cut-paper images, 29 placements, across 19 lessons. Full map in
+`GUT-RESET-VISUAL-PLAN.md`.
+
+While placing the five pattern portraits, the five pattern pages in Your
+Pattern, In Detail also got their palette corrected: `#DDD8CE` and `#F5F1EA`
+(email system) to `#C8DDD0` and `#EFF7F1`, and `#44564E` on the affiliate
+disclosure line (neither system) to `#6A8278`. Those were the last email colors
+anywhere in the course content; a site-wide search now returns zero.
+
+The Supplement Reference had to be resent whole to take its hero, since
+`update_course_content` replaces bodies rather than patching them. It carries
+clinical doses, so it was re-fetched and checked line by line afterwards. All
+fifteen dose ranges and every caution are byte-identical to what was there
+before.

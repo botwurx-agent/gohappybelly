@@ -341,3 +341,75 @@ Wired-and-Tired.
 **Those same five pages still carry the email palette** (`#DDD8CE` borders,
 `#F5F1EA` backgrounds) from before the website system was applied. Fix the
 palette in the same edit that places the portrait, not as a separate pass.
+
+---
+
+## Tier 1 placed: 29 placements, 2026-10-22
+
+Steve uploaded all fourteen. Every one is placed and verified by searching the
+lesson bodies for its filename, so the counts below are measured rather than
+assumed.
+
+### The nine module heroes, one placement each
+
+| Image | Lesson | Where in the body |
+|---|---|---|
+| start-here | `2174935211` Welcome: Start Here | after the garden paragraph |
+| find-your-pattern | `2178659244` What We Are Actually Doing | above the list of five patterns |
+| pattern-in-detail | `2178659456` The 5 Gut Patterns | top |
+| week1 | `2178659915` Week 1 | above "What everyone does this week" |
+| week2 | `2178660145` Week 2 | above "What everyone does this week" |
+| week3 | `2178660405` Week 3 | above "What everyone does this week" |
+| week4 | `2178660521` Week 4 | above "What everyone does this week" |
+| reintroduction | `2201293986` How Reintroduction Works | top |
+| reference-shelf | `2201292374` The Supplement Reference | top |
+
+**Six of the nine module openers are video lessons**, so on those the hero sits
+a paragraph or two into the body rather than directly under the player. Two
+full-width 16:9 blocks stacked with nothing between them is a heavy page, and a
+break before the first subheading reads as a chapter divider instead.
+
+**The Reference Shelf has no opening lesson**, so its hero went on The
+Supplement Reference, the one general reference in a module that is otherwise
+eleven per-pattern documents. The image (jars, books, folded cloth) fits it. If
+that module ever gets a proper opening lesson, the hero moves there.
+
+### The five pattern portraits, four placements each
+
+| Surface | Size |
+|---|---|
+| The 5 Gut Patterns, `2178659456`, above each of the five sections | full width |
+| the pattern page in Your Pattern, In Detail | full width |
+| the pattern's Shopping List | 340px, centered |
+| the pattern's Three Days Of Meals | 340px, centered |
+
+The shopping lists and meal plans are short utility pages, so the portrait is a
+**340px identity badge** there rather than a hero. The point is recognition: in
+a module of eleven lessons where five near-identical titles sit next to each
+other, the picture tells a member she is on her own page before she reads the
+heading.
+
+Putting all five portraits into The 5 Gut Patterns was not in the original plan
+and turned out to be the best single use of them. That lesson is five sections
+of parallel prose, and the images now mark where each one starts.
+
+### Palette fixed in the same pass
+
+The five pattern pages carried `#DDD8CE` borders and `#F5F1EA` backgrounds from
+the email system. Both corrected to `#C8DDD0` and `#EFF7F1`.
+
+They also carried `#44564E` on the affiliate disclosure line, which is in
+neither system. The website system puts legal and secondary copy at `#6A8278`,
+so that is what it is now. It appeared on exactly those five pages and nowhere
+else.
+
+Verified clean site-wide afterwards: `#DDD8CE`, `#F5F1EA`, `#44564E`, `#1B2D4F`
+and `#FAF6F0` all return zero results across every course on the site.
+
+### Not placed
+
+The four **"This Week For Your Pattern"** lessons each cover all five patterns
+in one page, so no single portrait fits. Five badges in each of four lessons
+would be twenty more placements of the same five images and would make those
+pages heavy. Left alone deliberately. The same is true of **Reintroducing For
+Your Pattern**.
