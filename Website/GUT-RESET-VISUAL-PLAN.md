@@ -487,3 +487,71 @@ per food.
 Two of these land on video lessons: Pre-Recorded Q&A With Alina and nothing
 else. The rule already set in the spine pass applies: on a video lesson the
 image sits a paragraph or two into the body, never directly under the player.
+
+---
+
+## Tier 3 placed, 2026-10-22: the course is complete at 62 of 62
+
+All 38 uploaded and placed, one image per lesson, at the top of the body.
+Verified by searching every lesson body in the course for an image URL: 62
+results against 62 published lessons.
+
+Running total across all three passes: **52 images, 67 placements, 62 lessons.**
+
+| Pass | Images | Placements |
+|---|---|---|
+| Tier 2, information graphics | 0, built inline | 10 lessons |
+| Tier 1, the spine | 14 | 29 across 19 lessons |
+| Tier 3, lesson heroes | 38 | 38 |
+
+### One exception to the top-of-body rule
+
+**Pre-Recorded Q&A With Alina** (`2178659040`) is the only Tier 3 target that is
+a video lesson, so its image sits after the second paragraph rather than
+directly under the player, matching the rule set in the spine pass.
+
+### Markup cleaned up along the way
+
+Six lessons carried `<span style="color: #000000;">` wrappers around every
+paragraph, forcing pure black instead of the website system's `#2E4438` body
+text. Since each one had to be resent whole to take its image, the spans came
+out in the same edit:
+
+- How Your Digestive System Works
+- When Things Are Not Moving
+- When Things Are Too Loose
+- How To Ferment Your Own Vegetables
+- Giving Your Gut A Break
+- Low-Fermentation Eating
+- Practice Gratitude
+
+How To Ferment Your Own Vegetables also had a full paragraph marked up as an
+`<h3>` and an empty `<h3>&nbsp;</h3>` below it. Both corrected.
+
+`color: #000000` now appears nowhere in any published lesson. It survives in
+three **draft** lessons that are superseded and not visible to members:
+`2178659619`, `2178660203`, `2178660736`.
+
+### Flagged, not changed
+
+Four lessons read as imported generic health copy rather than Alina's voice.
+They use contractions, "veggies", "toxins build up in your system", and a
+listicle register that nothing else in the course uses:
+
+| Lesson | Id |
+|---|---|
+| How Your Digestive System Works | `2178659968` |
+| When Things Are Not Moving | `2178660503` |
+| How To Ferment Your Own Vegetables | `2178660472` |
+| Practice Gratitude | `2178660709` |
+
+Rewriting them is a content decision rather than part of placing images, so
+they were left alone. Worth a pass of their own: they are the weakest writing
+in a course that is otherwise consistently in voice, and two of them sit in
+Week 3 next to The Gut-Liver Loop, which is the strongest page in the module.
+
+How To Ferment Your Own Vegetables also contradicts the course's own repeated
+caution. Five Foods and Week 2's pattern page both say start with a spoonful
+and stop if it disagrees with you, and warn the Bloated and Backed-Up pattern
+specifically. The fermenting lesson ends on "your gut will thank you" with no
+caveat at all.
