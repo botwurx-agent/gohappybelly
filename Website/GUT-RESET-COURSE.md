@@ -462,3 +462,45 @@ The Supplement Reference had to be resent whole to take its hero, since
 clinical doses, so it was re-fetched and checked line by line afterwards. All
 fifteen dose ranges and every caution are byte-identical to what was there
 before.
+
+---
+
+## Fermenting lesson corrected, 2026-10-22
+
+`2178660472` **How To Ferment Your Own Vegetables**, Week 3.
+
+The page told members to eat fermented vegetables daily and closed on "your gut
+will thank you" with no caution at all. Five Foods says, in Alina's voice, "I
+say this in every lesson that touches fermented food, because it is the single
+most common way people make themselves worse while believing they are helping."
+This was a lesson that touches fermented food, and it did not, so the copy was
+making a promise the course then broke.
+
+The placement made it sharper. Fermented foods come in during Week 2, and the
+Bloated and Backed-Up pattern is told to park them until Week 4. The how-to
+sits in Week 3, so the one pattern told to avoid them right now was meeting an
+uncaveated page in the middle of that window.
+
+**Three changes.**
+
+1. **The caution, added above the method**, in the standard sage callout:
+   start with a spoonful not a serving, the headache / flushing / itching /
+   racing heart stop signal, and a direct line telling the Bloated and
+   Backed-Up pattern their Week 2 instruction still holds. They can make a jar
+   now and leave the eating until Week 4.
+2. **Deleted the "Benefits of Fermented Vegetables for Gut Health" listicle.**
+   Five generic bullets claiming improved digestion, boosted immunity and
+   better absorption. Weakest writing in the course, and redundant: Probiotics
+   And Prebiotics covers it properly in Week 2 including the pattern
+   exception. Replaced with one line pointing back there.
+3. **Rewrote the opening and closing**, the two places the register slipped.
+
+**The method was left alone on the substance.** 2% salt by weight, the brine
+ratio, 65 to 75F, keeping everything under the brine to prevent mold, and
+loosening the lid to let gas escape are all correct. Only the register was
+touched: "veggies" to "vegetables" throughout, a handful of contractions
+expanded, one exclamation mark removed.
+
+Three of the four lessons flagged as imported generic copy remain:
+`2178659968`, `2178660503`, `2178660709`. Those are voice problems rather than
+safety ones.
