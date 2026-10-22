@@ -67,11 +67,17 @@ Kajabi products that already exist and are not attached:
 | Meal and supplement plans | offline | n/a |
 | Guthub access | external | n/a |
 | **Gut Reset Course access** | product `2148514926` | **no** |
-| **Private community access** | AccessGroup `2148816202` | **no** |
+| Private community access | **a Facebook group**, not Kajabi | n/a |
 
-AccessGroup `2148816202` is titled "Happier Belly Gut Reset Program", its
-description is "Group Chat", it was created 2024-11-20, and it is attached to
-**no offers at all**. Built, then never wired up.
+**Corrected by Steve, 2026-10-22.** The agent initially read AccessGroup
+`2148816202` ("Happier Belly Gut Reset Program", description "Group Chat") as
+the community deliverable and recommended attaching it. That was wrong. The
+private group in this bundle is a **Facebook group**, and the buyer is given
+access to it outside Kajabi.
+
+So only one product needed attaching, not two. AccessGroup `2148816202` is
+genuinely orphaned, attached to no offers, and is not part of this or any
+current flow. Leave it alone or retire it; do not wire it into an offer.
 
 ## What the flow looks like now
 
@@ -92,13 +98,7 @@ description is "Group Chat", it was created 2024-11-20, and it is attached to
 
 ## Outstanding
 
-**Steve, in the Kajabi UI (the MCP cannot do this):**
-
-1. Attach Gut Reset Course `2148514926` and AccessGroup `2148816202` to offer
-   `2149705539`. Two clicks on the existing offer, which keeps the live
-   checkout URL `/offers/442eXHU6/checkout` intact.
-2. Decide on the $2,497 and $4,497. They are live and purchasable today and
-   deliver nothing. Unpublishing reverts them to draft and is reversible.
+Both resolved on 2026-10-22. See the Resolved section at the end.
 
 **Open question before anything else is built:**
 
@@ -132,3 +132,40 @@ Better order: fix the delivery gap, rebuild the $147 thank-you page to get her
 into the course and book the call, and only then consider a paid upsell. If one
 is wanted, the $1,297 already exists and gives a real reason for the lower
 price rather than an arbitrary discount.
+
+
+---
+
+## Resolved, 2026-10-22
+
+**$1,497, offer `2149705539`.** Steve attached Gut Reset Course `2148514926` in
+the Kajabi UI. Verified: the offer is published, carries the course, and keeps
+its live checkout URL `/offers/442eXHU6/checkout`. The checkout description the
+agent wrote is live on it.
+
+Only the course needed attaching. The private group is on Facebook, so there is
+no second Kajabi product in this bundle.
+
+**$2,497 `2149705545` and $4,497 `2149705550`.** Unpublished at Steve's
+instruction, now `draft`. They were live and purchasable while delivering
+nothing. Reversible: set a `publish_at` to bring either back.
+
+## Still open
+
+1. **How does the buyer get the Facebook group link?** Nothing delivers it. The
+   thank-you page does not mention the group, and there is no welcome email.
+   The checkout description promises "access to the Gut Reset Course and to the
+   private group", so right now the second half of that is a promise with no
+   mechanism behind it. Easiest fix is a line and a link on the thank-you page,
+   which needs the group URL from Steve.
+
+2. **The welcome email.** The thank-you page says "Check your inbox for your
+   welcome email" and the site has only two automations, both for the webinar.
+   Now that a product is attached, Kajabi's own product-grant welcome email may
+   cover this. Worth a test purchase to see what actually arrives before
+   building an automation that would double up.
+
+3. **The $1,297, offer `2149874369`.** Still published, still has no products.
+   It is the discounted version of the same three-month package, so a buyer
+   there would now get less than a buyer at $1,497, who gets the course. Either
+   attach the course to it as well or unpublish it. Not raised with Steve yet.
