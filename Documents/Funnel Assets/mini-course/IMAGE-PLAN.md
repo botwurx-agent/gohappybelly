@@ -300,3 +300,34 @@ MCP cannot upload to Kajabi. The six web-sized files are in `images/web/` and in
 places them, and demotes each lesson's current framed diagram from the top of
 the page to an inline position where it supports the relevant section instead of
 leading.
+
+### The six placed, 2026-10-22
+
+All six uploaded cleanly, one copy each, no new duplicates.
+
+Each lesson now opens with its cut-paper hero, and the FDN diagram that was
+previously leading the page has dropped to where it belongs:
+
+| Lesson | Hero at top | Demoted diagram moved to |
+|---|---|---|
+| 01 Understanding Your Gut | sieve | `diagram-digestive-anatomy` now sits under "What We Mean By Your Gut", beside the one-continuous-tube paragraph it illustrates |
+| 02 Whole-Body Health | smoke alarm and toast | `diagram-gut-health-venn` moved to the *end*, after the five areas, where it works as a summary rather than an opener |
+| 05 Nutrition Foundations | laid table | `illus-intestine-with-foods` now sits under "Every Meal Is An Input" |
+| 06 The Gut-Brain Connection | two houses, one lit line | `illus-gut-brain-dark` now sits under "A Line That Runs Both Ways" |
+| 07 The Gut-Liver Connection | sink and drain | `diagram-liver-in-body` now sits under "The Part Nobody Mentions" |
+| B2 Digestion Under Pressure | untouched plate | `diagram-nervous-system-organs` now sits under "What Chronic Pressure Actually Does" |
+
+**One figure was removed, not moved.** Module 06 had `metaphor-two-way-cans`, a
+tin-can telephone. The new hero is two houses joined by a single lit line, which
+is the same idea in the house style. Running both would have made the same point
+twice on one page, so the cans came out. The asset is still in the library and
+in `images/fdn/` if it is wanted elsewhere.
+
+**Verified:** all six new URLs return 206, `two-way-cans` returns 0 results
+across the course, and a search for `hero-` returns 13 lessons, which is every
+lesson except **Who Is Teaching This**.
+
+### The course is now visually complete
+
+14 lessons. 13 open with a cut-paper hero. The fourteenth is waiting on Alina's
+photograph, which is the only image in this course the agent cannot make.
