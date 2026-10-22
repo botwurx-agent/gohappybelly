@@ -199,3 +199,12 @@ page above.
 
 The two emails are not built. They go in as a draft automation once the URLs
 land and once a test purchase shows what Kajabi already sends on its own.
+
+## Blocked inputs, as of 2026-10-22
+
+| Input | Status |
+|---|---|
+| Consultation booking URL | **Resolved.** `https://calendly.com/gohappybelly/60-minute-consultation`, now embedded on the thank-you page |
+| Lab profile URL | Waiting on Alina |
+| Facebook group URL | Waiting on Alina |
+| Intake form before the consult? | Waiting on Alina. If yes, it becomes step 2 and the rest shift down |

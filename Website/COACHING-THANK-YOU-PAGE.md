@@ -214,3 +214,42 @@ agent, so the page could not be fetched and compared. Steve should open
   Style Guide tokens, so they should, but a typo in a family name fails silently
   to a system serif.
 - The scheduler iframe still loads inside its new white card.
+
+## Scheduler swapped to Calendly, 2026-10-22
+
+The Calendly question is settled. Alina has a real **60 Minute Consultation**
+event at `calendly.com/gohappybelly/60-minute-consultation`, so this was not a
+guess after all, and code block `1726510473910` (renamed "Calendly scheduler")
+now carries the Calendly inline widget instead of the Google Calendar iframe.
+
+Embed settings chosen in Calendly's "Add to website" dialog:
+
+| Setting | Value | Reasoning |
+|---|---|---|
+| Hide Page Details | on | The page already supplies the heading and "Sixty minutes". Leaving it off stacked a second "60 Minute Consultation / 60 min" header directly under our `<h3>` |
+| Hide Cookie Banner | off | Turning it on tells Calendly the site handles consent itself, and it has no banner. No upside to taking that on |
+| Background | white (default) | The widget sits inside a white card, so the seam stays invisible. Calendly omits the param when it is the default, which is why it is absent from the URL |
+| Text | `2e4438` | Was black. Black is not in the palette and is the same thing that was stripped out of the course lessons |
+| Button & Link | `c07a5a` | Terracotta, per §3: every primary button, nothing else |
+
+These bake into the `data-url` as query parameters at copy time, so the settings
+have to be chosen **before** Copy Code. A block copied first and adjusted after
+carries none of them.
+
+**The Google Calendar scheduler is no longer on the page.** Its URL, kept here
+because nothing else now records it:
+
+```
+https://calendar.google.com/calendar/appointments/schedules/AcZssZ33z_foYnhld6LCFrykQAJQdVjPfMlRmAjKUPtnX5pZgFrxlhQYSiC7gWFUp1kn1sAKr_JzLk6y?gv=true
+```
+
+**Open, and worth closing quickly.** If that Google appointment schedule is
+still accepting bookings, two systems are now writing to the same hours of
+Alina's day with no knowledge of each other, and she will eventually be
+double-booked. Removing it from the page does not switch it off. It has to be
+turned off in Google Calendar, or Calendly has to be pointed at the same
+calendar so it reads the existing busy blocks.
+
+Also still open: if Alina keeps prep instructions in the Calendly event
+description, `hide_event_type_details=1` hides them. That copy belongs in the
+grey sub-line under the step heading instead.
