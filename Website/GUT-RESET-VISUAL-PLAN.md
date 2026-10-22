@@ -413,3 +413,77 @@ in one page, so no single portrait fits. Five badges in each of four lessons
 would be twenty more placements of the same five images and would make those
 pages heavy. Left alone deliberately. The same is true of **Reintroducing For
 Your Pattern**.
+
+---
+
+## Tier 3 generated: 38 of 38, 2026-10-22
+
+Not 39. The number in section 6 was an estimate made before the Reference
+Shelf turned out to be fully covered by the pattern portraits. 38 published
+lessons were still without an image, and all 38 now have one.
+
+Same locked style string as every image before them. Reviewed on four contact
+sheets: no text, no people, no hands, and the palette holds against the spine
+set.
+
+Files: `Website/images/gut-reset/web/` (originals in `raw/`).
+Upload bundle: `Website/images/gut-reset/gut-reset-tier3-images.zip`.
+
+| File | Module | Lesson | Lesson id | Scene |
+|---|---|---|---|---|
+| `reset-how-this-course-works.jpg` | Start Here | How This Course Works | `2201292320` | stepping stones across a stream, in sequence |
+| `reset-where-you-are-starting-from.jpg` | Start Here | Where You Are Starting From | `2178659049` | a freshly dug bed, nothing planted yet, one string line |
+| `reset-see-your-doctor.jpg` | Start Here | When To Stop And See Your Doctor | `2201292321` | a closed five-bar gate, the path continuing beyond |
+| `reset-qa-with-alina.jpg` | Start Here | Pre-Recorded Q&A With Alina | `2178659040` | two chairs turned to face each other, a teapot between |
+| `reset-questions-people-ask.jpg` | Start Here | Questions People Ask | `2178659036` | a table of mismatched teacups, mid-conversation |
+| `reset-gut-pattern-quiz.jpg` | Find Your Pattern | The Gut Pattern Quiz | `2180146833` | five identical doors, one ajar with light behind it |
+| `reset-what-your-result-means.jpg` | Find Your Pattern | What Your Result Means | `2178659257` | a lit lantern on a path at dusk, the way ahead visible |
+| `reset-testing.jpg` | Find Your Pattern | Testing, And When It Is Worth It | `2178659325` | specimen jars and a magnifying glass on a bench |
+| `reset-what-leaky-gut-means.jpg` | Week 1 | What The Reactive Gut Pattern Is | `2178659943` | torn screen mesh in close view, daylight through the holes |
+| `reset-11-signs.jpg` | Week 1 | The 11 Signs Of The Reactive Gut Pattern | `2178659964` | cracks spreading across a wall from one point |
+| `reset-how-digestion-works.jpg` | Week 1 | How Your Digestive System Works | `2178659968` | copper pipework along a wall, joints visible |
+| `reset-week1-your-pattern.jpg` | Week 1 | Week 1: This Week For Your Pattern | `2178659977` | five pots on a windowsill, a different plant in each |
+| `reset-ten-supplements.jpg` | Week 1 | Ten Supplements That Support The Gut Barrier | `2178660088` | amber bottles on a shelf, every one unlabelled |
+| `reset-named-diets.jpg` | Week 1 | The Named Diets | `2178660093` | several empty plates set out, none of them chosen |
+| `reset-stress-and-microbiome.jpg` | Week 1 | Stress And Your Gut Microbiome | `2178660098` | a kettle boiling hard, steam filling the frame |
+| `reset-five-foods.jpg` | Week 2 | Five Foods That Support The Gut Barrier | `2178660162` | five ingredients in a row on a board |
+| `reset-week2-your-pattern.jpg` | Week 2 | Week 2: This Week For Your Pattern | `2178660178` | five baskets, different produce in each |
+| `reset-bone-broth.jpg` | Week 2 | How To Make Bone Broth | `2178660245` | a stockpot simmering, ladle on the rim, vegetables beside |
+| `reset-probiotics-prebiotics.jpg` | Week 2 | Probiotics And Prebiotics | `2178660264` | a jar bubbling beside a bowl of fibrous roots |
+| `reset-apple-cider-vinegar.jpg` | Week 2 | Apple Cider Vinegar | `2201299362` | a cloudy amber bottle with the mother settled in strands |
+| `reset-collagen.jpg` | Week 2 | Collagen | `2201299363` | broth set firm into jelly, the pot still on the stove |
+| `reset-against-your-bacteria.jpg` | Week 2 | What Works Against Your Gut Bacteria | `2201299364` | one bare scorched patch in an otherwise thriving bed |
+| `reset-week3-your-pattern.jpg` | Week 3 | Week 3: This Week For Your Pattern | `2201292342` | five tools on hooks, each a different shape |
+| `reset-gut-liver-loop.jpg` | Week 3 | The Gut-Liver Loop | `2201347203` | a sink running, the trap and pipework open below |
+| `reset-bowel-movements.jpg` | Week 3 | Bowel Movements: What Is Normal | `2178660448` | a quiet bathroom in morning light, folded towel, a plant |
+| `reset-not-moving.jpg` | Week 3 | When Things Are Not Moving | `2178660503` | a water wheel stopped, leaves packed against the paddles |
+| `reset-too-loose.jpg` | Week 3 | When Things Are Too Loose | `2178660511` | a gutter overflowing in heavy rain |
+| `reset-fermenting.jpg` | Week 3 | How To Ferment Your Own Vegetables | `2178660472` | a jar of cabbage under a weight, bubbles rising |
+| `reset-stress-tiredness.jpg` | Week 3 | Stress, Tiredness And Your Gut | `2178660490` | a bed turned back, a lamp still on, first light |
+| `reset-smoothies.jpg` | Week 3 | Gut-Friendly Smoothies | `2178660451` | a blender jug of green, fruit and leaves beside it |
+| `reset-week4-your-pattern.jpg` | Week 4 | Week 4: This Week For Your Pattern | `2178660596` | five beds side by side, a different crop in each |
+| `reset-getting-outside.jpg` | Week 4 | Getting Outside, And The Dirt Question | `2201299570` | a trowel upright in turned soil, seedling trays waiting |
+| `reset-giving-your-gut-a-break.jpg` | Week 4 | Giving Your Gut A Break | `2178660605` | an empty table, one glass of water, morning light |
+| `reset-low-fermentation.jpg` | Week 4 | Low-Fermentation Eating | `2178660615` | one plain plate: rice, white fish, cooked carrot |
+| `reset-practice-gratitude.jpg` | Week 4 | Practice Gratitude | `2178660709` | a posy of garden flowers in a jam jar on a sill |
+| `reset-reintroduction-tracker.jpg` | Reintroduction | Your Reintroduction Tracker | `2201293987` | a rail of hooks, four blank tags hung, the rest empty |
+| `reset-reintroducing-your-pattern.jpg` | Reintroduction | Reintroducing For Your Pattern | `2201293988` | five iron keys on hooks, each a different shape |
+| `reset-when-you-have-finished.jpg` | Reintroduction | When You Have Finished | `2201292375` | a door open onto a bright garden, the path leading away |
+
+### Recurring motifs
+
+Each week has a **This Week For Your Pattern** lesson covering all five
+patterns in one page, and those five lessons share a deliberate motif: five of
+something, each one different. Pots, baskets, tools, beds, keys. A member who
+reaches Week 3 should recognize the shape of that page before reading it.
+
+The keys appear twice on purpose: on the module hero for The Two-Week
+Reintroduction (four keys in a row by a door) and again on Reintroducing For
+Your Pattern (five keys on hooks). Same idea, one per pattern rather than one
+per food.
+
+### Open question for placement
+
+Two of these land on video lessons: Pre-Recorded Q&A With Alina and nothing
+else. The rule already set in the spine pass applies: on a video lesson the
+image sits a paragraph or two into the body, never directly under the player.
