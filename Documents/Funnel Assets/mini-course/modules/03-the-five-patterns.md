@@ -117,7 +117,9 @@ Everything in the rest of this course works better once you know which one you
 are in, because you will stop applying general advice generally and start
 noticing which parts apply to you.
 
-[CTA placeholder: Take the quiz. See funnel note below.]
+[[CTA]] Take the quiz: What's Your Gut Pattern? | https://alina-mcrvo6le.scoreapp.com
+Twelve questions, about three minutes. Write your result down before you carry on,
+because the rest of this course refers back to it.
 
 ---
 

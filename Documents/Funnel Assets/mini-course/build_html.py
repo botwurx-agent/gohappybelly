@@ -2,8 +2,9 @@ import re, os, glob, json, html as H
 
 SAGE = 'border-left:3px solid #7AAE86; background:#EAF5EC; padding:16px 20px; margin:22px 0;'
 REFL = 'border:1px solid #C8DDD0; background:#F8FAF8; padding:18px 22px; margin:26px 0;'
-TD   = 'border:1px solid #DDD8CE; padding:10px 12px; vertical-align:top;'
-TH   = 'border:1px solid #DDD8CE; background:#F5F1EA; padding:10px 12px; text-align:left; font-weight:bold; vertical-align:top;'
+TD   = 'border:1px solid #C8DDD0; padding:10px 12px; vertical-align:top;'
+TH   = 'border:1px solid #C8DDD0; background:#EFF7F1; padding:10px 12px; text-align:left; font-weight:bold; vertical-align:top;'
+CTA  = 'border-left:3px solid #C07A5A; background:#F8FAF8; padding:18px 22px; margin:24px 0;'
 
 def inline(t):
     t = H.escape(t, quote=False)
@@ -42,6 +43,10 @@ def blocks(md):
         # a wrapped list item continues with leading whitespace; keep it in the list
         if kind in ('ul','ol') and re.match(r'^\s+\S', s) and not re.match(r'^\s*([-*]|\d+\.) ', s):
             buf.append('\x00' + s.strip()); continue
+        if s.startswith('[[CTA]]'):
+            flush(); kind = 'cta'; buf.append(s); continue
+        if kind == 'cta':
+            buf.append(s); continue
         k = ('quote' if s.startswith('> ') or s == '>' else
              'table' if s.lstrip().startswith('|') else
              'ul'    if re.match(r'^\s*[-*] ', s) else
@@ -76,6 +81,14 @@ def render(bs):
         elif kind == 'ol':
             items = join_wraps([re.sub(r'^\s*\d+\. ', '', l) for l in lines])
             out.append('<ol>\n' + '\n'.join(f'<li>{inline(i)}</li>' for i in items) + '\n</ol>')
+        elif kind == 'cta':
+            label, url = [p.strip() for p in lines[0][len('[[CTA]]'):].split('|', 1)]
+            sub = ' '.join(l.strip() for l in lines[1:])
+            ps = ['<p style="margin:0 0 6px 0; font-size:17px;">'
+                  f'<a href="{url}" target="_blank" rel="noopener"><strong>{inline(label)}</strong></a></p>']
+            if sub:
+                ps.append(f'<p style="margin:0; font-size:14px; color:#6A8278;">{inline(sub)}</p>')
+            out.append(f'<div style="{CTA}">\n' + '\n'.join(ps) + '\n</div>')
         elif kind == 'quote':
             inner = [re.sub(r'^> ?', '', l) for l in lines]
             is_refl = any(l.strip().lower().startswith('### reflection') for l in inner)

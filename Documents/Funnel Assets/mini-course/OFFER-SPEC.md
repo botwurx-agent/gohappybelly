@@ -251,3 +251,84 @@ the locked sign-off.
 `product_body` and `product_sidebar` both carry real copy, and no other section
 holds placeholder text. The Lorem ipsum still visible under `_defaults` in the
 API response is Momentum's shipped default values, not rendered content.
+
+## Matching the website palette, 2026-10-22
+
+Steve asked for the course colors to match the website. Three separate problems
+turned up, only the first of which was the one he could see.
+
+### 1. The theme was on Momentum's defaults
+
+Momentum 7.2.0 exposes seven color and type tokens and no custom-CSS field, so
+this is settings work, not CSS. Theme `2167985090`, before and after:
+
+| Token | Was | Now | Website role |
+|---|---|---|---|
+| `heading_font_family` | blank (theme default) | Playfair Display | Headings |
+| `font_family` | blank (theme default) | DM Sans | Body |
+| `text_dark` | `#30373d` cool gray | `#2E4438` | Body text |
+| `primary_color` | blank | `#C07A5A` | Terracotta, every primary button |
+| `accent_color` | blank | `#7AAE86` | Sage, accents and links |
+| `sidebar_background` | `#fff` | `#EFF7F1` | Alt background, for banding |
+| `text_light` | `#fff` | `#fff` | unchanged |
+
+Also set `dashboard_welcome.button_color` to `primary_color`, per the theme
+skill's own advice, so the dashboard buttons track the brand instead of carrying
+a hand-set color.
+
+**One token, two website colors.** The website separates forest `#162E28`
+headings from `#2E4438` body text. Momentum has a single `text_dark`. Body text
+is the bulk of what a member reads, so `text_dark` is the body value and the two
+dashboard headings carry forest inline. Lesson-page headings therefore render at
+`#2E4438` rather than forest. That is the one knowing divergence.
+
+### 2. The email palette had leaked into the course
+
+The converter's table styles used `#F5F1EA` and the in-lesson CTA boxes used
+`#FAF6F2`. `#F5F1EA` is the **email** system's testimonial background, straight
+out of CLAUDE.md. `#FAF6F2` is a near-miss of the email system's warm cream and
+belongs to neither palette. `#DDD8CE`, the table border, was in neither either.
+
+DESIGN-SYSTEM.md opens by warning not to mix the website and email systems, and
+this is exactly that mistake, made by the agent while building the course.
+
+| Was | Now | Website role | Where |
+|---|---|---|---|
+| `#DDD8CE` | `#C8DDD0` | Border, hairlines and card borders | table cells, modules 03 and B2 |
+| `#F5F1EA` | `#EFF7F1` | Alt background | table headers, modules 03 and B2 |
+| `#FAF6F2` | `#F8FAF8` | Page background | CTA boxes, modules 03 and 08 |
+
+Fixed in `build_html.py` and pushed to the three live lessons (`2201324062`,
+`2201324067`, `2201324069`) in one `update_course_content` call with
+`lesson_body_format: "html"`, without which the HTML is re-parsed as markdown.
+
+**Verified:** all three hex strings return 0 results from `search_course_content`
+across the course; `border-collapse` still returns both table lessons; lesson 08
+re-read in full with lists, divs, `<br />` and `rel="noopener"` intact and
+nothing escaped. Every hex in the course now audits clean against the palette:
+`#C8DDD0`, `#EAF5EC`, `#7AAE86`, `#F8FAF8`, `#6A8278`, `#EFF7F1`, `#C07A5A`.
+
+### 3. The local build was stale, and nearly got pushed over the live course
+
+`html/` was a pre-fix build. The two `[CTA placeholder]` lines had been fixed by
+hand in Kajabi and never back-ported, so the local copy of module 03 still said
+`[CTA placeholder: Take the quiz...]` and module 08 still named an internal file.
+The first instinct on this task was to sed the local files and push them, which
+would have put both placeholders in front of paying customers. Caught only by
+reading the file before sending it.
+
+The fix is not a warning comment, it is making the source authoritative again:
+`build_html.py` now has a first-class CTA block, written in the markdown as
+
+```
+[[CTA]] Label | https://url
+Subcopy line.
+```
+
+and rendering the terracotta-bar box. Both placeholders in `modules/` are now
+real CTAs, module 08's sign-off moved after the reflection box to match live, and
+a rebuild reproduces what is live instead of regressing it.
+
+**Standing rule from this:** Kajabi is the source of truth for anything edited
+there by hand. Before pushing a generated file over live content, diff it against
+live. A generated directory is only as current as the last build.

@@ -88,11 +88,9 @@ reference for yours rather than for everyone.
 
 This course taught you how the system works. That one works on your system.
 
-[CTA placeholder: the $147 Gut Reset Course. Upsell page built separately, see
-OFFER-SPEC.md. This copy is the in-course version, which runs after purchase as
-well as serving as the lesson ending.]
-
-In Gut Health,<br />Alina Nazari<br />FDN-P
+[[CTA]] The Gut Reset Course, $147 | https://www.gohappybelly.com/offers/jmFpFL5m/checkout
+Four weeks built around your pattern rather than around everyone's. Shopping list,
+meal plans, the reintroduction tracker and the supplement reference for yours.
 
 ---
 
@@ -101,6 +99,8 @@ In Gut Health,<br />Alina Nazari<br />FDN-P
 > One question. Which module did you most want to skip? That reluctance is
 > usually pointing at the thing you already know you have been avoiding, and it
 > is a better guide than enthusiasm.
+
+In Gut Health,<br />Alina Nazari<br />FDN-P
 
 ---
 
