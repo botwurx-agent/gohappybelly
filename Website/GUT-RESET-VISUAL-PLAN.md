@@ -288,3 +288,56 @@ portraits will land on, so they are worth doing in the same pass as those.
 
 **The rule, again:** search the whole site, not the course in front of you. This
 is the second time the same scoping mistake has produced a false all-clear.
+
+---
+
+## Tier 1 generated: 14 of 14, 2026-10-22
+
+All fourteen spine images are generated, downloaded, resized to 1600px JPEG and
+reviewed on contact sheets. No text leaked into any of them, no people, no
+hands. Every file is new. Nothing from the $27 course is reused.
+
+Files: `Website/images/gut-reset/web/` (originals in `raw/`).
+Upload bundle: `Website/images/gut-reset/gut-reset-spine-images.zip`.
+
+### The nine module heroes
+
+| File | Module | Scene |
+|---|---|---|
+| `reset-module-start-here.jpg` | Start Here | a packed holdall, boots and a coat by a front door |
+| `reset-module-find-your-pattern.jpg` | Find Your Pattern | a five-armed fingerpost where paths split across a meadow |
+| `reset-module-pattern-in-detail.jpg` | Your Pattern, In Detail | a workbench with one set of tools laid out and chosen |
+| `reset-module-week1.jpg` | Week 1: Take The Pressure Off | a cleared kitchen counter, jars moved up to the shelf |
+| `reset-module-week2.jpg` | Week 2: Rebuild | a drystone wall partway through repair, new stone stacked beside old |
+| `reset-module-week3.jpg` | Week 3: Digestion Itself | a mantel clock with its back case open, movement showing |
+| `reset-module-week4.jpg` | Week 4: Widen Your Range | one narrow single-crop row giving way to a wide mixed bed |
+| `reset-module-reintroduction.jpg` | The Two-Week Reintroduction | a keyhole door with four keys laid out in a row |
+| `reset-module-reference-shelf.jpg` | Your Reference Shelf | a kitchen shelf of jars, books and folded cloth |
+
+### The five pattern portraits
+
+New scenes of the locked analogies, as decided above. Each one carries four to
+five surfaces: the pattern page, the shopping list, the meal plan, and the
+"This Week For Your Pattern" section in each of the four weeks.
+
+| File | Pattern | Scene, and how it differs from the $27 artwork |
+|---|---|---|
+| `reset-pattern-reactive.jpg` | The Reactive Gut | the damaged screen door seen from **inside**, looking out to an evening garden |
+| `reset-pattern-backed-up.jpg` | The Bloated and Backed-Up Gut | looking **down** the cellar stairs into standing water |
+| `reset-pattern-sugar-driven.jpg` | The Sugar-Driven Gut | the **interior** of a kitchen taken over, cupboards stripped and open |
+| `reset-pattern-underactive.jpg` | The Underactive Gut | an **overhead** close view into a cold pan on an unlit burner |
+| `reset-pattern-wired-tired.jpg` | The Wired-and-Tired Gut | the open hood from the **front**, belt visibly slack |
+
+### Placement, once Steve has uploaded
+
+Heroes go at the top of each module's opening lesson, full width, the same
+pattern already used throughout the mini course.
+
+The five portraits land first on the five pattern pages in **Your Pattern, In
+Detail**: `2178659499` Reactive, `2178659503` Bloated and Backed-Up,
+`2178659481` Sugar-Driven, `2178659504` Underactive, `2178659515`
+Wired-and-Tired.
+
+**Those same five pages still carry the email palette** (`#DDD8CE` borders,
+`#F5F1EA` backgrounds) from before the website system was applied. Fix the
+palette in the same edit that places the portrait, not as a separate pass.
