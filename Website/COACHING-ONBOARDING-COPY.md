@@ -2,10 +2,13 @@
 
 Three pieces, one sequence. Written 2026-10-22, ready to deploy.
 
-Every word below is final except the three URLs, which are marked
-`{{FACEBOOK_GROUP_URL}}`, `{{LAB_PROFILE_URL}}` and, if the consultation moves
-off Google Calendar, `{{CONSULT_BOOKING_URL}}`. Those tokens are deliberately
-unusable so nothing can ship half-finished.
+Every word below is final. Two URLs are still missing and are marked
+`{{FACEBOOK_GROUP_URL}}` and `{{LAB_PROFILE_URL}}`. Those tokens are
+deliberately unusable so nothing can ship half-finished.
+
+The consultation link is **resolved** as of 2026-10-22:
+`https://calendly.com/gohappybelly/60-minute-consultation`, now embedded on the
+thank-you page.
 
 A fourth step gets inserted everywhere if Alina has an intake form.
 
@@ -100,7 +103,7 @@ today.
 > Sixty minutes, and it is where everything starts. Bring whatever you have
 > been tracking, and anything a doctor has already told you.
 >
-> {{CONSULT_BOOKING_URL}}
+> https://calendly.com/gohappybelly/60-minute-consultation
 >
 > **2. Set up your lab profile**
 >
@@ -173,9 +176,8 @@ assume.
    Gut Reset Course is attached to the offer. If it already sends a product
    welcome, fold this content into that rather than stacking a second email on
    a $1,497 buyer.
-2. **Resolve the Calendly question.** If the initial consultation stays on the
-   existing Google Calendar scheduler, the page keeps its embed and the email
-   needs a URL for that scheduler rather than a Calendly link.
+2. ~~Resolve the Calendly question.~~ **Done 2026-10-22.** The consultation is
+   a Calendly event and the page now embeds it. The email uses the same link.
 3. **Ask about the intake form.** If one exists it becomes step 2, the lab
    profile moves to 3, the group to 4, and "three things" becomes "four
    things" in both subject lines and both openings.
