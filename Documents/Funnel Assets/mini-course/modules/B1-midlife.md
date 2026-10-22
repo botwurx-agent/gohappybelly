@@ -132,7 +132,7 @@ you with.
 
 - **Protein and fiber at every meal.** Both get harder to hit in midlife and
   both matter more
-- **Bitter foods** before meals, which prompt bile: rocket, radicchio, endive,
+- **Bitter foods** before meals, which prompt bile: arugula, radicchio, endive,
   a squeeze of lemon
 - **Strength training.** This is a digestion recommendation as much as a muscle
   one. Movement and muscle mass both affect motility and blood sugar

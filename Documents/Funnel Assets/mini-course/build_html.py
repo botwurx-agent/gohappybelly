@@ -39,6 +39,9 @@ def blocks(md):
         s = line.rstrip()
         if not s.strip():
             flush(); continue
+        # a wrapped list item continues with leading whitespace; keep it in the list
+        if kind in ('ul','ol') and re.match(r'^\s+\S', s) and not re.match(r'^\s*([-*]|\d+\.) ', s):
+            buf.append('\x00' + s.strip()); continue
         k = ('quote' if s.startswith('> ') or s == '>' else
              'table' if s.lstrip().startswith('|') else
              'ul'    if re.match(r'^\s*[-*] ', s) else
@@ -47,6 +50,15 @@ def blocks(md):
         if k != kind: flush(); kind = k
         buf.append(s)
     flush()
+    return out
+
+def join_wraps(items):
+    out = []
+    for it in items:
+        if it.startswith('\x00'):
+            if out: out[-1] = out[-1] + ' ' + it[1:]
+        else:
+            out.append(it)
     return out
 
 def render(bs):
@@ -59,10 +71,10 @@ def render(bs):
         elif kind == 'table':
             out.append(table(lines))
         elif kind == 'ul':
-            items = [re.sub(r'^\s*[-*] ', '', l) for l in lines]
+            items = join_wraps([re.sub(r'^\s*[-*] ', '', l) for l in lines])
             out.append('<ul>\n' + '\n'.join(f'<li>{inline(i)}</li>' for i in items) + '\n</ul>')
         elif kind == 'ol':
-            items = [re.sub(r'^\s*\d+\. ', '', l) for l in lines]
+            items = join_wraps([re.sub(r'^\s*\d+\. ', '', l) for l in lines])
             out.append('<ol>\n' + '\n'.join(f'<li>{inline(i)}</li>' for i in items) + '\n</ol>')
         elif kind == 'quote':
             inner = [re.sub(r'^> ?', '', l) for l in lines]

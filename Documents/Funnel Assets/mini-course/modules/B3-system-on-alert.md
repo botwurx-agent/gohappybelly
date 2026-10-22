@@ -113,7 +113,7 @@ and the way it goes wrong is predictable:
 
 **Elimination without a reintroduction plan is not an experiment. It is just a
 smaller diet.** The part that produces answers is the structured reintroduction,
-and that is the part a slide in a course cannot give you.
+and that is the part a lesson like this one cannot give you.
 
 So: if an elimination approach is right for you, it is worth doing with someone
 who will hold you to the reintroduction. That is a conversation, not a download.
