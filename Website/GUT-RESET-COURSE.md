@@ -332,3 +332,68 @@ flavour, favour, grey, amongst, learnt, optimise, whilst.
 **Rule for next time:** after writing any new customer-facing copy, run the
 spelling check as a class rather than re-checking the one word that was wrong
 last time. The word that catches you is never the word you are looking for.
+
+### Weeks 2, 3 and 4 checked against their videos, 2026-10-22
+
+Steve supplied the Week 2, 3 and 4 transcripts. Each week's published lessons
+were mapped against what Alina promises on camera.
+
+**Week 2 video:** foods to heal leaky gut, apple cider vinegar, collagen, bone
+broth, tips for reducing stress, probiotics versus prebiotics, what destroys
+good bacteria.
+
+| Promised | Status |
+|---|---|
+| Foods to support the barrier | **was the one real gap.** Rewritten and published as "Five Foods That Support The Gut Barrier" |
+| Apple cider vinegar | published |
+| Collagen | published |
+| Bone broth | published |
+| Tips for reducing stress | covered, but in Week 1 and Week 3 rather than Week 2 |
+| Probiotics versus prebiotics | published |
+| What destroys good bacteria | published, as "What Works Against Your Gut Bacteria" |
+
+**Week 3 video:** chronic digestive issues, bowel movements and what is normal,
+gut healing smoothies, fermenting vegetables, adrenal fatigue, leaky gut,
+constipation and chronic diarrhea. **Complete.** All seven are published, and
+Week 3 carries no drafts at all. It is the most finished week in the course.
+
+Worth noting: "adrenal fatigue" from the video became **Stress, Tiredness And
+Your Gut** in the written course, and the term itself appears nowhere. That is
+the right call and should stay that way. Adrenal fatigue is not a recognized
+diagnosis, and using it would put Alina in exactly the position the compliance
+rule exists to avoid. The mechanism is covered without the label.
+
+**Week 4 video:** a strong microbiome supporting probiotic growth, nature and
+eating dirt, fasting, gratitude. **Complete.** The microbiome topic is carried
+by the Week 4 lesson body itself, the 30-plants count, plus "Getting Outside,
+And The Dirt Question". Fasting is "Giving Your Gut A Break". Gratitude has its
+own lesson.
+
+### The remaining question is not a video mismatch
+
+**Week 4: Section 3/6: Support Your Liver** is still draft, and no video promises
+it, so it is not a gap in the sense the other five were. It is worth a decision
+anyway, because of an inversion it creates:
+
+**The $27 mini course has a full gut-liver module. The $147 course has no liver
+lesson at all**, only a passing mention of bile inside "How Your Digestive System
+Works". The cheaper product covers something the more expensive one does not.
+
+The draft would need the same rewrite as the other five before it could ship.
+It opens on "filtering out toxins", which is the detox framing this course
+otherwise avoids.
+
+### Draft inventory after this pass
+
+| Lesson | Why it is still draft |
+|---|---|
+| Week 4: Section 3/6: Support Your Liver | real content, awaiting Steve's decision |
+| Options For Vegetarians & Vegans | not promised by any video, vegetarian guidance is already on each pattern page |
+| Week 2: Section 4/8: Benefits Of A Collagen Supplement | superseded by the published collagen lesson |
+| Week 2: Section 6/8: Tips For Reducing Stress | superseded, body already a marker |
+| Week 2: Section 8/8: What Destroys Good Bacteria | superseded, emptied |
+| Week 4: Your Reintroduction Tracker | duplicate of the published one |
+| Section 1/2: Shopping List | superseded by five per-pattern lists |
+| Section 2/2: Advanced Goal Weight Calculator | dropped deliberately |
+
+Nothing in that list is a hole in what a buyer was promised.
