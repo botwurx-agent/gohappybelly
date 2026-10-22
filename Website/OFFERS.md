@@ -165,7 +165,57 @@ nothing. Reversible: set a `publish_at` to bring either back.
    cover this. Worth a test purchase to see what actually arrives before
    building an automation that would double up.
 
-3. **The $1,297, offer `2149874369`.** Still published, still has no products.
-   It is the discounted version of the same three-month package, so a buyer
-   there would now get less than a buyer at $1,497, who gets the course. Either
-   attach the course to it as well or unpublish it. Not raised with Steve yet.
+3. **The $1,297, offer `2149874369`.** Unpublished at Steve's instruction,
+   now `draft`. The only live coaching offer is the $1,497.
+
+
+---
+
+## The order bump on the $1,497 checkout, 2026-10-22
+
+Steve: a "Happy Belly Essentials Club" offer at $9.97/month shows up under
+**ADD TO YOUR PURCHASE** on the $1,497 checkout, and he could not find where to
+remove it.
+
+**It is a Kajabi order bump, and the MCP cannot see or remove it.** Confirmed by
+elimination:
+
+- `get_offer` on the $1,497 (`2149705539`) returns no bump field
+- `get_offer` on the Essentials Club (`2149750878`) returns no bump field
+- The checkout theme `2167629152` has no bump section. Its sections are Hero,
+  `offer_embedded_checkout`, header, footer, exit pop, two step, and the
+  checkout section's settings cover only button color, borders, column width,
+  tracking code and mobile order
+
+So it is offer-level configuration that the commerce toolset does not expose.
+In the Kajabi admin it lives on the checkout settings of the offer whose
+checkout displays it:
+
+`https://app.kajabi.com/admin/cofounder/deep_link?offer_id=2149705539&resource_type=Offer&view=checkout`
+
+## Problems found in the checkout copy while looking
+
+The left column of that page is a theme Text block
+(`1746107473790` in theme `2167629152`), not the offer description. It carries
+its own "What You Will Get" list, and it has three issues:
+
+1. **It calls a one-time payment a subscription.** The offer is
+   `price_type: one_time`, a single $1,497 charge. The copy says "This is a 3
+   month subsription", with that typo, and then "You can cancel anytime within
+   your account". There is nothing to cancel on a one-time charge.
+2. **It contradicts itself.** Non-refundable and cancel anytime in the same
+   paragraph. On a $1,497 purchase that is a dispute risk, not just untidy.
+3. It promises "3 Month Access To The Happier Belly Gut Reset Course". Whether
+   the course grant is actually time-limited to three months depends on the
+   access duration set when the product was attached, which the MCP cannot read.
+
+## Open question on the description the agent wrote
+
+The checkout section has `sync_checkout_block_to_offer: false`, and the page
+already carries its own list in the theme block above. Where the offer
+description renders on this custom Encore checkout, if at all, is not visible
+from the API. If it does render, it now duplicates the theme block's list.
+
+Resolve by looking at the live preview before changing anything. If the
+description is redundant, the better fix is to correct the theme block and
+clear the description rather than keep both.
