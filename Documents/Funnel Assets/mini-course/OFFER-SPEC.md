@@ -332,3 +332,46 @@ a rebuild reproduces what is live instead of regressing it.
 **Standing rule from this:** Kajabi is the source of truth for anything edited
 there by hand. Before pushing a generated file over live content, diff it against
 live. A generated directory is only as current as the last build.
+
+### Correction: `primary_color` is the banner fill, not the button color
+
+Steve reloaded and the welcome banner was a full-bleed terracotta billboard.
+That was this agent's error, made within an hour of writing the palette note
+above.
+
+The reasoning that produced it: DESIGN-SYSTEM.md says terracotta `#C07A5A` is
+"Every primary button. Nothing else," so `primary_color` was set to terracotta on
+the assumption that a token called "primary color" drives buttons. In Momentum it
+does not. Reading the render back:
+
+| Element | Takes |
+|---|---|
+| Welcome banner background | `primary_color` |
+| Banner heading, "0% COMPLETE" | `text_dark` |
+| "Let's Start" button fill | a dark tone, not `primary_color` |
+| "Let's Start" button text | `primary_color` |
+
+So `primary_color` is a large surface fill with a small text role, which is the
+opposite of terracotta's job in the website system, and setting it to terracotta
+broke the one rule that color has.
+
+It also means **the banner has to stay light.** The heading on it is `text_dark`
+(`#2E4438`), fixed, with no contrast computation, so a forest banner would put
+dark green on dark green.
+
+`primary_color` is now `#E4F0E7`, the website's Deep background token: a pale
+sage band, dark green heading, and pale text on the dark button. A step deeper
+than the `#EFF7F1` sidebar so the two read as separate surfaces.
+
+**What this costs.** Momentum cannot give a terracotta button without a
+terracotta banner, because `button_color` only offers `default_color`,
+`primary_color` or `sidebar_color` and the first is unknown. So the dashboard
+button is dark green rather than terracotta. Forest is a legitimate website color
+for a dark element, so this is a fair trade, but it is a divergence from "every
+primary button is terracotta" and it is here on purpose.
+
+**The lesson, and it is the same one as the sidebar and the body block.** The
+token name was read as a description of its job and never checked against a
+render. A theme token's name is a label, not a specification. Where the rendered
+page cannot be opened, say the colors are unverified rather than reporting them
+as matching.
