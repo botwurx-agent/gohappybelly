@@ -225,3 +225,29 @@ worth a decision rather than a shrug.
 **Steve has to upload them.** `add_media` returns an uploader link for a human;
 the MCP cannot upload files. Once they are in the library the agent can place
 them into the lesson bodies by URL.
+
+## The second Lorem ipsum, 2026-10-22
+
+Momentum ships placeholder Latin in **two** adjacent blocks, not one. The agent
+fixed `product_sidebar` (block `1544746523002`), reported the sidebar fixed, and
+never looked at `product_body` (block `1544746514938`) sitting right beside it
+in the same theme response. It was the largest block of text on the dashboard.
+Steve caught it with a screenshot.
+
+Same failure class as the theme, the images and the fortnight sweep: a narrow
+check reported as a broad one. The fix each time is to read the whole surface,
+not the part that prompted the question. For a Kajabi theme that means
+`get_theme_content` with `full_settings: true` and a read of **every** section's
+blocks before saying the placeholder copy is gone.
+
+`product_body` now holds the dashboard welcome: what is on the page, what order
+to work the eight foundations in, that module three is where the quiz sits and
+everything after it reads differently once you know your pattern, that the
+end-of-lesson questions are the part worth not skipping, that the three bonus
+modules are read-if-they-apply, that it is self-paced, the support address, and
+the locked sign-off.
+
+**Verified after the write.** Re-read all six sections on theme `2167985090`:
+`product_body` and `product_sidebar` both carry real copy, and no other section
+holds placeholder text. The Lorem ipsum still visible under `_defaults` in the
+API response is Momentum's shipped default values, not rendered content.
