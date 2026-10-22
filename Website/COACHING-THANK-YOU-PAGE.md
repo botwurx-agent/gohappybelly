@@ -253,3 +253,45 @@ calendar so it reads the existing busy blocks.
 Also still open: if Alina keeps prep instructions in the Calendly event
 description, `hide_event_type_details=1` hides them. That copy belongs in the
 grey sub-line under the step heading instead.
+
+## Private group added, 2026-10-22
+
+`https://www.facebook.com/groups/gohappybelly/` is live on the page as block
+`1761100000004`, sitting between the scheduler and the inbox note: sage eyebrow,
+`<h3>`, a 15px muted line, and a terracotta button that opens in a new tab.
+
+**It is not "Step 03", and that is deliberate.** Alina's view is that the group
+goes to anybody who buys anything, which makes it a standing thing every
+customer gets rather than a rung in this program's onboarding. So its eyebrow
+reads "Your community", a category label, not a position in a sequence. The two
+things that genuinely gate something, the consultation and the lab profile, keep
+the ordinals. That also means the lab profile slots in as "Second step" when its
+URL lands without renumbering anything below it.
+
+The copy says plainly that it is a Facebook group and needs a Facebook account.
+Some buyers do not have one and will not want one, and it is cheaper to say so
+here than to field the support email.
+
+The inbox note shrank accordingly: "the short setup steps that come next"
+became "the one setup step left", since the group is no longer waiting in the
+email.
+
+Buttons now pick up §3 (uppercase, `0.13em`, 12px, 14/34 padding) from a `.btn`
+rule in `settings.css`. Like the `#section-header` rule, that selector is a
+reasoned guess at Encore's markup and is unverified until someone opens the page.
+
+### Where else the group link has to go
+
+Alina's decision reaches past this page. Every surface a buyer lands on after
+paying needs it, and right now only this one has it:
+
+| Surface | Offer | State |
+|---|---|---|
+| Coaching thank-you page `2150005925` | $1,497 `2149705539` | **Done** |
+| Course thank-you page `2150005720` | $147 `2149370663` | Missing. This is the one with live buyers |
+| Happy Belly Essentials Club | $9.97/mo `2149750878` | Missing, thank-you page not yet identified |
+| Gut Foundations | $27 `2151464245` | Still draft. Add before it is published |
+
+The $147 page is likely the same seeded Encore template this one was, so it
+probably wants the same revamp rather than a link dropped into off-palette
+chrome. Worth confirming before deciding how much to spend on it.

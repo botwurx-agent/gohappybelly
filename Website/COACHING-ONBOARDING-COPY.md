@@ -3,12 +3,13 @@
 Three pieces, one sequence. Written 2026-10-22, ready to deploy.
 
 Every word below is final. Two URLs are still missing and are marked
-`{{FACEBOOK_GROUP_URL}}` and `{{LAB_PROFILE_URL}}`. Those tokens are
+`https://www.facebook.com/groups/gohappybelly/` and `{{LAB_PROFILE_URL}}`. Those tokens are
 deliberately unusable so nothing can ship half-finished.
 
-The consultation link is **resolved** as of 2026-10-22:
+Resolved 2026-10-22: the consultation is
 `https://calendly.com/gohappybelly/60-minute-consultation`, now embedded on the
-thank-you page.
+thank-you page, and the group is
+`https://www.facebook.com/groups/gohappybelly/`, now live on it.
 
 A fourth step gets inserted everywhere if Alina has an intake form.
 
@@ -69,7 +70,7 @@ the support line and the confetti all stay.
 > This is where you can ask things between calls, and see what other women in
 > the program are working through.
 >
-> → `{{FACEBOOK_GROUP_URL}}`
+> → `https://www.facebook.com/groups/gohappybelly/`
 >
 > ---
 >
@@ -122,7 +123,7 @@ today.
 > Ask things between our calls, and see what other women in the program are
 > working through.
 >
-> {{FACEBOOK_GROUP_URL}}
+> https://www.facebook.com/groups/gohappybelly/
 >
 > That is everything for now. Your Gut Reset Course access is already in your
 > account, and you are welcome to start reading, though nothing in it needs
@@ -208,5 +209,5 @@ land and once a test purchase shows what Kajabi already sends on its own.
 |---|---|
 | Consultation booking URL | **Resolved.** `https://calendly.com/gohappybelly/60-minute-consultation`, now embedded on the thank-you page |
 | Lab profile URL | Waiting on Alina |
-| Facebook group URL | Waiting on Alina |
+| Facebook group URL | **Resolved.** `https://www.facebook.com/groups/gohappybelly/`, live on the thank-you page |
 | Intake form before the consult? | Waiting on Alina. If yes, it becomes step 2 and the rest shift down |
