@@ -397,3 +397,49 @@ otherwise avoids.
 | Section 2/2: Advanced Goal Weight Calculator | dropped deliberately |
 
 Nothing in that list is a hole in what a buyer was promised.
+
+### The liver lesson rewritten and moved to Week 3, 2026-10-22
+
+Steve left the placement to the agent. It went to **Week 3: Digestion Itself**,
+at position 2, directly after the pattern page and ahead of the three lessons on
+what comes out.
+
+**Why Week 3 and not Week 4.** Week 4 is about widening range, time outdoors,
+fasting and gratitude; the liver belongs to none of those. Week 3 already owns
+clearance, with "Bowel Movements: What Is Normal", "When Things Are Not Moving"
+and "When Things Are Too Loose". The liver story is the missing reason behind
+all three: the gut is the liver's exit route, so a skipped day is not only a
+comfort problem. Placing it ahead of those three makes them land differently.
+
+**The API cannot move a lesson between modules.** Addressing lesson
+`2178660602` under a different module id returns "Record not found". So the new
+lesson was created in Week 3 (`2201347203`, published) and the Week 4 original
+retitled `[Superseded]` and left in draft. Steve can delete it; MCP cannot.
+
+**Why the original could not be reused.** It was built on the detox framing this
+course rejects: "filtering out toxins", dandelion to "flush out toxins", lemon
+water to "flush out toxins", microgreen chlorophyll "cleansing the liver", milk
+thistle to "repair liver cells".
+
+The replacement takes the opposite position, and says so out loud: the liver is
+the thing that does the detoxing, it is not clogged, and the useful question is
+whether its exit route is open. It then goes through milk thistle, dandelion,
+lemon water and juice cleanses one by one and says what each actually does,
+which is mostly "it is a bitter, and bitters prompt bile".
+
+**It also contradicted the course.** The original told every reader to eat garlic
+and cruciferous vegetables. Both are among the first foods the Bloated and
+Backed-Up pattern is asked to ease off in Week 1, because they ferment readily.
+The replacement carries that caveat explicitly and says the pattern page takes
+precedence.
+
+Smaller: the original heading promised "10 Natural Ways" and listed twelve.
+
+**Verified:** no em dashes, US spellings throughout, no banned vocabulary, no
+diagnostic language, published and in position.
+
+### The $27 / $147 liver inversion is closed
+
+The mini course had a full gut-liver module while the $147 course had none. Both
+now cover it, from their own angle: Gut Foundations explains the connection,
+the Gut Reset explains why daily clearance is the thing to act on.
