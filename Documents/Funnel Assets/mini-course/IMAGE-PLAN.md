@@ -269,3 +269,34 @@ About 20 FDN images remain unplaced, among them `illus-happy-sad-gut`,
 `metaphor-detective`, `metaphor-blueprint-gears`, `icons-allergens`,
 `food-buddha-bowl`, `food-produce-flatlay` and the decorative microbe set. They
 are in the library and in `images/fdn/` if a second pass wants them.
+
+---
+
+## The six remaining heroes, 2026-10-22
+
+Six lessons were opening with a framed FDN diagram rather than a cut-paper hero.
+All six now have one, generated against the same locked style string so the set
+stays consistent.
+
+Where the lesson already had its own analogy, that was drawn rather than
+inventing a new one.
+
+| Lesson | Hero | Why this subject |
+|---|---|---|
+| 01 Understanding Your Gut | `hero-01-sieve` | a fine sieve over a bowl, grain passing through and larger pieces staying behind. The selective barrier, in a vessel rather than a wall, so it does not repeat the screen door |
+| 02 Whole-Body Health | `hero-02-smoke-alarm-toast` | **the lesson's own analogy.** Toast in a toaster with a smoke alarm above it. Nothing is burning down |
+| 05 Nutrition Foundations | `hero-05-laid-table` | an overhead table laid with a composed plate, a jar of ferment, berries, nuts and vegetables. Variety is the lesson's point |
+| 06 The Gut-Brain Connection | `hero-06-two-houses-lit-line` | two houses on a hillside joined by one taut line of lights, lit at both ends. A line that runs both ways |
+| 07 The Gut-Liver Connection | `hero-07-sink-and-drain` | **the lesson's own analogy.** A sink with the tap running and the water draining freely. The liver is the sink, the gut is the drain |
+| B2 Digestion Under Pressure | `hero-B2-untouched-plate` | a chair pushed back from an untouched meal in a still room. Eating interrupted, which is the whole module |
+
+Every lesson in the course now opens with a cut-paper image except **Who Is
+Teaching This**, which is waiting on Alina's photograph.
+
+### Still blocked on upload
+
+MCP cannot upload to Kajabi. The six web-sized files are in `images/web/` and in
+`gut-foundations-heroes-2.zip`. Once they are in the media library the agent
+places them, and demotes each lesson's current framed diagram from the top of
+the page to an inline position where it supports the relevant section instead of
+leading.
