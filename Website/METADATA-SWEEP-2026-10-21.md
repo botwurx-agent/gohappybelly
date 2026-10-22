@@ -208,3 +208,57 @@ That is also why they show up on a page whose own record is empty.
 
 **Steve has to paste this one in.** Replacement text is in the main findings
 above; the rewrite is below.
+
+
+---
+
+# 2026-10-22: the sweep was wrong twice, and here is the actual surface list
+
+The "0 results for fortnight across every course on the site" claim from
+yesterday was true and useless. `search_course_content` searches **lesson
+bodies**. That is one surface out of four.
+
+Steve asked an unrelated question about course themes. Reading the Gut Reset
+theme to answer it turned up "The Reintroduction Fortnight" in the dashboard
+body, which the sweep had never looked at. Checking the live pages then turned
+up three more on the sales page.
+
+## Where the word actually was
+
+| Surface | Count | How to search it |
+|---|---|---|
+| Lesson titles and module titles | 2 | `get_course` |
+| Course description | 1 | `get_course` |
+| **Lesson bodies** | 14 | `search_course_content` ← the only one the sweep used |
+| **Course theme content** (dashboard body) | 1 | `get_theme_content` on the course's `active_theme_id` |
+| **Landing page theme content** (sales page) | 3 | `get_theme_content` per page theme, or grep the rendered page |
+
+**21 instances across 5 surfaces.** The sweep reported 2, then 16, then claimed
+zero. All three numbers were wrong, each because the search covered fewer
+surfaces than the claim did.
+
+## The rule this gives
+
+**Name the surface in the claim.** "Zero across every course on the site" was a
+claim about the whole property made from a tool that reads one table. The honest
+version was "zero in lesson bodies, which is the only place I looked."
+
+**For any site-wide content sweep, all five surfaces have to be hit:**
+
+1. `get_course` for module and lesson titles, and the course description
+2. `search_course_content` for lesson bodies
+3. `get_theme_content` on each **course** theme, for dashboard and sidebar copy
+4. `get_theme_content` on each **landing page** theme, or grep the rendered page
+5. The rendered page itself, for head metadata and anything a theme inherits
+
+Grepping the live HTML of every page covers 4 and 5 at once and is the cheapest
+backstop. It would have caught the sales page instances on day one.
+
+## Fixed 2026-10-22
+
+- Gut Reset course theme `2156349489`, `product_body` block `1604458578268`
+- Sales page theme `2167971291`: `1792100000004 > st_5` (heading and block name),
+  `1792100000005 > rs_panel > op_list` (offer panel bullet),
+  `1792100000003 > oa_1` ("only for the next couple of weeks")
+
+Verified after: 12 live pages grepped, 0 hits. All courses searched, 0 hits.
