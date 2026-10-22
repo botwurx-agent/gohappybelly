@@ -36,11 +36,14 @@ Three things the buyer has to do after paying:
 
 ## Blocked on three inputs from Steve
 
+Steve is getting these from Alina, 2026-10-22.
+
 | Needed | Status |
 |---|---|
-| The Facebook group URL | not supplied |
-| The lab-ordering site: real name and URL | Steve recalls it as "Better Yourself" or similar and is not sure |
+| The Facebook group URL | waiting on Alina |
+| The lab-ordering site: real name and URL | waiting on Alina. Steve recalls it as "Better Yourself" or similar and is not sure. The two portals that match the described behavior, buyer self-registers and the practitioner is notified, are **Rupa Health** and **Evexia Diagnostics** |
 | Whether the consultation booking is Calendly or the existing Google Calendar embed | **conflict, see below** |
+| Is there a health history or intake form to complete before the initial consultation? | **not yet asked.** Most FDN practices have one, and if Alina does, it is a fourth step and belongs in the sequence |
 
 Nothing gets built until these land. A wrong or placeholder link on a page that
 paying customers hit is worse than no link, and the lab site in particular asks
@@ -78,14 +81,26 @@ attached and it is the one most likely to be forgotten.
 Numbered, each with one link, above the fold where possible. Alina's photo and
 the support email stay.
 
-## And the welcome email
+## The welcome email carries the same three steps
 
-The page says "Check your inbox for your welcome email" and no such automation
-exists. The site has two automations and both are for the Gut Secrets webinar.
+**Decided by Steve, 2026-10-22.** The same numbered sequence goes in an
+automated welcome email as well as on the page, with whatever else the buyer
+needs to know.
 
-Once the three links are on the page, the welcome email matters less, but it
-should still exist and should repeat all three. A buyer who closes the tab has
-no other way back to the lab profile step.
+The reasoning is worth writing down, because it decides the format. The
+thank-you page is a tab she can close. The email is the thing she can find
+again at 9pm when she finally sits down to do the lab profile. So the email is
+not a courtesy note, it is the durable copy of the instructions, and it has to
+stand alone rather than say "see the page you just left".
 
-Check first what Kajabi sends on its own now that a product is attached to the
-offer, so a new automation does not double up.
+Same three steps, same order, same numbers, every link repeated in full.
+
+**Before building it, check what Kajabi already sends.** A product is now
+attached to the offer, so Kajabi may send its own product-grant welcome. A new
+automation on top of that would double-email a $1,497 buyer. Make a test
+purchase, see what arrives, then build.
+
+**How it gets built.** `create_automation` on the Kajabi MCP, triggered on
+purchase of offer `2149705539`. It always creates a **draft** and never
+publishes, so nothing sends until Steve arms it in the admin. That satisfies
+the standing rule about not sending email without explicit confirmation.
