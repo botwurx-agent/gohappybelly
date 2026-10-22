@@ -219,3 +219,56 @@ from the API. If it does render, it now duplicates the theme block's list.
 Resolve by looking at the live preview before changing anything. If the
 description is redundant, the better fix is to correct the theme block and
 clear the description rather than keep both.
+
+---
+
+## Checkout copy fixed, 2026-10-22
+
+Theme `2167629152`, section `1744906803654`, text block `1746107473790`.
+Verified after writing: both blocks present, `block_order` and section settings
+untouched.
+
+**The payment terms, which were the real problem.** Was:
+
+> Note: This is a 3 month subsription. The full $1497 is charged upon purchase
+> and is non-refundable. You will gain access immediately upon signup. You can
+> cancel anytime within your account, or by sending us an email.
+
+Now:
+
+> Note: this is a one-time payment of $1497 for the three month program. There
+> is no recurring billing and nothing to cancel. The payment is non-refundable,
+> and your access starts as soon as you sign up.
+
+The offer is `price_type: one_time`. Calling it a subscription and offering
+cancel-anytime alongside non-refundable was a contradiction a buyer could
+screenshot and dispute.
+
+**The inclusions list**, tightened to match CLAUDE.md:
+
+- Consultation durations stated: 60 minutes initial, 30 minutes monthly
+- "GI Map Stool Test At Home Kit" and "Free Lab Results Reading Included"
+  folded into one line, spelled GI-MAP, with the $497 standalone value
+- Guthub added. CLAUDE.md permits naming it among the Reset inclusions, where
+  three months of it is genuinely part of what the buyer gets
+- "Access To Private Community Support" is now "Access to the private Facebook
+  community", so she knows to expect an invite rather than a Kajabi login
+
+**Left alone deliberately:** the price heading is `#e60202`, a bright red that
+belongs to no palette in this business. Changing it is styling rather than copy
+and was not asked for. Worth a decision.
+
+## The order bump is still there
+
+**Not removed. The MCP cannot do it**, for the reasons traced above. It is
+offer-level configuration exposed nowhere in the commerce toolset, and
+`update_offer` has no field for it.
+
+Steve removes it here:
+`https://app.kajabi.com/admin/cofounder/deep_link?offer_id=2149705539&resource_type=Offer&view=checkout`
+
+Note it is configured on the **$1,497 offer**, not on the Happy Belly
+Essentials Club offer, which is the likely reason it was hard to find.
+
+Unpublishing the Essentials Club would also clear it, but that offer is a live
+$9.97/month subscription and may have subscribers, so that is the wrong lever.
