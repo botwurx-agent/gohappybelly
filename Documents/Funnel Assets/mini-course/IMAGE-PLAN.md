@@ -190,3 +190,82 @@ after which the agent can place them into lesson bodies by URL.
 **Do not reference the Higgsfield CDN URLs directly in lesson HTML.** They are
 unsigned and look stable, but they are someone else's CDN and a purge would
 break images inside a paid product.
+
+---
+
+## Placed, 2026-10-22
+
+29 images placed across 13 of the 14 lessons. Only "Who Is Teaching This" is
+without one, deliberately: it wants Alina's photograph, which Steve has.
+
+### The two treatments
+
+The salvaged FDN images are a different visual language from the generated
+cut-paper set, and no amount of wishing makes them match. Rather than hide that,
+the layout makes it deliberate:
+
+**Cut-paper images run full width**, no border, 3px radius. These are the lesson
+heroes and the five analogies. They read as part of the page.
+
+**FDN images sit inside a bordered figure**, `1px solid #C8DDD0` on `#F8FAF8`,
+centered, with a 12px caption in `#6A8278` underneath. They read as reference
+figures, which is what they are. The frame is why the mixture looks intentional
+instead of accidental.
+
+Every image carries real alt text describing what is shown, not the filename.
+
+### Per lesson
+
+| Lesson | Hero | Figures |
+|---|---|---|
+| Start Here | `hero-start-here` | — |
+| Who Is Teaching This | *(awaiting Alina's photo)* | — |
+| What I Can And Cannot Do Here | `hero-scope-gate` | — |
+| 01 Understanding Your Gut | *(framed)* `diagram-digestive-anatomy` | `diagram-gut-lining-villi`, `diagram-gut-barrier` |
+| 02 Whole-Body Health | *(framed)* `diagram-gut-health-venn` | `diagram-organs-labeled` |
+| 03 The Five Common Patterns | `hero-03-five-doors` | **all five analogies**, one per archetype |
+| 04 Everyday Habits | `hero-04-everyday-habits` | `metaphor-habit-loop-cubes` |
+| 05 Nutrition Foundations | *(framed)* `illus-intestine-with-foods` | `food-fiber-flatlay`, `food-fermented-jars` |
+| 06 The Gut-Brain Connection | *(framed)* `illus-gut-brain-dark` | `metaphor-two-way-cans`, `diagram-autonomic-balance` |
+| 07 The Gut-Liver Connection | *(framed)* `diagram-liver-in-body` | `diagram-liver-pathway` |
+| 08 Putting It All Together | `hero-08-orchestra` | `photo-notebook-tracking` |
+| B1 Midlife | `hero-B1-midlife-tree` | `diagram-liver-gallbladder` |
+| B2 Digestion Under Pressure | *(framed)* `diagram-nervous-system-organs` | `food-minerals` |
+| B3 When Your System Stays On Alert | `hero-B3-house-lights-on` | `diagram-body-inflammation` |
+
+In module 03 each analogy sits between the archetype's description and its sage
+callout box, so the picture lands before the words name it.
+
+### Verified
+
+- All 24 distinct image URLs return 206 to a ranged request. None is a 404.
+- `search_course_content` for `kajabi-cdn` returns 13 lessons, matching the plan.
+- Every write used `lesson_body_format: "html"`; without it the HTML is
+  re-parsed as markdown and the markup is destroyed.
+
+### Duplicates in the media library
+
+Steve warned he may have uploaded some twice. Six pairs confirmed, identical
+file sizes:
+
+`hero-B1-midlife-tree`, `hero-08-orchestra`, `diagram-liver-gallbladder`,
+`diagram-body-inflammation`, `illus-intestine-with-foods`, `illus-happy-sad-gut`,
+`metaphor-detective`, `metaphor-blueprint-gears`.
+
+The newer ID of each pair is the one referenced. **Nothing was deleted.** The
+spares are harmless, show `used_count: 0`, and are Steve's to clear whenever he
+wants: Media Library, filter to unused.
+
+### Six lessons lead with a framed diagram rather than a cut-paper hero
+
+01, 02, 05, 06, 07 and B2. They look deliberate, but they are not as strong as
+the seven that open with a generated image. Six more cut-paper heroes would cost
+about 39 credits and ten minutes, and would make every lesson open the same way.
+Worth doing before launch if Steve wants it.
+
+### Still unused from the salvage
+
+About 20 FDN images remain unplaced, among them `illus-happy-sad-gut`,
+`metaphor-detective`, `metaphor-blueprint-gears`, `icons-allergens`,
+`food-buddha-bowl`, `food-produce-flatlay` and the decorative microbe set. They
+are in the library and in `images/fdn/` if a second pass wants them.
