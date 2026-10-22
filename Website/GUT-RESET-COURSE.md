@@ -305,3 +305,30 @@ signatures: `data-message-author-role`, `conversation-turn`, `prose-invert`,
 
 **Two lessons had it, both now dealt with:** Week 1 Section 8/8, rewritten and
 published, and this one. No others anywhere on the site.
+
+### British spelling sweep, 2026-10-22
+
+Steve caught **"draught"** in the Week 1 barrier lesson. Checking for others
+found two more, one of them a repeat of an error fixed earlier the same day.
+
+| Word | Lesson | Fixed to |
+|---|---|---|
+| draught | What The Reactive Gut Pattern Is | draft |
+| **fortnight** | Stress And Your Gut Microbiome | two weeks |
+| recognise | Questions People Ask | recognize |
+
+**The fortnight one is the bad one.** Earlier today a sweep found 21 instances of
+that exact word across five content surfaces and fixed every one, including
+renaming a module for it. Hours later the agent typed it again into a brand new
+lesson. Finding and fixing an error is not the same as learning it.
+
+`recognise` was in pre-existing published copy, so the earlier sweep missed it
+too. That sweep searched for `fortnight` specifically rather than for British
+spellings as a class.
+
+Searched and clean: realise, recognise, colour, behaviour, practise, fibre,
+flavour, favour, grey, amongst, learnt, optimise, whilst.
+
+**Rule for next time:** after writing any new customer-facing copy, run the
+spelling check as a class rather than re-checking the one word that was wrong
+last time. The word that catches you is never the word you are looking for.
