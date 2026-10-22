@@ -162,9 +162,32 @@ sweep.** Any future sweep has to run `search_course_content` over bodies as
 well, or it will report a fraction of what is there and someone will make a
 decision on the wrong number.
 
-Not fixed, pending Steve's call. Each needs a contextual replacement rather than
-a find-and-replace ("settle for a fortnight" and "the reintroduction fortnight"
-want different wording), and it is 14 writes to a live course with members on it.
+**Fixed 2026-10-22**, on Steve's go-ahead. All 14 bodies rewritten and written
+back, one lesson at a time, reading each body in full before replacing.
+
+Contextual, not find-and-replace. The word was doing six different jobs:
+
+| Original | Became |
+|---|---|
+| "the reintroduction fortnight" | "the two-week reintroduction" |
+| "Four weeks, then a fortnight" | "Four weeks, then two more" |
+| "settle for a fortnight" | "settle for a week or two" |
+| "a busy fortnight" | "a busy couple of weeks" |
+| "this is not the fortnight to test" | "this is not the time to test" |
+| "This fortnight is the centerpiece" | "These two weeks are the centerpiece" |
+
+**Reading each body in full mattered.** `search_course_content` returns one
+snippet per lesson, so it showed 14 hits. Several lessons held two, and "How
+This Course Works" held three. A count taken from the search result alone would
+have been short.
+
+**Two stale cross-references were caught the same way.** "How This Course Works"
+and "Week 4: Widen Your Range" both named the module as **The Reintroduction
+Fortnight** in their body text. The rename had already made those wrong, and
+neither would have been found by searching for the module title.
+
+Verified with `search_course_content` across **every course on the site**, not
+just this one: 0 results for `fortnight`, 0 for `whilst`, 0 for `fibre`.
 
 ## The home page metadata cannot be fixed through the MCP
 
