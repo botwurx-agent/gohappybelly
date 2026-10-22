@@ -92,9 +92,7 @@ This course taught you how the system works. That one works on your system.
 OFFER-SPEC.md. This copy is the in-course version, which runs after purchase as
 well as serving as the lesson ending.]
 
-**In Gut Health,**
-**Alina Nazari**
-**FDN-P**
+In Gut Health,<br />Alina Nazari<br />FDN-P
 
 ---
 

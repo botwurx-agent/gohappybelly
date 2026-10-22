@@ -51,9 +51,7 @@ What I do is find the pattern and build the work around it. This course is the
 first half of that: understanding the system well enough that the pattern, when
 you find it, actually means something to you.
 
-**In Gut Health,**
-**Alina Nazari**
-**FDN-P**
+In Gut Health,<br />Alina Nazari<br />FDN-P
 
 ---
 

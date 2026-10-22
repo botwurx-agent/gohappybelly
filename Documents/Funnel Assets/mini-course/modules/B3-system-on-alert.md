@@ -97,8 +97,9 @@ Those are different statements and the difference matters enormously.
 
 ## Why I Am Not Giving You An Elimination Protocol
 
-FDN's original version of this module recommends a short-term elimination
-reset. I have taken it out, and I want to tell you why rather than quietly drop it.
+You will have seen short-term elimination protocols recommended for this, and
+you may have been handed one. I am not going to give you one, and I want to
+tell you why rather than leave it out quietly.
 
 Elimination is a real tool. It is also the single easiest thing to do badly,
 and the way it goes wrong is predictable:
