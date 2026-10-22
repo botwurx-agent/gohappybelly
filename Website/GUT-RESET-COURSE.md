@@ -267,3 +267,41 @@ the old combined Shopping List, replaced by five per-pattern lists.
 
 **Week 2's Section 8/8 also still contains the ChatGPT markup.** It is draft and
 superseded, so it is harmless, but it should not be published as-is.
+
+### Week 2 Section 8/8 emptied, 2026-10-22
+
+Steve asked for the ChatGPT markup to be cleaned out of this lesson. Reading it
+against its published replacement changed the answer.
+
+**It is fully superseded.** "What Works Against Your Gut Bacteria", published in
+the same module, covers every sound point it made and adds the one it missed
+completely: that a narrow diet held for months is itself among the biggest
+things working against your bacteria. That is the most useful idea on the topic
+and the old version does not contain it.
+
+**Its four unique points are its four worst.** Cleaning it up would have produced
+a second lesson on the same subject whose only distinguishing content was:
+
+| Claim | Problem |
+|---|---|
+| GMO crops have "pesticides and herbicides embedded in their DNA" | Factually wrong. Not how any of it works, and the kind of error that costs a practitioner credibility with the one reader who knows better |
+| Tap water chlorine and fluoride wipe out the microbiome | Not supported at drinking-water concentrations, and it closes by recommending a filter purchase |
+| Limit grains "until your gut is healed" | Argues against this course's own position, and uses a healing claim |
+| Switch household and personal care products | Thin evidence, drifts into product recommendations outside the course's scope |
+
+It also carried **"If you have leaky gut"**, the banned construction, and the
+ChatGPT page markup.
+
+So the body was replaced with an internal note rather than rewritten, the title
+prefixed `[Superseded]`, and the lesson left in draft. **The MCP cannot delete a
+lesson**, so Steve can remove it in the admin whenever he wants; until then
+nothing publishable survives in it.
+
+### Site-wide sweep for pasted AI markup
+
+Searched every lesson on the site, drafts included, for four ChatGPT page
+signatures: `data-message-author-role`, `conversation-turn`, `prose-invert`,
+`text-token-text-primary`.
+
+**Two lessons had it, both now dealt with:** Week 1 Section 8/8, rewritten and
+published, and this one. No others anywhere on the site.
