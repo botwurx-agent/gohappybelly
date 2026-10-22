@@ -165,3 +165,69 @@ Tier 2 should start regardless, because it is blocked on nothing.
 2. **Order.** Tier 2 first, since it needs no upload, then Tier 1? Or Tier 1
    first so Steve has one upload batch to do while the graphics get built?
 3. **Scope.** Stop after Tier 1 and 2, or commit to all 62?
+
+---
+
+## Decisions, 2026-10-22
+
+**Analogies: new artwork, same analogies.** The five locked analogies stay. The
+$147 course gets fresh scenes of each, so no file is reused and no picture
+argues with the text beside it.
+
+**Order: graphics first, then the spine.** The graphics need no upload, so they
+started immediately.
+
+## Built so far: 2 of 10
+
+### 1. The shape of the course
+
+Lesson: **How This Course Works**, Start Here.
+
+A vertical timeline, built as nested divs rather than a table so it stacks
+properly on a phone without needing media queries. Seven steps: score, find your
+pattern, then the four weeks, with **the reintroduction broken out in a
+terracotta-bordered block at the end** rather than listed as a seventh equal
+step.
+
+That emphasis is deliberate. The reintroduction is the part the course says is
+most valuable and the part members most often skip, and in prose it was the
+third paragraph of a wall of text. Now it is the thing your eye lands on.
+
+### 2. Twelve days, four foods
+
+Lesson: **How Reintroduction Works**, The Two-Week Reintroduction.
+
+The method was written as a five-step ordered list, which is correct and still
+leaves the reader working out their own calendar. The schedule now shows it:
+test days carry a terracotta left border and dark text, watch days are muted, so
+the rhythm of one-then-three reads at a glance.
+
+Plus a **three verdicts** table (Fine, Not yet, No) summarizing what to do with
+each outcome, which was three separate paragraphs.
+
+## Still to build: 8
+
+| Graphic | Lesson |
+|---|---|
+| Symptom scoring sheet | Where You Are Starting From |
+| The five patterns at a glance | The 5 Gut Patterns |
+| Stool form and frequency reference | Bowel Movements: What Is Normal |
+| The fiber ramp | Week 1 or Week 2 |
+| Reintroduction result tracker | Your Reintroduction Tracker |
+| The plant count | Week 4 |
+| What each test actually shows | Testing, And When It Is Worth It |
+| Supplement timing | The Supplement Reference |
+
+## Build notes for the rest
+
+- **Inline styles only.** A `<style>` block may be stripped by the editor, and
+  there is no way to use media queries. Everything has to reflow without them.
+- **Tables get an `overflow-x:auto` wrapper and a `min-width`**, which is the
+  pattern already proven elsewhere in both courses.
+- **Prefer stacked divs to multi-column layouts** for anything that is not
+  genuinely tabular, because divs stack on a phone and columns do not.
+- **Palette only:** `#F8FAF8` panel, `#EFF7F1` header rows, `#FFFFFF` table
+  body, `#C8DDD0` borders, `#162E28` emphasis, `#6A8278` secondary,
+  `#C07A5A` for the one thing that matters most on the page.
+- **Verified by search, not by eye.** The agent cannot open a members-only page,
+  so these are confirmed present in the body rather than confirmed to render.
