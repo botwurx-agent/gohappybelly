@@ -186,3 +186,16 @@ assume.
 `email_send`, then a 3-day `wait`, then a second `email_send`. It is created as
 a **draft**. Nothing sends until Steve arms it in the Kajabi admin, which keeps
 the standing rule about not sending email without explicit confirmation.
+
+---
+
+## Status, 2026-10-22
+
+**The thank-you page is built**, on the website design system, in its interim
+form: the consultation step and the scheduler, plus a block saying the welcome
+email carries the rest. See `Website/COACHING-THANK-YOU-PAGE.md` for the rebuild
+record and the exact four-part swap that turns it into the numbered three-step
+page above.
+
+The two emails are not built. They go in as a draft automation once the URLs
+land and once a test purchase shows what Kajabi already sends on its own.
