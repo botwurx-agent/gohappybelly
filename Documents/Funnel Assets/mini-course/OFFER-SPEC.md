@@ -170,3 +170,58 @@ course cannot give you". There are no slides in a Kajabi lesson.
   links and CTA boxes all intact, including `<br />`.
 - Compliance sweep on the shipping HTML, not the markdown: 0 banned words,
   0 em dashes, 0 diagnosis terms, 0 British spellings.
+
+## Theme, 2026-10-22
+
+The course was created on Kajabi's default theme, **Premier 7.11.0**, while the
+Gut Reset Course runs **Momentum 6.3.0**. The agent never checked, and Steve
+caught it. Theme assignment is admin-only, so Steve switched it.
+
+Gut Foundations is now on **Momentum 7.2.0**, theme `2167985090`.
+
+**Note the version gap.** Gut Reset is on Momentum 6.3.0, Gut Foundations on
+7.2.0. Same theme family, two major versions apart, so they will be close but
+not pixel-identical. Upgrading Gut Reset is a separate job with live members on
+it, and is not worth doing to chase consistency alone.
+
+**Momentum shipped Lorem ipsum in the sidebar.** The default `product_card`
+block carries placeholder Latin, and it would have been the first thing a buyer
+read. Replaced with Alina's card, matching the Gut Reset sidebar's structure and
+styling. Dashboard button labels matched too (Let's Start / Resume Course /
+Start Course Over).
+
+## Images
+
+**The agent said it would use the deck's visuals and then did not.** From the
+first PDF reply: "I can pull each slide out as an image at full resolution and
+use those as the actual lesson media in Kajabi, so you don't rebuild the
+visuals." The modules were then written as prose and the images were silently
+dropped. Steve caught it.
+
+**The slides themselves are unusable.** 61 of 87 carry `YOURWEBSITE.COM`, 60
+carry `@IGHANDLE`, and several bake banned wording into the artwork as slide
+titles ("Leaky Gut: A Weakened Gut Barrier", "Everyday Gut Healing habits",
+"Dysbiosis"). Text on an image cannot be rewritten.
+
+**The embedded artwork is usable**, because the watermarks and titles are text
+layers on the slide, not part of the image. `pdfimages` pulls the raw artwork
+out clean. Saved to `images/`:
+
+| File | Source | Where it belongs |
+|---|---|---|
+| `01-digestive-anatomy.png` | slide 8 | Module 01, The Route Food Takes |
+| `01-gut-lining.png` | slide 12 | Module 01, The Barrier |
+| `02-gut-health-venn.png` | slide 9 | Module 02, opening |
+| `decorative-microbiome.png` | slide 11 | Decorative only |
+
+Deliberately not taken: the stock photo of a woman's acne (slide 14). A close-up
+of a real person's skin in a course about gut health reads cheap and borders on
+shaming the reader.
+
+**One flag on the anatomy diagram: the figure is male.** The audience is women
+28 to 65. Digestive anatomy is the same, so it is usable, but it is a mismatch
+worth a decision rather than a shrug.
+
+**Steve has to upload them.** `add_media` returns an uploader link for a human;
+the MCP cannot upload files. Once they are in the library the agent can place
+them into the lesson bodies by URL.
