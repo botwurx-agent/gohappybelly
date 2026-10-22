@@ -202,3 +202,68 @@ Verified on the live pages: Home, Private Coaching, Shop, The Gut Fix, Link in B
 sales page itself all show four items. Header holds without wrapping at 1440 and at 1024,
 where it is tightest because the page's own terracotta CTA sits beside it. The mobile drawer
 lists it too.
+
+---
+
+## Week 1 rebuilt, 2026-10-22
+
+Steve sent a voice note of the Week 1 video and flagged that it did not match
+the written week. He was right, and the cause was worse than a wording problem.
+
+**Five of the eight Week 1 sections were sitting in draft**, invisible to
+members, while the video promised all eight. They had been retitled into pattern
+language and never rewritten: the titles said "Reactive Gut Pattern", the bodies
+were still the original FDN leaky-gut text, untouched. Week 3 was fully rebuilt
+and Week 2 mostly, so Week 1 was the least finished week in the course.
+
+Published, rewritten, and reordered into the video's running order:
+
+| Position | Lesson | Was |
+|---|---|---|
+| 0 | Week 1: Take The Pressure Off *(video)* | already published |
+| 1 | What The Reactive Gut Pattern Is, And What "Leaky Gut" Means | draft, Section 2/8 |
+| 2 | The 11 Signs Of The Reactive Gut Pattern | draft, Section 3/8 |
+| 3 | How Your Digestive System Works | already published |
+| 4 | Week 1: This Week For Your Pattern | already published |
+| 5 | Ten Supplements That Support The Gut Barrier | draft, Section 6/8 |
+| 6 | The Named Diets, And Why This Course Does Not Pick One | draft, Section 7/8 |
+| 7 | Stress And Your Gut Microbiome | draft, Section 8/8 |
+
+The "Section N/8" numbering is gone, matching how Weeks 2 and 3 were rebuilt.
+
+### What was wrong with the source text, beyond the terminology
+
+- **Section 3/8** was headed **"11 Signs You Have Leaky Gut"**, the exact banned
+  construction, and attributed rheumatoid arthritis, lupus and Hashimoto's to it,
+  closing by telling the reader to "develop a treatment plan".
+- **Section 7/8** promoted **clean keto** at length as good for the gut lining.
+  That argues against this course's own position, is low in the plant fiber a
+  strained lining needs, and is aimed at the exact avatar who has already failed
+  keto. Rewritten as why this course does not pick a named diet.
+- **Section 8/8 was raw ChatGPT output with the chat markup still in it**:
+  `data-message-author-role="assistant"`, `group/conversation-turn`,
+  `prose dark:prose-invert`, and the model's own **"Outline"** section left
+  pasted at the bottom. Publishing it would have shown a buyer the scaffolding
+  of an AI chat session inside a $147 product.
+- **Section 6/8** put all ten supplements in Week 1, contradicting the course's
+  own sequence of subtract in Week 1, rebuild in Week 2. The rewrite leads with
+  the timing and says plainly that nothing new starts this week.
+
+### Still draft elsewhere, and worth checking against their own videos
+
+Four look like genuine gaps rather than superseded content:
+
+| Lesson | Module |
+|---|---|
+| Options For Vegetarians & Vegans | Your Pattern, In Detail |
+| Week 2: Section 2/8: 5 Foods That Support The Gut Barrier | Week 2 |
+| Week 2: Section 6/8: Tips For Reducing Stress | Week 2 |
+| Week 4: Section 3/6: Support Your Liver | Week 4 |
+
+These are superseded and can stay as they are: Section 4/8 and 8/8 of Week 2
+(replaced by "Collagen: What It Is And Whether You Need It" and "What Works
+Against Your Gut Bacteria"), the duplicate Reintroduction Tracker in Week 4, and
+the old combined Shopping List, replaced by five per-pattern lists.
+
+**Week 2's Section 8/8 also still contains the ChatGPT markup.** It is draft and
+superseded, so it is harmless, but it should not be published as-is.

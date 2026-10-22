@@ -262,6 +262,21 @@ Alina is NOT a doctor and cannot diagnose conditions. All language uses pattern/
 - "The [Archetype] pattern"
 - "Address" or "work with" the pattern
 
+**Clarified 2026-10-22 by Steve.** The ban is on *diagnosing the reader*, not on
+the vocabulary. Naming a mechanism and explaining it is fine, and it is what
+Alina does on camera.
+
+- **Allowed:** "increased intestinal permeability, commonly called leaky gut",
+  "the pattern suggests a barrier problem", explaining what the term means and
+  where the evidence is thin.
+- **Not allowed:** "you have leaky gut", "11 signs you have leaky gut", any claim
+  to heal, seal, cure or treat it, and naming specific diseases as caused by it.
+
+The agent had read this section as a blanket ban on the phrase and wrote around
+it entirely, including cropping the words off a diagram. That put the written
+course out of step with Alina's own recorded videos, which use the term
+throughout. Explain the mechanism, never diagnose the reader.
+
 ---
 
 ## Hard Style Rules
