@@ -121,3 +121,72 @@ Roughly 12 to 14 generated images, 20 or so FDN placements.
 - **Upload.** MCP cannot upload files to Kajabi. Every image here, salvaged or
   generated, needs Steve to put it in the media library before the agent can
   place it by URL.
+
+---
+
+## Decisions and build, 2026-10-22
+
+**House style: cut-paper collage** (Steve's pick from three samples).
+**Scope: one hero per lesson plus key figures.**
+
+### Locked style string
+
+Every generated image used this verbatim, which is why the set matches. Reuse it
+for any future image so new work does not drift:
+
+> Textured cut-paper collage illustration, layered matte paper with visible
+> deckled torn edges and soft drop shadows. Strict limited palette: sage green
+> #7AAE86, deep forest green #162E28, terracotta #C07A5A, warm off-white
+> #F8FAF8. Handmade, tactile, warm and reassuring rather than clinical.
+> Absolutely no text, no words, no letters, no numbers, no labels, no signage.
+> No people, no faces, no hands.
+
+Model `gpt_image_2`, 16:9, 2k, quality high. About 6.5 credits each.
+
+### The five archetype analogies, now drawn
+
+These are the asset worth the most beyond this course. They are brand property
+and belong in the quiz results pages, the 35 archetype emails and social.
+
+| Archetype | File | What it shows |
+|---|---|---|
+| Wired-and-Tired | `analogy-1-wired-tired-engine-timing` | a timing belt and gears, one gear rotated out of the belt path |
+| Reactive | `analogy-2-reactive-screen-door` | a screen door torn with holes, light coming through |
+| Sugar-Driven | `analogy-3-sugar-driven-squatters` | a lit house, door ajar, someone else's crates on the porch, a crumb trail |
+| Underactive | `analogy-4-underactive-cold-stove` | a full pan on an unlit burner, dial off, no steam |
+| Bloated and Backed-Up | `analogy-5-backed-up-flooded-basement` | standing water, a dripping pipe, a bucket already overflowing |
+
+### Lesson heroes generated
+
+`hero-start-here`, `hero-scope-gate` (What I Can And Cannot Do Here),
+`hero-03-five-doors`, `hero-04-everyday-habits`, `hero-08-orchestra` (drawn to
+match module 08's own orchestra line), `hero-B1-midlife-tree`,
+`hero-B3-house-lights-on` (every window lit, nothing switched off).
+
+### Folders
+
+| Folder | Contents |
+|---|---|
+| `images/fdn/` | 48 salvaged deck images, full resolution |
+| `images/generated/` | 12 generated images, full resolution (2688x1520) |
+| `images/web/` | **upload this one.** 60 files, 24MB, resized and stripped |
+| `images/style-samples/` | the three rejected style tests, kept for reference |
+
+Originals are kept because the web copies are lossy and capped in size.
+
+### One miss worth noting
+
+`hero-04-everyday-habits` was asked for a wall clock with a blank face. It
+rendered the clock as an empty round frame, so the time-of-day meaning is gone.
+The image still works as a calm-morning scene. Not worth a regeneration unless
+Steve wants the clock back.
+
+### Blocked on Steve
+
+MCP cannot upload files to Kajabi; `add_media` only returns an uploader link.
+All 60 files in `images/web/` need uploading to the media library in one go,
+after which the agent can place them into lesson bodies by URL.
+
+**Do not reference the Higgsfield CDN URLs directly in lesson HTML.** They are
+unsigned and look stable, but they are someone else's CDN and a purge would
+break images inside a paid product.
