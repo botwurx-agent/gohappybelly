@@ -504,3 +504,79 @@ expanded, one exclamation mark removed.
 Three of the four lessons flagged as imported generic copy remain:
 `2178659968`, `2178660503`, `2178660709`. Those are voice problems rather than
 safety ones.
+
+---
+
+## The last three imported lessons rewritten, 2026-10-22
+
+All three kept their existing image. Each still fits the rewritten content, so
+nothing was regenerated and no upload was needed.
+
+### How Your Digestive System Works, `2178659968`, Week 1
+
+Was four paragraphs of textbook anatomy. Correct, and it gave a member no
+reason to care.
+
+Rewritten around one idea: **your digestive tract is a tube, and the inside of
+it is not technically inside you.** Everything is in the corridor until it
+crosses the wall, which is what makes the barrier language in the rest of Week
+1 click.
+
+The real addition is a map of **where each pattern lives**: Underactive at the
+stomach, Reactive and Bloated and Backed-Up in the small intestine, Sugar-Driven
+in the large intestine, Wired-and-Tired in the nerve supply running all of it.
+That mapping existed nowhere else in the course, and it turns a filler page
+into the one that explains why the course sorts people before it gives them a
+plan. Every fact from the original is kept: thirty feet, the three sections,
+villi and microvilli, pancreatic enzymes and bile, five feet of colon, water
+and salts, fermentation.
+
+Image: copper pipework. Still right, and now earns its place.
+
+### When Things Are Not Moving, `2178660503`, Week 3
+
+Was an omega-3 and flax listicle that also said waste sitting there lets
+"toxins build up in your system". That contradicts The Gut-Liver Loop two
+lessons earlier, which says plainly that the liver does not need detoxing.
+
+Rewritten as the **troubleshooting page**, which is what it should always have
+been, since Bowel Movements already covers the basics and the two were
+overlapping. Now: you have done the basics and it still is not happening, so
+what next.
+
+- Replaced the toxin claim with the actual mechanism from The Gut-Liver Loop:
+  bile carries packaged waste out through the gut, and a slow exit means some
+  of it is unpacked and reabsorbed
+- Ordered the steps so **water comes before fiber**, which is the single most
+  common thing people get backward
+- Added what to look at when all five steps are in place: slow motility, thyroid,
+  medication, ignoring the urge, stress, very low fat eating
+- Added an honest paragraph on laxatives, including that daily use for months
+  is a doctor conversation
+- Added per-pattern notes and a when-to-get-it-checked block
+
+Image: the stopped water wheel. Unchanged and still apt.
+
+### Practice Gratitude, `2178660709`, Week 4
+
+Was three paragraphs claiming gratitude lowers cortisol, improves the
+microbiome, and improves nutrient absorption, followed by ten generic
+exercises. The microbiome claim is not supportable.
+
+Rewritten to say so. It now opens by stating that gratitude has reasonable
+evidence for mood and sleep and none for changing gut bacteria, which matches
+how the course already handles bone broth, blueberries, ACV, detoxes and the
+dirt question.
+
+The page now leads with **the twenty seconds before a meal**, which is the one
+version with a digestive rationale, and connects it to the breathing exercise
+already taught in Week 1. The ten exercises are cut to four, with an explicit
+instruction to pick one. Added the same mental-health line the Wired-and-Tired
+page carries.
+
+Image: the posy in a jam jar. Unchanged.
+
+### Checks
+
+`veggies` and `fortnight` both return zero across the site. All 62 published
+lessons still carry an image.
