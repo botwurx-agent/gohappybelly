@@ -6,7 +6,7 @@ This agent is a full business co-pilot for **Go Happy Belly**, the functional nu
 
 **Steve Nazari** (Alina's husband) operates this agent. Steve runs all business operations: copywriting, funnel building, email marketing, social content strategy, landing pages, and growth. Alina works with clients directly and creates content — she does not use this agent.
 
-**Related business:** Steve also owns **Guthub.ai**, an AI-powered gut health platform (beta). It is part of the ecosystem and is bundled into the 3-Month Gut Reset, but **it is not a funnel offer**. See "Guthub is not in the funnel" below.
+**Related business:** Steve also owns **Guthub.ai**, an AI-powered gut health platform (beta). It is part of the ecosystem and is bundled into the 3-Month Gut Reset, but **it is not a funnel offer yet**. See "Guthub is not in the funnel yet" below.
 
 ---
 
@@ -83,7 +83,7 @@ These are the segmentation categories from the ScoreApp quiz ("What's Your Gut P
 |-------|-------|---------|
 | 3-Month Gut Reset | $1,497 | (1) 60-min initial consult, (1) 30-min follow-up/month, **GI-MAP Stool Test with full results reading included**, gut-type meal + supplement plans, private community access, 3-month Gut Reset Course access, 3-month Guthub access |
 | Gut Reset Course | $147 | Standalone digital course |
-| Guthub.ai | $13/month | AI gut health platform. Bundled into the 3-Month Gut Reset. Not sold through any funnel (see below) |
+| Guthub.ai | $13/month | AI gut health platform. Bundled into the 3-Month Gut Reset. Not sold through any funnel yet (see below) |
 | GI-MAP Stool Test | $497 | Includes reading/consultation |
 | H. Pylori Test | $250 | Includes reading/consultation |
 | SIBO Test | $425 | Includes reading/consultation |
@@ -103,9 +103,12 @@ Quiz: "What's Your Gut Pattern?" (ScoreApp)
   https://gut-pattern-quiz.scoreapp.com
         ↓
 Results page: 1 of 5 archetypes
+  Primary CTA:   Book a Gut Breakthrough Call
+  Secondary CTA: Gut Foundations ($27)   "Not ready to talk yet?"
         ↓
 7-email archetype-specific sequence (21 days, Mailchimp)
   Exit logic: contact exits if booked-call tag is applied
+  Still drives to the call only. Deliberate, see the ladder below
         ↓
 Gut Breakthrough Call (20 min, free) → 3-Month Gut Reset ($1,497)
 ```
@@ -117,45 +120,96 @@ $27 mini course  →  $147 Gut Reset Course  →  $1,497 3-Month Gut Reset
 ```
 
 The $27 rung is **Gut Foundations**: eleven lessons built from FDN's
-done-for-you gut wellness material. The course and the offer both exist; the
-offer is still a draft. Price confirmed at $27 by Steve on 2026-10-23, having
-been specced at $47.
+done-for-you gut wellness material. Price confirmed at $27 by Steve on
+2026-10-23, having been specced at $47.
+
+**Live since 2026-10-23.** Offer published, sales page at
+`/gut-foundations`, a card on Link in Bio, and the secondary CTA on all five
+quiz results pages.
+
+The 35 archetype welcome emails still drive to the call and have not been
+rewired. That is deliberate: see
+`Documents/Funnel Assets/mini-course/OFFER-SPEC.md`. Launch, measure, then
+rewire, rather than rewriting 35 emails around an offer that has not proven
+itself.
 
 The Bone Broth Reset ($47) is a separate front-end offer at a different price,
 unpublished as of 2026-10-23 pending a rescheduled round.
 
-### Guthub is not in the funnel
+### Guthub is not in the funnel yet
 
-Steve's decision, 2026-10-21. Guthub.ai **may be mentioned** anywhere it is a
-true statement: the site footer, the ecosystem, and the 3-Month Gut Reset
-inclusions, where three months of it is part of what the buyer gets.
+Steve's decision, 2026-10-21, clarified 2026-10-23. Guthub.ai **may be
+mentioned** anywhere it is a true statement: the site footer, the ecosystem,
+and the 3-Month Gut Reset inclusions, where three months of it is part of what
+the buyer gets.
 
-It is **not** a funnel offer. Do not make it the entry offer, do not place it
-as a downsell or an upsell, do not put its trial in a quiz results CTA, and do
-not sell it in any email. It will join the funnel when it is further along.
-Until Steve says otherwise, treat any funnel placement of Guthub as a mistake.
+It is **not currently** a funnel offer. Do not make it the entry offer, do not
+place it as a downsell or an upsell, do not put its trial in a quiz results
+CTA, and do not sell it in any email.
+
+**This is deferred, not rejected.** The product needs more fine tuning first.
+Steve expects it to earn a place later, and thinks the effective placement is
+an **order bump or an upsell** rather than the downsell it was once framed as.
+Until he says the word, treat any funnel placement of Guthub as a mistake, but
+do not treat the idea itself as dead.
+
+**Done 2026-10-23:** the quiz results pages carried a "Start My Guthub Free
+Trial" CTA for three days after the decision, because the Platform Stack table
+below still described Guthub as a downsell and no session reconciled the two.
+That CTA, its Guthub logo and its copy are now replaced by Gut Foundations at
+$27. Copy and the reasoning behind it: `Website/QUIZ-RESULTS-CTA-COPY.md`.
 
 ---
 
-## Current Build Status (as of 2026-05-20)
+## Current Build Status (as of 2026-10-23)
 
-### Live
+### Live: the quiz funnel
 - ScoreApp quiz (12 questions, weighted multi-outcome scoring) — https://gut-pattern-quiz.scoreapp.com
-- 5 results pages (one per archetype)
+- 5 results pages, one per archetype. Primary CTA the call, secondary CTA Gut Foundations
 - Quiz landing page
-- Quiz link in Instagram Link in Bio
 - Calendly Gut Breakthrough Call booking
-- Mailchimp integration: API connected, Gut Pattern custom field (merge tag: GUTPATTERN), auto-tagging
+- Mailchimp: API connected, Gut Pattern custom field (merge tag: GUTPATTERN), auto-tagging
 - Zapier: Calendly "Invitee Created" to Mailchimp booked-call tag
-- All 5 archetype welcome sequences (35 emails total) loaded and active in Mailchimp Customer Journeys
-- Re-engagement Email 1: loaded in Mailchimp, ready to send
+- All 5 archetype welcome sequences (35 emails) active in Mailchimp Customer Journeys
+- Re-engagement Email 1 loaded, ready to send
 
-### Not Yet Built
-- 3-Month Gut Reset sales page (call is current sales mechanism)
+### Live: the Kajabi website
+Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
+`Website/`.
+
+- Home, Private Coaching, Shop, Link in Bio, The Gut Fix
+- Gut Reset Course sales page (`/gut-reset-course`) and thank-you page
+- Gut Foundations sales page (`/gut-foundations`) and thank-you page
+- 1:1 coaching thank-you page, with the Calendly embed and the private group
+- 7-Day Lifestyle Workbook lead magnet: opt-in page, Kajabi form, `workbook-optin`
+  tag, automation armed
+
+### Live: offers
+- Gut Foundations, $27 one-time, published 2026-10-23
+- Gut Reset Course, $147 one-time
+- 3-Month Gut Reset, $1,497
+- 8 lab test offers, $250 to $639
+
+### Not yet built
+- 3-Month Gut Reset sales page. The call is still the sales mechanism
+- Lab test thank-you pages. Blocked on Alina's lab-ordering URL, which also
+  blocks the $1,497 flow
 - ManyChat Instagram DM automation flows
-- SamCart checkout/landing pages for offers
 - Cold traffic funnel (Phase 2)
 - Paid ads strategy (Phase 3)
+- Bone Broth Reset ($47). Offer and sales page both unpublished pending a
+  rescheduled round
+
+### Known gaps and unverified
+- **Nobody has visually checked `/gut-foundations`.** Cloudflare returns 403 to
+  the agent's environment on every path, so the agent cannot fetch or screenshot
+  the live site. See the note in `Website/DESIGN-SYSTEM.md`
+- The $27 purchase-flow upsell was created by Steve; whether it is attached as
+  step 1 is unverified, since MCP is blind to Kajabi Purchase Flows
+- Published checkouts may carry a subscription/price misconfiguration. Two of
+  two inspected did, both since fixed. The rest are unaudited
+- SamCart is available and unused. The reason to move checkout there no longer
+  applies
 
 **Full technical reference and all 35 email HTML files:**
 `/Users/synastudio/Documents/GoHappyBelly/Documents/Claude Handoff Files/Go_Happy_Belly_Funnel_Handoff_v2.md`
@@ -175,7 +229,7 @@ Until Steve says otherwise, treat any funnel placement of Guthub as a mistake.
 | Instagram | Primary social (8K followers) |
 | TikTok | Social growth |
 | YouTube | Long-form content |
-| Guthub.ai | AI gut health platform (downsell) |
+| Guthub.ai | AI gut health platform. Bundled into the 3-Month Gut Reset, not in the funnel yet |
 
 ### Mailchimp Configuration
 - Audience: Go Happy Belly
@@ -295,7 +349,10 @@ throughout. Explain the mechanism, never diagnose the reader.
 
 ## Priorities (in order)
 
-1. Funnel completion and optimization — load remaining 4 email sequences, test, activate
+1. Funnel completion and optimization. All 35 archetype emails are loaded and
+   active, so that part is done. What remains in this lane is the 3-Month Gut
+   Reset sales page and the lab test thank-you pages, the latter blocked on
+   Alina's lab-ordering URL
 2. Social content — Instagram, TikTok, YouTube for audience growth
 3. Email marketing — sequences, re-engagement campaigns, nurture
 4. ManyChat DM automation flows
