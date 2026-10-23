@@ -87,3 +87,61 @@ Plus the support address, and the locked sign-off.
    built around it the same way the coaching page was.
 3. **$27 Gut Foundations.** Draft, so no exposure. Needs a page before launch.
 4. **Essentials Club.** Check what it does now before deciding.
+
+---
+
+# Progress, 2026-10-23
+
+## Bone Broth taken offline
+
+Both halves unpublished at Steve's instruction, pending a rescheduled round:
+
+| | ID | Now |
+|---|---|---|
+| Offer "The 3-Day Bone Broth Reset" | `2151405804` | draft |
+| Sales page `/broth-reset` | `2152286720` | draft |
+
+Its checkout no longer resolves, so nothing can be bought and nothing can be
+broken by being bought. **When the new dates land, three places carry the old
+ones**: the offer description, the custom-message thank-you body, and the sales
+page. The thank-you body also still has `[ADD ZOOM LINK]`, `[ADD GROUP LINK]`
+and `[ADD GUIDE LINK]`, and the offer still has no product attached.
+
+## $27 Gut Foundations thank-you page: built
+
+Landing page `2152353598` at `/gut-foundations-thank-you`, theme `2167999815`,
+Nova on the website design system. **Published** and hidden from search engines,
+since it is a destination rather than something to be found. Wired to offer
+`2151464245` with `thank_you_preference: landing_page`.
+
+Published ahead of the offer deliberately: the offer is still a draft, and a
+draft destination behind a live offer would 404 the moment the offer went up.
+This way the $27 is launch-ready the day Steve publishes it.
+
+Two sections, same shape as the $147 page so the two rungs feel like one
+business:
+
+1. `#F8FAF8`: "You're in", then **Open your course** with a terracotta button to
+   `/library`, then **Join the private group** across a hairline rule.
+2. `#EFF7F1`: check your inbox, support address, locked sign-off.
+
+The one piece of real guidance matches the course's own structure, which runs
+groundwork before the five patterns:
+
+> Start at the beginning rather than skipping to the part that sounds most like
+> you. The five patterns do not make much sense until you have met the
+> groundwork in front of them, and that is only a couple of short lessons.
+
+**No upsell on this page, deliberately.** `Documents/Funnel Assets/mini-course/
+OFFER-SPEC.md` records that the $147 upsell belongs in Kajabi's purchase flow,
+one click on a card already on file, which fires *before* the buyer reaches
+here. Selling again on the thank-you page would be the second ask in a minute,
+to someone who has either just bought or just declined.
+
+## Next
+
+1. **Lab tests.** Eight published offers, $250 to $639, all on the generic
+   screen. One shared page serves them all. Still blocked on the lab-ordering
+   URL from Alina.
+2. **Happy Belly Essentials Club** `2149750878`, $9.97/mo, published, never
+   examined.
