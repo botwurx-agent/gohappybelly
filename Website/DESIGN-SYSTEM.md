@@ -335,3 +335,30 @@ that are not plain URL settings, such as lesson `poster_image`.
 Before building any page, list what already exists: `Website/images/`,
 `Website/mockups/`, and `list_media` on the site. A page that ends up with no
 imagery has to be a decision, written down, not an oversight.
+
+---
+
+## The agent cannot see the live site
+
+Confirmed 2026-10-23. `gohappybelly.com` sits behind Cloudflare, which returns
+**403 to this environment's IP on every path**, the homepage included. That
+blocks `curl`, `WebFetch` and headless Chromium alike, so a page cannot be
+fetched or screenshotted from here.
+
+What that means in practice: **visual verification is always Steve's**, and the
+agent must say so rather than implying a page has been looked at. Claiming
+design fidelity from the theme JSON is exactly the mistake the theme's own skill
+file warns about.
+
+What the agent *can* verify without seeing the page, and should, on every build:
+
+- Section ids all present in `sections` **and** in `content_for_index`, in order
+- Every id in a `block_order` has a matching entry in `blocks`, recursively
+  through nested `group` blocks
+- Every image URL returns 200 (`curl -o /dev/null -w '%{http_code}'`)
+- Button targets resolve to the offer's current `checkout_url`
+- Copy checked against the banned list and for em dashes
+
+Anything that depends on Nova's rendered DOM, such as a `custom_classes`
+selector reaching a flex row, cannot be confirmed this way. Flag those
+explicitly as unverified and name what would break if the selector misses.

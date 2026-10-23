@@ -3,7 +3,7 @@
 Sales page for the $27 mini course, the first rung of the value ladder.
 
 - **Page id:** 2152353662 · **Theme id:** 2168000232 · **Slug:** `/gut-foundations`
-- **Status:** DRAFT. Stays a draft until the $27 offer (2151464245) is published.
+- **Status:** LIVE since 2026-10-23. https://www.gohappybelly.com/gut-foundations
 - **Checkout:** `/offers/yYfiaNgo/checkout`
 - **Course behind it:** Gut Foundations, course id 2149609329
 - Built on `Website/DESIGN-SYSTEM.md`.
@@ -203,11 +203,27 @@ claim about the reader. Checked for em dashes and the banned word list: clean.
 
 ---
 
+## Went live 2026-10-23
+
+Offer 2151464245 published by Steve, page published straight after. Verified at
+publish time:
+
+- Offer is `published`, **$27.00 one_time** (not the subscription misconfiguration
+  found on two other checkouts), course 2149609329 attached
+- `checkout_url` still `/offers/yYfiaNgo/checkout`, so every CTA on the page is live
+- Post-purchase points at landing page 2152353598, the Gut Foundations thank-you page
+- All eight image URLs on the page return 200
+- SEO metadata set at publish: title, description and a share image
+
 ## Still to do
 
-1. Publish the $27 offer 2151464245, then publish this page.
-2. Point traffic at `/gut-foundations`: Link in Bio, quiz results pages, the
-   archetype email sequences.
-3. A real photograph of Alina. The credential section currently uses an
-   illustration; `Website/Alina_Fence.jpg` and `Website/IMG_8247.jpg` exist on
-   disk but are not in the Kajabi library, and MCP cannot upload.
+1. **Point traffic at it.** Nothing links here yet: Link in Bio, the five quiz
+   results pages and the archetype email sequences all still route elsewhere.
+   Until that is done the page is live but unreachable in practice.
+2. Swap the hero art for one of the cut-paper mockups in
+   `Website/mockups/foundations/` once uploaded, and move the signpost down to
+   the five-patterns heading.
+3. A real photograph of Alina. The credential section uses an illustration;
+   `Website/Alina_Fence.jpg` and `Website/IMG_8247.jpg` are on disk but not in
+   the Kajabi library, and MCP cannot upload.
+4. Testimonials, when there are any, between the FAQ and the final CTA.
