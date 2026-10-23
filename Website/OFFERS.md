@@ -307,3 +307,81 @@ gets.
 
 If that slot is ever wanted, the thing most worth putting there on a $1,497
 page is a client testimonial rather than another photograph.
+
+---
+
+## $147 checkout copy rewritten, 2026-10-23
+
+Offer `2149370663`, checkout theme `2167629154`, text block `1746107473790`.
+
+### What it said, live, on a published checkout
+
+> Note: This is a subscription membership is a **1 year subscription**. The full
+> **$197** is charged upon purchase and is non-refundable. You will gain access
+> immediately upon signup. You can cancel anytime within your account, or by
+> sending us an email.
+
+Four things wrong at once. The offer is `price_type: one_time` at **$147**, so
+it is not a subscription, there is nothing to cancel, and the stated price was
+**$50 higher than the amount actually charged**. The sentence is also
+ungrammatical ("This is a subscription membership is a"). The heading still read
+"Happier Belly Gut Reset Program" after Steve renamed the offer to "Gut Reset
+Course".
+
+This is the same failure found on the $1,497 checkout on 2026-10-22. Two of two
+checkouts inspected have described a one-time payment as a cancellable
+subscription. **Assume the remaining published checkouts do too** until each is
+read.
+
+### What replaced it
+
+Title corrected, plus a one-line positioning statement and six inclusion
+bullets, each checkable against what is actually in the course:
+
+> Most gut programs hand everyone the same plan. This one asks which of the five
+> patterns is yours first, then gives you the four weeks written for that one.
+
+The terms now read:
+
+> Note: this is a one-time payment of $147. There is no subscription and nothing
+> to cancel. Your access starts as soon as you sign up, and the payment is
+> non-refundable.
+
+Copy changes from Steve's draft of the bullet list, and why:
+
+| Was | Now | Reason |
+|---|---|---|
+| "Personalized protocol tailored to your specific gut pattern" | "The four weeks written five separate ways" | The course is pattern-specific, not personalized. "Personalized" at $147 sets an expectation of something made for her individually, and that gap becomes a refund |
+| "four week plan to ease symptoms" | "self-paced video lessons, start whenever you want" | The only outcome claim in the list, removed rather than softened |
+| Reintroduction listed fourth | Promoted, with the tracker named | It is the course's best feature and the thing the $27 explicitly cannot give her. The upsell copy already leads with it |
+| No mention of the group | "The private group, for questions as you work through it" | Alina's decision: the group goes to anybody who buys anything. It was a real inclusion that was not being sold |
+
+### The value stack was dropped, deliberately, and it is reversible
+
+The old block carried a seven-item stack totalling "$4200", including "The
+Happier Belly Program (Value $1297)". That number sits just under the $1,497
+1:1 coaching price, which muddies the ladder: it implies the self-paced course
+is worth almost as much as three months of Alina's time. The figures were also
+not traceable to anything.
+
+Dropping it is a conversion decision, not a cleanup, and it was made without
+asking. **Flagged to Steve.** Easy to reinstate if he wants it.
+
+### Two open questions
+
+1. **Does $147 access expire?** The 3-Month Gut Reset grants "3-month Gut Reset
+   Course access", so bundled access is time-limited. Whether the standalone
+   $147 is permanent is not recorded anywhere. The new copy says access starts
+   at signup and deliberately says nothing about it ending.
+2. **Refund policy is inconsistent across the suite.** This checkout says
+   non-refundable, carried over from the old copy. The Gut Fix ebook advertises
+   a 30 day refund guarantee. Not resolved here.
+
+### The order summary panel is not in the theme
+
+The "What's included" list Steve pasted, with the Subtotal line, is the Kajabi
+checkout block's own panel on the right. `sync_checkout_block_to_offer` is
+`false` on this section and the offer `description` is empty, so that list is
+configured on the **offer's Checkout tab in the admin**, the same area where the
+order bump turned out to live. It is not reachable through the theme tools, so
+Steve pastes that one.
