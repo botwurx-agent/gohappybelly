@@ -104,21 +104,27 @@ Measured on the rendered page at 1440 and 390, not by eye:
 - Submit button renders "Send", uppercase, 12px, 1.56px tracking (0.13em)
 - Placeholder form copy gone
 
-## Open question
+## Open question, answered 2026-10-23
 
-The ebook and the workbook are lead magnets. Right now both download directly,
-which is what was asked for. Gating them behind an email capture would feed the
-Mailchimp list from Instagram traffic, which is priority 3 in CLAUDE.md. That is
-a one-block change per card (swap the `feature` block for a `form` block with a
-`thank_you` redirect to the file). Not done without a decision, because it
-changes what the visitor experiences.
+The workbook is now being gated behind an email capture. Steve chose a Kajabi
+form synced to Mailchimp by Zapier. It is built as a dedicated opt-in page
+rather than a form swapped into card 4, so the card keeps its shape and simply
+points at the new page. See `Website/WORKBOOK-LEAD-MAGNET.md`.
+
+Note the card never worked in the first place: `btn_action` was `"#"`.
+
+The ebook is a $10 SamCart product, not a lead magnet, so nothing changes there.
 
 ## Still needed from Steve
 
 1. ~~The Gut Fix ebook URL~~ supplied, wired to SamCart
-2. The 7-day lifestyle workbook file or its URL
-3. The URL for the Block Season 17 segment
-4. Whether the workbook should capture an email first
+2. The 7-day lifestyle workbook file. **Still outstanding**, and it blocks
+   publishing the whole opt-in flow
+3. The URL for the Block Season 17 segment. A Facebook URL is saved in card 5's
+   `img_action`, which is the image click target on a card with the image
+   hidden, so nothing reaches it. Needs confirming and moving to `btn_action`
+4. ~~Whether the workbook should capture an email first~~ yes, decided
+   2026-10-23
 
 ## The Gut Fix SamCart page
 
