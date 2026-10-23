@@ -13,6 +13,36 @@ the web version to upload.
 | `foundations-phone` | Phone propped up beside a mug, a single lesson on screen | The hero slot. Matches "Read on your phone" and does not imply video |
 | `foundations-flatlay` | Overhead: phone, open notebook with pen, mug, leaves | A full-width band. The notebook is the twelve reflection prompts |
 
+## Dashboard renders (added later the same day)
+
+Steve asked for the actual Gut Foundations course dashboard rendered in the same
+style, rather than a generic device. The real screenshot went in as an image
+reference alongside the two style references.
+
+| File | What it is | Verdict |
+|---|---|---|
+| `dashboard-angled` | The layout on a paper desk at a three-quarter angle, mug and leaves beside it | **Best.** Warmest and most finished. Heading legible, and the right panel carries an abstract shape where Alina's photo sits in the real UI |
+| `dashboard-text` | Flat, full view, straight on | Good. Both headings legible and the layout is faithful. Top banner strip is mush and the right card is blank |
+| `dashboard-notext` | Flat, no lettering at all | **Weakest.** Cropped too tight, clipping the sidebar title and the right panel. Texture only |
+
+### Text turned out to be fine
+
+An earlier note here said to keep letters out of these prompts entirely because
+image models garble them. That was too cautious for this model. `gpt_image_2_5`
+is tagged `text-rendering` and produced GUT FOUNDATIONS and WELCOME TO GUT
+FOUNDATIONS as clean cut-paper letterforms at the first attempt.
+
+The rule that still holds: **name the exact words you want and keep them few and
+large.** Body copy and the sidebar lesson titles are left as paper strips in all
+three, and that is where garbling would start. Asking for eleven small lesson
+titles is the pass that would break.
+
+Alina's photograph is deliberately absent. All 52 illustrations are objects and
+places with no people in them, and a cut-paper likeness of a real person would
+sit badly in the set as well as risking a poor likeness.
+
+---
+
 ## How they were made
 
 `gpt_image_2_5` via Higgsfield, 16:9, quality high, 2k, with two of the
