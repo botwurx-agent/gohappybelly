@@ -285,3 +285,24 @@ delete tool is `delete_navbar_link`. They have to go in the admin:
 | Download collection | `431713` | `app.kajabi.com/admin/downloads/collections/431713` |
 | Product | `2149610329` | `app.kajabi.com/admin/products/2149610329` |
 | Offer (draft) | `2151466467` | `app.kajabi.com/admin/offers/2151466467/edit` |
+
+## Cover image added, 2026-10-23
+
+Media `4739136`, 1545x2000 PNG, placed as block `1792050000001_img` at the top
+of the opt-in section, above the headline. Verified by read.
+
+Styled with a new `.gh-cover` rule copied in shape from the Link in Bio
+portrait: anchored to Nova's `image-wrapper` rather than the block, so the
+wrapper hugs the cover and centres it instead of filling the column, with
+`overflow: visible` to release Tailwind's `overflow-hidden` from clipping the
+drop shadow. 260px desktop, 200px mobile, 3px radius,
+`0 24px 60px rgba(22,46,40,0.14)`.
+
+Sized conservatively because the cover is 8.5x11. At 260px that is 337px of
+height before the headline starts, and the form has to stay reachable on a
+phone.
+
+**Weight:** the uploaded PNG is 1.1 MB for something displayed at 260px. A
+128 KB JPEG rendered from page 1 of the PDF at 850x1100 is in the scratchpad and
+was sent to Steve; swapping it in would cut almost a megabyte off a page whose
+traffic is nearly all mobile. Not swapped, his file is the one in place.
