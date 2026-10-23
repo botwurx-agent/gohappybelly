@@ -385,3 +385,60 @@ checkout block's own panel on the right. `sync_checkout_block_to_offer` is
 configured on the **offer's Checkout tab in the admin**, the same area where the
 order bump turned out to live. It is not reachable through the theme tools, so
 Steve pastes that one.
+
+
+---
+
+## Gut Foundations checkout, 2026-10-23
+
+Offer `2151464245`, checkout theme `2167984952`, `/offers/yYfiaNgo/checkout`.
+
+Found live, on a published checkout taking money, still carrying **Kajabi's raw
+placeholder template**:
+
+```
+[Offer title]
+[ Insert a call to action statement that will encourage the customer to purchase ]
+What you'll get:
+  [ Insert value 1 ]
+  [ Insert value 2 ]
+  [ Insert value 3 ]
+[ Add any additional disclaimers or details about the purchase ]
+```
+
+Plus an empty image block rendering nothing, the same fault fixed earlier on the
+$1,497 checkout.
+
+Replaced with real copy: the eight foundations and three bonus modules, twelve
+reflection questions, the private community, lifetime access, and a closing line
+that it is written rather than video. The cut-paper dashboard image now fills the
+image block.
+
+The checkout button was on Kajabi's default dark grey pill (`#343332`, radius
+50). Set to terracotta `#C07A5A` at radius 2, per the standing design system
+rule.
+
+### Price is deliberately not written into the copy
+
+`sync_checkout_block_to_offer` is true and `show_checkout_block_price_text_override`
+is false, so the checkout block renders the offer's real price by itself. The
+prose says "One payment, nothing recurring" and names no number.
+
+That is the lesson from the $147 checkout, which had a hardcoded $197 and the
+word subscription sitting on a $147 one-time offer. A number typed into checkout
+prose drifts the moment the offer changes and nothing warns you.
+
+### Three of three
+
+Every checkout inspected in this session has been wrong in a way a buyer would
+see:
+
+| Offer | Fault |
+|---|---|
+| $1,497 3-Month Gut Reset | Bad copy, empty image block |
+| $147 Gut Reset Course | Stated $197 and "subscription" on a $147 one-time offer |
+| $27 Gut Foundations | Raw Kajabi placeholder text, empty image block |
+
+**The remaining published checkouts are unaudited**: eight lab test offers from
+$250 to $639, and anything else published. On a three for three record it is
+reasonable to assume several are broken. Worth a sweep.
