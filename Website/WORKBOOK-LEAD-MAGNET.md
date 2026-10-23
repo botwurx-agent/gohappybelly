@@ -258,3 +258,30 @@ touching the PDF:
 
 That names the limit of the document honestly and points at the thing that does
 enter the funnel.
+
+---
+
+## Download moved onto the form, 2026-10-23
+
+Steve's call. Form block `1792050000001_f` on theme `2167998577` now has
+`thank_you` set to the file path instead of the thank-you page, so submitting
+the form downloads the PDF directly. Verified by read.
+
+Route A from the section above. Two things fall out of it:
+
+1. **Thank-you page `2152353358` is now orphaned.** Nothing routes to it. It has
+   never been published. Delete or keep, not decided.
+2. **Automation `1191254`'s email still links to that page** as the place to
+   download. If the page goes, the email link goes with it and should point at
+   the file path instead. Not changed.
+
+### The three Download-path objects cannot be deleted from here
+
+This MCP has no delete for offers, products or download collections. The only
+delete tool is `delete_navbar_link`. They have to go in the admin:
+
+| Thing | ID | Admin |
+|---|---|---|
+| Download collection | `431713` | `app.kajabi.com/admin/downloads/collections/431713` |
+| Product | `2149610329` | `app.kajabi.com/admin/products/2149610329` |
+| Offer (draft) | `2151466467` | `app.kajabi.com/admin/offers/2151466467/edit` |
