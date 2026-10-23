@@ -555,3 +555,75 @@ caution. Five Foods and Week 2's pattern page both say start with a spoonful
 and stop if it disagrees with you, and warn the Bloated and Backed-Up pattern
 specifically. The fermenting lesson ends on "your gut will thank you" with no
 caveat at all.
+
+---
+
+## Lesson thumbnails replaced, 2026-10-23: 62 of 62
+
+Steve flagged the Find Your Pattern module page: the lesson cards still carried
+old-course artwork, green brush circles reading "GUT TYPE QUIZ", "WHAT YOUR QUIZ
+RESULTS MEAN" and "ADVANCED ALLERGY TESTING FOR YOUR GUT", under the new lesson
+titles. Those images were wrong twice over. The titles baked into them no longer
+matched the lessons, and the locked image style forbids text outright:
+"Absolutely no text, no words, no letters, no numbers, no labels, no signage."
+
+**Nothing was generated.** Every lesson already had a bespoke cut-paper image
+sitting in its body from the Tier 1 and Tier 3 passes, and those images were
+already in the media library. The thumbnail is now that same image. Zero credits
+spent, no upload round-trip with Steve, and the card on the module page is the
+picture the member sees again at the top of the lesson.
+
+### How it is done
+
+Lesson thumbnails are **not** reachable through the course tools. `get_lesson`
+and `get_course` do not return the field, and `update_course_content` has no
+parameter for it. The route is `place_media`: a Kajabi lesson is a `Post`, and a
+Post's image column is `poster_image`.
+
+```
+place_media(site_id, media_id, surface_type: "Post",
+            surface_id: <lesson_id>, attribute_name: "poster_image")
+```
+
+Because the field cannot be read back, there is no way to audit which lessons
+had stale thumbnails, or to confirm one by reading it afterwards. Writing the
+right image to all 62 made the question moot.
+
+### The mapping
+
+`Website/images/gut-reset/lesson-thumbnails.tsv` holds all 62 rows. Built by
+joining `tier3-lesson-map.tsv` against the media library listing, which matched
+all 38 Tier 3 images with none left over, plus 24 rows added by hand from the
+Tier 1 placement record above:
+
+| Group | Lessons | Image |
+|---|---|---|
+| Tier 3 | 38 | its own, one to one |
+| Module openers | 9 | that module's hero |
+| Working With The X Gut | 5 | that pattern's portrait |
+| Shopping lists | 5 | that pattern's portrait |
+| Three Days Of Meals | 5 | that pattern's portrait |
+
+The fifteen pattern lessons share five portraits, so a portrait shows up twice
+in the Reference Shelf, once on a shopping list and once on a meal plan. That
+reads as recognition rather than repetition: in a module of eleven lessons where
+five near-identical titles sit side by side, the picture says which one is hers.
+
+### Verified
+
+`list_media` with `in_use: false` over the `reset-` prefix returns **zero** of
+52, so every image is placed and no lesson in the map was skipped.
+
+**Not visually verified.** Cloudflare blocks this container from the site.
+Worth a look at the Find Your Pattern module page, which is where the problem
+showed.
+
+### Drafts left without thumbnails
+
+Eight draft lessons are not in the map and still carry whatever they had:
+`2178659619` Options For Vegetarians & Vegans, `2178660203`, `2178660258`,
+`2178660273` and `2178660602` (the two superseded ones), `2201292355` Your
+Reintroduction Tracker (a duplicate of the published `2201293987`), and
+`2178660736` and `2181468223` in the Reference Shelf. Members cannot see drafts,
+so this only matters if one is published. Three of them are already queued for
+deletion.
