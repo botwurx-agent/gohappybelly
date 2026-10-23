@@ -344,7 +344,7 @@ duplicate.
 |---|---|
 | Opt-in page `2152353357` | **Published** at `/7-day-lifestyle-workbook`, with SEO title and description |
 | `/links` card 4 | Now points at the opt-in page, same tab. It had been `#` since the page was built |
-| Automation `1191254` | Email repointed at the real file path. Still a **draft** |
+| Automation `1191254` | **Armed 2026-10-23.** Published, not paused, no errors. Form submitted, then tag `workbook-optin`, then the email |
 
 The welcome email now also carries the quiz, which is the only place left to
 make the funnel argument now that the thank-you page is out of the flow:
@@ -359,9 +359,13 @@ make the funnel argument now that the thank-you page is out of the flow:
    nurture sequences. Without it they sit in Kajabi where no sequence runs.
    Watch the single `name` field against Mailchimp's `FNAME`, and expect
    `GUTPATTERN` to be blank.
-2. **Arm automation `1191254`** in the Kajabi admin. Until then nobody is tagged
-   and no email goes out; the download still works, since that is the form's own
-   setting.
+2. ~~Arm automation `1191254`.~~ **Done 2026-10-23.** Verified published and
+   unpaused, `total_enrolled` 0.
+
+   The email has still never actually sent. One live test is worth it, but
+   **use a fresh address**: Kajabi keeps a once-per-contact enrolment ledger, so
+   the address Steve already submitted with may not re-enrol. A plus-alias
+   works.
 3. Thank-you page `2152353358` is an orphaned draft. No delete tool for landing
    pages, and it is unreachable, so it is being left.
 4. The cover image is a 1.1 MB PNG rendered at 260px. A 128 KB JPEG of the same
