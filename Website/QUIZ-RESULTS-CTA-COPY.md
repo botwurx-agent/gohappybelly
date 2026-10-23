@@ -6,6 +6,36 @@ Written 2026-10-23, for Steve to paste into ScoreApp.
 (`https://gut-pattern-quiz.scoreapp.com`), which has no MCP connection here.
 Everything below is ready to paste by hand.
 
+The agent also did not build those pages. Checked 2026-10-23: the agent's own
+founding documents, `docs/superpowers/plans/2026-05-20-gohappybelly-agent-setup.md`
+and the matching design spec, both list "5 results pages (one per archetype)"
+under **Live** as of 2026-05-20, which is the day this agent was set up. They
+predate it. Nothing in git history creates or edits them, and there has never
+been a ScoreApp tool connected.
+
+---
+
+## Check the Guthub CTA while you are in there
+
+This matters more than the $27 placement below.
+
+That same founding spec records the results pages as carrying a **dual CTA**:
+
+```
+Results page: 1 of 5 archetypes - dual CTA:
+  [Book a Gut Breakthrough Call]  OR  [Start Guthub Trial]
+```
+
+Steve pulled Guthub from the funnel on 2026-10-21. CLAUDE.md now says, in as
+many words, "do not put its trial in a quiz results CTA", and "treat any funnel
+placement of Guthub as a mistake".
+
+So unless those buttons were changed in the five months since, **all five
+results pages are still sending quiz takers to a Guthub trial**, against a
+decision made two days ago. The agent cannot see the pages to confirm it. Worth
+looking at first, because it is a live contradiction and the fix is deleting a
+button rather than writing anything.
+
 ---
 
 ## Where it goes, and a decision to make first
