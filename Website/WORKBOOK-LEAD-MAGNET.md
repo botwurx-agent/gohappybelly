@@ -306,3 +306,14 @@ phone.
 128 KB JPEG rendered from page 1 of the PDF at 850x1100 is in the scratchpad and
 was sent to Steve; swapping it in would cut almost a megabyte off a page whose
 traffic is nearly all mobile. Not swapped, his file is the one in place.
+
+## Download-path leftovers removed, 2026-10-23
+
+Steve deleted the product and the offer in the admin. Verified: `search_products`
+with `digital_download` now returns only the two originals, the 2024 e-book and
+The Gut Fix. **Deleting the product took its download collection with it**, so
+the collection did not need deleting separately.
+
+Remaining clutter is the orphaned thank-you page `2152353358`. There is no
+delete tool for landing pages either, and it has never been published, so it
+costs nothing to leave as a draft.
