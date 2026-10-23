@@ -235,3 +235,47 @@ actually needs. Do not copy the home page's `settings.css` wholesale — most of
 it is Encore-specific workarounds (the 1260px container override, the
 `box_shadow`-on-`.block` portrait fix, the clipped-badge `overflow` release)
 that have no equivalent problem in Nova.
+
+---
+
+## Two copy rules this system does not cover, and must
+
+Added 2026-10-23, both from Steve rejecting a page.
+
+### Reuse the system, design the page
+
+The last page built is the cheapest thing in context to reach for, and reaching
+for it takes the whole blob: palette *and* architecture *and* copy rhythm. Only
+the palette travels.
+
+What is shared across every page: the tokens in §2 and §3, the button spec, the
+banding, the components, the Nova and Encore workarounds above. What is derived
+fresh from the page's own job, every time: its structure, its section order, and
+every sentence in it.
+
+The specific failure to watch for is a *sales* page built on a *thank-you* page's
+skeleton. A confirmation page talks to somebody who has already bought, so it
+only has to reassure, and its shape is eyebrow, centered h1, stacked prose,
+close. A sales page has to argue, which needs a hook, a named pain, a reframe, an
+is/is-not, objections answered, and a close. The two are not interchangeable and
+the design system does not make them so.
+
+Where a device genuinely is a system component, say so and reuse it knowingly.
+The two-column is/is-not card pair is one. Its content is still written new.
+
+### Do not assume the reader has had labs
+
+"Your labs came back normal" is Avatar 1, the Dismissed Patient, who has seen
+multiple doctors and been told she is fine. CLAUDE.md puts her at the highest
+urgency and the highest willingness to invest, which makes her the **$1,497**
+buyer. She is one avatar out of seven.
+
+Most people meeting the business for the first time have never had a test run.
+Opening a front-end page with a lab story tells all of them the page is not
+about them.
+
+**No page may assume the reader has lab results unless the offer itself is a
+test.** On the front end the pain to lead with is the one Avatars 2, 3, 4 and 5
+share: she has been trying things, some helped for two weeks, nothing
+converged, and nobody ever explained how the system works. Reserve Avatar 1
+framing for the Reset.
