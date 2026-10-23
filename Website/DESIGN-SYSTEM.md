@@ -279,3 +279,59 @@ test.** On the front end the pain to lead with is the one Avatars 2, 3, 4 and 5
 share: she has been trying things, some helped for two weeks, nothing
 converged, and nobody ever explained how the system works. Reserve Avatar 1
 framing for the Reset.
+
+---
+
+## Asset inventory: look here before building anything
+
+Added 2026-10-23, after a $27 sales page about the five patterns shipped with
+zero images while five purpose-made illustrations of exactly those five
+patterns sat in this repo and in the Kajabi media library.
+
+**There are 52 cut-paper illustrations.** They were commissioned for the Gut
+Reset course lessons and they are the strongest visual asset the business owns.
+They are not Gut Reset property. Any page may use any of them.
+
+- On disk: `Website/images/gut-reset/web/*.jpg` (1600x905) and `raw/*.png`
+- In Kajabi: all uploaded, ids in `Website/images/gut-reset/lesson-thumbnails.tsv`
+- Also on disk: `Website/mockups/` (course mockups, laptop shots, logo) and two
+  photographs of Alina, `Website/Alina_Fence.jpg` and `Website/IMG_8247.jpg`,
+  which are **not** yet in the Kajabi library
+
+### The five archetype illustrations
+
+Each one draws its locked analogy from CLAUDE.md. These are the single most
+reusable images in the set: every page that touches the five patterns should be
+using them.
+
+| Pattern | Image | Media id | What it shows |
+|---|---|---|---|
+| Wired-and-Tired | `reset-pattern-wired-tired` | 4728795 | Car, hood up, engine and belts |
+| Reactive | `reset-pattern-reactive` | 4728776 | Screen door, mesh torn |
+| Sugar-Driven | `reset-pattern-sugar-driven` | 4728779 | Kitchen ransacked, cupboards open, jars emptied |
+| Underactive | `reset-pattern-underactive` | 4728785 | Stove, pan on an unlit burner |
+| Bloated and Backed-Up | `reset-pattern-backed-up` | 4728783 | Basement, standing water, unrepaired leak |
+
+Other high-value ones: `reset-module-find-your-pattern` (4728778, a signpost at a
+five-way fork, which is the natural hero for anything about choosing a pattern),
+`reset-how-digestion-works` (4729601), `reset-qa-with-alina` (4729608).
+
+### Referencing them
+
+`list_media` returns a plain CDN `image_url` that resolves without signing and
+does not expire:
+
+```
+https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148204891/images/<hash>_<name>.jpg
+```
+
+Put that straight into an `image` block's `image` setting. This corrects an
+earlier note in this file: *constructed* CDN paths 403, but the `image_url`
+Kajabi hands back works and is durable. `place_media` is only needed for slots
+that are not plain URL settings, such as lesson `poster_image`.
+
+### The rule
+
+Before building any page, list what already exists: `Website/images/`,
+`Website/mockups/`, and `list_media` on the site. A page that ends up with no
+imagery has to be a decision, written down, not an oversight.

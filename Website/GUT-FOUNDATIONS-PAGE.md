@@ -46,6 +46,44 @@ lab story tells them the page is not about them.
 **Rule: no page may assume the reader has lab results unless the offer itself is
 a test.** Avatar 1 framing belongs on the Reset, not on the front end.
 
+### Correction 3: the copy went abstract, and the art was never looked for
+
+The second version was rejected too. Steve: the copy "sounds odd, it's very
+vague", and there is "no imagery, no graphics, no visual cues". Both were true
+and they had the same cause.
+
+**The copy had drifted one level of abstraction too high.** It argued about
+epistemology rather than describing her week: "it is an information problem",
+"trying things is not the same as knowing", "you are aiming at something". Those
+are propositions. They are how a consultant talks about the problem, not how it
+feels at 3pm when the waistband hurts. Compare the $147 sales page, written two
+days earlier, which is full of "my safe food list keeps getting shorter" and
+"days three to five are the worst, then it drops off a cliff". That page is
+good. This one regressed from it.
+
+**The five locked analogies and five locked aha lines went unused.** CLAUDE.md
+hands over the car with the engine timing off, the torn screen door, the
+squatters in the house, the stove that never gets hot, the bacteria in the wrong
+neighborhood, and five aha lines including "The cravings aren't yours. They're
+something else's, broadcasting through you." They are pre-approved, they are the
+most concrete language the brand owns, and the page used none of them.
+
+**And the art existed.** Fifty-two cut-paper illustrations sit in
+`Website/images/gut-reset/` and in the Kajabi media library, five of them
+illustrating exactly those five analogies, plus a signpost at a five-way fork
+that is the obvious hero for a page about choosing a pattern. A page about the
+five patterns shipped with no images while five pictures of the five patterns
+sat in the repo.
+
+So this was not a missing skill, and a new one would not have fixed it. The
+voice was already demonstrated on the $147 page, the vocabulary was already
+locked in CLAUDE.md, and the art was already drawn. All three were in reach and
+none were reached for.
+
+**Rule: use the locked analogies and aha lines wherever the five patterns
+appear, and inventory the assets before building.** The asset inventory now
+lives in `Website/DESIGN-SYSTEM.md`.
+
 ---
 
 ## Who this page is written for
@@ -78,51 +116,60 @@ Validates first, names the gap second, and the gap is what the product fills.
 
 ---
 
-## Structure (9 sections)
+## Structure (10 sections)
 
 | # | id | Section | BG | Job |
 |---|---|---|---|---|
-| 1 | `1792070000001` | Hero | `#F8FAF8` | Hook, two-line lead, CTA |
+| 1 | `1792070000001` | Hero | `#F8FAF8` | Hook, lead, CTA, **signpost art** |
 | 2 | `1792070000006` | Stat Bar | `#162E28` | Chrome. Scope in four facts |
-| 3 | `1792070000002` | The guessing | `#EFF7F1` | The pain, specific and unflattering |
-| 4 | `1792070000007` | Five patterns | `#F8FAF8` | Why the internet contradicts itself |
+| 3 | `1792070000002` | The drawer | `#EFF7F1` | The pain, in objects |
+| 4 | `1792070000007` | The five patterns | `#F8FAF8` | **The centerpiece. 5 illustrated rows** |
 | 5 | `1792070000003` | What is inside | `#EFF7F1` | 8 + 3 modules, prompts, group |
 | 6 | `1792070000004` | Is and is not | `#F8FAF8` | Two-column cards |
-| 7 | `1792070000008` | Who wrote this | `#EFF7F1` | Credential, late and brief |
-| 8 | `1792070000009` | FAQ | `#F8FAF8` | Five objections |
+| 7 | `1792070000008` | Who wrote this | `#EFF7F1` | Credential, late, with art |
+| 8 | `1792070000009` | FAQ | `#F8FAF8` | Six objections |
 | 9 | `1792070000005` | Final CTA | `#162E28` | Close |
+| 10 | `1792070000016` | Sticky Mobile CTA | n/a | Fixed buy bar, mobile only |
 
-Banding alternates `#F8FAF8` / `#EFF7F1`. Forest appears twice: the stat bar
-(chrome, 28px, acting as a rule under the hero, same deviation the $147 page
-documents) and the final CTA.
+Eight images on the page. Banding alternates `#F8FAF8` / `#EFF7F1`; forest
+appears twice, as the stat bar and the final CTA.
 
-### Decisions inside the structure
+### The five patterns section is the page
 
-- **Credential comes late, not early.** Section 7, not section 2. The reader's
-  question at the top of the page is "is this about me", not "who are you". The
-  credential only becomes interesting once she believes the diagnosis of her
-  problem. It also carries the price justification: "the groundwork, written down
-  so you can have it for $27 instead of an hour of her time."
-- **"Five patterns, not one problem" is the argument section.** It explains why
-  everything she has read disagrees with everything else she has read: the
-  patterns want opposite things, so eat-more-fermented-food and
-  avoid-fermented-food are both correct, for different people. This reframes her
-  past failures as an information problem rather than a willpower problem, which
-  is the pivot the sale turns on.
-- **Is / is not is two columns, not a list.** Same device as the $147 page
-  because it is a system component, with its own content. Sub reads "The
-  right-hand column is the reason to believe the left." The no-video admission
-  lives here, up front, not buried.
-- **The FAQ answers the two real objections.** "Why is it only $27" (it is the
-  groundwork, not the plan, and it is meant to be the first thing you buy rather
-  than the last) and "Is this just the free quiz" (the quiz gives you an answer,
-  this gives you the reasoning, which is what you need when the answer does not
-  quite fit). Also: no video, two hours total, and why it does not hand you a
-  food list.
-- **"Will it tell me what to eat" is answered with a no and a reason.** Removing
-  foods before you know your pattern "is how people end up with nine safe foods
-  and no answers." Turns a missing feature into a point of discipline, and keeps
-  the page clear of protocol promises.
+Five alternating rows, each one art on one side and copy on the other, flipping
+sides down the page (`gh-zig` / `gh-zig-flip`). Every row carries, in order: a
+numbered eyebrow, the pattern name, **one line in her words**, Alina's locked
+analogy, and the locked aha line in a sage-bordered Playfair italic (`gh-aha`).
+
+| # | Pattern | Her line | Art |
+|---|---|---|---|
+| 01 | Wired-and-Tired | "Same lunch on a calm day and a bad day, and only one of them hurts." | Car, hood up |
+| 02 | Reactive | "My safe food list keeps getting shorter." | Torn screen door |
+| 03 | Sugar-Driven | "The 3pm craving does not feel like a choice I am making." | Ransacked kitchen |
+| 04 | Underactive | "Food sits like a stone for hours." | Unlit stove |
+| 05 | Bloated and Backed-Up | "Flat in the morning, bloated by evening. Every day." | Flooded basement |
+
+Closes on: *"Four of these are not you. Working out which one is, is the whole
+job, and it is what the eleven lessons are for."*
+
+**This section is also the ladder's dividing line.** Gut Foundations explains
+what each pattern *is*. The $147 Gut Reset Course says what to *do* about it,
+week by week. The two pages cover the same five patterns and must not say the
+same things about them: explanation here, prescription there.
+
+### Other decisions
+
+- **Credential comes late**, at section 7, not section 2. Her question at the
+  top of the page is whether it is about her, not who Alina is. It also carries
+  the price justification: the hour she used to spend at the start of every
+  client call, written down, for $27.
+- **The pain section is made of objects**, not propositions. The drawer of
+  half-finished bottles, two-thirds full. Which jeans not to wear after lunch.
+  Three things changed in the same week.
+- **The FAQ answers "should I buy this or the $147 course"** directly, because
+  the ladder only works if the rungs are legible.
+- **Sticky mobile buy bar**, matching the $147 page, which had one while this
+  page did not.
 
 ---
 
@@ -133,35 +180,26 @@ All verified against course 2149609329 before writing.
 - **Eleven lessons sold.** Eight foundations plus three bonus modules. The
   course holds 14 published lessons; the three in Start Here are front matter
   and are not counted in the sell.
-- **No video anywhere.** Every lesson is `media: none`. Said plainly twice, in
-  the is/is-not column and again in the FAQ, rather than left for the buyer to
-  discover after paying.
+- **No video anywhere.** Every lesson is `media: none`. Said plainly three
+  times, in the stat bar, the is/is-not column and the FAQ, rather than left
+  for the buyer to discover after paying.
 - **About ten minutes per lesson, about two hours in total.**
 - **Twelve reflection prompts.**
 - **Private group included.**
 - **Lifetime access**, phrased as "yours to keep" and "access does not expire".
 
-No testimonials on the page. There are none for this course yet. When there are,
-they go between the FAQ and the final CTA in a terracotta-left-border card.
+No testimonials on the page. There are none for this course yet. When there
+are, they go between the FAQ and the final CTA in a terracotta-left-border card.
 
 ---
 
 ## Compliance
 
-Nothing on the page diagnoses the reader. It describes patterns, says the course
-"is clear about what a pattern can and cannot tell you", and makes no claim to
-heal, seal, cure or treat. Alina is named a Functional Diagnostic Nutrition
-Practitioner, which is her credential, not a claim about the reader. Checked for
-em dashes and the banned word list: clean.
-
----
-
-## Known gap
-
-**No image anywhere on this page.** The course has no thumbnail and there is no
-mockup. The hero is a centered column where the $147 hero has a cover shot
-beside the copy, and the page would read better with one. Options: a cut-paper
-cover in the locked style, or a photo of Alina. Flagged, not resolved.
+Nothing diagnoses the reader. The patterns are described as patterns, the
+is/is-not column says the course "is clear about what a pattern can and cannot
+tell you", and there is no claim to heal, seal, cure or treat. Alina is named a
+Functional Diagnostic Nutrition Practitioner, which is her credential, not a
+claim about the reader. Checked for em dashes and the banned word list: clean.
 
 ---
 
@@ -170,4 +208,6 @@ cover in the locked style, or a photo of Alina. Flagged, not resolved.
 1. Publish the $27 offer 2151464245, then publish this page.
 2. Point traffic at `/gut-foundations`: Link in Bio, quiz results pages, the
    archetype email sequences.
-3. An image in the hero.
+3. A real photograph of Alina. The credential section currently uses an
+   illustration; `Website/Alina_Fence.jpg` and `Website/IMG_8247.jpg` exist on
+   disk but are not in the Kajabi library, and MCP cannot upload.
