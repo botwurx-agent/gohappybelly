@@ -317,3 +317,52 @@ the collection did not need deleting separately.
 Remaining clutter is the orphaned thank-you page `2152353358`. There is no
 delete tool for landing pages either, and it has never been published, so it
 costs nothing to leave as a draft.
+
+---
+
+# Live, 2026-10-23
+
+Steve confirmed the opt-in works: submitting the form downloads the PDF.
+
+**The constructed path was wrong, and Pick File replaced it.** The form's
+`thank_you` now reads:
+
+```
+/resource_redirect/downloads/file-uploads/sites/2148204891/themes/2167998577/downloads/723c6c-3a18-3058-baa-aa0d74bc60ed_Copy_of_7-Day_Healthy_Lifestyle_Challenge_Workbook.pdf
+```
+
+That is `themes/2167998577/downloads/`, the theme-scoped shape, matching 101
+Foods exactly. The guess at `sites/2148204891/files/` was never going to work.
+**Rule for next time: a file served through `/resource_redirect/downloads/` has
+to be uploaded through the surface's own Pick File control, not the global media
+library.** The media library copy of the PDF (`4737430`) is now an unused
+duplicate.
+
+## What shipped
+
+| | |
+|---|---|
+| Opt-in page `2152353357` | **Published** at `/7-day-lifestyle-workbook`, with SEO title and description |
+| `/links` card 4 | Now points at the opt-in page, same tab. It had been `#` since the page was built |
+| Automation `1191254` | Email repointed at the real file path. Still a **draft** |
+
+The welcome email now also carries the quiz, which is the only place left to
+make the funnel argument now that the thank-you page is out of the flow:
+
+> One thing worth saying plainly: this workbook is about the habits around
+> eating. If what you actually want to know is why your symptoms are happening
+> at all, the gut pattern quiz is the better place to start.
+
+## Still outstanding
+
+1. **Zapier**, Kajabi form `2149762545` to Mailchimp, so these leads reach the
+   nurture sequences. Without it they sit in Kajabi where no sequence runs.
+   Watch the single `name` field against Mailchimp's `FNAME`, and expect
+   `GUTPATTERN` to be blank.
+2. **Arm automation `1191254`** in the Kajabi admin. Until then nobody is tagged
+   and no email goes out; the download still works, since that is the form's own
+   setting.
+3. Thank-you page `2152353358` is an orphaned draft. No delete tool for landing
+   pages, and it is unreachable, so it is being left.
+4. The cover image is a 1.1 MB PNG rendered at 260px. A 128 KB JPEG of the same
+   cover exists if mobile weight matters.
