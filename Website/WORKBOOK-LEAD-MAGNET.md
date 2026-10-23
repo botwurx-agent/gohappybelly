@@ -172,3 +172,89 @@ The signing behaviour above was observed during the course build, not re-tested
 since. If Steve uploads the PDF to the media library, reading the asset back
 will settle it: an unsigned permanent URL means option A can live on Kajabi and
 nothing external is needed. A signed URL with an expiry confirms the note.
+
+---
+
+# How Kajabi actually delivers a lead magnet, 2026-10-23
+
+Steve was right and the earlier recommendation here was wrong. The Kajabi form
+block's **Thank You Page** setting is not only a page redirect. It has a
+**"Download a file"** mode, and that mode simply stores a
+`/resource_redirect/downloads/...` path in the same `thank_you` field.
+
+Copied from the working `101-foods-before-one` page (landing page `2150689978`,
+theme `2159076509`, form block `1621647488940`):
+
+```
+"thank_you": "/resource_redirect/downloads/file-uploads/sites/2148204891/themes/2159076509/downloads/ea4e80d-dcc2-4f6d-4880-8e2ab0458_GoHappyBelly_101_Foods_Before_One_Checklist.pdf"
+```
+
+`/resource_redirect/downloads/` is a Kajabi route that re-signs the S3 object
+server side on every request. **That solves the 7-day expiry entirely.** No
+external host, no Download product, no offer, no Kajabi account.
+
+Note the path is **theme scoped**: the file sits under
+`themes/2159076509/downloads/`, not in the global media library. That is why
+`place_media` rejected both the collection and the product id, and why the
+Pick File button in the form block is the upload route for this kind of asset.
+
+## What that retires
+
+The Download product route was started and is **not needed**:
+
+| Thing | ID | Action |
+|---|---|---|
+| Download collection | `431713` | Delete in admin |
+| Product | `2149610329` | Delete in admin |
+| Free offer "Free 7-Day Lifestyle Workbook" | `2151466467` | Delete in admin, still draft |
+
+None was ever published and nothing references them.
+
+## Current wiring
+
+- Opt-in form block `1792050000001_f`: `thank_you` → `/7-day-lifestyle-workbook-thank-you`
+- Thank-you page download button `1792050000011_t`: `btn_action` →
+  `/resource_redirect/downloads/file-uploads/sites/2148204891/files/01c016-318d-12aa-7d0a-7a5e1bc480e_Copy_of_7-Day_Healthy_Lifestyle_Challenge_Workbook.pdf`
+
+That second path is **constructed, not copied**. The working example points at a
+theme's downloads folder; the uploaded workbook is a media library asset under
+`sites/2148204891/files/`. The route may or may not serve that prefix, and it
+cannot be tested from this container because Cloudflare 403s the site. **Steve
+tests it by clicking the button.**
+
+If it 404s, the fix is to open the opt-in page's form block in the theme
+builder, set Thank You Page to "Download a file", and use **Pick File**. That
+uploads the PDF into the theme's own downloads folder and writes the proven path
+shape. It also makes the separate thank-you page redundant, which is a choice
+rather than a problem (see below).
+
+## Two routes, one decision left
+
+**A. Form downloads the file directly.** `thank_you` holds the file path. She
+submits and the PDF arrives. Lowest friction, and what 101 Foods did. The
+thank-you page and its quiz push disappear.
+
+**B. Form redirects to the thank-you page**, which carries the download button
+and the quiz push. One extra click, but she lands somewhere that moves her
+further into the funnel rather than ending at a file.
+
+Currently wired as **B**, because the workbook does not enter anybody into the
+funnel by itself and the quiz does. 101 Foods used A because it had no next step
+to offer. Flipping to A is one setting.
+
+## Copy corrected to the real contents
+
+Steve chose to ship the workbook as it is, so the card and the opt-in page now
+describe what is actually in the file rather than the sleep and stress promise
+that was never in it. Both now list the seven days: portion control, vegetables,
+meal planning, smart snacking, hydration, mindful eating, active living.
+
+The opt-in page's closing line does the one piece of repair available without
+touching the PDF:
+
+> It is a starting point, not a protocol. If you want to know what is actually
+> driving your symptoms rather than build better habits around them, take the
+> gut pattern quiz instead.
+
+That names the limit of the document honestly and points at the thing that does
+enter the funnel.
