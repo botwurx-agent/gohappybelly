@@ -88,13 +88,28 @@ original problem.
 
 ## True of all eight, and worth a decision
 
-**`sync_checkout_block_to_offer` is false on every one.** The price in the body
-copy is typed by hand and does not follow the offer. They all match today. The
-day one changes in Kajabi, the page keeps the old number and nothing warns
-anyone. This is exactly what went wrong on the $147 checkout, which sat at $197.
+**`sync_checkout_block_to_offer` was false on every one. Turned on across all
+eight, 2026-10-23, on Steve's instruction.** The checkout block now takes its
+price from the offer rather than holding its own copy, so changing a price in
+Kajabi reaches the page.
 
-Turning sync on changes how the price renders, so it is a deliberate change
-rather than a silent fix. Recommended, but Steve's call.
+**This does not remove every hand-typed price.** Each body still opens with a
+line reading "Client Pricing: $639.00" and so on, typed into the prose. Sync
+governs the purchase block on the right, not that sentence. All eight agree
+today, and with sync on a future change will show up as the block and the
+sentence disagreeing on the same page, which is at least visible rather than
+silent. Deleting those lines would close the gap completely, at the cost of a
+layout every lab page currently shares.
+
+**Two things to eyeball now that sync is on,** since the agent cannot see the
+live site:
+
+1. **Blood Chemistry.** Its offer description is raw Elementor markup pasted
+   from another site, nested divs and all. If the block renders the offer
+   description, that page will look broken.
+2. **Food Sensitivity.** Its offer description carries the vendor's "can cause
+   ... leaky gut" and "if you are diagnosed with" language. If the block renders
+   descriptions, that text now appears twice on the page.
 
 **No product is attached to any of them** (`products: []`), so a purchase grants
 nothing in Kajabi. For physical kits fulfilled by the lab that is probably
