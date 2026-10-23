@@ -126,3 +126,49 @@ https://www.facebook.com/BetaBlox/videos/2152813141819963/
 nothing on the card can reach that URL. It looks like the link was supplied and
 saved into the wrong field. One-line fix once Steve confirms that is the right
 video; not changed on a guess.
+
+---
+
+## Where the file goes: the media library will not work on its own
+
+Confirmed 2026-10-23, and it changes step 2 above.
+
+`Website/GUT-RESET-COURSE.md` already records the finding from the course build:
+
+> - **Images** come back as a clean permanent CDN URL with no signing.
+> - **Files** come back signed with a 7-day expiry, and the unsigned path is 403.
+
+`place_media` states the same limit from the other direction: **"File assets
+cannot be placed on themed surfaces."** A landing page button has no managed
+file slot, so there is no way to hold a reference that Kajabi re-signs at render
+time. A URL pasted onto the button is a snapshot that dies in a week.
+
+This is why the download button cannot simply point at a media library asset.
+
+### The two real options
+
+**A. Host the PDF somewhere with a permanent public URL** (Google Drive set to
+anyone-with-the-link, Dropbox, S3). The URL goes on the thank-you page button
+and nothing else in the build changes. Zero friction for the reader: form, then
+download.
+
+**B. A Kajabi Download product granted by a free offer.** On platform, and the
+contact ends up with real product access that can be built on later. The cost is
+that she has to create a Kajabi account and set a password to read a free PDF,
+which on Instagram traffic will lose a meaningful share of the people who just
+gave their email.
+
+**Recommended: A.** The purpose of this magnet is the email address, and the
+form already captured that before the download is ever shown. Adding an account
+signup after the capture protects nothing and costs conversions.
+
+If A is chosen the file does not go in the media library at all. The uploader
+link, should it be wanted for option B or for anything else, is
+`https://app.kajabi.com/admin/sites/2148204891/media_library`.
+
+### Worth a 30 second check either way
+
+The signing behaviour above was observed during the course build, not re-tested
+since. If Steve uploads the PDF to the media library, reading the asset back
+will settle it: an unsigned permanent URL means option A can live on Kajabi and
+nothing external is needed. A signed URL with an expiry confirms the note.
