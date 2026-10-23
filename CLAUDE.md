@@ -113,11 +113,16 @@ Gut Breakthrough Call (20 min, free) → 3-Month Gut Reset ($1,497)
 ### The value ladder (decided 2026-10-21)
 
 ```
-$47 mini course  →  $147 Gut Reset Course  →  $1,497 3-Month Gut Reset
+$27 mini course  →  $147 Gut Reset Course  →  $1,497 3-Month Gut Reset
 ```
 
-The $47 rung is being built from FDN's done-for-you gut wellness material.
-The Bone Broth Reset ($47) is a second offer at the same price, parked for now.
+The $27 rung is **Gut Foundations**: eleven lessons built from FDN's
+done-for-you gut wellness material. The course and the offer both exist; the
+offer is still a draft. Price confirmed at $27 by Steve on 2026-10-23, having
+been specced at $47.
+
+The Bone Broth Reset ($47) is a separate front-end offer at a different price,
+unpublished as of 2026-10-23 pending a rescheduled round.
 
 ### Guthub is not in the funnel
 

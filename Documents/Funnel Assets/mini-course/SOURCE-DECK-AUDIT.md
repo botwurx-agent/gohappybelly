@@ -3,6 +3,14 @@
 Source: `Copy_of_Combined_Gut_Wellness.pdf`, 87 slides, 24.7MB, Canva export.
 Audited 2026-10-21 against CLAUDE.md.
 
+> **Note added 2026-10-23.** This audit assessed the deck against a **$47**
+> price and answered "no". The offer shipped at **$27**. The figures below are
+> left as written, because rewriting them would misrepresent what was actually
+> judged, but the verdict softens: the gap between 2,229 words of bullets and
+> the $147 course is a far easier one to justify at $27. The recommendation
+> that Alina's voice over the top is what would make it genuinely good still
+> stands, and is still the single biggest upgrade available to this offer.
+
 ## What it actually is
 
 **An unfilled Canva template.** Not a finished course.

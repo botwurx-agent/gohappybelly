@@ -1,21 +1,29 @@
-# $47 Mini Course — offer spec
+# $27 Mini Course (Gut Foundations) — offer spec
 
-**Status:** source material not yet received. Everything below marked PENDING
-waits on the FDN deck.
+**Price corrected 2026-10-23.** This file was written as a $47 offer. The offer
+built in Kajabi is **$27**, and Steve confirmed $27 is the right number. The
+spec is updated below; the deck audit's historical analysis is left as written.
+
+**Status:** built. The FDN deck arrived, was audited (`SOURCE-DECK-AUDIT.md`)
+and rewritten into eleven lessons. What remains is the upsell wiring and
+publishing the offer.
 
 ## Decisions already made
 
 | | |
 |---|---|
-| Price | $47, one time |
+| Price | **$27**, one time. Offer `2151464245`, draft |
 | Source | FDN done-for-you gut wellness material, Canva deck, supplied as PDF |
 | Role | Front-end offer. First paid rung of the ladder |
-| Ladder | $47 mini course → $147 Gut Reset Course → $1,497 3-Month Gut Reset |
+| Ladder | $27 mini course → $147 Gut Reset Course → $1,497 3-Month Gut Reset |
 | Guthub | Not in this funnel. May be mentioned, never sold. See CLAUDE.md |
-| Bone Broth Reset | Second $47 offer, parked. Not this one |
+| Bone Broth Reset | A separate $47 front-end offer, unpublished. Not this one |
 
-PENDING: name, promise, module structure, lesson count, whether $47 survives
-contact with what the deck actually teaches.
+~~PENDING: name, promise, module structure, lesson count.~~ **Settled.** Named
+**Gut Foundations**, eleven lessons: a welcome, eight modules and three bonus
+modules. Course `2149609329`, offer `2151464245`, thank-you page
+`/gut-foundations-thank-you` live. The price question settled at $27 rather than
+$47, which is the cheaper answer to the deck audit's objection.
 
 ## The upsell mechanic
 
@@ -69,13 +77,13 @@ entry, and that reason does not exist.
 
 ## What this breaks when it goes live
 
-The quiz funnel currently ends at the Gut Breakthrough Call. Once a $47 entry
+The quiz funnel currently ends at the Gut Breakthrough Call. Once a $27 entry
 offer exists, these stop matching the funnel:
 
 - The quiz results pages, 5 of them, whose CTAs were built for the old structure.
 - The 5 archetype welcome sequences, 35 emails, which drive to the call.
 
-Do not rewrite either until the $47 is live and converting. Launch, measure,
+Do not rewrite either until the $27 is live and converting. Launch, measure,
 then rewire. Rewriting 35 emails around an offer that has not proven itself is
 how you end up doing it twice.
 
