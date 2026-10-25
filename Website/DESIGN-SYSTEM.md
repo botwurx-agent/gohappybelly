@@ -362,3 +362,35 @@ What the agent *can* verify without seeing the page, and should, on every build:
 Anything that depends on Nova's rendered DOM, such as a `custom_classes`
 selector reaching a flex row, cannot be confirmed this way. Flag those
 explicitly as unverified and name what would break if the selector misses.
+
+
+---
+
+## The custom_classes trap, hit twice now
+
+`custom_classes` land on a block's **wrapper**, not on the flex row Nova renders
+inside it. This is already recorded in `Website/LINK-IN-BIO.md` from the first
+time it bit, and it bit again on the Gut Foundations two-column cards, so it
+belongs here where it will actually be read.
+
+**What happened.** The two-column card row carried
+`display: grid; grid-template-columns: 1fr 1fr` on its `.gh-grid-2` class. That
+class is on the wrapper, and the wrapper has exactly **one** child, the row. So
+the grid gave the row column one and left column two empty. The row then split
+that half between its two cards. Result: two narrow cards hugging the left edge
+with half the page blank, on a live page, for two days.
+
+**The rule.** Never put a multi-column layout on a `custom_classes` hook. The
+hook sits one level above the thing you are trying to lay out. Two safe moves:
+
+1. **Size the children instead.** Let Nova's own `direction: horizontal` make
+   the row, and give each child `flex: 1 1 0; min-width: 0` so they share the
+   width. This is what the fix uses, and it needs no knowledge of Nova's DOM.
+2. **Reach through**, `.hook .nova-group { ... }`, when the row itself genuinely
+   needs changing, as the alternating pattern rows do with `row-reverse`.
+
+**Why this keeps happening.** A grid or flex declaration on a class looks
+correct in isolation and the API accepts it, so nothing fails loudly. It only
+shows up in a browser, and this environment cannot open one, so the page shipped
+broken and stayed that way until Steve looked. Any rule that creates columns is
+worth a screenshot before it is called done.
