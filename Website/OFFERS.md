@@ -442,3 +442,45 @@ see:
 **The remaining published checkouts are unaudited**: eight lab test offers from
 $250 to $639, and anything else published. On a three for three record it is
 reasonable to assume several are broken. Worth a sweep.
+
+
+---
+
+## Checkout button colour, normalised across all 16 offers, 2026-10-25
+
+Steve asked whether `#16a085` was the correct colour for checkout buttons. It
+was not, and it was live.
+
+`Website/DESIGN-SYSTEM.md` is unambiguous:
+
+| Terracotta | `#C07A5A` | Every primary button. Nothing else |
+
+`#16a085` is a teal. It appears in no Go Happy Belly spec, website or email.
+It was found on the **$147 Gut Reset Course checkout**, which is almost
+certainly where Steve saw it.
+
+### What every checkout was actually on
+
+Three different wrong colours were in play, none of them the brand's:
+
+| Was | Where |
+|---|---|
+| `#16a085` teal | $147 Gut Reset Course |
+| `#76a685` old sage | The eight lab tests, Essentials Club, Group Coaching, E-Book |
+| `#343332` Kajabi default grey | H. Pylori and anything with no value set, which falls through to the schema default |
+
+All sixteen published offers are now `#C07A5A` at `border_radius: 2`, matching
+the button spec in §3 of the design system.
+
+### Why the radius matters too
+
+Kajabi's default is `checkout_block_btn_border_radius: 50`, a full pill. The
+design system specifies radius 2, a near-square corner, everywhere. Both values
+were set together on every checkout, so the buttons now match the ones on the
+sales pages rather than looking like a different brand at the moment of payment.
+
+### Still unverified
+
+Cloudflare blocks this environment from the live site, so the settings are
+confirmed stored and the rendering is not. One checkout opened in a browser
+settles it for all sixteen, since they now carry identical values.
