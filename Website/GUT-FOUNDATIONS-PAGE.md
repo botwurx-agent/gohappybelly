@@ -330,6 +330,53 @@ share image, pick `foundations-hero-b`. Do not burn calls retrying the tool.
 
 ---
 
+## The five patterns are photoreal (2026-10-26)
+
+Placed into `fp_1i` to `fp_5i` on section `1792070000007`, one
+`update_theme_content` call, all five read back and all five URLs return 200.
+
+| Block | Media id | Pattern |
+|---|---|---|
+| `fp_1i` | 4831169 | Wired-and-Tired |
+| `fp_2i` | 4831167 | Reactive |
+| `fp_3i` | 4831170 | Sugar-Driven |
+| `fp_4i` | 4831168 | Underactive |
+| `fp_5i` | 4831171 | Bloated and Backed-Up |
+
+Alt text describes what is in each photograph and never tells the reader what
+she has. Built and art-directed per `Website/mockups/patterns/README.md`.
+
+### One cut-paper image is still on this page
+
+`wi_img`, in **"What is inside"** (section `1792070000003`): the digestive
+tract laid out as a route, `reset-how-digestion-works.jpg`. Its alt text still
+says "A cut-paper illustration". Found by sweeping every section after placing
+the five, rather than assuming the patterns section was all of it.
+
+It is the hard case in the whole set, because an anatomical route is the one
+thing a photograph genuinely cannot do. Three ways out, and it is Steve's call:
+
+1. **Swap it for a product shot** (a phone showing a lesson). Best fit for the
+   section, which is about what the course contains rather than about anatomy,
+   and it matches the sales-page rule in `IMAGE-DIRECTION.md`: product shots
+   and Alina, not metaphor.
+2. **Redraw the diagram** in a clean non-cut-paper style on the website palette.
+   Keeps the anatomy, loses the texture Alina rejected.
+3. **Drop it.** The section reads fine without an image.
+
+Recommendation is 1.
+
+### A copy line the switch left behind
+
+`fp_head` still reads "Alina teaches each one the way she teaches it on a call:
+with a picture you will not forget." That was written when the images *were*
+the pictures. The analogies now live only in the body copy beside each photo,
+so the line points at something the reader no longer sees. It is still
+defensible, since the copy does paint a picture, but it is worth a look.
+Not changed: it is approved sales copy and the change is Steve's.
+
+---
+
 ## Still to do
 
 1. **Point traffic at it.** Nothing links here yet: Link in Bio, the five quiz
@@ -339,10 +386,7 @@ share image, pick `foundations-hero-b`. Do not burn calls retrying the tool.
    `Website/mockups/foundations/` once uploaded, and move the signpost down to
    the five-patterns heading.
 3. Testimonials, when there are any, between the FAQ and the final CTA.
-5. **Five cut-paper pattern images are still on this page** (`fp_1i` to `fp_5i`),
-   and the hero above them is now photoreal, so the page currently mixes two
-   styles. This is the next job, not a later one. Blocked on Steve deciding
-   between photoreal metaphors and the symptom moment: `Website/IMAGE-DIRECTION.md`.
+5. **One cut-paper image left**, `wi_img` in "What is inside". See above.
 6. Set the social share image in the admin UI (see above).
 4. **Nobody has seen the page.** Cloudflare returns 403 to this environment on
    every path, so the two fixes of 2026-10-26 are verified only against what the
