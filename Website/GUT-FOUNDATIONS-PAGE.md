@@ -214,10 +214,7 @@ publish time:
 - Post-purchase points at landing page 2152353598, the Gut Foundations thank-you page
 - All eight image URLs on the page return 200
 - SEO metadata set at publish: title and description. **The share image was
-  not.** Checked 2026-10-26: `page_image` on landing page 2152353662 is `null`,
-  so anything shared to Facebook, iMessage or Slack renders with no image. This
-  line previously claimed a share image was set; it was wrong. Fix it when the
-  photoreal banner is uploaded
+  not**, and still is not. See "The share image, and an MCP dead end" below
 
 ## Fixed 2026-10-26
 
@@ -291,6 +288,48 @@ inconsistency, but it is Steve's call once he has looked at it.
 
 ---
 
+## The photoreal banner is in (2026-10-26)
+
+`foundations-hero-b.jpg`, media id **4829069**, 2400x1357. Steve uploaded it;
+MCP cannot upload, only hand back an uploader link.
+
+Three placements, all verified by reading back:
+
+| Where | How |
+|---|---|
+| Hero art, `hs_shot` on section `1792070000001` | `update_theme_content`, image + alt |
+| Offer 2151464245, `image` | `replace_media` |
+| Course 2149609329, `thumbnail` | `replace_media` |
+
+`replace_media` did the last two in one call, because both pointed at the same
+retired cut-paper file (`foundations-laptop`, 4754760, now unused). That tool is
+the right instrument whenever an asset is being swapped rather than a slot being
+filled: it rewrites every tracked placement at once.
+
+It does **not** catch raw URLs sitting in Nova `image` settings. The hero was
+invisible to `where_used` for exactly that reason, which is why it had to be
+done by hand with `update_theme_content`. Do not trust a `used_count` of 0 to
+mean an asset is unplaced on a Nova page.
+
+The old alt text described the art as "rendered in cut paper". Replaced.
+
+### The share image, and an MCP dead end
+
+`page_image` on landing page 2152353662 is still `null`, so the $27 page shares
+with no image into Facebook, iMessage or Slack.
+
+**`update_landing_page` accepts `page_image` and silently discards it.** Tried
+twice, once with the full CDN URL and once with the `file-uploads/...` S3 key
+that other Kajabi image columns use. Both returned a clean 200 with the field
+absent from the response body, and both left `page_image` null with `updated_at`
+unmoved. `place_media` is not a way round it either: its own docs say LandingPage
+has no image column.
+
+So this one is Steve's, in the admin UI: landing page settings, SEO, social
+share image, pick `foundations-hero-b`. Do not burn calls retrying the tool.
+
+---
+
 ## Still to do
 
 1. **Point traffic at it.** Nothing links here yet: Link in Bio, the five quiz
@@ -300,10 +339,11 @@ inconsistency, but it is Steve's call once he has looked at it.
    `Website/mockups/foundations/` once uploaded, and move the signpost down to
    the five-patterns heading.
 3. Testimonials, when there are any, between the FAQ and the final CTA.
-5. **Five cut-paper pattern images are still on this page** (`fp_1i` to `fp_5i`).
-   Alina rejected the style on 2026-10-26. The hero is being replaced with the
-   photoreal laptop; until the five are dealt with the page mixes two styles.
-   See `Website/IMAGE-DIRECTION.md`.
+5. **Five cut-paper pattern images are still on this page** (`fp_1i` to `fp_5i`),
+   and the hero above them is now photoreal, so the page currently mixes two
+   styles. This is the next job, not a later one. Blocked on Steve deciding
+   between photoreal metaphors and the symptom moment: `Website/IMAGE-DIRECTION.md`.
+6. Set the social share image in the admin UI (see above).
 4. **Nobody has seen the page.** Cloudflare returns 403 to this environment on
    every path, so the two fixes of 2026-10-26 are verified only against what the
    theme reads back, not against a render. Steve checks the cards sit side by

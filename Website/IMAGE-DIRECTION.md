@@ -88,7 +88,10 @@ so they come last and can go in batches.
 ### The Gut Foundations laptop banner (2026-10-26)
 
 `Website/mockups/foundations/foundations-hero-{a,b,c}.jpg`, 2400x1357. Three
-angles of the same scene. Steve to pick one.
+angles of the same scene. **Steve picked B on 2026-10-26 and it is live** on the
+sales page hero, the offer image and the course thumbnail (Kajabi media id
+4829069). Placement detail and the share-image dead end:
+`Website/GUT-FOUNDATIONS-PAGE.md`.
 
 Built on the pipeline already documented in `Website/mockups/README.md`, which is
 the right one and should be reused for every device shot:
