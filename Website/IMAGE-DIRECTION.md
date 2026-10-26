@@ -65,16 +65,15 @@ kind.**
 |---|---|---|
 | Sales pages | Proof. Make the thing feel real and worth $27 / $147 / $1,497 | Product shots (the laptop banner), and Alina |
 | Course lesson thumbnails | Pacing and warmth. Nobody buys off these | Photoreal still life of the literal subject |
-| The five patterns | The hardest case. See below | Open question |
+| The five patterns | The hardest case. See below | **Decided: the symptom moment** |
 
 **On the five patterns.** My recommendation is to stop illustrating the metaphor
 and photograph the *symptom moment* instead: the 3pm slump at a desk, the waist
 button undone, the plate pushed away, a bed at 4am. Those read instantly, they
 are about the reader rather than about a door, and they carry the emotional
 weight the archetype is actually trading on. Keep the car and the screen door
-and the squatters in the headline and the voiceover, where they land. That is a
-real change to how the pattern pages work, which is why it is flagged as an open
-question rather than quietly built.
+and the squatters in the headline and the voiceover, where they land. **Steve chose this on 2026-10-26.** Built and awaiting upload:
+`Website/mockups/patterns/`, with the prompt traps recorded in its README.
 
 **On sequencing.** Sales pages first: there are few images, they are the ones
 prospects see, and they are the ones Alina reacted to. The 52 course thumbnails
@@ -148,9 +147,7 @@ Colors sampled from the real dashboard screenshot rather than guessed:
 
 ## Open questions for Steve
 
-1. The five patterns: metaphor photography, or the symptom moment? This is the
-   one that changes page structure, not just art.
-2. The 52 course thumbnails: replace all of them, or only the ones a buyer sees
+1. The 52 course thumbnails: replace all of them, or only the ones a buyer sees
    early (Start Here, Find Your Pattern, the five pattern pages)?
 3. Does the Gut Reset course sales page get a matching re-shoot, so the $27 and
    $147 pages look like one family?
