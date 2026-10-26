@@ -1,0 +1,10 @@
+import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport:{width:2000,height:1126}, deviceScaleFactor:1 });
+await p.goto('file:///home/user/gohappybelly/Website/mockups/foundations-ui.html');
+await p.waitForLoadState('networkidle');
+await p.evaluate(() => document.fonts.ready);
+await p.waitForTimeout(1200);
+await p.locator('#ui').screenshot({ path:'foundations-ui.png' });
+await b.close();
+console.log('ok');

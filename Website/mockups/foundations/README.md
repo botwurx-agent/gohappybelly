@@ -1,5 +1,11 @@
 # Gut Foundations mockups
 
+> **2026-10-26: the cut-paper mockups below are dead.** Alina rejected the style
+> outright. They are kept only as a record. The live banner is
+> `foundations-hero-{a,b,c}.jpg`, photoreal, built the same way as the $147
+> laptop. Direction and reasoning: `Website/IMAGE-DIRECTION.md`.
+
+
 Cut-paper product mockups for the $27 Gut Foundations course, generated
 2026-10-23 to match the 52 existing illustrations.
 
@@ -63,3 +69,34 @@ terracotta, which is the illustration palette, not the website token set.
 Gut Foundations has **no video**. A mockup showing a video player or a play
 button would misrepresent it. The laptop and phone screens here show reading
 layouts only, which is deliberate.
+
+
+---
+
+## 2026-10-26: the photoreal laptop banner
+
+`foundations-hero-a.jpg`, `-b`, `-c` (2400x1357). Three angles of one generated
+scene with the **real** dashboard composited into the screen. A is straightest
+and most legible, B a touch more angled, C sits further right.
+
+Build, in full, with the traps: `Website/IMAGE-DIRECTION.md`. In short:
+
+    node render-foundations.mjs                                         # UI -> foundations-ui.png
+    python3.13 composite2.py foundations/scene-a.png foundations/comp-a.png foundations-ui.png
+    python3.13 demagenta.py  foundations/scene-a.png foundations/comp-a.png foundations/foundations-hero-a.png
+
+Both scripts are run from `Website/mockups/`, and **must** be run with
+`python3.13`: the system `python3` has a broken PIL in this container.
+
+`composite2.py` is `composite.py` with the screenshot path taken as `sys.argv[3]`
+instead of hardcoded to `course-ui-v2.png`. Everything else, including the
+dilate-not-erode key handling and the 1.8% quad push, is unchanged and still
+correct.
+
+Source files kept: `scene-{a,b,c}.png` are the raw generated scenes with the
+magenta screens, so the UI can be re-composited without paying for generation
+again. `alina.jpg` is her portrait pulled from the Link in Bio theme.
+
+**Regenerate the UI whenever the course changes.** `foundations-ui.html` hardcodes
+the lesson titles and welcome copy that were live on 2026-10-26. The whole point
+is that it shows the real product.

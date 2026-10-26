@@ -302,9 +302,17 @@ Added 2026-10-23, after a $27 sales page about the five patterns shipped with
 zero images while five purpose-made illustrations of exactly those five
 patterns sat in this repo and in the Kajabi media library.
 
+> **Superseded 2026-10-26. Alina rejected the cut-paper style outright, all 52.**
+> Do not place any of them on a new or rebuilt page. They stay in the repo and in
+> the Kajabi library because they are still live inside the Gut Reset course, and
+> because the still-life subjects among them are worth re-shooting rather than
+> re-inventing. The replacement direction is in `Website/IMAGE-DIRECTION.md`;
+> read that before sourcing any image. The inventory below is kept as a map of
+> what has to be replaced, not as a menu to pick from.
+
 **There are 52 cut-paper illustrations.** They were commissioned for the Gut
-Reset course lessons and they are the strongest visual asset the business owns.
-They are not Gut Reset property. Any page may use any of them.
+Reset course lessons. They are not Gut Reset property, and until 2026-10-26 any
+page was free to use any of them.
 
 - On disk: `Website/images/gut-reset/web/*.jpg` (1600x905) and `raw/*.png`
 - In Kajabi: all uploaded, ids in `Website/images/gut-reset/lesson-thumbnails.tsv`
@@ -314,9 +322,10 @@ They are not Gut Reset property. Any page may use any of them.
 
 ### The five archetype illustrations
 
-Each one draws its locked analogy from CLAUDE.md. These are the single most
-reusable images in the set: every page that touches the five patterns should be
-using them.
+Each one draws its locked analogy from CLAUDE.md. These were the most reused
+images in the set. They are also the clearest case of the second problem in
+`IMAGE-DIRECTION.md`: the analogy is locked as *language*, and rendering it as a
+picture asks the image to carry an argument it cannot carry on its own.
 
 | Pattern | Image | Media id | What it shows |
 |---|---|---|---|
@@ -349,6 +358,10 @@ that are not plain URL settings, such as lesson `poster_image`.
 Before building any page, list what already exists: `Website/images/`,
 `Website/mockups/`, and `list_media` on the site. A page that ends up with no
 imagery has to be a decision, written down, not an oversight.
+
+Since 2026-10-26 that list excludes the cut-paper set. What is cleared for use:
+`Website/mockups/foundations/foundations-hero-*.jpg`, `Website/mockups/course-hero-laptop*.png`,
+and photographs of Alina.
 
 ---
 

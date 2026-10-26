@@ -1,0 +1,169 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;700&family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:2000px; height:1126px; overflow:hidden; background:#fff; }
+  #ui { width:2000px; height:1126px; position:relative; display:flex;
+        font-family:'Lato',sans-serif; -webkit-font-smoothing:antialiased; }
+
+  /* ---------- sidebar ---------- */
+  .side { width:440px; height:1126px; background:#C3EFD0; flex:0 0 440px; }
+  .side-top { background:#C3EFD0; padding:48px 40px 40px; }
+  .lib { font-family:'Lato'; font-size:21px; font-weight:700; letter-spacing:.16em;
+         color:#2D3C50; opacity:.72; margin-bottom:34px; }
+  .lib span { font-size:17px; margin-right:9px; }
+  .side-title { font-family:'Fira Sans Extra Condensed'; font-weight:700; font-size:67px;
+                line-height:1.04; color:#2D3C50; letter-spacing:-.005em; }
+
+  .row { height:61px; background:#9ACEAA; display:flex; align-items:center;
+         padding:0 26px 0 22px; border-bottom:1px solid rgba(45,60,80,.09); gap:12px; }
+  .row .lbl { font-family:'Lato'; font-weight:700; font-size:21.5px; color:#2D3C50; flex:1; }
+  .row .chev { font-size:15px; color:#2D3C50; width:16px; }
+  .row svg { flex:0 0 auto; }
+  .lesson { height:auto; min-height:54px; background:#AEDCBC; padding:11px 22px 11px 58px; }
+  .lesson .lbl { font-weight:400; font-size:19.5px; line-height:1.3; opacity:.88; }
+
+  /* ---------- right of sidebar ---------- */
+  .main { flex:1; height:1126px; position:relative; background:#fff; }
+
+  .topbar { height:135px; background:#fff; display:flex; align-items:center;
+            padding:0 40px 0 56px; }
+  .topbar img { width:268px; }
+  .topbar .sp { flex:1; }
+  .pill { background:#B0C96C; color:#2A3A20; font-family:'Lato'; font-weight:700;
+          font-size:23px; letter-spacing:.055em; padding:16px 26px; border-radius:4px;
+          display:flex; align-items:center; gap:12px; }
+  .ava { width:62px; height:62px; border-radius:50%; background:#5A5F63; margin-left:26px;
+         position:relative; overflow:hidden; }
+  .ava::after { content:''; position:absolute; left:50%; top:16px; width:22px; height:22px;
+                border-radius:50%; background:#B9BDC0; transform:translateX(-50%); }
+  .ava::before { content:''; position:absolute; left:50%; top:43px; width:42px; height:30px;
+                 border-radius:21px 21px 0 0; background:#B9BDC0; transform:translateX(-50%); }
+
+  .banner { height:284px; background:linear-gradient(100deg,#7EAC8D 0%,#8FB99C 42%,#BDDCC6 100%);
+            padding:66px 0 0 90px; color:#fff; }
+  .eyebrow { font-family:'Lato'; font-weight:700; font-size:20px; letter-spacing:.14em;
+             display:flex; align-items:center; gap:16px; margin-bottom:14px; opacity:.95; }
+  .eyebrow::before { content:''; width:34px; height:2.5px; background:#fff; display:block; }
+  .btitle { font-family:'Playfair Display'; font-weight:400; font-size:86px; line-height:1.05;
+            letter-spacing:-.012em; margin-bottom:10px; }
+  .bsub { font-family:'Lato'; font-size:27px; opacity:.97; }
+
+  .wstrip { height:65px; background:#76A684; color:#fff; display:flex; align-items:center;
+            padding-left:90px; font-family:'Lato'; font-size:28px; }
+
+  .tabs { height:92px; display:flex; align-items:center; padding:0 56px 0 90px;
+          gap:46px; border-bottom:1px solid #E6E6E6; }
+  .tab { font-family:'Lato'; font-weight:700; font-size:24px; letter-spacing:.045em;
+         color:#2D3C50; display:flex; align-items:center; gap:11px; padding:30px 2px 28px; }
+  .tab.on { color:#2D3C50; box-shadow:inset 0 -4px 0 #7EAC8D; }
+  .search { margin-left:auto; display:flex; align-items:center; gap:14px;
+            color:#9AA2AC; font-size:24px; font-family:'Lato'; }
+
+  .body { display:flex; padding:56px 56px 0 90px; gap:60px; }
+  .col { flex:1; min-width:0; }
+  .col h1 { font-family:'Fira Sans Extra Condensed'; font-weight:700; font-size:58px;
+            color:#B1BECD; line-height:1.1; margin-bottom:30px; }
+  .col p { font-family:'Lato'; font-size:25px; line-height:1.62; color:#2D3C50;
+           margin-bottom:22px; }
+  .col p b { font-weight:700; }
+
+  .panel { flex:0 0 440px; background:#F2F2F2; padding:0 0 30px; align-self:flex-start; }
+  .panel img { width:100%; height:250px; object-fit:cover; object-position:center 14%;
+               display:block; }
+  .pcard { background:#fff; border-left:3px solid #7AAE86; padding:34px 30px; margin:0 0 10px; }
+  .pcard h2 { font-family:'Fira Sans Extra Condensed'; font-weight:700; font-size:45px;
+              color:#162E28; text-align:center; margin-bottom:12px; }
+  .pcard .cred { font-family:'Lato'; font-style:italic; font-size:23px; color:#2D3C50;
+                 text-align:center; margin-bottom:22px; }
+  .pcard p { font-family:'Lato'; font-size:22.5px; line-height:1.58; color:#2D3C50;
+             text-align:center; }
+</style></head>
+<body><div id="ui">
+
+  <div class="side">
+    <div class="side-top">
+      <div class="lib"><span>&#10094;</span>LIBRARY</div>
+      <div class="side-title">Gut<br>Foundations</div>
+    </div>
+
+    <div class="row">
+      <svg width="19" height="23" viewBox="0 0 19 23"><path d="M1 1h17v21l-8.5-6L1 22z" fill="#2D3C50"/></svg>
+      <div class="lbl" style="margin-left:4px">My Favorites</div>
+    </div>
+
+    <div class="row"><div class="chev">&#9656;</div><div class="lbl">Start Here</div>
+      <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11.5" fill="none" stroke="#4A6B57" stroke-width="1.6"/><path d="M9 13h8M13.5 9.5L17 13l-3.5 3.5" fill="none" stroke="#4A6B57" stroke-width="1.6"/></svg>
+    </div>
+
+    <div class="row"><div class="chev">&#9662;</div><div class="lbl">The Eight Foundations</div>
+      <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11.5" fill="none" stroke="#4A6B57" stroke-width="1.6"/><path d="M9 13h8M13.5 9.5L17 13l-3.5 3.5" fill="none" stroke="#4A6B57" stroke-width="1.6"/></svg>
+    </div>
+
+    <div class="row lesson"><div class="lbl">01. Understanding Your Gut</div></div>
+    <div class="row lesson"><div class="lbl">02. How The Gut Impacts Whole-Body Health</div></div>
+    <div class="row lesson"><div class="lbl">03. The Five Common Patterns</div></div>
+    <div class="row lesson"><div class="lbl">04. Everyday Habits That Support Digestion</div></div>
+    <div class="row lesson"><div class="lbl">05. Nutrition Foundations</div></div>
+    <div class="row lesson"><div class="lbl">06. The Gut-Brain Connection</div></div>
+    <div class="row lesson"><div class="lbl">07. The Gut-Liver Connection</div></div>
+    <div class="row lesson"><div class="lbl">08. Putting It All Together</div></div>
+
+    <div class="row"><div class="chev">&#9656;</div><div class="lbl">Bonus Modules</div>
+      <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11.5" fill="none" stroke="#4A6B57" stroke-width="1.6"/><path d="M9 13h8M13.5 9.5L17 13l-3.5 3.5" fill="none" stroke="#4A6B57" stroke-width="1.6"/></svg>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="topbar">
+      <img src="ghb-logo-trim.png" alt="">
+      <div class="sp"></div>
+      <div class="pill">
+        <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="11.5" fill="none" stroke="#2A3A20" stroke-width="2"/><path d="M13 13l5-4" stroke="#2A3A20" stroke-width="2" fill="none"/></svg>
+        DASHBOARD
+      </div>
+      <div class="ava"></div>
+    </div>
+
+    <div class="banner">
+      <div class="eyebrow">GO HAPPY BELLY</div>
+      <div class="btitle">Gut Foundations</div>
+      <div class="bsub">The groundwork, before any protocol.</div>
+    </div>
+
+    <div class="wstrip">Welcome back</div>
+
+    <div class="tabs">
+      <div class="tab on">DASHBOARD</div>
+      <div class="tab">
+        <svg width="24" height="19" viewBox="0 0 24 19"><path d="M1 3a2 2 0 012-2h6l2 3h10a2 2 0 012 2v11a2 2 0 01-2 2H3a2 2 0 01-2-2z" fill="#2D3C50"/></svg>
+        CATEGORIES
+      </div>
+      <div class="tab">ANNOUNCEMENTS</div>
+      <div class="search">
+        <svg width="25" height="25" viewBox="0 0 25 25"><circle cx="10.5" cy="10.5" r="8" fill="none" stroke="#9AA2AC" stroke-width="2.2"/><path d="M16.5 16.5L23 23" stroke="#9AA2AC" stroke-width="2.2"/></svg>
+        Search for something...
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="col">
+        <h1>Welcome to Gut Foundations</h1>
+        <p>Everything you need is on this page.</p>
+        <p>Start with <b>Start Here</b>. It takes about ten minutes and it explains how to use the rest.</p>
+        <p>Then work through <b>The Eight Foundations</b> in order. Each one is about ten minutes: how digestion actually works, what it is wired into, the five common patterns, and the daily habits and nutrition underneath all of it.</p>
+        <p>Each lesson ends with one question. Those are the part most people skip and should not, because the answers are what turn this from reading into something you can act on.</p>
+      </div>
+      <div class="panel">
+        <img src="foundations/alina.jpg" alt="">
+        <div class="pcard">
+          <h2>Alina Nazari</h2>
+          <div class="cred">Functional Diagnostic Nutrition Practitioner</div>
+          <p>Welcome to Gut Foundations. This is the groundwork: how digestion actually works, what it is wired into, and what the five common patterns look like when it stops running well.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div></body></html>
