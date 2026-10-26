@@ -213,7 +213,11 @@ publish time:
 - `checkout_url` still `/offers/yYfiaNgo/checkout`, so every CTA on the page is live
 - Post-purchase points at landing page 2152353598, the Gut Foundations thank-you page
 - All eight image URLs on the page return 200
-- SEO metadata set at publish: title, description and a share image
+- SEO metadata set at publish: title and description. **The share image was
+  not.** Checked 2026-10-26: `page_image` on landing page 2152353662 is `null`,
+  so anything shared to Facebook, iMessage or Slack renders with no image. This
+  line previously claimed a share image was set; it was wrong. Fix it when the
+  photoreal banner is uploaded
 
 ## Fixed 2026-10-26
 
@@ -296,6 +300,10 @@ inconsistency, but it is Steve's call once he has looked at it.
    `Website/mockups/foundations/` once uploaded, and move the signpost down to
    the five-patterns heading.
 3. Testimonials, when there are any, between the FAQ and the final CTA.
+5. **Five cut-paper pattern images are still on this page** (`fp_1i` to `fp_5i`).
+   Alina rejected the style on 2026-10-26. The hero is being replaced with the
+   photoreal laptop; until the five are dealt with the page mixes two styles.
+   See `Website/IMAGE-DIRECTION.md`.
 4. **Nobody has seen the page.** Cloudflare returns 403 to this environment on
    every path, so the two fixes of 2026-10-26 are verified only against what the
    theme reads back, not against a render. Steve checks the cards sit side by
