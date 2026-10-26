@@ -145,6 +145,19 @@ Colors sampled from the real dashboard screenshot rather than guessed:
 
 ---
 
+## The cut-paper problem reaches inside the course
+
+Found 2026-10-26 while pulling real copy for the phone mockup. **The lesson
+bodies themselves embed cut-paper images.** Lesson 01 carries `hero-01-sieve.jpg`
+as its hero plus three inline diagrams, and the other ten will be the same.
+
+That is a third surface, on top of the sales pages and the 52 lesson thumbnails:
+art inside the product that a paying customer reads. Not scoped, not costed, and
+worth deciding before anything else is regenerated, because it changes how big
+this job actually is.
+
+---
+
 ## Open questions for Steve
 
 1. The 52 course thumbnails: replace all of them, or only the ones a buyer sees

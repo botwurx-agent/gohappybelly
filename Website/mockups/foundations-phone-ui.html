@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;500;700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:450px;height:975px;overflow:hidden;background:#fff;
+       font-family:'Lato',sans-serif;-webkit-font-smoothing:antialiased}
+  #ui{width:450px;height:975px;position:relative;background:#FFFFFF}
+
+  /* status bar */
+  .status{height:34px;display:flex;align-items:center;justify-content:space-between;
+          padding:0 20px;font-family:'Lato';font-size:13px;font-weight:700;color:#162E28}
+  .status .dots{display:flex;gap:4px;align-items:center}
+  .status .dots i{display:block;width:4px;height:9px;background:#162E28;border-radius:1px}
+  .status .batt{width:22px;height:11px;border:1.4px solid #162E28;border-radius:3px;position:relative}
+  .status .batt::after{content:'';position:absolute;inset:1.5px;right:6px;background:#162E28;border-radius:1px}
+
+  /* course chrome */
+  .bar{height:52px;background:#C3EFD0;display:flex;align-items:center;padding:0 16px;gap:12px}
+  .bar .back{font-size:17px;color:#2D3C50}
+  .bar .crumb{font-family:'Lato';font-size:13px;font-weight:700;letter-spacing:.1em;
+              text-transform:uppercase;color:#2D3C50;opacity:.78}
+
+  .prog{height:4px;background:#E4F0E7}
+  .prog span{display:block;height:4px;width:36%;background:#7AAE86}
+
+  .wrap{padding:24px 22px 0}
+  .mod{font-family:'Lato';font-size:11px;font-weight:700;letter-spacing:.2em;
+       text-transform:uppercase;color:#7AAE86;margin-bottom:9px}
+  h1{font-family:'Fira Sans Extra Condensed';font-weight:700;font-size:34px;line-height:1.08;
+     color:#162E28;margin-bottom:22px;letter-spacing:-.005em}
+  h3{font-family:'Fira Sans Extra Condensed';font-weight:700;font-size:23px;
+     color:#162E28;margin:0 0 12px}
+  p{font-family:'Lato';font-size:15.5px;line-height:1.72;color:#2E4438;margin:0 0 14px}
+  p b{font-weight:700;color:#162E28}
+
+  .take{border-left:3px solid #7AAE86;background:#EAF5EC;padding:15px 17px;margin:20px 0 0}
+  .take p{margin:0;font-size:15px;line-height:1.68}
+  ul{margin:0;padding-left:18px}
+  li{font-family:'Lato';font-size:15.5px;line-height:1.72;color:#2E4438;margin-bottom:7px}
+
+</style></head>
+<body><div id="ui">
+
+  <div class="status">
+    <span>9:41</span>
+    <span class="dots"><i></i><i style="height:12px"></i><i style="height:15px"></i><span class="batt"></span></span>
+  </div>
+
+  <div class="bar">
+    <span class="back">&#10094;</span>
+    <span class="crumb">Gut Foundations</span>
+  </div>
+  <div class="prog"><span></span></div>
+
+  <div class="wrap">
+    <div class="mod">The Eight Foundations</div>
+    <h1>01. Understanding Your Gut</h1>
+
+    <h3>What We Mean By &ldquo;Your Gut&rdquo;</h3>
+    <p>When people say gut, they usually mean stomach. It is a lot more than that.</p>
+    <p>Your gut is one continuous tube running from your mouth to the other end. Food goes in one side and what is left comes out the other, and the whole length of it is technically outside your body.</p>
+    <p>That crossing is the thing almost everything in this course comes back to.</p>
+
+    <h3 style="margin-top:26px">The Barrier</h3>
+    <p>The wall of your small intestine is one cell thick.</p>
+    <p>One cell. That is the entire separation between the contents of that tube and your bloodstream. That layer decides what crosses and what keeps moving.</p>
+
+    <div class="take">
+      <p><b>Alina's take.</b> Picture a screen door. It is supposed to let air through and keep everything else out. When the mesh gets torn, the door still looks like a door and still swings on its hinges, but it is no longer doing the one job it had. The problem is not what is on the porch. The problem is the mesh.</p>
+    </div>
+
+    <h3 style="margin-top:26px">Signs Worth Paying Attention To</h3>
+    <ul>
+      <li>Bloating, gas, or constipation</li>
+      <li>Skin flare-ups or brain fog</li>
+      <li>Fatigue, low mood, or reacting to foods that used to be fine</li>
+    </ul>
+  </div>
+
+</div></body></html>
