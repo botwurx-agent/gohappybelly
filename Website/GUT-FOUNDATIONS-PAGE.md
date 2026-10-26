@@ -215,6 +215,78 @@ publish time:
 - All eight image URLs on the page return 200
 - SEO metadata set at publish: title, description and a share image
 
+## Fixed 2026-10-26
+
+### The two-column "is and is not" row shipped broken
+
+Section `1792070000004` rendered its two cards as narrow strips hugging the left
+edge with half the page blank, and had done since launch. Cause: `.gh-grid-2`
+carried `display: grid; grid-template-columns: 1fr 1fr`, but a `custom_classes`
+value lands on the block *wrapper*, not on the flex row Nova renders inside it.
+So the wrapper became the two-column grid, its single child (the row) took
+column one, column two rendered empty, and the flex row then split that half
+into two quarters.
+
+The fix leaves the row alone and sizes the cards: wrapper and row at `width:
+100%`, each `.gh-card` at `flex: 1 1 0; min-width: 0`, column direction under
+767px.
+
+This is the second time this trap has been walked into. It was already written
+down in `LINK-IN-BIO.md` from the first occurrence, and is now in
+`DESIGN-SYSTEM.md` where it will actually be read before building.
+
+### A photograph of Alina in the credential section
+
+Section `1792070000008` held the cut-paper illustration of two chairs turned
+toward each other (`reset-qa-with-alina.jpg`). It is a good illustration and it
+was the wrong one: the section exists to say who wrote the course, so it should
+show her.
+
+`Website/Alina_Fence.jpg` and `Website/IMG_8247.jpg` are on disk but not in the
+Kajabi library, and MCP cannot upload. The portrait that is already live on Link
+in Bio solved it without an upload:
+
+```
+.../themes/2167908665/settings_images/
+  c74f5a-84b6-5ad1-ccb7-8b4bc30408_00804c32-ad07-4104-a21a-c23e7ef2733e.jpg
+960x1440 JPEG, kitchen, squeezing a lemon into a glass of juice
+```
+
+Nova accepts a full CDN URL, so one theme's `settings_images` path serves
+another theme's page. That is how the five archetype illustrations already work
+on this page.
+
+It is sized rather than left to fill its column. A 2:3 photo at `width: fill`
+in a 940px row renders roughly 450x675 and would dominate a section that is
+there to support the copy. New `.gh-bio-portrait` hook, following the locked
+Link in Bio portrait treatment:
+
+```css
+.gh-bio-portrait { flex: 0 0 340px !important; }
+.gh-bio-portrait img {
+  width: 340px; height: 453px;
+  object-fit: cover; object-position: center 12%;
+  border-radius: 3px;
+  box-shadow: 0 24px 60px rgba(22,46,40,0.14);
+}
+.gh-bio-copy { flex: 1 1 0 !important; min-width: 0 !important; }
+```
+
+`center 12%` rather than Link in Bio's `72% center`: the source is 2:3 and the
+target 3:4, so `cover` crops vertically here, not horizontally, and the crop has
+to be pulled up to keep her face in frame. Mobile drops to the 260x347 Link in
+Bio size and centers.
+
+`.gh-bio-portrait img` sits after `.gh-zig img` in the stylesheet at equal
+specificity, so the heavier portrait shadow wins over the illustration shadow.
+Fragile if the file is ever reordered; worth a comment there if it moves.
+
+**It is the only photograph on a page otherwise entirely cut-paper.** That reads
+as deliberate for the one human moment on the page rather than as an
+inconsistency, but it is Steve's call once he has looked at it.
+
+---
+
 ## Still to do
 
 1. **Point traffic at it.** Nothing links here yet: Link in Bio, the five quiz
@@ -223,7 +295,8 @@ publish time:
 2. Swap the hero art for one of the cut-paper mockups in
    `Website/mockups/foundations/` once uploaded, and move the signpost down to
    the five-patterns heading.
-3. A real photograph of Alina. The credential section uses an illustration;
-   `Website/Alina_Fence.jpg` and `Website/IMG_8247.jpg` are on disk but not in
-   the Kajabi library, and MCP cannot upload.
-4. Testimonials, when there are any, between the FAQ and the final CTA.
+3. Testimonials, when there are any, between the FAQ and the final CTA.
+4. **Nobody has seen the page.** Cloudflare returns 403 to this environment on
+   every path, so the two fixes of 2026-10-26 are verified only against what the
+   theme reads back, not against a render. Steve checks the cards sit side by
+   side and the portrait is cropped sensibly on a phone.

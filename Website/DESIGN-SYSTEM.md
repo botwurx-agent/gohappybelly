@@ -94,15 +94,29 @@ transparent fill, white text, `1.5px solid rgba(255,255,255,0.45)`.
 
 ### Portraits
 
-| | Hero | About |
-|---|---|---|
-| Width | 380px | 486px |
-| Ratio | 3 / 4 | 4 / 5 |
-| Crop | `object-position: 72% center` | `object-position: center top` |
-| Shadow | `0 24px 60px rgba(22,46,40,0.14)` | `0 16px 48px rgba(22,46,40,0.1)` |
-| Radius | 3px | 3px |
+| | Hero | About | Bio |
+|---|---|---|---|
+| Width | 380px | 486px | 340px |
+| Ratio | 3 / 4 | 4 / 5 | 3 / 4 |
+| Crop | `object-position: 72% center` | `object-position: center top` | `object-position: center 12%` |
+| Shadow | `0 24px 60px rgba(22,46,40,0.14)` | `0 16px 48px rgba(22,46,40,0.1)` | `0 24px 60px rgba(22,46,40,0.14)` |
+| Radius | 3px | 3px | 3px |
 
 The shadow belongs on the image box, never on the column that holds it.
+
+**Bio** is the inline variant: a portrait sitting beside body copy in a
+two-column row, as in the "Who wrote this" section of `/gut-foundations`. It is
+fixed at `flex: 0 0 340px` so it does not take half the row, drops to 260x347
+and centers under 768px, and the copy column beside it takes `flex: 1 1 0;
+min-width: 0`.
+
+**Set the crop from the source aspect, not from habit.** `object-fit: cover`
+crops on whichever axis has slack. Alina's photos are mostly 2:3 (960x1440). In
+a 3:4 box that is a *vertical* crop, so the position has to be pulled up
+(`center 12%`) to keep her face in frame; `72% center` would do nothing. In a
+wider box it is a horizontal crop and `72% center` is the one that matters.
+Copying a crop value between portraits without checking the two aspect ratios is
+how a head ends up cut off.
 
 ## 5. Components
 
