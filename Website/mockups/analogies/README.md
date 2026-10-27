@@ -64,3 +64,34 @@ originals are called. The heroes batch had an exact-collision slip
 
 `.png` is the 2752x1536 original, `.jpg` is 1600x893. `upload/` holds exactly
 the five files to upload and nothing else.
+
+---
+
+## The sugar re-shoot, 2026-10-27
+
+Steve on the first kitchen frame: the brown bag looked like something illegal
+was falling out of it.
+
+He is right, and it was caused by over-applying the no-text rule. Stripping the
+packaging of all printing left a plain kraft paper bag tipped over with white
+powder spilling from it, which is a drug-bust still life. **Removing the label
+removed the thing that made it sugar.**
+
+Three fixes were generated with the rest of the scene held constant.
+
+| File | Fix | Verdict |
+|---|---|---|
+| `a3-alt-blue-bag` | Blue and white paper sack, upright | Bag reads, but the scene changed: the fridge is pushed to the far right and stops being the light source |
+| `a3-alt-canister` | **Clear glass canister, lid off** | **Chosen.** No packaging to misread at all, and the composition stays closest to the original |
+| `a3-alt-white-bag` | White paper sack on its side | Better than brown, but it is still white powder coming out of a bag |
+
+The lesson worth keeping: when a no-text rule strips an object of the thing that
+identifies it, **change the object rather than the label**. A glass jar of sugar
+cannot be mistaken for anything else, and it needs no printing to say what it is.
+
+Checked at native resolution: glass jar of sugar with the lid off, spoon in the
+spill, biscuit tin on its side, chocolate with the foil back, cutlery drawer
+open. The fridge jars carry blurred label shapes but nothing resolves.
+
+`a3-kitchen.png` is the chosen frame. `a3-squatters-brownbag-rejected.png` is
+the original, kept for the record.
