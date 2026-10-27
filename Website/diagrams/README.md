@@ -55,3 +55,35 @@ never part of what Alina rejected. They failed for their own reasons:
 changes: a real wire sieve with oats held on the mesh and fine flour falling
 through. That is the allocation rule working as intended, and it is why the
 analogy images do not all need inventing from scratch.
+
+
+---
+
+## Placed in lesson 01 (2026-10-27)
+
+All four live. Media ids: hero `4838132`, tract `4838131`, villi `4838129`,
+barrier `4838130`. Verified by content search and by fetching each URL.
+
+`diagram-digestive-anatomy` now returns **zero** hits across the whole course.
+The male-body illustration is gone from the product.
+
+### The reuse estimate was wrong, and the real numbers are these
+
+Told Steve the diagrams would "appear across multiple lessons" and guessed
+10 to 15 diagrams for the whole job. A content search says otherwise: each of
+the three originals appeared in **exactly one lesson**. `diagram-gut-barrier`
+is now at zero hits course-wide, which means it was only ever in lesson 01.
+
+Nothing is currently reused. Every lesson carries its own art.
+
+| Count | What |
+|---|---|
+| **6 of 14** | lessons in Gut Foundations carry `diagram-` images (02, 06, 07, and all three bonus modules) |
+| **12 of 14** | still carry cut paper, down from 13 |
+| 1 | lesson fully converted |
+
+So the diagram work is roughly **6 more lessons in this course**, not 3, and the
+Gut Reset course is still uncounted. The reuse upside is real but it has to be
+*designed in*: the barrier diagram genuinely belongs in the Reactive pattern
+lesson too, and nothing is stopping it being placed there. It simply is not
+today, and an estimate should not assume work nobody has done.
