@@ -282,3 +282,43 @@ Three stock medical diagrams remain, one in each bonus module:
 `diagram-liver-gallbladder`, `diagram-nervous-system-organs`,
 `diagram-body-inflammation`. These were never cut paper. They are the off-brand
 stock art described earlier in this file.
+
+### The last two, placed 2026-10-27
+
+`hero-scope` (`4842340`) on 2201324059 and `hero-l02-alarm` (`4842339`) on
+2201324061. Both uploaded under the right names this time.
+
+**All twelve are now live.** Verified by searching the course for every old hero
+filename rather than trusting the alt text:
+
+| Search | Result |
+|---|---|
+| `hero-0` | 0 |
+| `midlife-tree`, `house-lights`, `untouched-plate` | 0 each |
+| `analogy-` | 1, lesson 03, the five known in-body images |
+
+Note that `hero-B` returns three lessons and is a false positive: the search is
+case-insensitive and matches the new `hero-b1` / `hero-b2` / `hero-b3` files.
+Search the distinctive part of the old name, not the prefix.
+
+### One picture-and-copy mismatch, left in deliberately
+
+Lesson 02's Alina's take is "a smoke alarm that goes off every time you make
+toast." **There is no toast in the photograph.** It is an alarm on a hallway
+ceiling with a kitchen out of focus beyond, because the prompt was written for
+the alarm-in-one-room-fire-in-another idea rather than the toast detail.
+
+It is not wrong, the alarm and the kitchen are both there, and the alt text
+describes only what is in the frame. But by the standard applied to the
+Sugar-Driven image and the orchestra, this is the weaker kind of agreement and
+it is Steve's call whether to re-roll with toast in the toaster in the
+background.
+
+## Gut Foundations, state at the end of this pass
+
+| | |
+|---|---|
+| Lessons with a photoreal hero | **13 of 13** that have one |
+| Cut-paper remaining | 5, all in lesson 03's body |
+| Off-brand stock diagrams | 3, one per bonus module |
+| Branded diagrams in place | lessons 01, 02, 06, 07 |
