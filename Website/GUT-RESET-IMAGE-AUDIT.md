@@ -139,3 +139,51 @@ Foundations and Gut Reset. Someone who owns both will see the same images twice.
 That is a deliberate trade: one consistent visual language for the same five
 analogies, against six images of generation cost and the risk of two different
 screen doors meaning the same thing. Worth revisiting only if Steve dislikes it.
+
+---
+
+## Wave 2 placed, and one body deliberately left alone
+
+### Module covers: 9 posters, 8 of 9 bodies
+
+All nine `replace_media` calls succeeded. Eight of the nine lesson bodies that
+carry a cover inline are rewritten with the photograph and honest alt text:
+Welcome, What We Are Actually Doing, The 5 Gut Patterns, Weeks 1 to 4, and How
+Reintroduction Works.
+
+`The 5 Gut Patterns` was held back until the covers existed so it could be done
+in one pass rather than two: it carries the workbench cover **and** all five
+pattern images. All six are now correct in a single rewrite.
+
+### The Supplement Reference: stopped on purpose
+
+**`The Supplement Reference` (2201292374) has its poster swapped and its body
+left as it was, and that is a judgement rather than an oversight.**
+
+The only change it needs is one `img src` in the first paragraph. But there is
+no partial-update API, so making it means hand-reproducing a 400-line document
+containing roughly 25 rows of supplement dosing: milligram ranges, durations,
+and drug-interaction cautions for berberine, oregano oil, grapefruit seed
+extract, betaine HCl and ashwagandha.
+
+Weigh that honestly. The upside is a decorative hero image stops being cut
+paper. The downside, if a single number or caution is mistyped, is wrong dosing
+information shown to paying customers. That trade is bad, and the risk is one I
+cannot fully verify after the fact.
+
+**The safe fix is Steve swapping that one image in the Kajabi admin UI**, which
+is two clicks and carries no transcription risk at all. The asset is already in
+the library as `mod-reference-shelf`.
+
+This is worth remembering as a general rule for the rest of this conversion:
+where a lesson body carries clinical detail, the admin UI beats a rewrite.
+
+### Running total
+
+| | Posters | Bodies |
+|---|---|---|
+| Wave 1, the six reusable | 16 of 16 | 8 of 17 |
+| Wave 2, module covers | 9 of 9 | 8 of 9, one declined |
+
+Wave 1 bodies still to do: four Shopping Lists and five Three Days Of Meals
+pages. All are short and carry no clinical detail, so they are low risk.
