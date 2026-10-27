@@ -102,3 +102,50 @@ mismatch, because each is the last image in its run.
 `.png` is the 2752x1536 original, `.jpg` is 1600x893, which is the size this
 slot uses. MCP cannot upload to Kajabi, so the twelve `.jpg` files go up through
 the admin UI and then get placed by media id.
+
+---
+
+## Lesson 08 re-shot, 2026-10-27
+
+Steve: the instruments did not translate. He kept the metaphor and rejected the
+frame, correctly: "the picture just looked like instruments sitting next to one
+another." His direction was an orchestra setting, one instrument per chair,
+waiting for the players who are not there.
+
+**The orchestra is also in the body copy**, as Alina's take:
+
+> Think of it as an orchestra. Every habit is one instrument, and none of them
+> sounds like much alone. What you are listening for is whether the whole thing
+> is starting to play together, and that is not something you can hear on any
+> given day.
+
+`search_course_content` across both courses returns that one line and nothing
+else, so the metaphor is contained to this lesson. Because Steve kept the
+metaphor, **the copy does not change.** Had it been swapped, that paragraph
+would have had to be rewritten in the same pass, or the picture would have
+argued with the line the way the first Sugar-Driven frame did.
+
+### Three framings generated
+
+| File | Framing | Read |
+|---|---|---|
+| `h09-alt-a` | From where the conductor stands, arc of chairs, dark hall beyond | Unmistakably an orchestra waiting. Recommended |
+| `h09-alt-b` | Three-quarter from the side, two rows receding | Reads as an orchestra, but one-instrument-per-chair is lost in the crowd of stands |
+| `h09-alt-c` | Four chairs close, one instrument each | Most legible, but reads as a quartet. Blank white stands sit too bright |
+
+`h09-options.jpg` is the comparison sheet, with the rejected original included.
+
+### Why the re-shoot also fixed the recorded fault
+
+The note above says the two bows read as bare sticks with no hair and that if it
+were ever re-shot the bows should be dropped from the prompt rather than
+described better. The new prompts have no bows at all, so that fault is gone
+rather than improved.
+
+Checked `h09-alt-a` at native 2752x1536: cello and double bass are anatomically
+clean, with correct f-holes, bridges, strings and endpins, which is what this
+model usually ruins. Stands empty, no notation, no text, nobody present.
+
+**Awaiting Steve's pick between A, B and C.** On his word the chosen file joins
+the twelve and the alt text is rewritten to describe the chairs rather than a
+pile of instruments.
