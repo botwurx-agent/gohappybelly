@@ -329,3 +329,63 @@ These need the lesson 03 treatment: photograph the real object and then check
 each frame against the sentence printed beside it, because a metaphor that does
 not land is worse than no image. `what-leaky-gut-means` is a torn screen and may
 be able to reuse `l03-screen-door` at a different crop rather than a new shot.
+
+---
+
+## Wave 4 placed, 10 of 13, 2026-10-27
+
+Ten of the thirteen metaphors are live: 10 `replace_media` poster swaps and 10
+body rewrites, no failures on either. Build notes and the metaphor-vs-copy
+reasoning: `Website/mockups/reset-metaphor/README.md`.
+
+### Three did not upload, and three uploaded twice
+
+Checked before placing anything, by listing the library rather than assuming
+the upload was complete. The library went from 26 `photo-` assets to 39, which
+looks like 13 until the names are read: only **10 are distinct**.
+
+**Missing, still cut paper:**
+
+| Lesson | Needs |
+|---|---|
+| The 11 Signs Of The Reactive Gut Pattern (2178659964) | `photo-11-signs.jpg` |
+| How Your Digestive System Works (2178659968) | `photo-how-digestion-works.jpg` |
+| The Named Diets (2178660093) | `photo-named-diets.jpg` |
+
+**Uploaded twice.** Identical files, so either copy works. The lower id of each
+pair was used and the spare left untouched, since deleting media is Steve's
+call:
+
+| Name | Used | Spare, safe to delete |
+|---|---|---|
+| `photo-against-your-bacteria` | 4865989 | 4866045 |
+| `photo-reintroduction-tracker` | 4865983 | 4866046 |
+| `photo-reintroducing-your-pattern` | 4865981 | 4866044 |
+
+This is the second time an upload batch has arrived short without the uploader
+saying so. The lesson stands: **list the library and count distinct names before
+placing, never trust the batch size.**
+
+### Verified by filename, not alt text
+
+| Search | Result |
+|---|---|
+| `_photo-` | **34**, which is wave 3's 24 plus these 10 |
+| `_reset-` | **4** |
+
+Those 4 are exactly the 3 missing uploads plus `The Supplement Reference`, the
+body left for the admin UI. Nothing unaccounted for.
+
+### Where the course stands
+
+| | Done | Left |
+|---|---|---|
+| The five pattern images | 16 posters, 16 bodies | 0 |
+| The quiz image | 1 poster, 1 body | 0 |
+| Module covers | 9 posters, 8 bodies | 1 body, declined |
+| Literal still lifes | 24 posters, 24 bodies | 0 |
+| Metaphors | 10 posters, 10 bodies | 3, blocked on upload |
+| **Cut paper remaining** | | **3 lessons, plus the one declined body** |
+
+49 of 52 images converted. The three remaining are generated and sitting in
+`Website/mockups/reset-metaphor/upload/`, waiting only on a re-upload.
