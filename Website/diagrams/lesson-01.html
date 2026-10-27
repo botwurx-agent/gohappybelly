@@ -1,0 +1,164 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',sans-serif;background:#FFFFFF}
+  .d{display:block;margin:0 0 60px}
+  svg{display:block}
+  .lab{font-family:'DM Sans',sans-serif;font-size:21px;font-weight:400;fill:#2E4438}
+  .sub{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;fill:#6A8278}
+  .eyebrow{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
+           letter-spacing:.18em;text-transform:uppercase;fill:#7AAE86}
+  .note{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:19px;fill:#162E28}
+</style></head>
+<body>
+
+<!-- ============ A. One continuous tube ============ -->
+<div class="d"><svg id="A" width="1000" height="930" viewBox="0 0 1000 930">
+  <!-- mouth -->
+  <circle cx="500" cy="55" r="20" fill="none" stroke="#7AAE86" stroke-width="10"/>
+  <!-- oesophagus -->
+  <path d="M 500 78 L 500 162" stroke="#7AAE86" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <!-- stomach -->
+  <path d="M 500 160 C 498 192 448 188 418 218 C 388 248 398 292 450 306 C 478 314 486 322 482 342"
+        stroke="#7AAE86" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- small intestine -->
+  <path d="M 480 350
+           C 572 362 584 398 500 408
+           C 392 420 372 454 464 468
+           C 584 486 588 520 478 532
+           C 388 542 380 568 452 582
+           C 520 595 602 602 640 614"
+        stroke="#A8CAB2" stroke-width="25" stroke-linecap="round" fill="none"/>
+  <!-- large intestine, single path through to the exit: drawn as one stroke so the
+       segments cannot overlap into a darker seam the way two paths did -->
+  <path d="M 648 636
+           C 686 682 604 718 474 724
+           C 376 729 352 762 434 784
+           C 498 801 508 818 500 842
+           L 500 884"
+        stroke="#C9886B" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- labels -->
+  <text class="lab" x="540" y="62">Mouth</text>
+  <text class="lab" x="352" y="244" text-anchor="end">Stomach</text>
+  <text class="sub" x="352" y="268" text-anchor="end">acid, and a checkpoint</text>
+  <text class="lab" x="676" y="446">Small intestine</text>
+  <text class="sub" x="676" y="470">where most absorbing happens</text>
+  <text class="lab" x="300" y="736" text-anchor="end">Large intestine</text>
+  <text class="sub" x="300" y="760" text-anchor="end">water, and most of your bacteria</text>
+  <text class="lab" x="540" y="878">Out</text>
+</svg></div>
+
+<!-- ============ B. Smooth vs folded ============ -->
+<div class="d"><svg id="B" width="1200" height="470" viewBox="0 0 1200 470">
+  <text class="eyebrow" x="40" y="34">If the lining were smooth</text>
+  <text class="eyebrow" x="650" y="34">Folded into fingers</text>
+
+  <!-- left panel -->
+  <rect x="40" y="275" width="500" height="95" fill="#E4F0E7"/>
+  <path id="flatline" d="M 40 275 L 540 275" stroke="#7AAE86" stroke-width="7" fill="none"/>
+  <text class="sub" x="290" y="424" text-anchor="middle">A short surface. Not much room to absorb.</text>
+
+  <!-- right panel -->
+  <rect x="650" y="275" width="500" height="95" fill="#E4F0E7"/>
+  <g id="villi"></g>
+  <text class="sub" x="900" y="424" text-anchor="middle">The same stretch of wall, many times the surface.</text>
+</svg></div>
+
+<!-- ============ C. The barrier ============ -->
+<div class="d"><svg id="C" width="1300" height="700" viewBox="0 0 1300 700">
+  <text class="eyebrow" x="40" y="32">Sealed</text>
+  <text class="eyebrow" x="700" y="32">Loosened</text>
+  <g id="barrierL"></g>
+  <g id="barrierR"></g>
+  <text class="sub" x="330" y="648" text-anchor="middle">Nutrients cross through the cells. Everything else keeps moving.</text>
+  <text class="sub" x="990" y="648" text-anchor="middle">The seals give, and larger pieces slip between.</text>
+</svg></div>
+
+<script>
+const NS = 'http://www.w3.org/2000/svg';
+const el = (t, a) => { const n = document.createElementNS(NS, t);
+  for (const k in a) n.setAttribute(k, a[k]); return n; };
+
+/* ---- B: villi fingers ---- */
+(function () {
+  const g = document.getElementById('villi');
+  const n = 17, x0 = 652, step = 29.2, w = 17, h = 128, base = 275;
+  for (let i = 0; i < n; i++) {
+    const x = x0 + i * step;
+    g.appendChild(el('path', {
+      d: `M ${x} ${base} L ${x} ${base - h + w/2} A ${w/2} ${w/2} 0 0 1 ${x + w} ${base - h + w/2} L ${x + w} ${base} Z`,
+      fill: '#7AAE86'
+    }));
+  }
+  g.appendChild(el('rect', { x: 650, y: 271, width: 500, height: 8, fill: '#7AAE86' }));
+})();
+
+/* ---- C: the barrier, two panels ---- */
+function barrier(gid, ox, loose) {
+  const g = document.getElementById(gid);
+  const top = 70, cellTop = 250, cellH = 180, bloodTop = 455, panelW = 560;
+
+  // lumen (inside of the tube)
+  g.appendChild(el('rect', { x: ox, y: top, width: panelW, height: cellTop - top, fill: '#F8FAF8' }));
+  // bloodstream
+  g.appendChild(el('rect', { x: ox, y: bloodTop, width: panelW, height: 100, fill: '#F2E2D9' }));
+  g.appendChild(el('text', { x: ox + 12, y: bloodTop + 60, class: 'sub' })).textContent = 'bloodstream';
+  g.appendChild(el('text', { x: ox + 12, y: top + 28, class: 'sub' })).textContent = 'inside the tube';
+
+  // cells
+  const n = 5, gap = loose ? 15 : 5, cw = (panelW - 40 - (n - 1) * gap) / n;
+  for (let i = 0; i < n; i++) {
+    const x = ox + 20 + i * (cw + gap);
+    g.appendChild(el('rect', { x, y: cellTop, width: cw, height: cellH, rx: 12,
+                               fill: '#EFF7F1', stroke: '#C8DDD0', 'stroke-width': 2 }));
+    g.appendChild(el('circle', { cx: x + cw / 2, cy: cellTop + 112, r: 17, fill: '#C8DDD0' }));
+    // junction seal between this cell and the next
+    if (i < n - 1) {
+      const jx = x + cw + gap / 2;
+      if (!loose) {
+        for (let k = 0; k < 3; k++)
+          g.appendChild(el('rect', { x: jx - 9, y: cellTop + 14 + k * 15, width: 18, height: 6,
+                                     rx: 3, fill: '#C07A5A' }));
+      } else {
+        for (let k = 0; k < 2; k++)
+          g.appendChild(el('rect', { x: jx - 9, y: cellTop + 14 + k * 15, width: 18, height: 6,
+                                     rx: 3, fill: '#C07A5A', opacity: 0.3 }));
+      }
+    }
+  }
+
+  // nutrients: small sage dots, crossing THROUGH the cells in both panels
+  [0, 2, 4].forEach(i => {
+    const x = ox + 20 + i * (cw + gap) + cw / 2;
+    g.appendChild(el('circle', { cx: x, cy: top + 70, r: 9, fill: '#7AAE86' }));
+    g.appendChild(el('path', { d: `M ${x} ${top + 92} L ${x} ${bloodTop + 14}`,
+                               stroke: '#7AAE86', 'stroke-width': 2.5,
+                               'stroke-dasharray': '7 7', fill: 'none' }));
+    g.appendChild(el('circle', { cx: x, cy: bloodTop + 36, r: 9, fill: '#7AAE86' }));
+  });
+
+  // larger pieces: terracotta, held above when sealed, slipping between when loose
+  const bigs = loose ? [1, 3] : [1, 3];
+  bigs.forEach(i => {
+    const jx = ox + 20 + i * (cw + gap) + cw + gap / 2;
+    if (!loose) {
+      g.appendChild(el('rect', { x: jx - 16, y: top + 118, width: 32, height: 17, rx: 8,
+                                 fill: '#C07A5A' }));
+    } else {
+      g.appendChild(el('rect', { x: jx - 16, y: top + 118, width: 32, height: 17, rx: 8,
+                                 fill: '#C07A5A' }));
+      g.appendChild(el('path', { d: `M ${jx} ${top + 146} L ${jx} ${bloodTop + 14}`,
+                                 stroke: '#C07A5A', 'stroke-width': 2.5,
+                                 'stroke-dasharray': '7 7', fill: 'none' }));
+      g.appendChild(el('rect', { x: jx - 16, y: bloodTop + 26, width: 32, height: 17, rx: 8,
+                                 fill: '#C07A5A' }));
+    }
+  });
+}
+barrier('barrierL', 40, false);
+barrier('barrierR', 700, true);
+</script>
+</body></html>
