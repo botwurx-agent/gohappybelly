@@ -139,3 +139,45 @@ drawing the *anatomy* answers a question nobody asked.
 
 All three were invisible in the markup and obvious in the render. **Render and
 look before exporting.**
+
+
+---
+
+## Batch two placed (2026-10-27)
+
+All six live across lessons 02, 06 and 07. Verified by fetching each URL and by
+content search. `_diagram-` is down from 6 lessons to **3**, all of them bonus
+modules.
+
+### I broke my own tracking metric, and it is worth saying how
+
+The "12 of 14 lessons still carry cut paper" number came from searching the
+course for the string **"Cut-paper"**, which only ever appeared in *alt text*.
+While swapping the diagrams in these three lessons I also rewrote their hero
+alt text, dropping the words "Cut-paper illustration of" in favour of a plain
+description of the scene.
+
+The heroes themselves are **unchanged**. They are still the cut-paper images.
+But a "Cut-paper" search now returns 9 instead of 12, which would read as
+progress that did not happen.
+
+**Count the asset, not the description.** `_hero-` returns **12**, which is the
+honest number of lessons still carrying a cut-paper hero, and it is unaffected
+by anything written in alt text.
+
+The alt-text rewrite is still right on its own terms. Alt text should describe
+what is in the picture, not what medium it was made in. It just must not double
+as a progress counter.
+
+### State of Gut Foundations
+
+| | |
+|---|---|
+| Lessons with branded diagrams | 4 of 14 (01, 02, 06, 07) |
+| Lessons still carrying `_diagram-` stock art | 3, all bonus modules |
+| Lessons still carrying a cut-paper hero | **12 of 14** (`_hero-`) |
+| Lessons fully converted, hero and diagrams | **1** (lesson 01) |
+
+Only lesson 01 is actually finished. Lessons 02, 06 and 07 have new diagrams
+sitting above old cut-paper heroes, which is the mixed state the sales page was
+in yesterday. Worth closing before starting the Gut Reset course.
