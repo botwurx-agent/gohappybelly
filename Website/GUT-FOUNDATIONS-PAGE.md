@@ -346,25 +346,30 @@ Placed into `fp_1i` to `fp_5i` on section `1792070000007`, one
 Alt text describes what is in each photograph and never tells the reader what
 she has. Built and art-directed per `Website/mockups/patterns/README.md`.
 
-### One cut-paper image is still on this page
+### The page is fully photoreal (2026-10-27)
 
-`wi_img`, in **"What is inside"** (section `1792070000003`): the digestive
-tract laid out as a route, `reset-how-digestion-works.jpg`. Its alt text still
-says "A cut-paper illustration". Found by sweeping every section after placing
-the five, rather than assuming the patterns section was all of it.
+The last cut-paper image, `wi_img` in **"What is inside"** (the digestive tract
+as a route), is replaced by the phone shot, media id **4836582**. Steve chose
+the product shot over redrawing the anatomy.
 
-It is the hard case in the whole set, because an anatomical route is the one
-thing a photograph genuinely cannot do. Three ways out, and it is Steve's call:
+**All ten sections were read, not just the ones holding images.** This is how
+the digestive-tract image was missed the first time: the five patterns were
+placed and the page declared done without checking the rest. Final inventory:
 
-1. **Swap it for a product shot** (a phone showing a lesson). Best fit for the
-   section, which is about what the course contains rather than about anatomy,
-   and it matches the sales-page rule in `IMAGE-DIRECTION.md`: product shots
-   and Alina, not metaphor.
-2. **Redraw the diagram** in a clean non-cut-paper style on the website palette.
-   Keeps the anatomy, loses the texture Alina rejected.
-3. **Drop it.** The section reads fine without an image.
+| Section | Image |
+|---|---|
+| `…0001` Hero | `foundations-hero-b`, photoreal laptop |
+| `…0002` The drawer | text only |
+| `…0003` What is inside | `foundations-phone`, photoreal phone |
+| `…0004` Is and is not | text cards only |
+| `…0005` Final CTA | text only |
+| `…0006` Stat bar | text only |
+| `…0007` The five patterns | five photoreal symptom moments |
+| `…0008` Who wrote this | Alina's photograph |
+| `…0009` FAQ | text only |
+| `…0016` Sticky mobile CTA | button only |
 
-Recommendation is 1.
+Eight images, every one photographic. No cut paper remains on this page.
 
 ### A copy line the switch left behind
 
@@ -386,8 +391,8 @@ Not changed: it is approved sales copy and the change is Steve's.
    `Website/mockups/foundations/` once uploaded, and move the signpost down to
    the five-patterns heading.
 3. Testimonials, when there are any, between the FAQ and the final CTA.
-5. **One cut-paper image left**, `wi_img` in "What is inside". See above.
-6. Set the social share image in the admin UI (see above).
+5. Set the social share image in the admin UI (see above). Still the only
+   thing outstanding on this page.
 4. **Nobody has seen the page.** Cloudflare returns 403 to this environment on
    every path, so the two fixes of 2026-10-26 are verified only against what the
    theme reads back, not against a render. Steve checks the cards sit side by
