@@ -183,6 +183,57 @@ page. Easy to grab the wrong one; the sales page theme is `2167971291`.
 
 ---
 
+## The mix: photography and illustration (Steve, 2026-10-27)
+
+Steve's direction for the course interiors: photoreal photography **and**
+illustration where illustration is necessary. Correct, and the audit below
+turns it into an allocation rather than a preference.
+
+### What is actually in the courses, three kinds not one
+
+Opening the live images rather than assuming:
+
+| Kind | Example | State |
+|---|---|---|
+| Cut-paper analogy art | `hero-01-sieve.jpg`, the 52 in Gut Reset | Rejected by Alina |
+| **Stock medical diagrams** | `diagram-digestive-anatomy.png`, `diagram-gut-barrier.png` | **Not cut paper. Off-brand stock** |
+| Real photographs | the food shot in lesson 05 | Already good, keep |
+
+The diagrams were never part of the cut-paper problem, and they have three
+faults of their own:
+
+1. **Off-brand.** Clinical reds and pinks, nothing like sage, cream and
+   terracotta. They read as stock art dropped into the page, because they are.
+2. **`diagram-digestive-anatomy.png` shows a male body.** Every one of the seven
+   avatars is a woman. On a women's health product that is a real miss, and it
+   is the kind of thing a buyer notices without being able to say why.
+3. **Clinical labels in a generic sans.** "Paracellular", "Transcellular",
+   "Normal tight junction". Off-brand type and off-register vocabulary for a
+   reader who was told this would be in plain language.
+
+### The allocation
+
+| The subject | Treatment | Why |
+|---|---|---|
+| Anything that exists in the world: food, broth, jars, supplements, a kitchen, a person | **Photography** | It is real, so photograph it. Roughly a third of the 52 |
+| Anything inside the body: the barrier, villi, tight junctions, the tract, the gut-brain and gut-liver loops | **Illustration, branded** | A camera cannot go there. This is exactly Steve's "if necessary" |
+| The analogies: screen door, flooded basement, car engine | **Photography of the real object**, or drop | Alina's objection was the *style*, not the metaphor. In-course the surrounding text carries the meaning, which is why these fail on a sales page and survive inside a lesson |
+
+### Sequence
+
+**Diagrams first.** Smallest count, biggest lift, and the only category where
+the current art is actively wrong rather than just out of favour. A consistent
+branded diagram set (website palette, clean line, a female body where a body
+appears, plain-language labels) would raise the course more than replacing any
+number of analogy images.
+
+Then photography for the literal subjects, then a decision on the analogies.
+
+**Proposed first step: one lesson end to end**, all three treatments in place,
+so the mix can be judged before anything is committed at scale.
+
+---
+
 ## Open questions for Steve
 
 1. The 52 course thumbnails: replace all of them, or only the ones a buyer sees
