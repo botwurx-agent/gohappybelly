@@ -147,9 +147,14 @@ Colors sampled from the real dashboard screenshot rather than guessed:
 
 ## The cut-paper problem reaches inside the course
 
-Found 2026-10-26 while pulling real copy for the phone mockup. **The lesson
-bodies themselves embed cut-paper images.** Lesson 01 carries `hero-01-sieve.jpg`
-as its hero plus three inline diagrams, and the other ten will be the same.
+Found 2026-10-26 while pulling real copy for the phone mockup, and counted
+properly on 2026-10-27. **The lesson bodies themselves embed cut-paper images:
+13 of the 14 lessons** reference "Cut-paper" in their alt text
+(`search_course_content`).
+
+It is a mix, not a clean sweep. Lesson 05 opens with a real food photograph and
+still carries a cut-paper image further down, so this is a per-lesson audit
+rather than a wholesale swap.
 
 That is a third surface, on top of the sales pages and the 52 lesson thumbnails:
 art inside the product that a paying customer reads. Not scoped, not costed, and

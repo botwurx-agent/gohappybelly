@@ -5,16 +5,16 @@ cut-paper digestive-tract diagram. Steve chose the product shot over redrawing
 the anatomy, 2026-10-26, working from a reference he supplied: a hand holding a
 phone, real UI on screen, blurred warm kitchen behind.
 
-`foundations-phone-b.jpg` is 1600x905, the size that slot already uses.
-`scene-b.png` is the raw generated scene with the magenta screen, kept so the UI
-can be re-composited without paying for generation again.
+`foundations-phone.jpg` is 1600x905, the size that slot already uses.
+`scene-b.png` is the raw generated scene with the magenta screen and
+`img0678.png` is Steve's screenshot, both kept so the shot can be rebuilt
+without paying for generation again.
 
 ## Same chroma-key method as the laptop, one change
 
 The scene is generated (`nano_banana_2_1`, 16:9, 2k, thinking_level high) with
-the screen prompted as a flat `#FF00FF` fill. `foundations-phone-ui.html`
-renders the real lesson at 450x975 logical, 2x, and `composite-phone.py` warps
-it into the key.
+the screen prompted as a flat `#FF00FF` fill. `composite-phone.py` warps
+**Steve's real iPhone screenshot** (`img0678.png`, 1290x2796) into the key.
 
 **`composite-phone.py` exists because `composite.py` fits the quad wrongly on a
 phone.** The laptop screen is a sharp rectangle, so picking corners by the
@@ -34,28 +34,48 @@ quad is now correct and a large push would bleed over the bezel.
 
 Residual magenta: 0 pixels.
 
-## What is on the screen, and what is deliberately not
+## The first attempt was drawn, and it was wrong
 
-Lesson **01. Understanding Your Gut**, real title, real module eyebrow, real body
-copy pulled from lesson 2201324060, including Alina's screen-door take. Momentum
-fonts (Fira Sans Extra Condensed and Lato), website palette, which is what the
-lesson bodies actually use inline.
+Before Steve supplied the screenshot, this was built from a hand-rolled
+`foundations-phone-ui.html` that rendered the lesson from live course copy. The
+copy was real. **The chrome and the type were invented, and both were wrong.**
 
-**The lesson's own hero image is left off deliberately.** It is
-`hero-01-sieve.jpg`, cut paper, the style Alina rejected. Showing it on a sales
-page mockup would put rejected art back on the page through the back door. The
-shot opens at a text section instead, which also does a better job: it
-demonstrates the writing, and the writing is the product.
+- The real lesson page is a **browser** page: Safari, the gohappybelly.com URL
+  bar, a pale green search bar with a hamburger, then a nav row carrying a
+  **Complete Lesson** button and prev/next arrows. The drawn version had none of
+  that and invented a native-app header instead.
+- Lesson headings are a **serif**, not Fira Sans Extra Condensed. The condensed
+  sans is the *dashboard* template. Two different Momentum surfaces, two
+  different type systems, and the laptop screenshot only ever showed the first.
 
-Two sizing notes. Content must run to the bottom edge; the first pass stopped
-two thirds down and read as a half-empty page rather than a scroll position.
-And type has to be generous, because the screen is roughly 490x1090 in a
-2752-wide frame.
+This is the same mistake `Website/mockups/README.md` already records from
+2026-10-21, when a drawn facsimile used the website fonts and "looked like the
+brand but not like the product". It recurred because the laptop had a real
+screenshot and the phone did not.
+
+**Rule: do not draw a surface nobody has screenshotted.** Ask for the
+screenshot. Real copy in invented chrome still misrepresents the product, and
+it is not obvious it is wrong until the real thing turns up beside it.
+
+The drawn HTML and its render script are deleted rather than kept, so no one
+reaches for them again.
+
+## What is on the screen
+
+Lesson **05. Nutrition Foundations**, scrolled to "Every Meal Is An Input",
+with the lesson's own food photograph. Safari chrome included on purpose: the
+visible `gohappybelly.com` is evidence it is the real site rather than a
+mockup.
+
+Nothing was retouched. The laptop shot needed a member's name painted out;
+this one carries nothing personal, just a tab count and a clock.
 
 ## Flagged, not fixed
 
-**The course lesson bodies are full of cut-paper images.** Lesson 01 alone
-carries `hero-01-sieve.jpg` plus three diagrams. This is the same rejection
-reaching inside the product, not just the sales pages, and it is bigger than the
-52 thumbnails already noted in `Website/IMAGE-DIRECTION.md`. Nobody has scoped
-it yet.
+**The course lesson bodies carry cut-paper images throughout.** Verified with
+`search_course_content`: **13 of the 14 lessons** reference "Cut-paper" in their
+body alt text.
+
+The course is a *mix*, which the screenshot made clear: lesson 05 opens with a
+real food photograph and still carries a cut-paper image further down. So this
+is not a wholesale replacement, it is a per-lesson audit. Nobody has scoped it.
