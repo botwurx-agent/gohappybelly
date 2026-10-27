@@ -111,3 +111,59 @@ only light, which makes this a more ordinary lit kitchen and less of a
 night-time scene, and that is a fair trade for packaging that identifies itself.
 
 `a3-kitchen.png` is now the sack version. `a3-alt-canister.png` is kept.
+
+---
+
+## Placed, 2026-10-27, and an audit that changes the picture
+
+All five are live on lesson `2201324062`. Verified: `analogy-` returns 0 and
+`Cut-paper` returns 0 across the whole course. **Every cut-paper image is now
+gone from Gut Foundations.**
+
+Then, instead of asserting what was left for a third time, the remaining nine
+in-body images were downloaded and opened. `remaining-in-body-audit.jpg` is the
+sheet. The earlier claim that "only three off-brand stock diagrams remain" was
+wrong and understated it, and it was wrong for the same reason as before:
+**it was read off alt text instead of off the images.**
+
+### Four images do not show what their alt text says
+
+This is worse than off-brand. The alt text is false, which also means a screen
+reader describes something that is not there.
+
+| Lesson | Alt text claims | The image actually is |
+|---|---|---|
+| Midlife (B1) | "Anatomical illustration showing the position of the liver and gallbladder within the torso" | A stock photo of a young woman pointing at her head over a bowl of pasta |
+| When Your System Stays On Alert (B3) | "Illustration of a human figure with several joints and regions highlighted" | A photograph of a yellow **SLOW** road sign |
+| Digestion Under Pressure (B2) | "Whole foods arranged with the mineral symbols for calcium, potassium, magnesium, zinc and iron overlaid" | A cartoon of a smiling stomach character with cute bacteria holding forks |
+| Digestion Under Pressure (B2) | "Illustration of the nervous system running alongside the digestive organs" | A cartoon of organs with angry faces and comic lightning bolts |
+
+### Three are cartoon clipart
+
+`B2_food-minerals`, `B2_diagram-nervous-system` and `L05_illus-intestine-foods`
+are cartoon characters. On a paid product aimed at women aged 40 to 65 who have
+been dismissed by doctors, cartoon organs with faces undercut the credibility
+the copy works hard to build.
+
+### Two have readable text burned into the image
+
+The **SLOW** road sign, and a chalkboard reading **FIBER** in the fiber flat-lay.
+Both contradict the no-text rule applied to everything generated in this project.
+
+### Three are fine and should be kept
+
+`L05_food-fermented-jars`, `L05_food-fiber-flatlay` (apart from the chalkboard)
+and `L08_photo-notebook` are real photographs that match their captions.
+`L04_metaphor-habit-loop` is generic stock but is honest about what it shows.
+
+### Revised count of what is left in Gut Foundations
+
+| | |
+|---|---|
+| Cut paper | **0** |
+| Images whose alt text is false | 4 |
+| Cartoon clipart | 3 |
+| Images with burned-in text | 2 |
+| Genuinely fine, keep | 3 |
+
+Not scoped and not costed. Flagged for Steve to decide.
