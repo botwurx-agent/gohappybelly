@@ -265,3 +265,38 @@ They are not pretending to be an anatomy plate, and the labels carry the names.
 **The general lesson:** when a drawing fights back three times, the subject is
 probably wrong, not the curve handles. Ask what the passage actually teaches
 and draw that.
+
+## Placed, and a complete inventory
+
+All five are live. Verified by searching the course for every old filename:
+`diagram-`, `illus-intestine` and `food-minerals` each return 0.
+
+**Every one of the 14 lesson bodies has now been read in full**, so the
+following is an inventory rather than an estimate. The last two to be opened
+were `Who Is Teaching This` (Alina's own photograph, correct) and
+`01. Understanding Your Gut` (the sieve plus the three lesson 01 diagrams,
+correct).
+
+| Kind | Count | State |
+|---|---|---|
+| Lesson heroes | 13 | All photographs |
+| Alina's portrait | 1 | Correct |
+| Branded diagrams | 14 | Hand-built, website palette |
+| Analogy photographs, lesson 03 | 5 | Photographs of the real object |
+| Stock photographs still in place | 4 | See below |
+
+| Cut paper | Cartoon clipart | Off-brand stock diagrams | False alt text |
+|---|---|---|---|
+| **0** | **0** | **0** | **0** |
+
+### The four stock photographs left, and why they stayed
+
+Steve's call was to replace the cartoons, not every stock image. Three of these
+are real photographs that match their captions and are worth keeping:
+`food-fermented-jars`, `photo-notebook-tracking`, and `metaphor-habit-loop-cubes`
+(generic, but honest about what it shows).
+
+**One is worth revisiting: `food-fiber-flatlay` has a chalkboard reading FIBER
+burned into the photograph.** Every image generated or drawn in this project
+carries no text at all, by rule. This one predates that rule and breaks it. It
+is the single remaining inconsistency in the course and it is not yet costed.
