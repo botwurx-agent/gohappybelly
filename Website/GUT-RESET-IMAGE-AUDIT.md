@@ -94,3 +94,48 @@ the real object, and check each frame against the sentence beside it.
 
 This is several times the size of the twelve heroes done this morning. It is
 worth agreeing the pace before spending it.
+
+---
+
+## Wave 1 in progress, 2026-10-27
+
+Steve chose waves, module covers first. Wave 1 is the six that cost nothing.
+
+### Posters: done, 16 placements
+
+Six `replace_media` calls, no failures.
+
+| Old | New | Placements |
+|---|---|---|
+| `reset-pattern-reactive` | `l03-screen-door` | 3 |
+| `reset-pattern-backed-up` | `l03-basement` | 3 |
+| `reset-pattern-sugar-driven` | `l03-kitchen` | 3 |
+| `reset-pattern-underactive` | `l03-stove` | 3 |
+| `reset-pattern-wired-tired` | `l03-engine` | 3 |
+| `reset-gut-pattern-quiz` | `hero-l03-doors` | 1 |
+
+### Bodies: 3 of 17 done
+
+**The images were free. The placement is not.** Those six assets appear inline
+in seventeen lesson bodies, and each one needs a full rewrite because there is
+no partial-update API and the alt text ends "in cut-paper collage" on every one.
+
+| Done | Remaining |
+|---|---|
+| The Gut Pattern Quiz | The 5 Gut Patterns (carries all five inline) |
+| Working With The Reactive Gut | Working With: Sugar-Driven, Underactive, Wired-And-Tired |
+| Working With The Bloated And Backed-Up Gut | 5 Shopping List lessons |
+| | 5 Three Days Of Meals lessons |
+
+Until the rest are done those lessons show a photographic thumbnail and a
+cut-paper image inside. Same subject, different style. Not broken, but
+inconsistent, and the reference-shelf pages are the lower-traffic ones so they
+are last deliberately.
+
+### A note on reuse across both courses
+
+The five pattern photographs and the five-doors image now appear in both Gut
+Foundations and Gut Reset. Someone who owns both will see the same images twice.
+That is a deliberate trade: one consistent visual language for the same five
+analogies, against six images of generation cost and the risk of two different
+screen doors meaning the same thing. Worth revisiting only if Steve dislikes it.
