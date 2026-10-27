@@ -149,3 +149,52 @@ model usually ruins. Stands empty, no notation, no text, nobody present.
 **Awaiting Steve's pick between A, B and C.** On his word the chosen file joins
 the twelve and the alt text is rewritten to describe the chairs rather than a
 pile of instruments.
+
+### Chosen: C3, 2026-10-27
+
+Steve picked C3. The staging problem he spotted was real and the stands were
+reversed, not merely misplaced: a stand belongs in front of the player, between
+them and the conductor, so from the audience side the backs of the stands
+should be visible with the chairs behind them.
+
+C1 corrected that and showed why correcting it is the wrong move here. Four
+dark stands then sit across the middle of the frame and clip the trumpet and
+the cello. The staging is right and the subject is lost.
+
+C3 keeps the stands Steve wanted for the scene, in the rows behind rather than
+the front row, where the mass of chairs and stands receding into the dark is
+what actually produces the orchestra. The front four read clean. An empty front
+desk with its stand not yet set is unremarkable.
+
+Front row checked at native resolution: violin with bow, flute with correct
+keywork, trumpet with three valves, cello. Four different instruments as asked,
+no text, nobody present.
+
+Files: `h09-orchestra.png` / `.jpg` is the chosen frame.
+`h09-instruments-rejected.png` is the original pile. The other candidates stay
+as `h09-alt-*` and `h09-c1-stands-front` for the record.
+
+## The upload set
+
+`upload/` holds exactly the twelve files to upload and nothing else, renamed to
+library names so placement is unambiguous. The working directory above it has
+options and contact sheets mixed in and is not the thing to upload from.
+
+| Upload file | Lesson id |
+|---|---|
+| `hero-start-here.jpg` | 2201324057 |
+| `hero-scope.jpg` | 2201324059 |
+| `hero-l02-alarm.jpg` | 2201324061 |
+| `hero-l03-doors.jpg` | 2201324062 |
+| `hero-l04-habits.jpg` | 2201324063 |
+| `hero-l05-nutrition.jpg` | 2201324064 |
+| `hero-l06-gut-brain.jpg` | 2201324065 |
+| `hero-l07-gut-liver.jpg` | 2201324066 |
+| `hero-l08-orchestra.jpg` | 2201324067 |
+| `hero-b1-midlife.jpg` | 2201324068 |
+| `hero-b2-pressure.jpg` | 2201324069 |
+| `hero-b3-alert.jpg` | 2201324070 |
+
+Deliberately not reusing the existing `hero-01-sieve` style names, because the
+cut-paper originals still carry those and a collision in the library would make
+the wrong image easy to place.
