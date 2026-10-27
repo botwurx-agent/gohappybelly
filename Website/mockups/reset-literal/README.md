@@ -93,3 +93,22 @@ Upload, then per lesson: `replace_media` for the poster, then a body rewrite
 for the inline image and alt text. The exception recorded in
 `Website/GUT-RESET-IMAGE-AUDIT.md` still stands: where a lesson body carries
 clinical detail, the admin UI beats a rewrite.
+
+## Placed 2026-10-27
+
+All 24 are live: poster swapped with `replace_media`, inline image and alt text
+swapped by body rewrite. Media ids 4859822 to 4859859.
+
+Verified by filename rather than alt text: `_photo-` returns 24 across the
+course, `_reset-` returns 14, which are the 13 wave-4 metaphors plus the one
+body deliberately left for the admin UI.
+
+Two things worth carrying forward, both recorded in
+`Website/GUT-RESET-IMAGE-AUDIT.md`:
+
+- the image is not always the first element in a body. `Pre-Recorded Q&A With
+  Alina` carries its image third. Fetch and edit each body rather than patching
+  by position
+- several old alt texts stated a count ("five pots", "five baskets") that the
+  new photograph does not have, and two described a teapot that is not in
+  frame. Alt text was rewritten to the photograph, not carried over

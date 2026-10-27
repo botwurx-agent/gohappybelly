@@ -231,3 +231,101 @@ Wave 3 is the ~31 literal still lifes, which photograph directly and should run
 at the hit rate the module covers just did. Wave 4 is the ~15 metaphors, which
 need the lesson 03 treatment: photograph the real object, then check each frame
 against the sentence beside it.
+
+---
+
+## Wave 3 complete, 2026-10-27
+
+All 24 literal still lifes are generated, uploaded and placed: 24
+`replace_media` poster swaps and 24 body rewrites, no failures on either.
+Build notes and prompts: `Website/mockups/reset-literal/README.md`.
+
+### The split was 24 and 13, not 31 and 15
+
+The earlier estimate was made before the remaining 37 were sorted subject by
+subject. Sorted honestly: **24 literal** and **13 metaphor**. The figures above
+in the "Next" section of wave 2 were a guess and are superseded.
+
+### The names would have collided with all 24 at once
+
+The existing cut-paper assets are themselves named `reset-*`, so
+`reset-apple-cider-vinegar` is the **old** file, not a free name. The
+replacements carry a **`photo-`** prefix, which also makes the photoreal
+version obvious at a glance in the media library.
+
+Caught by listing media before naming the upload. That is now twice on this
+project. Do it every time.
+
+### `used_count` does not see inline images
+
+Every cut-paper asset read `used_count: 1` while being used twice, as the
+lesson `poster_image` and again inline in the body. Kajabi counts only the
+tracked model placement; an inline image is a bare CDN URL inside a body
+string and is invisible to the counter.
+
+So `used_count: 1` is not evidence that a lesson needs only one fix, and the
+count falling to 0 after `replace_media` is not evidence a lesson is finished.
+
+### The leading-image assumption was wrong
+
+Most bodies open with the image, so it was tempting to treat that as a rule and
+patch position 1. `Pre-Recorded Q&A With Alina` (2178659040) carries its image
+**third**, after two paragraphs. Every body was fetched and edited in place
+rather than patched by position, which is why that one did not break.
+
+### Four alt texts described a count that was never there
+
+The old alt text was written to the cut-paper art and in several places got the
+count wrong for the new photograph. Fixed while swapping, not left to drift:
+
+| Lesson | Old alt said | The photograph has |
+|---|---|---|
+| Week 1: This Week For Your Pattern | five pots | four pots and a watering jug |
+| Week 2: This Week For Your Pattern | five baskets | three baskets |
+| Pre-Recorded Q&A With Alina | a teapot | two cups and a closed notebook |
+| Questions People Ask | a teapot | cups, saucers and a spoon |
+
+`The Gut-Liver Loop` also said "with the tap running", which is not in frame;
+the photograph is the cupboard below. Corrected.
+
+### Two subjects were re-directed away from module covers
+
+Caught before generating rather than after:
+
+| Subject | Would have duplicated | Shot instead |
+|---|---|---|
+| `week4-your-pattern` | `mod-week4`, garden from above | a trug of harvest, low on the grass |
+| `week3-your-pattern` | `mod-pattern-in-detail`, tools on a bench | tools hung on a shed wall |
+
+### Verified by filename, not alt text
+
+| Search | Result |
+|---|---|
+| `_photo-` | **24**, matching the placement list exactly |
+| `_reset-` | **14** |
+
+Those 14 are the 13 wave-4 metaphors plus `The Supplement Reference`, the body
+deliberately left for the admin UI. Nothing unaccounted for.
+
+### Where the course stands
+
+| | Done | Left |
+|---|---|---|
+| The five pattern images | 16 posters, 16 bodies | 0 |
+| The quiz image | 1 poster, 1 body | 0 |
+| Module covers | 9 posters, 8 bodies | 1 body, declined |
+| Literal still lifes | 24 posters, 24 bodies | 0 |
+| **Cut paper remaining** | | **13 metaphors, plus the one declined body** |
+
+### Next
+
+Wave 4, the last 13, all metaphors: `11-signs`, `against-your-bacteria`,
+`how-digestion-works`, `how-this-course-works`, `named-diets`, `not-moving`,
+`reintroducing-your-pattern`, `reintroduction-tracker`, `see-your-doctor`,
+`too-loose`, `what-leaky-gut-means`, `what-your-result-means`,
+`when-you-have-finished`.
+
+These need the lesson 03 treatment: photograph the real object and then check
+each frame against the sentence printed beside it, because a metaphor that does
+not land is worse than no image. `what-leaky-gut-means` is a torn screen and may
+be able to reuse `l03-screen-door` at a different crop rather than a new shot.
