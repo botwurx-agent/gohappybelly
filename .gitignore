@@ -10,3 +10,8 @@
 # Editor / OS cruft
 Thumbs.db
 *.swp
+
+# Generated source images. The 1600px uploads in each mockups/*/upload are
+# what gets used; the full-resolution originals are regenerable and would add
+# ~10MB per image to a repo that is already large.
+Website/mockups/*/raw/
