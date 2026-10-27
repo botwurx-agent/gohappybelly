@@ -1,0 +1,238 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',sans-serif;background:#FFFFFF}
+  .d{display:block;margin:0 0 70px}
+  svg{display:block}
+  .lab{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:500;fill:#162E28}
+  .sub{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:300;fill:#6A8278}
+  .eyebrow{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;
+           letter-spacing:.18em;text-transform:uppercase;fill:#7AAE86}
+  .big{font-family:'Playfair Display',Georgia,serif;font-size:24px;fill:#162E28}
+</style></head>
+<body>
+
+<!-- ============ D1. Four things pressure changes ============ -->
+<div class="d"><svg id="D1" width="1200" height="450" viewBox="0 0 1200 450">
+  <g id="p1"></g>
+</svg></div>
+
+<!-- ============ D2. What stress spends, where it comes back ============ -->
+<div class="d"><svg id="D2" width="1100" height="540" viewBox="0 0 1100 540">
+  <text class="eyebrow" x="60" y="34">What it draws down</text>
+  <text class="eyebrow" x="620" y="34">Where it comes back</text>
+  <line x1="560" y1="12" x2="560" y2="452" stroke="#C8DDD0" stroke-width="1.5"/>
+  <g id="p2"></g>
+</svg></div>
+
+<!-- ============ D3. Fiber in, fuel out ============ -->
+<div class="d"><svg id="D3" width="1200" height="272" viewBox="0 0 1200 272">
+  <g id="p3"></g>
+</svg></div>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+const el=(t,a)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);return n;};
+const txt=(p,x,y,s,cls,anchor)=>{const n=el('text',{x,y,class:cls});
+  if(anchor)n.setAttribute('text-anchor',anchor); n.textContent=s; p.appendChild(n); return n;};
+/* greedy wrap. The first version kept testing later words against the budget,
+   so short words after a long one leaked back onto line 1 ("...is down /
+   broken less completely"). Once a line is closed it stays closed. */
+const wrap=(s,max)=>{const out=[];let cur='';
+  s.split(' ').forEach(w=>{ const t=cur?cur+' '+w:w;
+    if(t.length<=max) cur=t; else { if(cur) out.push(cur); cur=w; } });
+  if(cur) out.push(cur); return out;};
+
+/* ---------- D1: four panels ---------- */
+(function(){
+  const g=document.getElementById('p1');
+  const x0=40, w=280, gap=0, top=30;
+
+  // panel frames
+  for(let i=0;i<4;i++){
+    const x=x0+i*w;
+    if(i>0) g.appendChild(el('line',{x1:x-1,y1:top+10,x2:x-1,y2:top+420,
+                                     stroke:'#C8DDD0','stroke-width':1.5}));
+  }
+
+  const cx=i=>x0+i*w+w/2;
+  const gy=top+130;           // centre of the glyph band
+
+  /* 1. stomach acid, shown as a stomach with a low fill */
+  (function(){
+    const x=cx(0);
+    const d='M '+(x-6)+' '+(gy-70)+' C '+(x-10)+' '+(gy-44)+' '+(x-54)+' '+(gy-46)+' '+(x-62)+' '+(gy-10)
+           +' C '+(x-70)+' '+(gy+34)+' '+(x-22)+' '+(gy+58)+' '+(x+6)+' '+(gy+44)
+           +' C '+(x+34)+' '+(gy+30)+' '+(x+40)+' '+(gy-14)+' '+(x+18)+' '+(gy-34)
+           +' C '+(x+6)+' '+(gy-44)+' '+(x+2)+' '+(gy-56)+' '+(x+2)+' '+(gy-70) +' Z';
+    g.appendChild(el('path',{d,fill:'#EFF7F1',stroke:'#7AAE86','stroke-width':3}));
+    // low acid level
+    g.appendChild(el('path',{d:'M '+(x-56)+' '+(gy+18)+' L '+(x+26)+' '+(gy+18),
+                             stroke:'#C07A5A','stroke-width':4,'stroke-linecap':'round'}));
+    g.appendChild(el('path',{d:'M '+(x+46)+' '+(gy-26)+' L '+(x+46)+' '+(gy+14),
+                             stroke:'#C07A5A','stroke-width':3,'stroke-linecap':'round'}));
+    g.appendChild(el('path',{d:'M '+(x+38)+' '+(gy+6)+' L '+(x+46)+' '+(gy+16)+' L '+(x+54)+' '+(gy+6),
+                             stroke:'#C07A5A','stroke-width':3,fill:'none',
+                             'stroke-linecap':'round','stroke-linejoin':'round'}));
+  })();
+
+  /* 2. enzymes, shown as droplets thinning out */
+  (function(){
+    const x=cx(1);
+    const drop=(dx,dy,s,op)=>{
+      const p='M '+(x+dx)+' '+(gy+dy-18*s)+' C '+(x+dx+13*s)+' '+(gy+dy)+' '+(x+dx+9*s)+' '+(gy+dy+16*s)
+             +' '+(x+dx)+' '+(gy+dy+16*s)+' C '+(x+dx-9*s)+' '+(gy+dy+16*s)+' '+(x+dx-13*s)+' '+(gy+dy)
+             +' '+(x+dx)+' '+(gy+dy-18*s)+' Z';
+      g.appendChild(el('path',{d:p,fill:'#7AAE86',opacity:op}));
+    };
+    drop(-52,-28,1,.85); drop(4,-40,1,.5); drop(52,-22,1,.22);
+    drop(-28,28,1,.6);  drop(30,34,1,.18);
+  })();
+
+  /* 3. movement, two arrows at different speeds */
+  (function(){
+    const x=cx(2);
+    const lane=(dy,dash,col)=>{
+      g.appendChild(el('path',{d:'M '+(x-78)+' '+(gy+dy)+' L '+(x+56)+' '+(gy+dy),
+        stroke:col,'stroke-width':7,'stroke-linecap':'round','stroke-dasharray':dash}));
+      g.appendChild(el('path',{d:'M '+(x+48)+' '+(gy+dy-13)+' L '+(x+74)+' '+(gy+dy)+' L '+(x+48)+' '+(gy+dy+13),
+        stroke:col,'stroke-width':7,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'}));
+    };
+    lane(-34,'4 26','#A8CAB2');
+    lane(34,'30 8','#C07A5A');
+    txt(g,x-96,gy-28,'slow','sub','end');
+    txt(g,x-96,gy+40,'fast','sub','end');
+  })();
+
+  /* 4. the barrier, cells with one gap opened */
+  (function(){
+    // Four cells with ONE junction visibly wider than the others. The first
+    // version used an even gap and only dropped the seal opacity, which was
+    // too subtle to read as "strained" at lesson width.
+    const x=cx(3), cw=36, tight=9, wide=26;
+    const gaps=[tight,wide,tight];
+    const total=4*cw+gaps.reduce((a,b)=>a+b,0);
+    let bx=x-total/2;
+    const xs=[];
+    for(let i=0;i<4;i++){ xs.push(bx);
+      g.appendChild(el('rect',{x:bx,y:gy-42,width:cw,height:84,rx:9,
+        fill:'#EFF7F1',stroke:'#C8DDD0','stroke-width':2}));
+      bx+=cw+(gaps[i]||0); }
+    let looseJx=null;
+    for(let i=0;i<3;i++){
+      const jx=xs[i]+cw+gaps[i]/2, loose=(gaps[i]===wide);
+      if(loose) looseJx=jx;
+      for(let k=0;k<(loose?2:3);k++)
+        g.appendChild(el('rect',{x:jx-8,y:gy-28+k*15,width:16,height:6,rx:3,
+          fill:'#C07A5A',opacity:loose?0.3:1}));
+    }
+    // a piece slipping through the widened join
+    g.appendChild(el('circle',{cx:looseJx,cy:gy-62,r:7,fill:'#C07A5A'}));
+    g.appendChild(el('path',{d:'M '+looseJx+' '+(gy-52)+' L '+looseJx+' '+(gy+52),
+      stroke:'#C07A5A','stroke-width':2.5,'stroke-dasharray':'6 6',fill:'none'}));
+    g.appendChild(el('circle',{cx:looseJx,cy:gy+62,r:7,fill:'#C07A5A'}));
+  })();
+
+  // labels
+  const labs=[['Stomach acid','drops, so protein is broken down less completely'],
+              ['Enzymes','fewer of them are released'],
+              ['Movement','slows for some people, speeds up for others'],
+              ['The barrier','comes under strain']];
+  labs.forEach((l,i)=>{
+    txt(g,cx(i),top+300,l[0],'lab','middle');
+    wrap(l[1],28).forEach((line,k)=> txt(g,cx(i),top+330+k*26,line,'sub','middle'));
+  });
+})();
+
+/* ---------- D2: spent / replaced ---------- */
+(function(){
+  const g=document.getElementById('p2');
+  const rows=[
+    ['Magnesium','leafy greens, pumpkin seeds, cocoa'],
+    ['B vitamins','eggs, fish, beans and lentils'],
+    ['Zinc','shellfish, beef, seeds'],
+    ['Electrolytes','salt, potassium-rich food, water'],
+    ['Short-chain fatty acids','not eaten. Your bacteria make these from fiber']
+  ];
+  const y0=92, step=100;
+  // The highlight on the last row goes down FIRST. The first version appended
+  // it after the text loop, so it covered the very row it was meant to stress.
+  g.appendChild(el('rect',{x:60,y:y0+4*step-40,width:980,height:76,rx:4,fill:'#EFF7F1'}));
+  g.appendChild(el('rect',{x:60,y:y0+4*step-40,width:3,height:76,fill:'#7AAE86'}));
+  rows.forEach((r,i)=>{
+    const y=y0+i*step;
+    if(i>0) g.appendChild(el('line',{x1:60,y1:y-38,x2:1040,y2:y-38,
+                                     stroke:'#C8DDD0','stroke-width':1}));
+    // terracotta down-arrow marker
+    g.appendChild(el('path',{d:'M 70 '+(y-14)+' L 70 '+(y+8),
+      stroke:'#C07A5A','stroke-width':3,'stroke-linecap':'round'}));
+    g.appendChild(el('path',{d:'M 62 '+(y)+' L 70 '+(y+10)+' L 78 '+(y),
+      stroke:'#C07A5A','stroke-width':3,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'}));
+    txt(g,100,y+4,r[0],'lab');
+    // sage dot on the right side
+    g.appendChild(el('circle',{cx:632,cy:y-3,r:6,fill:'#7AAE86'}));
+    txt(g,656,y+4,r[1],'sub');
+  });
+})();
+
+/* ---------- D3: fiber in, fuel out ---------- */
+(function(){
+  const g=document.getElementById('p3');
+  const ys=118;
+  const steps=[
+    {x:168, t:'Plants with fiber', s:'what you put on the plate'},
+    {x:456, t:'Your bacteria', s:'they ferment what you cannot'},
+    {x:744, t:'Short-chain fatty acids', s:'made in the process'},
+    {x:1032,t:'The colon lining, fed', s:'this is what runs on them'}
+  ];
+
+  // glyphs
+  // 1 leaves
+  (function(){const x=steps[0].x;
+    [[-26,0,-24],[0,-10,0],[26,2,22]].forEach(([dx,dy,rot])=>{
+      const p=el('path',{d:'M '+(x+dx)+' '+(ys+dy+26)+' C '+(x+dx-22)+' '+(ys+dy+4)+' '+(x+dx-10)+' '+(ys+dy-26)+' '+(x+dx)+' '+(ys+dy-30)
+                           +' C '+(x+dx+10)+' '+(ys+dy-26)+' '+(x+dx+22)+' '+(ys+dy+4)+' '+(x+dx)+' '+(ys+dy+26)+' Z',
+                         fill:'#7AAE86',opacity:.85,
+                         transform:'rotate('+rot+' '+(x+dx)+' '+(ys+dy)+')'});
+      g.appendChild(p);});
+  })();
+  // 2 bacteria cluster
+  (function(){const x=steps[1].x;
+    const pods=[[-30,-14,16,9,-20],[6,-24,15,8,25],[26,4,17,9,-10],[-14,20,14,8,15],[14,30,12,7,-30]];
+    pods.forEach(([dx,dy,rx,ry,rot])=>{
+      g.appendChild(el('ellipse',{cx:x+dx,cy:ys+dy,rx,ry,fill:'#A8CAB2',
+        transform:'rotate('+rot+' '+(x+dx)+' '+(ys+dy)+')'}));});
+  })();
+  // 3 small molecules
+  (function(){const x=steps[2].x;
+    [[-28,-16],[4,-26],[28,0],[-10,16],[16,26]].forEach(([dx,dy])=>{
+      g.appendChild(el('circle',{cx:x+dx,cy:ys+dy,r:9,fill:'#C07A5A'}));});
+  })();
+  // 4 cell wall, fed
+  (function(){const x=steps[3].x;
+    for(let i=0;i<3;i++){
+      const bx=x-57+i*40;
+      g.appendChild(el('rect',{x:bx,y:ys-32,width:34,height:64,rx:8,
+        fill:'#EFF7F1',stroke:'#7AAE86','stroke-width':2.5}));
+      g.appendChild(el('circle',{cx:bx+17,cy:ys,r:7,fill:'#7AAE86',opacity:.55}));
+    }
+  })();
+
+  // arrows between
+  for(let i=0;i<3;i++){
+    const a=steps[i].x+86, b=steps[i+1].x-86;
+    g.appendChild(el('path',{d:'M '+a+' '+ys+' L '+(b-12)+' '+ys,
+      stroke:'#C8DDD0','stroke-width':3,'stroke-linecap':'round'}));
+    g.appendChild(el('path',{d:'M '+(b-20)+' '+(ys-9)+' L '+b+' '+ys+' L '+(b-20)+' '+(ys+9),
+      stroke:'#C8DDD0','stroke-width':3,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'}));
+  }
+
+  steps.forEach(s=>{
+    txt(g,s.x,ys+86,s.t,'lab','middle');
+    txt(g,s.x,ys+114,s.s,'sub','middle');
+  });
+})();
+</script>
+</body></html>

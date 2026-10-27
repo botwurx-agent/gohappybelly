@@ -181,3 +181,46 @@ as a progress counter.
 Only lesson 01 is actually finished. Lessons 02, 06 and 07 have new diagrams
 sitting above old cut-paper heroes, which is the mixed state the sales page was
 in yesterday. Worth closing before starting the Gut Reset course.
+
+---
+
+## Three more, 2026-10-27: replacing the cartoons
+
+Built after an audit of what was actually left inside Gut Foundations lesson
+bodies. Four images turned out not to show what their alt text claimed, and
+three were cartoon clipart with faces drawn on organs. Steve asked for the alt
+text fixed and the cartoons replaced. The audit sheet is
+`Website/mockups/analogies/remaining-in-body-audit.jpg`.
+
+    node render3.mjs      # lessons-05-b2.html -> the three below
+
+| File | Replaces | Lesson | Shows |
+|---|---|---|---|
+| `b2-under-pressure` | Cartoon organs with angry faces and lightning bolts | Digestion Under Pressure `2201324069` | The four mechanical changes the copy lists: acid, enzymes, movement, barrier |
+| `b2-what-stress-spends` | Cartoon smiling stomach with bacteria holding forks | Digestion Under Pressure `2201324069` | The five nutrients drawn down, and where each comes back |
+| `l05-fiber-to-fuel` | Cartoon intestine ringed with food | 05. Nutrition Foundations `2201324064` | Fiber in, bacteria ferment it, short-chain fatty acids out, colon lining fed |
+
+### Why illustration and not photography here
+
+All three subjects are inside the body or are a process, which the allocation
+rule in `IMAGE-DIRECTION.md` sends to branded illustration. A camera cannot
+photograph fermentation producing short-chain fatty acids.
+
+### Three faults the render caught
+
+The rule at the top of this file is to render and look before exporting. It
+earned its place again; all three of these were invisible in the markup.
+
+1. **The text wrapper leaked words back onto line one.** It kept testing every
+   later word against the remaining budget, so a short word after a long one
+   jumped the queue: "drops, so protein is **down** / broken less completely".
+   Fixed with a proper greedy wrap that closes a line once it overflows.
+2. **The highlight rectangle was drawn after its own text**, so the row it was
+   meant to emphasise came out washed pale and nearly unreadable. It now goes
+   down before the rows.
+3. **The strained junction was too subtle.** The first version used an even gap
+   between all four cells and only dropped the seal opacity. At lesson width
+   that reads as nothing. The strained junction is now visibly wider as well.
+
+Also trimmed all three canvases, which were 15 to 25 percent dead space at the
+bottom. Exported at 1x with alpha, matching the rest of the set.
