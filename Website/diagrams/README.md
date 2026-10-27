@@ -87,3 +87,55 @@ Gut Reset course is still uncounted. The reuse upside is real but it has to be
 *designed in*: the barrier diagram genuinely belongs in the Reactive pattern
 lesson too, and nothing is stopping it being placed there. It simply is not
 today, and an estimate should not assume work nobody has done.
+
+
+---
+
+## Batch two: lessons 02, 06 and 07 (2026-10-27)
+
+Built from `lessons-02-06-07.html`, `node render2.mjs`.
+
+**Six diagrams, not five.** Lessons 06 and 07 carry two each. Worth counting
+before promising a number.
+
+| File | Lesson | Replaces | Teaching point |
+|---|---|---|---|
+| `l02-wired-in` | 02 | `diagram-organs-labeled` | What the gut is wired into: nervous system, immune cells, hormone clearance |
+| `l02-five-areas` | 02 | `diagram-gut-health-venn` | Five areas overlapping a central gut |
+| `l06-gut-brain` | 06 | `illus-gut-brain-dark` | Traffic both ways, most of it upward |
+| `l06-two-modes` | 06 | `diagram-autonomic-balance` | Fight-or-flight beside rest-and-digest |
+| `l07-loop` | 07 | `diagram-liver-in-body` | Gut and liver as a loop |
+| `l07-two-ways-out` | 07 | `diagram-liver-pathway` | Bile through the gut, or kidneys to urine |
+
+### The old Venn disagreed with its own caption
+
+`diagram-gut-health-venn` showed **four** circles (mental, metabolic, immune,
+gut). Its caption says "Five areas, heavily overlapped" and the lesson names
+five: energy, hormones, mood, immunity, inflammation. Nobody had noticed
+because nobody reads a stock diagram against the copy beside it.
+
+The replacement shows the five the lesson actually names. **Read the caption
+and the body copy before redrawing anything**, because the old art is not a
+reliable brief for the new art.
+
+### Two anatomical-position diagrams became relationship diagrams
+
+`diagram-liver-in-body` showed the liver's position in a torso. The lesson's
+actual point is "a loop, not a sequence. If either end is slow, both back up",
+which a position drawing cannot say at all. It is now two boxes and two arrows.
+
+Same move as the tract in lesson 01: when the copy is about a *relationship*,
+drawing the *anatomy* answers a question nobody asked.
+
+### Layout faults caught on the first render
+
+- **A label collided with the thing it labelled.** The immune-cell dots were
+  placed at the same x as their own right-anchored text. Dots now hug the gut,
+  where they belong anatomically, and the label sits clear with a leader.
+- **An arrow stranded from its caption.** The single downward arrow sat beside
+  the nerve while "Some runs down" sat 100px away at a different height.
+  Aligned, and the nerve shortened so the composition is not mostly empty.
+- Dead space top and bottom on the loop diagram. Trimmed.
+
+All three were invisible in the markup and obvious in the render. **Render and
+look before exporting.**

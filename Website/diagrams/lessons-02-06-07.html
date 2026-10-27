@@ -1,0 +1,216 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'DM Sans',sans-serif;background:#FFFFFF}
+  .d{display:block;margin:0 0 70px}
+  svg{display:block}
+  .lab{font-family:'DM Sans',sans-serif;font-size:21px;font-weight:400;fill:#2E4438}
+  .labw{font-family:'DM Sans',sans-serif;font-size:21px;font-weight:500;fill:#162E28}
+  .sub{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;fill:#6A8278}
+  .eyebrow{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
+           letter-spacing:.18em;text-transform:uppercase;fill:#7AAE86}
+  .eyebrowT{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;
+            letter-spacing:.18em;text-transform:uppercase;fill:#C07A5A}
+  .big{font-family:'Playfair Display',Georgia,serif;font-size:23px;fill:#162E28}
+</style></head>
+<body>
+
+<!-- ===== D1 (lesson 02) : what the gut is wired into ===== -->
+<div class="d"><svg id="D1" width="1100" height="600" viewBox="0 0 1100 600">
+  <!-- the gut, simplified, centre -->
+  <path d="M 550 210 C 470 222 462 260 540 272 C 630 286 634 322 544 334 C 470 344 466 376 540 390"
+        stroke="#A8CAB2" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <text class="labw" x="550" y="440" text-anchor="middle">Your gut</text>
+  <text class="sub" x="550" y="466" text-anchor="middle">the busiest border your body has</text>
+
+  <!-- nervous system, up -->
+  <path d="M 550 172 L 550 112" stroke="#7AAE86" stroke-width="3" fill="none"/>
+  <circle cx="550" cy="86" r="26" fill="#E4F0E7"/>
+  <text class="lab" x="550" y="44" text-anchor="middle">Nervous system</text>
+  <text class="sub" x="590" y="92">wired in, both directions</text>
+
+  <!-- immune cells, left: dots hug the gut, label sits clear of them -->
+  <g id="immune"></g>
+  <path d="M 398 300 L 358 300" stroke="#7AAE86" stroke-width="3" fill="none"/>
+  <text class="lab" x="340" y="294" text-anchor="end">Immune cells</text>
+  <text class="sub" x="340" y="318" text-anchor="end">most of them sit right here</text>
+
+  <!-- hormone clearance, right -->
+  <path d="M 648 300 L 694 300" stroke="#7AAE86" stroke-width="3" fill="none"/>
+  <rect x="706" y="277" width="46" height="46" rx="10" fill="#E4F0E7"/>
+  <text class="lab" x="768" y="294">Hormone clearance</text>
+  <text class="sub" x="768" y="318">used hormones leave this way</text>
+
+  <text class="sub" x="550" y="552" text-anchor="middle">Two people with the same underlying problem can arrive with completely different complaints.</text>
+</svg></div>
+
+<!-- ===== D2 (lesson 02) : the five areas ===== -->
+<div class="d"><svg id="D2" width="1000" height="860" viewBox="0 0 1000 860">
+  <g id="petals"></g>
+  <circle cx="500" cy="420" r="74" fill="#162E28"/>
+  <text x="500" y="414" text-anchor="middle" font-family="DM Sans" font-size="19" font-weight="500" fill="#FFFFFF">Your</text>
+  <text x="500" y="440" text-anchor="middle" font-family="DM Sans" font-size="19" font-weight="500" fill="#FFFFFF">gut</text>
+  <text class="sub" x="500" y="810" text-anchor="middle">Five areas, and the overlaps are where the confusing symptoms live.</text>
+</svg></div>
+
+<!-- ===== D3 (lesson 06) : traffic both ways ===== -->
+<div class="d"><svg id="D3" width="920" height="690" viewBox="0 0 920 690">
+  <!-- brain -->
+  <path d="M 460 62 C 536 62 576 104 576 142 C 576 186 528 214 460 214 C 392 214 344 186 344 142 C 344 104 384 62 460 62 Z"
+        fill="#E4F0E7"/>
+  <path d="M 460 72 L 460 210 M 404 86 C 420 118 404 154 388 186 M 516 86 C 500 118 516 154 532 186"
+        stroke="#A8CAB2" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <text class="labw" x="460" y="40" text-anchor="middle">Brain</text>
+
+  <!-- the nerve -->
+  <path d="M 460 220 L 460 442" stroke="#C8DDD0" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <text class="sub" x="460" y="332" text-anchor="middle" transform="rotate(-90 460 332)">the vagus nerve</text>
+
+  <!-- gut -->
+  <path d="M 460 450 C 380 462 372 500 450 512 C 540 526 544 562 454 574"
+        stroke="#A8CAB2" stroke-width="26" stroke-linecap="round" fill="none"/>
+  <text class="labw" x="460" y="632" text-anchor="middle">Gut</text>
+
+  <g id="traffic"></g>
+
+  <text class="lab" x="604" y="306">Most of the traffic</text>
+  <text class="lab" x="604" y="332">runs upward</text>
+  <text class="sub" x="604" y="358">your gut reports to your brain</text>
+
+  <text class="lab" x="380" y="326" text-anchor="end">Some runs down</text>
+  <text class="sub" x="380" y="350" text-anchor="end">your brain instructs your gut</text>
+</svg></div>
+
+<!-- ===== D4 (lesson 06) : the two modes ===== -->
+<div class="d"><svg id="D4" width="1200" height="560" viewBox="0 0 1200 560">
+  <rect x="40" y="60" width="520" height="400" rx="4" fill="#F7EFE9"/>
+  <rect x="640" y="60" width="520" height="400" rx="4" fill="#EFF7F1"/>
+  <text class="eyebrowT" x="76" y="110">Fight or flight</text>
+  <text class="eyebrow" x="676" y="110">Rest and digest</text>
+  <text class="big" x="76" y="156">Digestion is not the priority</text>
+  <text class="big" x="676" y="156">Digestion runs properly</text>
+  <g id="modes"></g>
+  <text class="sub" x="600" y="520" text-anchor="middle">The system cannot tell a genuine emergency from a difficult email.</text>
+</svg></div>
+
+<!-- ===== D5 (lesson 07) : a loop, not a sequence ===== -->
+<div class="d"><svg id="D5" width="1100" height="450" viewBox="0 0 1100 450">
+  <rect x="120" y="142" width="300" height="150" rx="6" fill="#E4F0E7"/>
+  <text class="labw" x="270" y="226" text-anchor="middle">Your gut</text>
+  <rect x="680" y="142" width="300" height="150" rx="6" fill="#F7EFE9"/>
+  <text class="labw" x="830" y="226" text-anchor="middle">Your liver</text>
+
+  <!-- out and back -->
+  <path d="M 430 174 C 530 132 580 132 668 174" stroke="#7AAE86" stroke-width="5" fill="none" marker-end="url(#arrS)"/>
+  <path d="M 668 262 C 580 304 530 304 432 262" stroke="#C07A5A" stroke-width="5" fill="none" marker-end="url(#arrT)"/>
+  <text class="lab" x="550" y="112" text-anchor="middle">everything absorbed</text>
+  <text class="sub" x="550" y="136" text-anchor="middle">goes here first, through the portal vein</text>
+  <text class="lab" x="550" y="350" text-anchor="middle">processed waste comes back</text>
+  <text class="sub" x="550" y="374" text-anchor="middle">in bile, to leave through the gut</text>
+
+  <text class="sub" x="550" y="424" text-anchor="middle">A loop, not a sequence. If either end is slow, both back up.</text>
+
+  <defs>
+    <marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7AAE86"/></marker>
+    <marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C07A5A"/></marker>
+  </defs>
+</svg></div>
+
+<!-- ===== D6 (lesson 07) : two ways out ===== -->
+<div class="d"><svg id="D6" width="1100" height="720" viewBox="0 0 1100 720">
+  <rect x="420" y="50" width="260" height="104" rx="6" fill="#F7EFE9"/>
+  <text class="labw" x="550" y="110" text-anchor="middle">Your liver</text>
+
+  <path d="M 490 160 L 320 226" stroke="#C07A5A" stroke-width="5" fill="none" marker-end="url(#a2)"/>
+  <path d="M 610 160 L 782 226" stroke="#6A8278" stroke-width="5" fill="none" marker-end="url(#a3)"/>
+
+  <rect x="166" y="246" width="300" height="96" rx="6" fill="#EFF7F1"/>
+  <text class="lab" x="316" y="294" text-anchor="middle">Gallbladder, then bile</text>
+  <text class="sub" x="316" y="320" text-anchor="middle">released when fat arrives</text>
+
+  <rect x="636" y="246" width="300" height="96" rx="6" fill="#EFF7F1"/>
+  <text class="lab" x="786" y="302" text-anchor="middle">Kidneys</text>
+
+  <path d="M 316 348 L 316 420" stroke="#C07A5A" stroke-width="5" fill="none" marker-end="url(#a2)"/>
+  <path d="M 786 348 L 786 420" stroke="#6A8278" stroke-width="5" fill="none" marker-end="url(#a3)"/>
+
+  <rect x="166" y="440" width="300" height="96" rx="6" fill="#E4F0E7"/>
+  <text class="lab" x="316" y="496" text-anchor="middle">Into your gut</text>
+
+  <rect x="636" y="440" width="300" height="96" rx="6" fill="#EFF7F1"/>
+  <text class="lab" x="786" y="496" text-anchor="middle">Into urine</text>
+
+  <path d="M 316 542 L 316 606" stroke="#C07A5A" stroke-width="5" fill="none" marker-end="url(#a2)"/>
+  <path d="M 786 542 L 786 606" stroke="#6A8278" stroke-width="5" fill="none" marker-end="url(#a3)"/>
+  <text class="labw" x="316" y="644" text-anchor="middle">Out</text>
+  <text class="labw" x="786" y="644" text-anchor="middle">Out</text>
+
+  <text class="sub" x="316" y="676" text-anchor="middle">This one only works if things are moving.</text>
+
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C07A5A"/></marker>
+    <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6A8278"/></marker>
+  </defs>
+</svg></div>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+const el=(t,a)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);return n;};
+const txt=(p,t,a)=>{const n=el('text',a);n.textContent=t;p.appendChild(n);return n;};
+
+/* D1: a cluster of immune cells hugging the gut wall */
+(function(){
+  const g=document.getElementById('immune');
+  const pts=[[432,282],[414,302],[436,324],[410,262],[424,344],[398,318]];
+  pts.forEach(([x,y],i)=>g.appendChild(el('circle',{cx:x,cy:y,r:i%2?7:9,fill:'#7AAE86',opacity:0.75})));
+})();
+
+/* D2: five overlapping lobes around a hub */
+(function(){
+  const g=document.getElementById('petals');
+  const names=['Energy','Hormones','Mood','Immunity','Inflammation'];
+  const cx=500, cy=420, R=150, r=150;
+  names.forEach((n,i)=>{
+    const a=-Math.PI/2 + i*2*Math.PI/5;
+    const x=cx+R*Math.cos(a), y=cy+R*Math.sin(a);
+    g.appendChild(el('circle',{cx:x,cy:y,r:r,fill:'#7AAE86',opacity:0.18}));
+    g.appendChild(el('circle',{cx:x,cy:y,r:r,fill:'none',stroke:'#A8CAB2','stroke-width':1.5}));
+    const lx=cx+(R+r+34)*Math.cos(a), ly=cy+(R+r+34)*Math.sin(a);
+    txt(g,n,{x:lx,y:ly+7,'text-anchor':Math.abs(Math.cos(a))<0.25?'middle':(Math.cos(a)>0?'start':'end'),
+             class:'labw'});
+  });
+})();
+
+/* D3: arrows along the nerve, four up and one down */
+(function(){
+  const g=document.getElementById('traffic');
+  const up=[266,326,386];
+  up.forEach(y=>{
+    g.appendChild(el('path',{d:`M 506 ${y+26} L 506 ${y}`,stroke:'#7AAE86','stroke-width':4,fill:'none'}));
+    g.appendChild(el('path',{d:`M 500 ${y+8} L 506 ${y-2} L 512 ${y+8} Z`,fill:'#7AAE86'}));
+  });
+  g.appendChild(el('path',{d:'M 414 306 L 414 336',stroke:'#C07A5A','stroke-width':4,fill:'none'}));
+  g.appendChild(el('path',{d:'M 408 328 L 414 340 L 420 328 Z',fill:'#C07A5A'}));
+})();
+
+/* D4: the rows inside each mode panel */
+(function(){
+  const g=document.getElementById('modes');
+  const L=['Stomach acid drops','Fewer enzymes released','Movement slows, or speeds up','Blood goes elsewhere'];
+  const R=['Stomach acid is produced','Enzymes are released','Food moves along normally','Blood stays where it is needed'];
+  const row=(items,x,colour)=>items.forEach((t,i)=>{
+    const y=214+i*58;
+    g.appendChild(el('circle',{cx:x+10,cy:y-6,r:5,fill:colour}));
+    txt(g,t,{x:x+34,y:y,class:'lab'});
+  });
+  row(L,76,'#C07A5A');
+  row(R,676,'#7AAE86');
+})();
+</script>
+</body></html>
