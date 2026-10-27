@@ -163,6 +163,26 @@ this job actually is.
 
 ---
 
+## Where the cut paper actually is, checked 2026-10-27
+
+Stated in chat that "the $147 Gut Reset page is still all cut-paper". **That was
+wrong**, asserted from memory without opening the page. The verified position:
+
+| Surface | What is on it |
+|---|---|
+| `/gut-reset-course` sales page (page `2152348302`, theme `2167971291`) | **One image, already photoreal**: `course-hero-laptop.png` in the hero. Every other section is text: the correspondence table, the forest band, the four-week spine, the reference shelf, Alina's letter, testimonials, is/is-not, FAQ, CTA. Nothing to replace |
+| `/gut-foundations` sales page | Fully photoreal since 2026-10-27 |
+| The **Gut Reset course** itself | Where the 52 illustrations live, as lesson thumbnails and inside lesson bodies |
+| The **Gut Foundations course** | 13 of 14 lessons carry cut paper, mixed with photographs |
+
+So the cut paper is **entirely inside the two courses**, behind the paywall. Not
+one pixel of it is on a sales page any more.
+
+Note also that theme `2167629154` is the $147 **offer checkout**, not its sales
+page. Easy to grab the wrong one; the sales page theme is `2167971291`.
+
+---
+
 ## Open questions for Steve
 
 1. The 52 course thumbnails: replace all of them, or only the ones a buyer sees
