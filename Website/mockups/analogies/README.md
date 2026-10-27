@@ -81,8 +81,8 @@ Three fixes were generated with the rest of the scene held constant.
 
 | File | Fix | Verdict |
 |---|---|---|
-| `a3-alt-blue-bag` | Blue and white paper sack, upright | Bag reads, but the scene changed: the fridge is pushed to the far right and stops being the light source |
-| `a3-alt-canister` | **Clear glass canister, lid off** | **Chosen.** No packaging to misread at all, and the composition stays closest to the original |
+| `a3-alt-blue-bag` | **Blue and white paper sack, upright** | **Chosen by Steve.** See below |
+| `a3-alt-canister` | Clear glass canister, lid off | No packaging to misread, composition closest to the original |
 | `a3-alt-white-bag` | White paper sack on its side | Better than brown, but it is still white powder coming out of a bag |
 
 The lesson worth keeping: when a no-text rule strips an object of the thing that
@@ -95,3 +95,19 @@ open. The fridge jars carry blurred label shapes but nothing resolves.
 
 `a3-kitchen.png` is the chosen frame. `a3-squatters-brownbag-rejected.png` is
 the original, kept for the record.
+
+### Steve chose A, the blue and white sack
+
+The canister was recommended on the grounds that the sack version pushed the
+fridge to the far right and cost the frame its light source. Steve picked the
+sack anyway, and opening it at native resolution the recommendation was too
+cautious: the bag is pale blue with a white panel in the classic sugar sack
+shape, torn open at the top, with the spoon in the spill. It reads as sugar
+immediately and carries no text at all. The biscuit tin behind it has a
+decorative band with nothing readable on it.
+
+The fridge is still open and lit at the right of the frame. It is no longer the
+only light, which makes this a more ordinary lit kitchen and less of a
+night-time scene, and that is a fair trade for packaging that identifies itself.
+
+`a3-kitchen.png` is now the sack version. `a3-alt-canister.png` is kept.
