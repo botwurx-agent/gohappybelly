@@ -198,3 +198,87 @@ options and contact sheets mixed in and is not the thing to upload from.
 Deliberately not reusing the existing `hero-01-sieve` style names, because the
 cut-paper originals still carry those and a collision in the library would make
 the wrong image easy to place.
+
+---
+
+## Placed, 2026-10-27
+
+Ten of the twelve are live in the course. Steve uploaded, and the upload was
+short by two.
+
+### The upload count, and the stray
+
+Steve reported ten uploaded and could not tell which two were missing. Ten did
+land, but **only nine were his files**. The tenth, media `4841412`, arrived as
+`l01-barrier.png` at 1600x893. Downloading and opening it showed it is the
+`hero-start-here` photograph under the wrong filename, so the content is right
+and the name is wrong.
+
+So Steve's count of two missing was correct and an initial read of three was
+wrong. **Missing: `hero-scope.jpg` and `hero-l02-alarm.jpg`.**
+
+`4841412` is placed by media id, which is unambiguous, but the name is a trap:
+there is a real `l01-barrier` diagram (`4838130`, 1300x700) placed in lesson 01,
+and a future session searching by name will find two. MCP has no rename for
+media assets, only for tags, so this needs fixing in the admin UI. Rename it to
+`hero-00-start-here`.
+
+### A naming collision that was claimed not to exist
+
+The note above says these names deliberately avoid colliding with the cut-paper
+originals. That was true for eleven of twelve and **false for `hero-start-here`,
+which is an exact collision** with asset `4711511`, the cut-paper original. The
+check was made against the `hero-01-sieve` pattern without noticing that the
+Start Here asset already used the plain name.
+
+### Placement log
+
+| Lesson | Id | Media placed |
+|---|---|---|
+| Start Here | 2201324057 | `4841412` (misnamed, see above) |
+| 03. The Five Common Patterns | 2201324062 | `4841418` |
+| 04. Everyday Habits | 2201324063 | `4841414` |
+| 05. Nutrition Foundations | 2201324064 | `4841416` |
+| 06. The Gut-Brain Connection | 2201324065 | `4841413` |
+| 07. The Gut-Liver Connection | 2201324066 | `4841415` |
+| 08. Putting It All Together | 2201324067 | `4841410` |
+| Midlife, Hormones And Digestion | 2201324068 | `4841417` |
+| Digestion Under Pressure | 2201324069 | `4841419` |
+| When Your System Stays On Alert | 2201324070 | `4841411` |
+
+Alt text was rewritten on every one to describe the photograph. No body copy
+was touched.
+
+## What is still cut paper in Gut Foundations
+
+Found while placing, and larger than the hero count implied.
+
+| Where | What | Count |
+|---|---|---|
+| `What I Can And Cannot Do Here` (2201324059) | Hero, the gate | 1, file ready, not uploaded |
+| `02. How The Gut Impacts Whole-Body Health` (2201324061) | Hero, the smoke alarm | 1, file ready, not uploaded |
+| **`03. The Five Common Patterns` (2201324062)** | **Five analogy images inside the body**, one per pattern: engine timing, screen door, squatters, cold stove, flooded basement | **5, not generated** |
+
+The five in lesson 03 were not in the twelve and were not costed. They sit
+directly above the sage quote box that states each analogy, so under the
+allocation rule they become **photographs of the real object**, since the copy
+beside them carries the meaning.
+
+**Do not reuse the `patterns/` set for these.** Those are symptom moments of a
+person, built for the sales page. These illustrate the analogy itself and are a
+different job.
+
+### Searching for "Cut-paper" undercounts
+
+A search for `Cut-paper` now returns two lessons, not three. Lesson 02 still
+carries a cut-paper hero but its alt text was rewritten in an earlier pass, so
+the phrase is gone while the image remains. This is the same broken metric
+recorded in `Website/diagrams/README.md`. **Count image filenames, never alt
+text.**
+
+### Also still off-brand, separate problem
+
+Three stock medical diagrams remain, one in each bonus module:
+`diagram-liver-gallbladder`, `diagram-nervous-system-organs`,
+`diagram-body-inflammation`. These were never cut paper. They are the off-brand
+stock art described earlier in this file.
