@@ -187,3 +187,47 @@ where a lesson body carries clinical detail, the admin UI beats a rewrite.
 
 Wave 1 bodies still to do: four Shopping Lists and five Three Days Of Meals
 pages. All are short and carry no clinical detail, so they are low risk.
+
+---
+
+## Waves 1 and 2 complete, 2026-10-27
+
+All nine remaining bodies are done: five Shopping Lists and four Three Days Of
+Meals pages, plus the Wired-and-Tired meal plan.
+
+### Verified by filename, not alt text
+
+| Search | Result |
+|---|---|
+| `reset-pattern-` | **0** across the whole course |
+| `reset-module-` | **1**, and it is the known exception |
+
+The single remaining hit is `The Supplement Reference` (2201292374), whose body
+was left alone on purpose. Its poster is already the photograph; only the inline
+image is stale. The reasoning is above: a 400-line body of supplement dosing is
+not worth a hand transcription to swap one decorative image, and the admin UI
+does it in two clicks with no risk.
+
+### Where the course stands
+
+| | Done | Left |
+|---|---|---|
+| The five pattern images | 16 poster placements, 16 bodies | 0 |
+| The quiz image | 1 poster, 1 body | 0 |
+| Module covers | 9 posters, 8 bodies | 1 body, declined |
+| **Cut paper remaining** | | **37 lesson images, plus the one declined body** |
+
+### A note on the small-format treatment
+
+The Shopping List and Three Days Of Meals pages render their pattern image at
+`max-width:340px`, centered, rather than full width. That styling was preserved
+exactly; only the `src` and the alt text changed. Worth knowing before anyone
+"tidies" those into full-width heroes, because the small format is what keeps
+a reference page feeling like a reference page.
+
+### Next
+
+Wave 3 is the ~31 literal still lifes, which photograph directly and should run
+at the hit rate the module covers just did. Wave 4 is the ~15 metaphors, which
+need the lesson 03 treatment: photograph the real object, then check each frame
+against the sentence beside it.
