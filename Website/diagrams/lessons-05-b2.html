@@ -32,6 +32,17 @@
   <g id="p3"></g>
 </svg></div>
 
+
+<!-- ============ D4. Liver, gallbladder, bile ============ -->
+<div class="d"><svg id="D4" width="1200" height="320" viewBox="0 0 1200 320">
+  <g id="p4"></g>
+</svg></div>
+
+<!-- ============ D5. One source, many surfaces ============ -->
+<div class="d"><svg id="D5" width="1100" height="430" viewBox="0 0 1100 430">
+  <g id="p5"></g>
+</svg></div>
+
 <script>
 const NS='http://www.w3.org/2000/svg';
 const el=(t,a)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);return n;};
@@ -233,6 +244,85 @@ const wrap=(s,max)=>{const out=[];let cur='';
     txt(g,s.x,ys+86,s.t,'lab','middle');
     txt(g,s.x,ys+114,s.s,'sub','middle');
   });
+})();
+
+/* ---------- D4: bile, made then stored then released ---------- */
+/* Three passes at an anatomical liver produced an oval with a thorn, then a
+   butterfly, and a duodenum that read as a lasso. Abandoned rather than fiddled
+   with a fourth time. The section this sits in teaches a PROCESS, so the
+   process is what gets drawn, in the same grammar as l05-fiber-to-fuel. */
+(function(){
+  const g=document.getElementById('p4');
+  const ys=132, xs=[210,600,990];
+
+  const drop=(x,y,s,fill,op)=>g.appendChild(el('path',{
+    d:'M '+x+' '+(y-13*s)+' C '+(x+10*s)+' '+(y-1*s)+' '+(x+7*s)+' '+(y+12*s)+' '+x+' '+(y+12*s)
+     +' C '+(x-7*s)+' '+(y+12*s)+' '+(x-10*s)+' '+(y-1*s)+' '+x+' '+(y-13*s)+' Z',
+    fill:fill,opacity:op||1}));
+
+  // 1. liver, deliberately abstract: a rounded wedge, not an anatomy plate
+  (function(){const x=xs[0];
+    g.appendChild(el('path',{d:'M '+(x-74)+' '+(ys+24)+' C '+(x-80)+' '+(ys-18)+' '+(x-34)+' '+(ys-44)+' '+(x+14)+' '+(ys-44)
+      +' C '+(x+62)+' '+(ys-44)+' '+(x+80)+' '+(ys-10)+' '+(x+72)+' '+(ys+22)
+      +' C '+(x+40)+' '+(ys+40)+' '+(x-34)+' '+(ys+42)+' '+(x-74)+' '+(ys+24)+' Z',
+      fill:'#C07A5A',opacity:.3,stroke:'#C07A5A','stroke-width':3}));
+    drop(x-26,ys+2,1,'#C07A5A',.9); drop(x+8,ys-10,1,'#C07A5A',.75); drop(x+38,ys+6,1,'#C07A5A',.55);
+  })();
+
+  // 2. gallbladder, a pear, holding what the liver made
+  (function(){const x=xs[1];
+    g.appendChild(el('path',{d:'M '+x+' '+(ys-48)+' C '+(x+26)+' '+(ys-32)+' '+(x+38)+' '+(ys+6)+' '+(x+20)+' '+(ys+32)
+      +' C '+(x+2)+' '+(ys+56)+' '+(x-30)+' '+(ys+50)+' '+(x-40)+' '+(ys+22)
+      +' C '+(x-50)+' '+(ys-8)+' '+(x-22)+' '+(ys-38)+' '+x+' '+(ys-48)+' Z',
+      fill:'#7AAE86',stroke:'#4F7F60','stroke-width':2.5}));
+    drop(x-12,ys+4,.85,'#F8FAF8',.95); drop(x+10,ys+20,.85,'#F8FAF8',.8);
+  })();
+
+  // 3. the gut, with bile arriving
+  (function(){const x=xs[2];
+    g.appendChild(el('path',{d:'M '+(x-74)+' '+(ys+18)+' L '+(x+74)+' '+(ys+18),
+      stroke:'#A8CAB2','stroke-width':30,fill:'none','stroke-linecap':'round'}));
+    drop(x-30,ys-24,.9,'#C07A5A',.9); drop(x+6,ys-34,.9,'#C07A5A',.9); drop(x+38,ys-22,.9,'#C07A5A',.9);
+  })();
+
+  for(let i=0;i<2;i++){
+    const a=xs[i]+100, b=xs[i+1]-100;
+    g.appendChild(el('path',{d:'M '+a+' '+ys+' L '+(b-12)+' '+ys,
+      stroke:'#C8DDD0','stroke-width':3,'stroke-linecap':'round'}));
+    g.appendChild(el('path',{d:'M '+(b-20)+' '+(ys-9)+' L '+b+' '+ys+' L '+(b-20)+' '+(ys+9),
+      stroke:'#C8DDD0','stroke-width':3,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'}));
+  }
+
+  const labs=[['Liver','makes bile, continuously'],
+              ['Gallbladder','stores it, and lets it go when fat arrives'],
+              ['Small intestine','where bile digests fat and carries waste out']];
+  labs.forEach((l,i)=>{
+    txt(g,xs[i],ys+110,l[0],'lab','middle');
+    wrap(l[1],30).forEach((line,k)=>txt(g,xs[i],ys+138+k*25,line,'sub','middle'));
+  });
+})();
+
+/* ---------- D5: one source, many surfaces ---------- */
+(function(){
+  const g=document.getElementById('p5');
+  const cx=186, cy=236, r=56;
+  const ends=[['Joints and muscles',78],['Skin',158],['Energy',238],
+              ['Focus',318],['What you can tolerate',398]];
+  const ex=720;
+
+  // A fan, deliberately not a Venn. Lesson 02 already carries five
+  // overlapping circles; two diagrams of five things must not look alike.
+  ends.forEach(([lab,y])=>{
+    g.appendChild(el('path',{d:'M '+(cx+r+6)+' '+cy+' C '+(cx+200)+' '+cy+' '+(ex-200)+' '+y+' '+(ex-10)+' '+y,
+      stroke:'#C8DDD0','stroke-width':2.5,fill:'none'}));
+    g.appendChild(el('circle',{cx:ex,cy:y,r:7,fill:'#7AAE86'}));
+    txt(g,ex+24,y+7,lab,'lab');
+  });
+
+  g.appendChild(el('circle',{cx,cy,r,fill:'#E4F0E7',stroke:'#7AAE86','stroke-width':3}));
+  g.appendChild(el('circle',{cx,cy,r:15,fill:'#7AAE86'}));
+  txt(g,cx,cy+r+38,'One system,','lab','middle');
+  txt(g,cx,cy+r+66,'staying on alert','lab','middle');
 })();
 </script>
 </body></html>

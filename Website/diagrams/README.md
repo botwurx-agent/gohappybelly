@@ -224,3 +224,44 @@ earned its place again; all three of these were invisible in the markup.
 
 Also trimmed all three canvases, which were 15 to 25 percent dead space at the
 bottom. Exported at 1x with alpha, matching the rest of the set.
+
+## Two more, same day: the images that were not what their captions said
+
+Steve also asked for the two remaining mismatched images to be drawn, rather
+than only having their alt text corrected. Both had honest alt text by then but
+still carried a **visible caption that contradicted the picture above it**,
+which is the same defect as the cartoons wearing a different hat.
+
+| File | Replaces | Lesson | The caption it has to earn |
+|---|---|---|---|
+| `b1-liver-gallbladder` | A stock photo of a woman pointing at her head over a bowl of pasta | Midlife, Hormones And Digestion `2201324068` | "The liver and gallbladder, where bile is made and stored" |
+| `b3-many-surfaces` | A photograph of a yellow SLOW road sign | When Your System Stays On Alert `2201324070` | "Why this one is so often missed: it rarely shows up in a single place" |
+
+### b3: a fan, on purpose, because lesson 02 already owns the Venn
+
+`l02-five-areas` is five overlapping circles around a central gut. A second
+five-things diagram in the same course drawn the same way would read as a
+duplicate rather than a different idea. This one is a divergence instead: one
+filled node on the left, five lines fanning out to five named surfaces. Same
+palette, different form, different claim.
+
+### b1: three failed passes at anatomy, then a change of approach
+
+Worth recording because the instinct to keep tweaking was wrong.
+
+| Pass | What came out |
+|---|---|
+| 1 | A flat pink ellipse. The lobe notch was too small and rendered as a thorn on top, so it read as a speech bubble. The duodenum spiralled and read as a snail shell |
+| 2 | Same ellipse. The "Gallbladder" label also sat far to the left of the gallbladder, pointing at nothing, which is the stranded-label fault already recorded in this file |
+| 3 | Notch widened and deepened, which split the silhouette into a butterfly. The gut loop became a lasso |
+
+Three passes made it worse each time. **Abandoned the anatomy instead of
+fiddling a fourth time.** The section it illustrates teaches a process (bile is
+made, stored, then released when fat arrives), so the process is what it draws
+now, using the same three-step grammar as `l05-fiber-to-fuel`, which came out
+right first time. The glyphs are deliberately abstract: a wedge, a pear, a tube.
+They are not pretending to be an anatomy plate, and the labels carry the names.
+
+**The general lesson:** when a drawing fights back three times, the subject is
+probably wrong, not the curve handles. Ask what the passage actually teaches
+and draw that.
