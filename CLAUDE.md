@@ -200,6 +200,31 @@ an **order bump or an upsell** rather than the downsell it was once framed as.
 Until he says the word, treat any funnel placement of Guthub as a mistake, but
 do not treat the idea itself as dead.
 
+**Reconfirmed 2026-10-28.** Steve: it stays out of the funnel for now, he needs
+to iron things out first, and it is in the works to be involved later. Design
+the ascension so Guthub can slot in afterwards without a rebuild, rather than
+designing around its arrival.
+
+**Guthub carries a real marginal cost per user (recorded 2026-10-28).** It is an
+AI platform, so every active user costs inference money. This makes it
+structurally unlike every other rung: a course costs the same to deliver to one
+buyer or a thousand, Guthub does not.
+
+The consequence for funnel design, and the reason this is written down: **do not
+propose giving Guthub away as a free bundle at the front of the funnel.** A
+bundle pays inference for every buyer including the ones who never open it, which
+puts maximum cost on the least committed users. A paid upsell or order bump
+inverts that: the people generating cost are the ones who chose it and are
+paying for it. This is a second, independent reason for the order-bump/upsell
+placement Steve already favored.
+
+The agent proposed bundling a free month of Guthub into the $147 on 2026-10-28
+and withdrew it when Steve raised the cost structure. Note also that the $147
+Gut Reset Course grants a **year** of access, so "bundle it for the included
+period" would mean a year of inference per buyer. A Guthub window can be
+decoupled from the course term (the $1,497 bundles three months), but the cost
+objection stands regardless of the window.
+
 **Done 2026-10-23:** the quiz results pages carried a "Start My Guthub Free
 Trial" CTA for three days after the decision, because the Platform Stack table
 below still described Guthub as a downsell and no session reconciled the two.
