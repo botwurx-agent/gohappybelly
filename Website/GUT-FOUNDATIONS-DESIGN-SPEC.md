@@ -200,3 +200,25 @@ the same payload:
 The spec said to take the `is not` column from 14px to 15px. The `what it is`
 column alongside it is also 14px, so moving only one would have left two
 side-by-side cards visibly mismatched. **Both** columns were moved to 15px.
+
+### Hero headline changed, 2026-10-28
+
+Steve's call. From:
+
+> Why the same gut advice works for her and *wrecks* you.
+
+to:
+
+> Why the same gut advice works for her but *not for you*.
+
+The terracotta italic moved from `wrecks` to `not for you`, since that phrase
+now carries the turn of the sentence and a single `not` would have been too
+small to hold the emphasis.
+
+Worth noting for the compliance file as well as the copy file: "wrecks you"
+asserts an effect on the reader, which edges toward a claim about harm. "Not
+for you" makes the same point about fit rather than effect, which is where the
+pattern language is supposed to sit anyway.
+
+Verified on the live DOM: the `em` reads `not for you` in `rgb(192,122,90)`,
+and `wrecks` no longer appears anywhere on the page.
