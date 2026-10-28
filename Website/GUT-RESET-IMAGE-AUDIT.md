@@ -454,3 +454,68 @@ Worth keeping, because none of it was obvious at the start:
 - Rename media `4841412` from `l01-barrier` to `hero-00-start-here`
 - Optionally retire the now-unused `reset-*` assets, and the three duplicate
   `photo-*` spares listed in the wave 4 section above
+
+---
+
+## The video covers, 2026-10-28
+
+Steve spotted that on the seven video lessons the decorative image is also the
+video's cover. He is right, and the fix is his in the admin UI.
+
+### What the poster_image field actually is
+
+On a lesson with no video, `poster_image` is a decorative header. **On a lesson
+with a video it is the video's cover**, which is a different job entirely.
+The conversion treated both the same.
+
+Worth being accurate about the cause. `replace_media` can only re-point
+placements that already exist, never create them, so the cut-paper images were
+already sitting in those cover slots before any of this work. The wiring
+predates the conversion. What the conversion did was swap seven covers without
+registering what they were, and a good photograph reads as a deliberate cover
+in a way the cut paper did not, which is why it became visible now.
+
+### The seven
+
+| Lesson | Id | Cover to remove |
+|---|---|---|
+| Welcome: Start Here | 2174935211 | `mod-start-here` |
+| What We Are Actually Doing | 2178659244 | `mod-find-pattern` |
+| Week 1: Take The Pressure Off | 2178659915 | `mod-week1` |
+| Week 2: Rebuild | 2178660145 | `mod-week2` |
+| Week 3: Digestion Itself | 2178660405 | `mod-week3` |
+| Week 4: Widen Your Range | 2178660521 | `mod-week4` |
+| Pre-Recorded Q&A With Alina | 2178659040 | `photo-qa-with-alina` |
+
+Steve's decision: clear the poster on each, so the player falls back to the
+Wistia thumbnail, which is a frame of Alina from that specific video. Each
+video then carries its own relevant still rather than one shared portrait.
+
+### No API route, and a tool that lies about it
+
+`place_media` sets a poster and `replace_media` swaps one. Neither removes one,
+and `update_course_content` does not accept the field.
+
+That last one is worth recording properly. Passing `poster_image: null` to
+`update_course_content` returned **`"summary": "Updated 1 module, 1 lesson"`**
+and changed nothing. A follow-up `get_media` showed the placement still in
+place. **A success response from `update_course_content` does not mean the
+field you sent was applied**; it silently drops unknown keys. Verify writes
+against `get_media` where-used rather than trusting the summary.
+
+### The trap waiting after the fix
+
+Once the posters are cleared, all seven of those assets will read
+`used_count: 0`. **They are still inline in the lesson bodies.** The counter
+cannot see inline body images, as recorded above, so a cleanup that retires
+unused media on the strength of that number would break the image lower down
+each of those seven pages.
+
+Do not delete `mod-start-here`, `mod-find-pattern`, `mod-week1`, `mod-week2`,
+`mod-week3`, `mod-week4` or `photo-qa-with-alina`, whatever `used_count` says.
+
+### Not an option
+
+Generating a synthetic photograph of Alina. She is a real person and a
+made-up image of her presented as her is not something to produce. If a
+portrait is ever wanted on these covers it has to be a real photograph.
