@@ -55,6 +55,10 @@ not yet done, and not done unprompted because it changes the look of a live page
 further down the stack is a tension worth a decision at some point. It is on
 SamCart and was left alone.
 
+**Corrected 2026-10-28:** `/the-gut-fix` now checks out through Kajabi
+(`/offers/JnHcWPaw/checkout`), verified on the live page. The SamCart note below
+is stale and kept only for history.
+
 The Gut Fix link points at SamCart with the trailing slash. Without it the
 store 301s, and the Location header it returns is malformed
 (`https://mystore2429.mysamcart.com:/the-gut-fix/`, with a stray colon).

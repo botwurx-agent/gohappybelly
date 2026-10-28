@@ -183,6 +183,37 @@ itself.
 The Bone Broth Reset ($47) is a separate front-end offer at a different price,
 unpublished as of 2026-10-23 pending a rescheduled round.
 
+**Clarified 2026-10-28: it is a COHORT, not an evergreen product.** A live
+three-day fasting event with a group call, run on specific dates. The earlier
+wording "pending a rescheduled round" was ambiguous and the agent misread it as
+a pending launch, then proposed the $47 as the one-click upsell on the $27
+checkout. Steve caught it.
+
+**Why a cohort cannot sit in an evergreen upsell slot.** The upsell fires
+whenever someone buys, at any hour on any date. If the next cohort is six weeks
+out, the buyer has been sold a wait; if a round has just finished, they have
+been sold nothing for months. For an audience whose relationship with Alina is
+built on not being misled, that is a bad first transaction, and it generates
+refunds and support load.
+
+**Where it belongs instead: the calendar, not the funnel.** Run it two or three
+times a year as a campaign to the existing list. Its best job is
+**reactivating $27 buyers who stalled**, which is a different group from the
+buyers the ascension moves up. Best window is the first week of January rather
+than before the holidays: that audience is most motivated and most receptive to
+something short and finish-able right after the holidays, not during them.
+
+**It is a lateral product, not a rung.** A narrow three-day protocol is not a
+step up from the $27, and it is not a smaller Gut Reset Course either (the $147
+is a broad system, this is one protocol). Treat the offer suite as a catalog
+alongside the ladder: lateral products earn more from the same buyer without
+requiring everyone to climb.
+
+**The path to an evergreen version.** Run the live round, record it, and the
+recording becomes a self-paced product with no dates attached, which *can* then
+sit in the upsell slot. One production effort, two uses, and the live round
+proves whether the content converts before the automated version gets built.
+
 ### Guthub is not in the funnel yet
 
 Steve's decision, 2026-10-21, clarified 2026-10-23. Guthub.ai **may be
@@ -286,6 +317,21 @@ Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
   two inspected did, both since fixed. The rest are unaudited
 - SamCart is available and unused. The reason to move checkout there no longer
   applies
+- **Front-end AOV: there is no order bump or upsell on the $27 checkout.**
+  Recommended 2026-10-28 and not yet built, since Kajabi order bumps and
+  Purchase Flows are admin-UI only and invisible to MCP. The bump to attach is
+  **The Gut Fix at $10** (offer `2151452007`, checkout `JnHcWPaw`, Kajabi-native
+  digital download, verified clean at $10 one-time). It fits on the merits:
+  Gut Foundations is knowledge, The Gut Fix is a 30-day plan with a log and
+  swaps, so it complements rather than supersedes, which is the test the $147
+  fails. It also **stops The Gut Fix competing** with the front door, where it
+  currently sits as a cheaper alternative on Link in Bio card 3.
+  Realistic effect: roughly $29 to $31 AOV at 20 to 40 percent attach. Worth
+  doing because it is free to implement, but it does not change the economics;
+  the $147 and $1,497 conversions do.
+  **Leave the upsell slot empty for now.** Every post-purchase step adds
+  friction between paying and receiving, and the $47 cohort cannot fill it (see
+  the value ladder section).
 
 **Full technical reference and all 35 email HTML files:**
 `/Users/synastudio/Documents/GoHappyBelly/Documents/Claude Handoff Files/Go_Happy_Belly_Funnel_Handoff_v2.md`
