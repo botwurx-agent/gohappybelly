@@ -389,3 +389,68 @@ body left for the admin UI. Nothing unaccounted for.
 
 49 of 52 images converted. The three remaining are generated and sitting in
 `Website/mockups/reset-metaphor/upload/`, waiting only on a re-upload.
+
+---
+
+## Wave 4 complete. The conversion is done, 2026-10-28
+
+The last three uploaded cleanly, three distinct names and no duplicates this
+time. Three poster swaps, three body rewrites, no failures.
+
+### Verified across the whole site, not just this course
+
+Both searches were run with `course_id` omitted, so they cover Gut Foundations
+and Gut Reset together:
+
+| Search | Result |
+|---|---|
+| `_reset-` | **1** |
+| `cut-paper` | **1** |
+| `_photo-` in Gut Reset | **37**, which is 24 literal plus 13 metaphor |
+
+The single remaining hit, on both searches, is the same lesson:
+`The Supplement Reference` (2201292374). Its poster is already the photograph.
+Only the inline image is stale, and that body was left alone on purpose, since
+hand-transcribing 400 lines of supplement dosing to swap one decorative image
+is a bad trade against two clicks in the admin UI.
+
+### Final state of the Gut Reset course
+
+| Group | Posters | Bodies |
+|---|---|---|
+| The five pattern images | 16 | 16 |
+| The quiz image | 1 | 1 |
+| Module covers | 9 | 8, 1 declined |
+| Literal still lifes | 24 | 24 |
+| Metaphors | 13 | 13 |
+| **Total** | **63 placements** | **62, plus the one declined** |
+
+**52 of 52 images converted.** All cut paper is gone from both courses bar the
+single declined body.
+
+### What this conversion established
+
+Worth keeping, because none of it was obvious at the start:
+
+1. **Count image filenames, never alt text.** Alt text gets rewritten while the
+   image stays, so searching the prose undercounts. Every verification in this
+   document searches the CDN filename.
+2. **`used_count` does not see inline body images.** Kajabi counts the tracked
+   poster placement only. An asset reading `used_count: 1` was used twice
+   throughout this course.
+3. **List the media library and count distinct names before placing.** Two
+   batches arrived incomplete without the uploader saying so, and one would
+   have collided with all 24 existing names at once.
+4. **Render it and look at it.** Every fault found in this project, the wrapped
+   diagram text, the soup that should have been jelly, the bare lab bench, the
+   garden path that should have been damage, was invisible in the prompt and
+   obvious in the picture.
+5. **Where a lesson body carries clinical detail, the admin UI beats a rewrite.**
+
+### Outstanding, both for Steve in the admin UI
+
+- Swap `reset-module-reference-shelf` for `mod-reference-shelf` in the body of
+  `The Supplement Reference` (2201292374)
+- Rename media `4841412` from `l01-barrier` to `hero-00-start-here`
+- Optionally retire the now-unused `reset-*` assets, and the three duplicate
+  `photo-*` spares listed in the wave 4 section above
