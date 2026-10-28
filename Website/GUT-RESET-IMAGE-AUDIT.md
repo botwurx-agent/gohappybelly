@@ -519,3 +519,46 @@ Do not delete `mod-start-here`, `mod-find-pattern`, `mod-week1`, `mod-week2`,
 Generating a synthetic photograph of Alina. She is a real person and a
 made-up image of her presented as her is not something to produce. If a
 portrait is ever wanted on these covers it has to be a real photograph.
+
+### Cleared and verified, 2026-10-28
+
+All seven video covers are off. Verified per asset with `get_media` where-used
+rather than by eye:
+
+| Lesson | Cover removed | `where_used` |
+|---|---|---|
+| Welcome: Start Here | `mod-start-here` | empty |
+| What We Are Actually Doing | `mod-find-pattern` | empty |
+| Week 1: Take The Pressure Off | `mod-week1` | empty |
+| Week 2: Rebuild | `mod-week2` | empty |
+| Week 3: Digestion Itself | `mod-week3` | empty |
+| Week 4: Widen Your Range | `mod-week4` | empty |
+| Pre-Recorded Q&A With Alina | `photo-qa-with-alina` | empty |
+
+Each video now falls back to its own Wistia thumbnail, a frame of Alina from
+that video.
+
+**Every body image survived.** Searching the lesson bodies still returns all
+eight `mod-` lessons and the Q&A page, so clearing a poster does not touch the
+inline image. Poster and body are genuinely independent fields.
+
+The three module covers never in scope, `mod-pattern-detail`,
+`mod-reintroduction` and `mod-reference-shelf`, still read `used_count: 1` and
+were not touched.
+
+### The trap is now live
+
+These seven assets all read `used_count: 0` while still being used inline in
+the lesson bodies:
+
+`mod-start-here`, `mod-find-pattern`, `mod-week1`, `mod-week2`, `mod-week3`,
+`mod-week4`, `photo-qa-with-alina`
+
+Deleting any of them, or filtering the library on `in_use: false` and clearing
+the results, breaks the image lower down on all seven pages. The counter cannot
+see inline body images. Check the body with `search_course_content` before
+retiring any asset, whatever the count says.
+
+This applies to the earlier suggestion about retiring the unused `reset-*`
+assets too. Those genuinely are unused, but the check is the body search and
+not the number.
