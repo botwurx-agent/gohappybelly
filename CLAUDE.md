@@ -317,9 +317,12 @@ Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
   two inspected did, both since fixed. The rest are unaudited
 - SamCart is available and unused. The reason to move checkout there no longer
   applies
-- **Front-end AOV: there is no order bump or upsell on the $27 checkout.**
-  Recommended 2026-10-28 and not yet built, since Kajabi order bumps and
-  Purchase Flows are admin-UI only and invisible to MCP. The bump to attach is
+- **Front-end AOV: The Gut Fix $10 order bump is ATTACHED to the $27 checkout**
+  (Steve, 2026-10-28). Copy in `Website/ORDER-BUMP-COPY.md`, written to the
+  structure of a competitor bump Steve supplied. Still unverified from here,
+  since Purchase Flows are admin-UI only and invisible to MCP: that the bump
+  actually grants download `2149603425`, and that it does not fight the offer's
+  post-purchase redirect to thank-you page `2152353598`. The bump is
   **The Gut Fix at $10** (offer `2151452007`, checkout `JnHcWPaw`, Kajabi-native
   digital download, verified clean at $10 one-time). It fits on the merits:
   Gut Foundations is knowledge, The Gut Fix is a 30-day plan with a log and
@@ -332,6 +335,13 @@ Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
   **Leave the upsell slot empty for now.** Every post-purchase step adds
   friction between paying and receiving, and the $47 cohort cannot fill it (see
   the value ladder section).
+  **Copy note:** the bump copy deliberately does not carry an outcome promise.
+  The reference Steve supplied closes on "blow up your Instagram account"; the
+  health equivalent would be a compliance problem. What carries over is the
+  mechanism underneath it, a promise of *certainty about process* rather than
+  results ("tells you exactly what to do each day"), which is fully available
+  to us. Same applies to "fast-track", which reads as harmless in a business
+  context and as an implied speed-of-results claim in a health one.
 
 **Full technical reference and all 35 email HTML files:**
 `/Users/synastudio/Documents/GoHappyBelly/Documents/Claude Handoff Files/Go_Happy_Belly_Funnel_Handoff_v2.md`

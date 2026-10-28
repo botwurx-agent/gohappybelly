@@ -22,37 +22,10 @@ the test the $147 fails.
 
 ## Recommended: version A
 
-Checkbox label:
-
-```
-Yes, add The Gut Fix for $10
-```
-
-Body:
-
-```
-Eleven lessons tell you what is going on. This is the next thirty days of doing something about it: a daily log so the patterns show up on paper, the foods that commonly sit behind them and what to put in their place. Instant download, refunded in full if it does not help.
-```
-
----
-
-## Version B, the "knowing is not doing" angle
-
-Checkbox label:
-
-```
-Add the 30-day plan for $10
-```
-
-Body:
-
-```
-Knowing your pattern and changing it are two different things. The Gut Fix is the doing part: thirty days, one page at a time, with a log that shows you what your own week is actually doing to you. Written by Alina. Refunded in full if it does not help.
-```
-
----
-
-## Version C, the shortest
+**Status 2026-10-28: Steve attached the $10 Gut Fix bump and asked for copy in
+the style of a competitor bump (Maria Wendt's Instagram Implementation Pack).**
+Versions A and B below are written to that structure. The earlier, quieter
+versions are kept at the bottom as fallbacks.
 
 Checkbox label:
 
@@ -63,21 +36,57 @@ Yes, add The Gut Fix for $10
 Body:
 
 ```
-The lessons tell you what is going on. This tells you what to do about it for the next thirty days. Instant download, full refund if it does not help.
+[HIGHLY RECOMMENDED] Important: If you want to put this into practice from day one, I'd add The Gut Fix to your order. You'll get a daily log for food, sleep and symptoms so the patterns show up on paper, the foods that commonly sit behind each pattern and what to put in their place, and the small daily habits that settle the system. Thirty days, one page at a time, no elimination lists and no calorie counting. The eleven lessons tell you what is going on. This one tells you exactly what to do each day. [$10]
+```
+
+Bold the opening sentence (through "to your order") and the final two
+sentences (from "The eleven lessons"). Leave the middle plain, and italicize
+*The Gut Fix*. That is the emphasis pattern the reference uses: bold the ask,
+plain the contents, bold the close.
+
+---
+
+## Version B, shorter
+
+Body:
+
+```
+[HIGHLY RECOMMENDED] Important: If you want to know exactly what to do each day while you work through these eleven lessons, add The Gut Fix to your order. Thirty days of daily logs for food, sleep and symptoms, the foods that commonly sit behind each pattern and what to put in their place, and the small habits that settle the system. No elimination lists, no calorie counting, and refunded in full if it does not help. [$10]
 ```
 
 ---
 
 ## Which to run
 
-Start with **A**. It is the only one that names the specific contents (the log,
-the foods, the swaps), and at $10 the buyer is deciding on substance rather than
-on a feeling. B is the better line but sells the idea more than the thing. C is
-there if the Kajabi bump block turns out to be visually cramped, which is worth
-checking before committing to A.
+Start with **A**. B is there if the Kajabi bump block turns out visually
+cramped, which is worth checking before committing, since A runs to about a
+hundred words.
 
-Do not run all three at once. A bump is one checkbox, and there is no
-split-testing here worth the complexity at current volume.
+Do not run two at once. A bump is one checkbox, and split-testing is not worth
+the complexity at current volume.
+
+## What was taken from the reference, and what was not
+
+**Taken:** the `[HIGHLY RECOMMENDED]` tag, the "Important:" opener, the
+conditional "if you want X, add Y" construction, a concrete list of nouns
+rather than adjectives, bold on the ask and the close with plain text between,
+and the price in brackets at the end.
+
+**Not taken: the outcome promise.** The reference closes on "blow up your
+Instagram account". The health equivalent would be an outcome claim and a
+compliance problem, so it is not available to us.
+
+What *is* available is the mechanism underneath that line. It converts because
+it promises **certainty**, that someone will tell you exactly what to do. That
+is a promise about process, not results, and it carries over intact: "This one
+tells you exactly what to do each day." Same job, no claim.
+
+**Also not taken: "we".** The reference is a team voice. Alina is one person,
+so the copy says "I'd add".
+
+**Also not taken: "fast-track".** Speed-of-results language is an implied
+outcome claim in a health context even when it reads as harmless in a business
+one.
 
 ---
 
