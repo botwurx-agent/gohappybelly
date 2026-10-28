@@ -222,3 +222,73 @@ pattern language is supposed to sit anyway.
 
 Verified on the live DOM: the `em` reads `not for you` in `rgb(192,122,90)`,
 and `wrecks` no longer appears anywhere on the page.
+
+---
+
+## Eleven lessons shown as eleven things (2026-10-28)
+
+**Why.** The page told the reader "eleven lessons" in the stat bar and then
+showed one laptop photo. Quantity was a claim, not a picture. The competitor
+page that prompted this work shows eight products in a numbered pile, so the
+value is graspable before a word is read. At $27 that does real work.
+
+**What changed.** Block `wi_mods` in section `1792070000003` ("What is
+inside"). It was a vertical numbered list styled by `.gh-modules` in
+`custom_css`, which read as a table of contents. It is now a grid of eleven
+countable tiles: eight foundations in white, three bonus modules in
+`#FBF4EF` with a terracotta number. Block widened from `max-w-[620px]` to
+`max-w-[700px]` so four columns fit.
+
+**How it is built, and why that way.** The markup carries its own scoped
+`<style>` tag inside the text block. No `custom_css` change at all.
+
+Two reasons, both learned the hard way this session:
+
+1. `custom_css` is a single ~500-line string. Editing it means resending the
+   whole thing, and the only copy available was a DOM scrape of the rendered
+   `<style>` element, which is not guaranteed to be the source byte for byte.
+   Overwriting 500 lines of working CSS from a scrape to add nine rules is a
+   bad trade.
+2. The responsive behavior needs no media query:
+   `grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))` resolves to
+   four columns at 700px and two at phone width on its own. Verified live:
+   4 columns desktop, 2 columns mobile.
+
+**Kajabi keeps a `<style>` tag inside a text block.** Verified on the live
+DOM, not assumed. This is a reusable escape hatch for any page element that
+needs real CSS without touching the theme's `custom_css`.
+
+**A note on `<i>` and `<s>`.** Short tags were used to keep the payload under
+the API's practical size limit (the fully inline-styled version was 4.7KB and
+would not parse as a tool argument; this one is 1.5KB). Both are reset in the
+scoped CSS, `font-style: normal` on `<i>` and `text-decoration: none` on
+`<s>`, and both resets are confirmed on the live DOM. If this markup is ever
+copied elsewhere, carry those two resets with it.
+
+**Verified live** (desktop 1200px and mobile 430px, real Chromium):
+
+| Check | Result |
+|---|---|
+| `.gh11` present | yes |
+| `<style>` tag survived | yes |
+| Tiles | 11 |
+| Bonus tiles | 3 |
+| Grid columns | 4 desktop / 2 mobile |
+| Numbers in order | 01 through 11 |
+| Foundation number color | `rgb(63,122,80)` |
+| Bonus number color | `rgb(192,122,90)` |
+| `<s>` strikethrough suppressed | yes |
+| Old `.gh-modules` list gone | 0 occurrences |
+
+**Cloudflare note, correcting an earlier assumption.** A headless Chromium
+with the *default* user-agent now gets a 403 block page from Cloudflare. The
+first verification pass reported the new markup missing; it was reading the
+block page, not the site. A realistic desktop or iPhone user-agent still gets
+through. Any future check of the live site must set a user-agent AND assert
+`response.status() === 200` before trusting what it finds. A selector that
+returns nothing is not evidence of a missing element until the 200 is
+confirmed.
+
+The `.gh-modules` rules remain in `custom_css` and are now unused. They are
+harmless and were left alone deliberately, rather than risk a full-string
+rewrite to delete nine rules.
