@@ -143,3 +143,60 @@ changes nothing on the server.
 
 This retires the "nobody has visually checked the live site" limitation
 recorded in `DESIGN-SYSTEM.md`.
+
+---
+
+## Applied, 2026-10-28
+
+All of it is live. Verified against the rendered page, not the API response.
+
+| Change | Verified on the live DOM |
+|---|---|
+| Button background | `rgb(168,95,62)` = `#A85F3E` |
+| Button type | 16px, weight 600, `text-transform: none` |
+| Button label | `Find your gut pattern, $27`, 4 instances, 0 of the old label |
+| Eyebrow / price | `rgb(63,122,80)` = `#3F7A50` |
+| Secondary text | `rgb(94,117,105)` = `#5E7569` |
+| Both panel columns | 15px |
+| Reframe line | weight 600 |
+| Relief section | present, between the five patterns and What is inside |
+
+CTA count went from 3 to 4, since the relief section carries one. That closes
+the mid-page gap as well.
+
+### Two things that cost a round trip
+
+**1. The page is cached, and the cache does not clear on save.**
+
+Immediately after the update the API read back the new section correctly while
+`https://www.gohappybelly.com/gut-foundations` still served the entirely old
+page: old button labels, no relief section, old colours. Nothing had failed.
+The same URL with `?v=<timestamp>` served the new version at once.
+
+`cf-cache-status` reads `DYNAMIC`, so this is Kajabi's own page cache rather
+than Cloudflare. **Verify theme edits against a cache-busted URL**, and expect
+to tell anyone checking the page to hard-refresh. A plain load proves nothing
+for several minutes.
+
+**2. A nested block addressed at the wrong level fails silently.**
+
+`1792070000004_b` lives inside the group block `1792070000004_g`, not directly
+under the section. The first write addressed it as
+`sections.1792070000004.blocks.1792070000004_b`, which is a path that does not
+render. **`update_theme_content` returned `{"updated": true}`** and the stored
+text was unchanged.
+
+This is the same class of failure as `update_course_content` silently dropping
+`poster_image: null` earlier in this project. The rule holds across both tools:
+a success response means the payload was accepted, never that the field landed.
+Check the rendered page.
+
+The correct path is the full nesting, as used successfully for the hero CTA in
+the same payload:
+`sections.<id>.blocks.<group>.blocks.<block>.settings`
+
+### One correction to the spec above
+
+The spec said to take the `is not` column from 14px to 15px. The `what it is`
+column alongside it is also 14px, so moving only one would have left two
+side-by-side cards visibly mismatched. **Both** columns were moved to 15px.
