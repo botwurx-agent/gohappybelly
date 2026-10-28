@@ -562,3 +562,41 @@ retiring any asset, whatever the count says.
 This applies to the earlier suggestion about retiring the unused `reset-*`
 assets too. Those genuinely are unused, but the check is the body search and
 not the number.
+
+---
+
+## Renaming media is metadata only, 2026-10-28
+
+`4841412` renamed from `l01-barrier` to `hero-00-start-here`. Checked
+afterwards because an inline body reference is a hardcoded URL that Kajabi does
+not track, so a path change would have broken it silently.
+
+**It did not change.** The asset still serves from
+`...c82f3f2-..._l01-barrier.png`, and both that URL and the real diagram's URL
+return 200. The CDN path is built from the **original upload filename**, not
+the asset's display name, so renaming an asset in the library is safe for
+inline references and does not rename the served file.
+
+The corollary is that a CDN path can disagree with the asset name indefinitely.
+`hero-00-start-here` will serve from a URL ending `_l01-barrier.png` forever.
+Searching bodies by filename, which this document relies on, therefore matches
+the **upload** name, not the current one. Worth remembering before trusting a
+body search that comes back empty.
+
+### The collision that prompted it
+
+Two different live images were both named `l01-barrier`, and both read
+`used_count: 0` while both were inline:
+
+| Id | What it actually is | Inline in |
+|---|---|---|
+| 4841412 | a notebook, tea and potted ivy on a sunlit table | Gut Foundations, `Start Here` |
+| 4838130 | the branded SEALED / LOOSENED tight-junction diagram | Gut Foundations, `01. Understanding Your Gut` |
+
+Only the first was renamed. 4838130 keeps `l01-barrier`, which is correct
+for it.
+
+A further wrongness in 4841412, left alone deliberately: it is a **JPEG served
+with a `.png` extension**. Harmless, since browsers sniff the type and the CDN
+returns `image/png` regardless, and fixing it would mean a re-upload and a body
+rewrite for no visible gain.
