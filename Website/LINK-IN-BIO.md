@@ -22,18 +22,38 @@ design system in `Website/DESIGN-SYSTEM.md`; nothing new was invented for it.
 | `1791980000002` Links | `#EFF7F1` | Five `feature` blocks, stacked, capped at 640px |
 | `1791980000003` Contact | `#F8FAF8` | Heading, Kajabi form, a line offering the free call instead |
 
-### The five links
+### The six links
+
+**Updated 2026-10-28.** This file previously listed five cards and omitted Gut
+Foundations, which had been live since 2026-10-23. It also still showed two `#`
+placeholders that have since been filled. Both corrected against the live page.
 
 | # | Card | Destination | New tab |
 |---|---|---|---|
-| 1 | What's Your Gut Pattern? | `https://gut-pattern-quiz.scoreapp.com` | yes |
-| 2 | The Gut Fix Ebook | `/the-gut-fix` | no (internal) |
-| 3 | My Favourite Products | `/shop` | no (internal) |
-| 4 | Free 7-Day Lifestyle Workbook | **`#` placeholder** | yes |
-| 5 | Watch Me on The Block, Season 17 | **`#` placeholder** | yes |
+| 1 | **Gut Foundations** ("Start here", $27) | `/gut-foundations` | no (internal) |
+| 2 | What's Your Gut Pattern? | `https://gut-pattern-quiz.scoreapp.com` | yes |
+| 3 | The Gut Fix Ebook | `/the-gut-fix` | no (internal) |
+| 4 | My Favourite Products | `/shop` | no (internal) |
+| 5 | Free 7-Day Lifestyle Workbook | `/7-day-lifestyle-workbook` | no (internal) |
+| 6 | Watch Me on The Block, Season 17 | Facebook video | yes |
 
-Two destinations are still placeholders. The page should not go in the
-Instagram bio until they are real.
+Block ids in theme `2167908665`, section `1791980000002`, in render order:
+`_l6`, `_l1`, `_l2`, `_l3`, `_l4`, `_l5`. Note `_l6` is the Gut Foundations card
+and leads the stack despite its id, so trust `block_order`, not the numbering.
+
+**Gut Foundations leads, per the front-door decision of 2026-10-28** (see
+CLAUDE.md). It carries a terracotta "START HERE" eyebrow above the heading. The
+quiz sits second: it is free and still the segmentation engine, so it keeps a
+high slot without taking the lead one.
+
+**Open: the lead card has position but no visual weight.** All six cards render
+an identical terracotta button and identical card chrome, so the front door does
+not stand out when the page is scanned. Worth a distinct treatment for card 1,
+not yet done, and not done unprompted because it changes the look of a live page.
+
+**Note the $10 Gut Fix Ebook sits below a $27 front door.** A cheaper offer
+further down the stack is a tension worth a decision at some point. It is on
+SamCart and was left alone.
 
 The Gut Fix link points at SamCart with the trailing slash. Without it the
 store 301s, and the Location header it returns is malformed

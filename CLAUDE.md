@@ -103,8 +103,9 @@ Quiz: "What's Your Gut Pattern?" (ScoreApp)
   https://gut-pattern-quiz.scoreapp.com
         ↓
 Results page: 1 of 5 archetypes
-  Primary CTA:   Book a Gut Breakthrough Call
-  Secondary CTA: Gut Foundations ($27)   "Not ready to talk yet?"
+  Primary CTA:   Gut Foundations ($27)   the front door
+  Secondary CTA: Book a Gut Breakthrough Call
+  (decided 2026-10-28, ScoreApp paste pending: Website/QUIZ-RESULTS-CTA-COPY.md)
         ↓
 7-email archetype-specific sequence (21 days, Mailchimp)
   Exit logic: contact exits if booked-call tag is applied
@@ -112,6 +113,36 @@ Results page: 1 of 5 archetypes
         ↓
 Gut Breakthrough Call (20 min, free) → 3-Month Gut Reset ($1,497)
 ```
+
+### Gut Foundations is the front door (decided 2026-10-28)
+
+Steve's decision: **the $27 is the low-ticket front door and the offer to sell
+at scale.** Everything else is up the ladder from it, the Gut Reset Course and
+ultimately the 1:1 coaching included. It is not a tripwire or a consolation
+prize, and it delivers what it charges for.
+
+What this changed:
+
+- **Link in Bio**: Gut Foundations moved from card 2 to **card 1**, with a
+  "Start here" marker. Done and live 2026-10-28.
+- **Quiz results pages**: the $27 becomes the primary CTA and the call moves
+  below it. The heading "Not ready to talk yet?" is deleted outright, since it
+  framed the $27 as the option for people who will not commit. Copy written and
+  waiting for Steve to paste into ScoreApp:
+  `Website/QUIZ-RESULTS-CTA-COPY.md`.
+- **The 35 archetype emails**: deliberately **not** rewired. Steve confirmed
+  2026-10-28. The "launch, measure, then rewire" rule in the mini-course
+  OFFER-SPEC still stands.
+
+**What makes this work, and is still missing.** A Gut Foundations buyer
+currently reaches a thank-you page and is sold nothing further. A front door
+that does not pass buyers up the ladder just collects them. Building that
+ascension ($27 to $147 to $1,497) matters more than any further CTA placement.
+
+**The tradeoff on the record.** The Gut Breakthrough Call is still the only
+mechanism selling the $1,497, since that sales page does not exist. One $1,497
+sale equals 55 sales of the $27. Steve accepted this knowingly. Watch call
+volume.
 
 ### The value ladder (decided 2026-10-21)
 
@@ -124,8 +155,12 @@ done-for-you gut wellness material. Price confirmed at $27 by Steve on
 2026-10-23, having been specced at $47.
 
 **Live since 2026-10-23.** Offer published, sales page at
-`/gut-foundations`, a card on Link in Bio, and the secondary CTA on all five
-quiz results pages.
+`/gut-foundations`, a card on Link in Bio, and a CTA on all five quiz results
+pages. **Zero sales in the first five days**, which is what prompted the
+front-door decision of 2026-10-28 above. The offer had not failed so much as
+never been given an ungated path: both placements sat behind something, the
+quiz behind twelve questions and the Link in Bio behind already following
+Alina.
 
 The 35 archetype welcome emails still drive to the call and have not been
 rewired. That is deliberate: see
