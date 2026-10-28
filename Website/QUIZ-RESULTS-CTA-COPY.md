@@ -125,19 +125,24 @@ seal, cure or treat, no em dashes, none of the banned words.
 
 ---
 
-## The risk Steve accepted, recorded
+## The risk, as corrected
 
-The Gut Breakthrough Call is currently the only mechanism selling the $1,497
-3-Month Gut Reset, because that sales page does not exist yet. Demoting the call
-on the results pages could cost call bookings, and one $1,497 sale is worth 55
-sales of the $27.
+An earlier version of this section claimed the Gut Breakthrough Call was the
+only mechanism selling the $1,497, because the sales page did not exist. **That
+was wrong.** `/private-coaching` is a full 3-Month Gut Reset sales page with a
+direct checkout button, verified 2026-10-28 at $1,497 one-time, fixed price, no
+subscription. Steve caught the error; the agent had taken it from a stale line
+in CLAUDE.md instead of checking the live site.
 
-Steve's position, 2026-10-28: the $27 is the low-ticket front door and the offer
-to sell at scale, with everything else up the ladder from it. Recorded here so
-the tradeoff is visible if call volume drops rather than being rediscovered.
+So demoting the call here is safer than first stated. The $1,497 keeps a
+working self-serve path whatever happens to call volume.
 
-**The piece that makes this safe is the ascension, and it does not exist yet.**
-A Gut Foundations buyer currently reaches a thank-you page and is sold nothing
-further. Until a $27 buyer is moved toward the $147 and the $1,497, the front
-door collects buyers it does not pass on. That is the next thing to build, and
-it matters more than any further CTA placement.
+What remains true, weakly: one $1,497 sale is worth 55 sales of the $27, and
+most people will still want to talk before spending $1,497. Watch call volume
+after the swap. It is a measurement, not a reason to delay.
+
+**The ascension is still the missing piece.** A Gut Foundations buyer currently
+reaches a thank-you page and is sold nothing further. Until a $27 buyer is moved
+toward the $147 and the $1,497, the front door collects buyers it does not pass
+on. Both destinations exist and take money today (`/gut-reset-course` and
+`/private-coaching`), so what is missing is only the path between them.

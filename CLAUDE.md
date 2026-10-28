@@ -139,10 +139,22 @@ currently reaches a thank-you page and is sold nothing further. A front door
 that does not pass buyers up the ladder just collects them. Building that
 ascension ($27 to $147 to $1,497) matters more than any further CTA placement.
 
-**The tradeoff on the record.** The Gut Breakthrough Call is still the only
-mechanism selling the $1,497, since that sales page does not exist. One $1,497
-sale equals 55 sales of the $27. Steve accepted this knowingly. Watch call
-volume.
+Both destinations for it already exist and are checkout-ready:
+`/gut-reset-course` at $147 and `/private-coaching` at $1,497. The missing
+piece is only the mechanism that moves a $27 buyer toward them, not the pages
+themselves.
+
+**The tradeoff, corrected 2026-10-28.** The agent initially argued that
+demoting the call was risky because the call was the only mechanism selling the
+$1,497. That was false: `/private-coaching` is a full sales page with a direct
+checkout, verified at $1,497 one-time. The $1,497 does not depend on the call,
+so moving the call below the $27 on the quiz results pages is materially safer
+than first stated.
+
+The residual point still holds in weaker form: one $1,497 sale is worth 55 of
+the $27, and few people buy at $1,497 without talking first, so call volume is
+still worth watching. It is a thing to measure, not a reason to hold the
+front-door change.
 
 ### The value ladder (decided 2026-10-21)
 
@@ -213,6 +225,12 @@ Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
 `Website/`.
 
 - Home, Private Coaching, Shop, Link in Bio, The Gut Fix
+- **3-Month Gut Reset sales page (`/private-coaching`)**, 12 sections with a
+  direct checkout button to `/offers/442eXHU6/checkout` and the call offered
+  beneath it as "Rather talk first?". **Corrected 2026-10-28:** this file
+  previously listed this page under "Not yet built" and said the call was the
+  only sales mechanism for the $1,497. Both were wrong, and the agent repeated
+  the error from these notes instead of checking the live site. Steve caught it
 - Gut Reset Course sales page (`/gut-reset-course`) and thank-you page
 - Gut Foundations sales page (`/gut-foundations`) and thank-you page
 - 1:1 coaching thank-you page, with the Calendly embed and the private group
@@ -226,9 +244,7 @@ Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
 - 8 lab test offers, $250 to $639
 
 ### Not yet built
-- 3-Month Gut Reset sales page. The call is still the sales mechanism
-- Lab test thank-you pages. Blocked on Alina's lab-ordering URL, which also
-  blocks the $1,497 flow
+- Lab test thank-you pages. Blocked on Alina's lab-ordering URL
 - ManyChat Instagram DM automation flows
 - Cold traffic funnel (Phase 2)
 - Paid ads strategy (Phase 3)
