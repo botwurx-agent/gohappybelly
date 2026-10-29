@@ -66,10 +66,57 @@ CLAUDE.md). It carries a terracotta "START HERE" eyebrow above the heading. The
 quiz sits second: it is free and still the segmentation engine, so it keeps a
 high slot without taking the lead one.
 
-**Open: the lead card has position but no visual weight.** All six cards render
-an identical terracotta button and identical card chrome, so the front door does
-not stand out when the page is scanned. Worth a distinct treatment for card 1,
-not yet done, and not done unprompted because it changes the look of a live page.
+### Card 1 carries the featured treatment, 2026-10-29
+
+**The problem it solves.** Every card rendered identical chrome and an identical
+terracotta button, so the front door had position but no visual weight on a
+scan.
+
+**What was rejected, and why.** Steve asked whether to recolor the button or add
+a photo. Neither:
+
+- **Recoloring the button works against you.** `DESIGN-SYSTEM.md` §1 reserves
+  terracotta `#C07A5A` for "every primary button. Nothing else." Since every
+  button on the page is already terracotta, making the front door's button a
+  different color would mark it as *less* primary, not more.
+- **A photo costs about 190px of height** at phone width, pushing the quiz and
+  everything under it down the page. Rendered and compared before discarding.
+
+**What was used instead: the system's own featured offer panel** (§5), which
+exists for exactly this job. Card 1 only:
+
+| | |
+|---|---|
+| Background | `#162E28` forest |
+| Radius | 4px |
+| Shadow | `0 16px 48px rgba(22,46,40,0.18)` |
+| Eyebrow | `#A8CAB2` (was terracotta, too low contrast on forest) |
+| Heading | `#FFFFFF` |
+| Body | `rgba(255,255,255,0.78)`, the §1 body value for forest |
+| Button | **unchanged** terracotta, which is the point |
+
+All confirmed on the live DOM, and the other four cards confirmed still white.
+
+**How it is built.** `custom_classes` gains `gh-featured`, and the background,
+radius and shadow come from a scoped `<style>` tag inside the block's own text
+field. `custom_css` is untouched, for the same reason as the eleven-tile grid on
+`/gut-foundations`: the only available copy of that ~500-line string is a DOM
+scrape, and rewriting it wholesale to add three rules is a bad trade. Text
+colors are set inline rather than in the `<style>`, because the block's existing
+inline colors would otherwise win on specificity.
+
+The `<style>` targets three elements, `.gh-featured` plus its inner `> div` and
+`[data-nova-role='details']`, because the white background sits on an inner
+element rather than on the wrapper.
+
+**A false alarm worth recording.** In the screenshot the button looked like it
+was hanging below the forest card. Measured, it is not: the button sits inside
+the card and the gap below it is 0. The same gap is 0 on all five cards and the
+`.gh-link-card` wrapper has `padding: 0` on all five, so the padding lives on an
+inner element and the flush button is this component's normal rendering. It
+simply reads more sharply where terracotta meets forest than where it meets
+white. No change made. Card 1's only real geometric difference is 23px above the
+heading, which is the eyebrow line.
 
 **Resolved 2026-10-28:** the $10 Gut Fix card was the cheaper-offer tension
 noted here. It is now the order bump on the $27 and no longer a card.
