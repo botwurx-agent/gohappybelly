@@ -57,13 +57,17 @@ CLAUDE.md.
 
 ---
 
-## Replacement, recommended
+## Replacement, CHOSEN BY STEVE 2026-10-29
 
-**Title** (56 characters):
+**Title** (58 characters):
 
 ```
-Gut Health Coaching & Courses for Women | Go Happy Belly
+Gut Nutrition Coaching & Courses for Women | Go Happy Belly
 ```
+
+Steve picked the "Gut Nutrition" wording over "Gut Health". It keeps the
+search term people actually type while naming the subject rather than claiming
+the protected title "Nutritionist", which Alina does not hold.
 
 **Description** (156 characters):
 
@@ -71,7 +75,13 @@ Gut Health Coaching & Courses for Women | Go Happy Belly
 Your labs came back normal but you still feel unwell. Alina Nazari, FDN-P, helps women find the pattern behind their gut symptoms. Courses and 1:1 coaching.
 ```
 
-## Alternatives
+## Alternatives, not used
+
+**Title, "Gut Health" wording** (56 characters):
+
+```
+Gut Health Coaching & Courses for Women | Go Happy Belly
+```
 
 **Title, shorter and closer to the brand line** (48 characters):
 
@@ -110,15 +120,12 @@ engines display.
 
 ---
 
-## One open item this does not fix
+## The credential question, resolved
 
-The title currently carries "Expert Gut Nutritionist" partly because it is the
-phrase people search for. Dropping it is the compliant choice and may cost some
-search matching. If that matters, the honest version is "Gut Nutrition" rather
-than "Nutritionist", which describes the subject rather than claiming the title:
+The old title carried "Expert Gut Nutritionist". Dropping "Nutritionist" is the
+compliant choice, since Alina holds FDN-P and the title is protected in some
+jurisdictions, but it risked losing a term people search for.
 
-```
-Gut Nutrition Coaching & Courses for Women | Go Happy Belly
-```
-
-58 characters. Steve's call.
+**Resolved 2026-10-29: "Gut Nutrition".** It names the subject rather than
+claiming the title, so it keeps the search term and states nothing untrue. Used
+in the chosen title above.
