@@ -308,9 +308,19 @@ Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
   rescheduled round
 
 ### Known gaps and unverified
-- **Nobody has visually checked `/gut-foundations`.** Cloudflare returns 403 to
-  the agent's environment on every path, so the agent cannot fetch or screenshot
-  the live site. See the note in `Website/DESIGN-SYSTEM.md`
+- **The agent CAN now see the live site**, via headless Chromium with a
+  realistic user-agent. A default headless user-agent still gets a 403 block
+  page from Cloudflare, so every check must set a user-agent AND assert
+  `status === 200` before trusting what it finds; a missing element on a 403 is
+  not evidence of anything. `/gut-foundations` has been visually checked.
+- **Kajabi's page cache can leave a change saved but not live, and a
+  cache-busted URL hides it.** `?v=<timestamp>` bypasses the cache, so it only
+  proves the markup renders, never that a visitor sees it. Always finish by
+  loading the PLAIN url and report what that shows. A theme save does not clear
+  the cache and neither does re-publishing the page; it expires on its own.
+  Full detail and the measurements in `Website/DESIGN-SYSTEM.md`.
+  **Open as of 2026-10-29: the `/links` featured card is saved and correct but
+  serving stale on the plain URL.**
 - The $27 purchase-flow upsell was created by Steve; whether it is attached as
   step 1 is unverified, since MCP is blind to Kajabi Purchase Flows
 - Published checkouts may carry a subscription/price misconfiguration. Two of

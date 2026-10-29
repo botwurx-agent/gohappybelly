@@ -365,6 +365,51 @@ and photographs of Alina.
 
 ---
 
+## Verification rule: never trust a cache-busted URL alone
+
+**Added 2026-10-29, after getting this wrong.** Steve reported a change was not
+live. It was not. Every check that session had used
+`https://...?v=<timestamp>`, which **bypasses Kajabi's page cache**. That proves
+the theme data saved and renders. It does **not** prove a visitor sees it.
+
+Measured on `/links`, three loads each from a fresh browser context:
+
+| URL | `.gh-featured` present |
+|---|---|
+| `/links` | **no** |
+| `/links?v=<ts>` | yes |
+| `/links` again | **no** |
+
+**The rule: check the PLAIN url last, and report what IT shows.** A cache-busted
+check is for confirming your markup is right. A plain-URL check is the only one
+that answers "is this live." Say which one a claim rests on.
+
+### What this cache does and does not respond to
+
+- `cf-cache-status: DYNAMIC` means Cloudflare is *not* caching it. This is
+  Kajabi's own cache, so Cloudflare-side tricks are irrelevant.
+- **A theme save does not clear it.** Already documented; confirmed again.
+- **Re-publishing the landing page does not clear it.** `update_landing_page`
+  with a fresh `publish_at` returned success and the plain URL stayed stale
+  across three loads. New finding, 2026-10-29.
+- **It does expire on its own.** `/gut-foundations` was edited the previous day
+  and serves correctly on the plain URL, so this is a TTL rather than a
+  permanent pin. Length unknown; it had cleared within hours there.
+
+### Why only part of a change can appear
+
+On `/links`, two edits six minutes apart behaved differently: the card removal
+(03:50) reached the plain URL, the featured styling (03:56) did not. The cache
+was filled between them. So **"some of my change is live" is not evidence that
+the rest is**, and each edit needs its own plain-URL check.
+
+### If it has to be live now
+
+The API cannot flush it. Options, in order: make the edit once more through the
+Kajabi admin theme builder, which may invalidate where the API does not; look
+for a cache control in Kajabi site settings; or wait for the TTL. Do not keep
+re-saving through the API expecting a different result.
+
 ## The agent cannot see the live site
 
 Confirmed 2026-10-23. `gohappybelly.com` sits behind Cloudflare, which returns
