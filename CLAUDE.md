@@ -319,8 +319,11 @@ Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
   loading the PLAIN url and report what that shows. A theme save does not clear
   the cache and neither does re-publishing the page; it expires on its own.
   Full detail and the measurements in `Website/DESIGN-SYSTEM.md`.
-  **Open as of 2026-10-29: the `/links` featured card is saved and correct but
-  serving stale on the plain URL.**
+  **Resolved: `/links` rolled over on its own within ~66 minutes**, so the TTL
+  is bounded under that. **Open as of 2026-10-29 05:03Z: the second batch of
+  `/gut-foundations` edits (relief CTA label, Alina's portrait restored to full
+  height, pattern images at 180px) is saved and correct but serving stale.
+  Until it rolls, the live page shows Alina's bio portrait squashed to 168px.**
 - The $27 purchase-flow upsell was created by Steve; whether it is attached as
   step 1 is unverified, since MCP is blind to Kajabi Purchase Flows
 - Published checkouts may carry a subscription/price misconfiguration. Two of

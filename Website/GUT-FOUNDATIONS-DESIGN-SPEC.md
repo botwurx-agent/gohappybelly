@@ -292,3 +292,98 @@ confirmed.
 The `.gh-modules` rules remain in `custom_css` and are now unused. They are
 harmless and were left alone deliberately, rather than risk a full-string
 rewrite to delete nine rules.
+
+---
+
+## Acting on the external review, 2026-10-29
+
+Steve supplied a third-party review of the page
+(`go-happy-belly-landing-page-recommendations.md`, dated 2026-10-28) and said
+to make the changes. Its claims were checked against the live page before
+anything was altered; some held, some did not.
+
+### Verified true, and acted on
+
+| Claim | Check |
+|---|---|
+| Lesson/question counts contradict | True. Page said eleven lessons and "twelve of them" questions |
+| CTA labels inconsistent | True. "Get it, $27" and "Find your gut pattern, $27" both live |
+| Page is long | True. 11,873px at 430px wide, about 13 screens |
+| Five-pattern section dominates | True. 3,576px, 30% of the page, 3.8 screens, five images |
+| Quiz and course both promise pattern identification | True, and unanswered anywhere on the page |
+
+**The question count is eleven, established not guessed.** A search of the
+course for "Before you move on" returns exactly 11 lessons, one question each:
+the 8 foundations and the 3 bonus modules. The three Start Here lessons carry
+none. The page's "twelve" was simply wrong and now reads "Eleven of them, one
+for each lesson".
+
+**The quiz-versus-course gap is the review's best point.** A visitor who has
+just taken the free quiz already has her pattern, so the page never said what
+the $27 adds. Answered in the five-pattern closing note rather than in the FAQ,
+because that section is where the objection actually occurs to the reader:
+
+> Four of these are not you. The quiz tells you which one is. What twelve
+> questions cannot tell you is **why** yours behaves the way it does, what makes
+> one week worse than the last, or what to watch for next. That is what the
+> eleven lessons are for.
+
+**CTA label unified to "Get Gut Foundations, $27"** across the hero, the relief
+section, the final CTA and the sticky bar. Note that the old label, "Find your
+gut pattern, $27", was itself part of the confusion: it promised exactly what
+the free quiz delivers.
+
+**The two remaining "Get it, $27" buttons are the site header nav**
+(`#btn-header-cta`, `#btn-header-cta-mobile`), not page CTAs. Left alone
+deliberately: a nav button is different furniture from a page CTA, and the long
+label would crowd the bar.
+
+### Rejected, with reasons
+
+**The health-claim rewrite. Refused.** It asks to remove "cravings as proof of
+another organism", symptom-to-cause statements about bacterial location, and
+barrier claims. Those are the **locked aha lines for four of the five
+archetypes** in CLAUDE.md, used across the quiz, the emails and Alina's videos.
+
+Its underlying instinct is right and is already our rule: do not assert
+symptom-to-cause *about the reader*. But the proposed fix is the exact
+over-correction CLAUDE.md records from 2026-10-22, when the agent read the
+compliance rule as a vocabulary ban, wrote around it, and cropped words off a
+diagram, putting the course out of step with Alina's own recordings. Doing it
+again at page scale would be a larger version of a mistake already made once.
+
+**The replacement copy. Rejected wholesale.** It hedges where the current page
+commits. "Helps you understand... explore... notice what may be influencing your
+own experience" is three hedges in one sentence, against the current "You will
+finish it able to look at a bad afternoon and say what probably caused it." For
+a reader already dismissed by doctors, hedged copy reads as one more person who
+will not commit.
+
+Two tells that it was not written against CLAUDE.md: it contains three em
+dashes, two inside customer-facing copy, and it promises "lifetime access" at
+checkout while its own rules forbid publishing unconfirmed access terms. The
+$27 access duration is still unknown.
+
+**Two factual errors in the review.** "Use a real photo" of Alina is already
+done, the bio portrait is on the page. "Reduce competing links" overstates it:
+there are two, one quiz and one call.
+
+### Compaction: done, and its limit
+
+Pattern images capped to 180px on mobile only. That is the whole available win:
+it saves about 200px, because the section's height is mostly copy, and that copy
+is the locked analogies and aha lines. **Compacting further would mean cutting
+locked brand content, which is Steve's call, not the agent's.** The review's
+"one recognition statement and one explanatory sentence" is not available
+without deleting locked material.
+
+### A regression caused and caught
+
+The first version scoped the image cap as `.gh-zig img`. The bio section
+(`1792070000008`) uses `gh-zig` too, so **Alina's portrait was squashed from
+347px to 168px.** Caught by counting matched images: six matched where the five
+patterns have five. Rescoped to `#section-1792070000007 .gh-zig img` and the
+portrait measured back at 347px.
+
+The lesson is the one already in this file: a selector written from a class name
+seen in one place will find it in others. Count the matches.
