@@ -125,6 +125,14 @@ What this changed:
 
 - **Link in Bio**: Gut Foundations moved from card 2 to **card 1**, with a
   "Start here" marker. Done and live 2026-10-28.
+- **The homepage: Gut Foundations stays OFF it. Steve's decision, 2026-10-29.**
+  The $27 is the tool that brings traffic in from other platforms, so it lives
+  on social, the Link in Bio and the quiz results pages, not on the site's front
+  page. The homepage serves people who arrive at the brand already.
+  Do not add it to the homepage or its navigation without Steve saying so.
+  One consequence on the record: this leaves **$147 straight to checkout as the
+  cheapest thing a homepage visitor can buy**, with nothing between free and
+  $147. Steve knows; it is noted so it is not rediscovered as a bug.
 - **Quiz results pages**: the $27 becomes the primary CTA and the call moves
   below it. The heading "Not ready to talk yet?" is deleted outright, since it
   framed the $27 as the option for people who will not commit. Copy written and
@@ -483,6 +491,43 @@ The agent had read this section as a blanket ban on the phrase and wrote around
 it entirely, including cropping the words off a diagram. That put the written
 course out of step with Alina's own recorded videos, which use the term
 throughout. Explain the mechanism, never diagnose the reader.
+
+---
+
+## Where these rules came from (traced 2026-10-29)
+
+Steve asked who decided the banned words. Traced through git rather than
+answered from memory, because the three groups have different origins and
+different authority:
+
+| Words | Origin | Authority |
+|---|---|---|
+| "Cure", "treat" | Commit `f116a7d`, 2026-08-04, `botwurx-agent <botwurx@gmail.com>` | **Steve's own**, in the original CLAUDE.md |
+| transform, journey, empower, authentic, passionate, innovative, creative, unique, elevate, synergy | Same commit, Hard Style Rules | **Steve's own.** Note these are banned for *voice*, as marketing cliches, not for compliance |
+| "heal", "seal" | Commit `2cc83df`, 2026-10-22, authored by **Claude** | **Agent-written**, while writing up the clarification attributed to Steve |
+
+**"Heal" and "seal" were never on a list Steve wrote.** In his original file the
+word "heal" appears once, in Avatar 3's description, as something the customer
+*wants*. The phrasing entered as an agent's formulation of Steve's 2026-10-22
+clarification, in the context of FDN source material that carried "11 Signs You
+Have Leaky Gut" with rheumatoid arthritis, lupus and Hashimoto's attributed to
+it. "Heal and seal" is a stock phrase in the leaky-gut world and was almost
+certainly the target, rather than the general word "heal".
+
+**Scope, read precisely.** The clarification bans "any claim to heal, seal, cure
+or treat **it**", where "it" is leaky gut in that bullet's context. It is
+narrower than a blanket ban on the word.
+
+**The agent overstated this on 2026-10-29** by calling the homepage title "Heal
+Your Gut" a direct breach of a locked rule. It is caught by an agent-written
+clarification of narrower scope, and sits adjacent to Steve's own cure/treat
+ban. Corrected here so the next session does not inherit the overstatement.
+What is unambiguous on that page: "Transform your health" in the meta
+description breaks Steve's own banned-word list, and "Proven Courses" is a
+results claim.
+
+**Open for Steve:** whether "heal" stays, narrows to the leaky-gut context it
+was written for, or goes.
 
 ---
 
