@@ -327,8 +327,11 @@ Rebuilt on `Website/DESIGN-SYSTEM.md`. Each page has its own notes file under
   digital download, verified clean at $10 one-time). It fits on the merits:
   Gut Foundations is knowledge, The Gut Fix is a 30-day plan with a log and
   swaps, so it complements rather than supersedes, which is the test the $147
-  fails. It also **stops The Gut Fix competing** with the front door, where it
-  currently sits as a cheaper alternative on Link in Bio card 3.
+  fails. It also **stops The Gut Fix competing** with the front door. Its Link in Bio
+  card was removed 2026-10-28 for exactly that reason, so the $10 is now only
+  reachable as a bump on the $27 or via its own page, not as a cheaper
+  alternative sitting beneath the front door. The standalone offer and
+  `/the-gut-fix` stay published and simply go unpromoted.
   Realistic effect: roughly $29 to $31 AOV at 20 to 40 percent attach. Worth
   doing because it is free to implement, but it does not change the economics;
   the $147 and $1,497 conversions do.

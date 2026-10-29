@@ -22,7 +22,7 @@ design system in `Website/DESIGN-SYSTEM.md`; nothing new was invented for it.
 | `1791980000002` Links | `#EFF7F1` | Five `feature` blocks, stacked, capped at 640px |
 | `1791980000003` Contact | `#F8FAF8` | Heading, Kajabi form, a line offering the free call instead |
 
-### The six links
+### The five links
 
 **Updated 2026-10-28.** This file previously listed five cards and omitted Gut
 Foundations, which had been live since 2026-10-23. It also still showed two `#`
@@ -32,14 +32,34 @@ placeholders that have since been filled. Both corrected against the live page.
 |---|---|---|---|
 | 1 | **Gut Foundations** ("Start here", $27) | `/gut-foundations` | no (internal) |
 | 2 | What's Your Gut Pattern? | `https://gut-pattern-quiz.scoreapp.com` | yes |
-| 3 | The Gut Fix Ebook | `/the-gut-fix` | no (internal) |
-| 4 | My Favourite Products | `/shop` | no (internal) |
-| 5 | Free 7-Day Lifestyle Workbook | `/7-day-lifestyle-workbook` | no (internal) |
-| 6 | Watch Me on The Block, Season 17 | Facebook video | yes |
+| 3 | My Favourite Products | `/shop` | no (internal) |
+| 4 | Free 7-Day Lifestyle Workbook | `/7-day-lifestyle-workbook` | no (internal) |
+| 5 | Watch Me on The Block, Season 17 | Facebook video | yes |
 
 Block ids in theme `2167908665`, section `1791980000002`, in render order:
-`_l6`, `_l1`, `_l2`, `_l3`, `_l4`, `_l5`. Note `_l6` is the Gut Foundations card
+`_l6`, `_l1`, `_l3`, `_l4`, `_l5`. Note `_l6` is the Gut Foundations card
 and leads the stack despite its id, so trust `block_order`, not the numbering.
+
+### The Gut Fix card was removed, 2026-10-28
+
+Steve's call, once The Gut Fix became the $10 order bump on the $27 checkout.
+A $10 alternative sitting two cards below the $27 front door competes with it;
+as a bump it adds to the same order instead. This also resolves the pricing
+tension flagged on this page earlier, a cheaper offer sitting under the front
+door.
+
+**How it was removed, and how to put it back.** Block `_l2` was taken out of
+`block_order` and set `hidden: "true"`. The block itself was NOT deleted, so
+restoring it is two changes: set `hidden` back to `"false"` and re-insert
+`1791980000002_l2` into `block_order` at the position you want.
+
+**The standalone offer is untouched.** `/the-gut-fix` is still published and
+its checkout (`JnHcWPaw`, $10) still works. It is simply no longer promoted
+here. Leave that page live: the bump needs a reference page, and any existing
+links to it would otherwise break.
+
+Verified on the live page after the change: five cards, and the string "Gut
+Fix" appears nowhere in the body text, with zero links to `/the-gut-fix`.
 
 **Gut Foundations leads, per the front-door decision of 2026-10-28** (see
 CLAUDE.md). It carries a terracotta "START HERE" eyebrow above the heading. The
@@ -51,9 +71,8 @@ an identical terracotta button and identical card chrome, so the front door does
 not stand out when the page is scanned. Worth a distinct treatment for card 1,
 not yet done, and not done unprompted because it changes the look of a live page.
 
-**Note the $10 Gut Fix Ebook sits below a $27 front door.** A cheaper offer
-further down the stack is a tension worth a decision at some point. It is on
-SamCart and was left alone.
+**Resolved 2026-10-28:** the $10 Gut Fix card was the cheaper-offer tension
+noted here. It is now the order bump on the $27 and no longer a card.
 
 **Corrected 2026-10-28:** `/the-gut-fix` now checks out through Kajabi
 (`/offers/JnHcWPaw/checkout`), verified on the live page. The SamCart note below
