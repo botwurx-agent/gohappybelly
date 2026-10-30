@@ -1,6 +1,30 @@
 # Gut Foundations: before and after
 
-Drafted 2026-10-30 for Steve to react to. **Nothing here is applied.**
+Drafted 2026-10-30 for Steve to react to.
+
+**APPLIED IN FULL 2026-10-30**, with the 30 day guarantee, on Steve's go-ahead.
+Verified on the live page at 430px and 1100px. Page height went from 11,487px
+to 13,871px, which is the intended direction: the $27 page was previously
+almost the same length as the $1,497 page.
+
+| Change | State |
+|---|---|
+| Hero second paragraph, the patterns want opposite things | live |
+| Hero guarantee line | live |
+| Drawer heading now argues | live |
+| Stakes section (new, `1792070000018`) | live |
+| Relief prose to six outcome cards | live, 6 cards confirmed |
+| Lesson excerpt section (new, `1792070000019`) | live |
+| "Twelve in all" corrected to eleven | live |
+
+**Still open, deliberately:** no FAQ entry for the guarantee yet, and the $147
+page already carried its own 30 day promise so it needed no change.
+
+**One thing Steve has to action outside the website.** The guarantee is now a
+public promise on the page. Kajabi holds no refund-policy setting for it, so
+honouring it is manual: a buyer emails `support@gohappybelly.com`, Steve
+refunds in Kajabi and revokes access. Whoever answers that inbox needs to know
+the policy exists and that the answer is yes.
 
 ## What this is fixing
 
