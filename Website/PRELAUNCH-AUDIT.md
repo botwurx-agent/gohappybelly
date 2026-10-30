@@ -140,6 +140,45 @@ placeholders entirely, cannot be determined from the theme data. **Steve has
 to open the dashboard and look.** If they are placeholders they have been
 visible to paying members.
 
+### B5. The login page was off-brand, and its button was unreadable
+
+Found 2026-10-30 from Steve's screenshot, not by the audit, which had checked
+only that `/login` *worked*. It did. It also looked like a different company.
+
+Two values in the site theme's `login` section were template leftovers:
+
+| Setting | Was | Now |
+|---|---|---|
+| `background_color` | `#9acdaa` mint, not in the palette | `#F8FAF8`, the page background |
+| `btn_background_color` | `#c7e154` lime | `#A85F3E` terracotta |
+| `btn_text` | "Submit" | "Log In" |
+| `btn_border_radius` | unset | `2`, the house button radius |
+
+**The lime button was not just off-brand, it was unreadable.** White text on
+`#c7e154` measures **1.47**. AA wants 4.5. The replacement measures **4.80**.
+
+Verified on the live page at desktop and phone: button renders
+`rgb(168,95,62)` with white text and a 2px radius, the section background is
+the page colour, the header logo and nav are present, and the footer is the
+on-brand forest panel.
+
+**A decision this surfaces for Steve.** There are now two terracottas in use:
+
+- `#C07A5A`, what `DESIGN-SYSTEM.md` locks as "every primary button, nothing
+  else". White on it measures **3.40**, which fails AA.
+- `#A85F3E`, the accessible variant, used on the Gut Foundations CTAs and now
+  on the login button. **4.80**, which passes.
+
+The site header button is still `#C07A5A`. So the site is internally
+inconsistent, and the design system's locked value is the one that fails.
+Worth resolving deliberately: either update the locked value to `#A85F3E`, or
+decide 3.40 is acceptable and revert the two pages that deviate. The agent has
+not chosen, because changing a locked design-system value is Steve's call.
+
+**The general lesson.** This audit asked "does it work" and got a yes.
+Nobody asked "what does it look like" until Steve opened it. Every page a
+customer can reach needs a look, not just a status code.
+
 ---
 
 ## High priority, not strictly blocking
