@@ -273,3 +273,86 @@ No em dashes. None of the banned words. No diagnosis of the reader, no claim
 to heal, seal, cure or treat, no disease named, no prediction about anybody's
 body. Every outcome is phrased as something the reader will be able to do.
 Pattern language throughout.
+
+---
+
+# Ported to the other two pages, 2026-10-30
+
+## /private-coaching ($1,497), theme `2167882803`
+
+**The CTA leak, which was the worst thing on the site.** Two separate links
+sent the visitor to the free quiz on another domain, one inline in the hero and
+one as a full competing button mid-page. On the highest-value page.
+
+| Was | Now |
+|---|---|
+| Hero: "Not ready to talk? Find your gut pattern first" to scoreapp.com | "Not ready to talk? Start with Gut Foundations, $27" to `/gut-foundations` |
+| Five patterns: "Find Your Pattern, Free" button to scoreapp.com | hidden (`1791960000003_cta`, `hidden: true`, reversible) |
+
+Verified live: **zero off-site quiz links left in the body.** CTA labels are now
+"Book a Free Gut Breakthrough Call" three times plus one "Start the 3-Month Gut
+Reset", which is the right shape at this price: one primary action, one
+direct-buy for the ready.
+
+Repointing the fallback at the $27 rather than deleting it follows Steve's
+front-door decision. Someone not ready for $1,497 is exactly who Gut Foundations
+exists for, and sending her to a free quiz on another domain monetised nothing.
+
+**Stakes section added** as `1791960000014`, between "Why Normal Labs Miss It"
+and "The Five Patterns":
+
+> BEFORE YOU DECIDE
+> ## Doing nothing has a price too. It is just paid in pieces.
+> A bottle here. An appointment that ends in "your labs are normal". Another elimination that takes a food off the list and gives nothing back. None of it feels like a decision, so none of it ever gets added up.
+> Three months of this is the opposite of that. One pattern, found with testing rather than guesswork, and a plan built around the pattern you actually have instead of around what worked for somebody else.
+> *You have already paid for the guessing. This is what it costs to stop.*
+
+**No guarantee added here, deliberately.** A 30 day money-back on a $1,497
+programme where Alina spends real hours and a GI-MAP is ordered and paid for is
+a different exposure from a $27 download. The free call already does the
+risk-reversal job. Steve's call if he wants one.
+
+## /gut-reset-course ($147), theme `2167971291`
+
+Already in better shape: five CTAs all to the same checkout, no off-site leaks,
+a path section, a proof section and the 30 day guarantee.
+
+- **Stakes section added** as `1792100000013`, after the lentil soup section:
+  "The next four weeks will pass either way", closing on *"The time gets spent
+  either way. The only question is whether you learn anything from it."*
+- **CTA label unified.** One button said "Get the Course" where the other four
+  said "Get the Course, $147". All five now match.
+
+## A real problem found while doing this
+
+**The homepage metadata never landed. It went onto the Gut Reset Course page
+instead.**
+
+| Page | Title as of 2026-10-30 |
+|---|---|
+| `/` | still "Expert Gut Nutritionist \| Heal Your Gut with **Proven** Courses" and "**Transform** your health" |
+| `/gut-reset-course` | had the homepage title and description |
+
+The $147 page was describing the whole business rather than the course. Given
+its own metadata instead, which the agent **can** do because it is a landing
+page and `update_landing_page` exists:
+
+> Gut Reset Course: Four Weeks for Your Gut Pattern
+> Find which of the five gut patterns is yours, then four weeks built around that one instead of a general gut diet. Self-paced, $147, full refund inside 30 days.
+
+**The homepage still needs its paste**, and it is a different kind of record: a
+*website page*, id `2154501976`, at
+https://app.kajabi.com/admin/website_pages/2154501976/edit, not the landing
+pages list. Copy is unchanged in `Website/HOMEPAGE-METADATA.md`.
+
+## A mistake worth recording
+
+The first version of the `/private-coaching` stakes section used
+`class="gh-aha"` for its closing line. **That class is defined in the Gut
+Foundations theme's `custom_css`, not in this one**, so the line rendered as
+plain body text. Caught by looking at the screenshot.
+
+Every landing page here has its **own theme and its own `custom_css`**. A class
+that works on one page does not exist on another. Both ported stakes sections
+now style the aha line inline, and both were verified on the live DOM as
+Playfair Display italic with the sage left border.
