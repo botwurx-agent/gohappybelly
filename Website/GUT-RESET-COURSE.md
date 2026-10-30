@@ -580,3 +580,59 @@ Image: the posy in a jam jar. Unchanged.
 
 `veggies` and `fortnight` both return zero across the site. All 62 published
 lessons still carry an image.
+
+---
+
+## Sales page: "Who made this" section, 2026-10-30
+
+Steve: "i just realized the Alina is no where to be found on the Gut Reset
+Course page."
+
+He was right. Checked live across all three sales pages:
+
+| Page | "Alina" in copy | Her photo |
+|---|---|---|
+| `/gut-reset-course` | 7 times | **none**, of 5 images on the page |
+| `/gut-foundations` | 6 times | 1, at 8,963px down |
+| `/private-coaching` | 13 times | 2, one in the hero |
+
+The $147 page named her throughout and never showed her. Added section
+`1792100000015`, "Who made this", on `#F8FAF8`, placed between the outcome
+cards (forest) and the price panel (`#EFF7F1`), so the alternation holds and
+the order reads: what you get, who it is from, what it costs.
+
+Copy is course-specific rather than ported from the $27 page. It closes on the
+honest limit, which hands off directly into the section that follows it
+("Why this is not my private program, written down"):
+
+> The four weeks here are the sequence she runs with private clients, written
+> five ways so the version you follow is the one built for your pattern. What
+> it does not include is her in the room with you, which is the honest
+> difference and the reason the private program still exists.
+
+### The portrait is reused, not re-uploaded
+
+Same CDN file as the Gut Foundations bio portrait. The URL is absolute and
+carries another theme's id in its path (`themes/2167908665`), which is fine:
+it is a storefront CDN URL, not a theme-relative one, so it loads anywhere on
+the site.
+
+### Styled inline, not with the shared classes
+
+`gh-zig`, `gh-bio-portrait` and `gh-bio-copy` are defined in the **Gut
+Foundations theme's** `custom_css` (`2168000232`). They do not exist in this
+page's theme (`2167971291`). This is the same trap that made the
+`/private-coaching` stakes aha line render as plain text earlier in the week.
+
+So the section carries its own scoped `<style>` inside the text block, on
+classes `ghbiorow` / `ghbio` / `ghbiocopy`. Portrait 340x453 desktop,
+260x347 mobile, `object-position: center 12%`, column stack under 767px.
+
+### Verified
+
+Cache-busted URL, 200: section present at 6,077px, portrait 340x453, row
+`flex-direction: row`, `align-items: center`, page 12,082px (was 11,449px).
+Mobile 390px: 260x347, stacked, no horizontal overflow.
+
+Plain URL at time of writing still serves the pre-change page, which is the
+known Kajabi cache behaviour. It rolls on its own, bounded under ~66 minutes.
