@@ -49,6 +49,41 @@ A navbar change does not bust the page cache, which is new: the Nova landing
 pages picked it up at once because their caches were cold, while the Encore
 homepage kept serving its cached copy.
 
+### The header wrapped, and the real cause was already there
+
+Steve sent a screenshot: adding a fifth item made the nav wrap. "Log In"
+broke across two lines as "Log / In", and so did "Gut Reset Course" and
+"Private Coaching".
+
+**Two fixes, because there were two problems.**
+
+1. Renamed the link to **"Login"**, one word, so it cannot break.
+2. The real cause: the header menu block `1555988491313` had
+   **`stretch: true`**, which gives every item an equal share of the menu
+   width instead of sizing each to its own text. Long labels then wrap no
+   matter how much room the header has. Set to **`false`**.
+
+The `stretch` setting was pre-existing, not something this session introduced.
+It had been wrapping "Gut Reset Course" and "Private Coaching" already; a
+fifth item only made it obvious. So the screenshot exposed a bug that had been
+live for a while.
+
+**Verified after the fix**, cache-busted at four widths:
+
+| Width | Result |
+|---|---|
+| 1440 | all six items single-line |
+| 1280 | all six items single-line |
+| 1024 | all six items single-line |
+| 430 | collapses to the hamburger, links single-line in the drawer |
+
+**The lesson, which is the same one as the `.gh-zig` selector.** A measurement
+heuristic can lie: the first check used element height to detect wrapping and
+reported every item as wrapped, including ones that were fine. Counting
+`Range.getClientRects()` per link gives the true line count. And the
+simulation that "removed" the Login link actually removed the whole menu
+container, so that test proved nothing. **Look at the picture.**
+
 ### B2. No automation or email sequence fires on a purchase
 
 The whole site has **three** automations and **two** sequences:
