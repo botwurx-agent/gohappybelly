@@ -3,10 +3,17 @@
 Drafted 2026-10-30. Closes blocker **B2** in `PRELAUNCH-AUDIT.md` for the $27
 offer.
 
-**Status: NOT YET CREATED IN KAJABI.** The `create_automation` call was
-refused by the session's permission layer (category: account and standing-rule
-changes). The tag below *was* created. Everything else here is ready to apply
-the moment the call is approved, or to build by hand in the admin.
+**Status: CREATED AS A DRAFT, 2026-10-30.** Automation `1388764`,
+https://app.kajabi.com/admin/workflows/1388764/edit
+
+Read back from Kajabi and confirmed: six nodes, five edges, chain intact
+(trigger, tag, email 1, wait 2 days, email 2, end). Both email bodies and
+subjects landed verbatim. `errors: []`, `is_publishable: true`,
+`total_enrolled: 0`.
+
+**It is a draft and will not fire until Steve publishes it.** Kajabi's
+`create_automation` cannot publish, by design, so no email can reach anyone
+until someone clicks Publish in the admin. Nothing has been sent.
 
 ---
 
@@ -164,3 +171,36 @@ follow-up.
 offer. This automation says nothing about The Gut Fix. If a Gut Fix welcome is
 added later, a bump buyer receives two emails in the same minute. Whether the
 bump delivers at all is still U1, untested.
+
+---
+
+## Before publishing
+
+1. **Read it in the visual builder** at the admin URL above. The two emails
+   are the thing to read, not the wiring.
+2. **Settle U2 first if you can.** This automation's email tells the buyer to
+   use Forgot Password if they have no password yet. If Kajabi's built-in
+   purchase email already hands them one, that instruction is harmless but
+   redundant, and the two emails arriving together may read oddly. Worth one
+   look at Settings before arming.
+3. **Publish.** Then make one real purchase with a 100% coupon, which also
+   clears U1, U3 and U4 in the same run.
+
+## Operational note: the wait step's schema
+
+Four attempts to get the wait node accepted. Recording the shape so the next
+session does not repeat it.
+
+A step is wrapped, and a wait's own keys go under `options`, exactly as an
+action's do. The error message's own example (`{ "amount": "1", "unit":
+"days" }`) shows the inner keys **without** that wrapper, which is what sent
+three of the four attempts down the wrong path:
+
+```json
+{"action": {"type": "contact_tag_add", "resource_type": "ContactTag", "resource_id": "..."}}
+{"action": {"type": "email_send", "options": {"subject": "...", "body": "...", "recipient_option": "contact"}}}
+{"wait":   {"options": {"wait_type": "set_amount_of_time", "unit": "days", "amount": "2"}}}
+```
+
+Neither `amount` as a bare integer nor the keys at the top level of `wait`
+are accepted. Both must be strings under `options`.
