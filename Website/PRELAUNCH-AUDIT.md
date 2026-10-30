@@ -21,7 +21,33 @@ The problem is that **no page links to it.** Searched the homepage and
 matches in nav, body or footer. A buyer who closes the tab has no route back
 into what she paid for except guessing a URL or digging out a receipt.
 
-Fix: a "Log In" link in the site header and footer. Site theme `2156348838`.
+**FIXED 2026-10-29.**
+
+The fix was not a theme edit. The Encore header's menu block and the footer's
+link list both reference Kajabi **navigation menus** by handle (`main-menu`
+and `footer`), not inline links, so the link belongs in the menus:
+
+| Menu | Navbar id | New link |
+|---|---|---|
+| Main Menu | `2148458013` | "Log In", PathLink to `/login`, link id `2151222857` |
+| Footer | `2148458014` | "Log In", PathLink to `/login`, link id `2151222858` |
+
+Both set `authenticated_only: false`, which is the point: the link has to be
+visible to someone who is logged **out**. Note Kajabi offers no
+"unauthenticated only" toggle, so a logged-in member sees it too; clicking it
+while signed in is harmless.
+
+Appended rather than positioned, which puts "Log In" after Shop and **before**
+the terracotta quiz button, so the primary CTA keeps the rightmost slot.
+
+**Verified** on the live site: `/gut-foundations` shows three (desktop header,
+mobile menu, footer). The homepage showed zero on the plain URL and two on a
+cache-busted one, which is the known Kajabi page cache, not a failure. It
+rolls on its own, measured under ~66 minutes yesterday.
+
+A navbar change does not bust the page cache, which is new: the Nova landing
+pages picked it up at once because their caches were cold, while the Encore
+homepage kept serving its cached copy.
 
 ### B2. No automation or email sequence fires on a purchase
 
@@ -141,8 +167,7 @@ unaudited.
 ## Suggested order
 
 1. ~~B3, the invisible heading.~~ **Done 2026-10-29.**
-2. B1, the login link. Small, and it is the thing that makes a purchase
-   feel finished.
+2. ~~B1, the login link.~~ **Done 2026-10-29.**
 3. U2, read the purchase email. It gates whether B2 is a gap or a crisis.
 4. B4, look at the two video blocks.
 5. B2, build the onboarding sequences.
