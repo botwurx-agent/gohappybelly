@@ -356,3 +356,58 @@ Every landing page here has its **own theme and its own `custom_css`**. A class
 that works on one page does not exist on another. Both ported stakes sections
 now style the aha line inline, and both were verified on the live DOM as
 Playfair Display italic with the sage left border.
+
+## Outcome cards ported to both, 2026-10-30
+
+Same component as the $27 page, content written per offer and checked against
+what each one actually includes in the CLAUDE.md offer suite.
+
+**`/private-coaching`, section `1791960000015`**, forest, placed between the
+testimonials and the Investment section so the sequence runs proof, then what
+you get, then price.
+
+> AFTER THREE MONTHS
+> ## What three months leaves you with
+> Not a feeling. Six things you will have that you do not have today.
+>
+> 01 Data underneath the pattern · A GI-MAP read through with Alina
+> 02 A plan built from your result · meal and supplement plans from your test
+> 03 Your whole history heard once · the sixty minute start
+> 04 Adjusted as you go · a call every month
+> 05 Somewhere to ask between calls · the private community
+> 06 The reasoning alongside it · the Gut Reset Course included
+
+Each maps to a real inclusion: GI-MAP with reading, gut-type meal and
+supplement plans, the 60 minute consult, the 30 minute monthly follow-up,
+community access, and 3 month course access.
+
+**`/gut-reset-course`, section `1792100000014`**, forest, placed after "The
+four weeks, in order" and before the section carrying the price panel.
+
+> BY THE END OF THE REINTRODUCTION
+> ## What you can do then that you cannot do now
+> Six of them, and none of them are a feeling.
+>
+> 01 Work the plan written for your pattern
+> 02 Shop from a list, not a guess
+> 03 Put foods back properly
+> 04 Change one thing at a time
+> 05 Buy supplements on reasoning
+> 06 Have something to go back to
+
+Each maps to real course content: the five-way weekly pages, the reference
+shelf's shopping list and meal plans and recipes, the Two-Week Reintroduction,
+the week ordering, and the supplement reference.
+
+**Backgrounds chosen from measured pixels, not guesses.** Both pages alternate
+`#F8FAF8` and `#EFF7F1` with forest accents, so a forest cards section lands
+with no two darks adjacent. Sampled by screenshotting full page and reading
+pixel colours down the left edge, because the section elements compute as
+transparent: the colour is painted on an inner element, the same trap as the
+Link in Bio cards.
+
+**Scoped per page.** `.ghoc2` on private coaching, `.ghoc3` on the course,
+each with its own `<style>` inside the block, because every landing page has
+its own theme and its own `custom_css`. Verified on both live pages: six cards,
+grid active, `<s>` strikethrough suppressed, `<i>` italics suppressed, no style
+text leaking into the page.
