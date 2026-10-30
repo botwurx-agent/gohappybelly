@@ -130,10 +130,10 @@ statement about process and is simply true.
 
 ## 4. What changes  (prose becomes cards)
 
-**BEFORE** — three paragraphs plus a four-item list. The content is right and
+**BEFORE.** Three paragraphs plus a four-item list. The content is right and
 specific. It is buried in prose at roughly 10% of the page.
 
-**AFTER** — keep the opening paragraph, then six cards:
+**AFTER.** Keep the opening paragraph, then six cards:
 
 > AFTER THE ELEVEN LESSONS
 > ## What changes is that you stop guessing
