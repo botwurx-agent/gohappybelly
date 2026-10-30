@@ -155,23 +155,45 @@ there is no outcome claim anywhere in it.
 
 ---
 
-## 5. Proof  (NEW SECTION, blocked on Steve)
+## 5. Proof: a real lesson, not a testimonial  (NEW SECTION)
 
-The $27 page currently has **no testimonials, no client voices, nothing**.
-`/private-coaching` has three. This is the offer we want to sell at scale and
-it carries no proof at all.
+**Steve confirmed 2026-10-30 there are no Gut Foundations testimonials. It is a
+new offer.** Waiting for them would hold the page back for months, and the
+agent will not write a fake one.
 
-Structure proposed, three short quotes with first name and context, in the
-style already used on `/private-coaching`:
+**The better answer was already in the product.** At $27 the objection is not
+"do other people rate this", it is "will this be another thing I buy and never
+finish". A testimonial answers the first. **A real excerpt answers the second**,
+which is the question she is actually asking. It is also proof that cannot be
+faked, because it simply is the product.
 
-> CLIENT EXPERIENCES
-> ## What it sounds like when it lands
-> *[three real quotes, attributed]*
+Proposed section, using genuine copy from lesson 06, The Gut-Brain Connection,
+live in the course now:
 
-**The agent will not write these.** Fabricating a testimonial is the one thing
-on this page that would genuinely damage the practice. See open questions.
+> A LESSON, UNEDITED
+> ## This is what one of the eleven actually reads like
+> Lesson six, on why the same meal lands differently depending on the day.
+>
+> > **Alina's take.** This is the pattern I see most in women who are doing everything right. Clean food, good sleep on paper, exercise, supplements. And still reacting to foods that should be fine.
+> >
+> > It is a car with the engine timing off. Every part works. They are firing in the wrong sequence, and you cannot fix timing by putting in better fuel.
+> >
+> > **The food is fine. The system processing it isn't.**
+>
+> And the question that closes it:
+>
+> > When did you last eat a meal sitting down, with nothing else happening, that took longer than fifteen minutes? If you cannot remember, that is your answer and it is a more useful one than any supplement.
+>
+> Eleven of those. About ten minutes each.
+> **[ Get Gut Foundations, $27 ]**
 
----
+**Why this excerpt.** It carries a locked archetype analogy and its locked aha
+line, so it is on brand by construction. It shows the register, the plain
+language and the fact that lessons end in a question rather than a instruction.
+It demonstrates the product instead of describing it.
+
+**Swap in a testimonial section later**, once real buyers have said something
+worth quoting. The two can coexist; this one does not expire.
 
 ## 6. Corrections to existing copy
 
@@ -188,16 +210,36 @@ this one was missed.
 
 ## Open questions only Steve can answer
 
-1. **What is the refund policy on Gut Foundations?** The $147 says "Full refund
-   inside 30 days." The $27 says nothing. The competitor puts a 14-day
-   guarantee in the hero. Whatever the real policy is, saying it will lift
-   conversion more than any sentence in this document. If there is no policy,
-   that is a decision to make rather than a gap to write around.
-2. **Are there any real Gut Foundations testimonials?** Buyers, beta readers,
-   or anyone who has read the lessons. If none exist yet, an honest alternative
-   is a short quote from Alina about why she wrote it, clearly labelled as
-   hers, rather than a fake client.
-3. **Does the stakes section sit right with Alina?** It is the most direct copy
+1. **RESOLVED 2026-10-30: testimonials.** None exist, the offer is new.
+   Replaced with the real lesson excerpt above, which is better suited to the
+   objection at this price anyway.
+
+2. **OPEN: the refund policy on the $27.** Steve confirmed there is none.
+
+   **Recommended: 30 days, matching what the business already does.** The Gut
+   Fix at $10 already says "Refunded in full inside 30 days if it does not
+   help." This is not a new exposure, it is consistency with a policy already
+   running on a cheaper digital product.
+
+   What it means in practice: a buyer emails inside the window, gets the money
+   back, and loses access. Two honest caveats. A stated guarantee has to be
+   honoured. And on a fully readable product someone can finish all eleven
+   lessons in an afternoon and still ask, which is the genuine risk; at $27 the
+   incentive to do that is small and the trust gained with an audience who have
+   been let down repeatedly is large.
+
+   Proposed line, for the hero note and the FAQ:
+
+   > Read it, and if it does not help, email inside 30 days and Alina will
+   > refund you.
+
+3. **CORRECTION for Steve: the $147 already has a guarantee, and it is 30 days,
+   not 14.** `/gut-reset-course` states "Full refund inside 30 days." Moving it
+   to 14 would shorten a live promise that existing buyers bought under.
+   Recommend leaving it at 30 and matching the $27 to it, so every offer in the
+   ladder says the same thing.
+
+4. **Does the stakes section sit right with Alina?** It is the most direct copy
    on the page. It makes no medical claim, but it is a change in register and
    she should recognise it as her voice.
 
