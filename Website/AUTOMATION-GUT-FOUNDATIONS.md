@@ -231,7 +231,7 @@ STEP 1   Add tag              →  foundations-started
 Read back and confirmed: three nodes, two edges, trigger resolved to the right
 lesson by name.
 
-### NOT done: the exit condition on 1388764
+### DONE 2026-10-31 00:17Z: the exit condition on 1388764
 
 This is the half that actually does the suppressing. The call
 
@@ -286,8 +286,47 @@ Current behaviour: `1388767` tags buyers who finish lesson 01, and nothing
 reads that tag. The nudge still reaches everyone. No harm, just no suppression
 yet.
 
-**Note on reading this back.** `get_automation` does not return an
-`exit_conditions` field at all, so the only evidence available from here is
-the `updated_at` timestamp. Once the condition is applied by hand, `updated_at`
-will move and that is the signal to look for. It will not be possible to read
-the condition's contents through MCP.
+**Note on reading this back, refined.** `get_automation` does not return an
+`exit_conditions` field, confirmed again after the write. But
+`update_automation` *does* echo the stored value in its response, so a write
+can be confirmed at the time it is made. For any later session, `updated_at`
+is still the only available signal that a condition exists at all; re-reading
+its contents means re-writing it.
+
+### Applied, and the schema that took four tries
+
+```
+update_automation(1388764, exit_conditions:
+  [{"filters": [{"key": "has_tag_id", "value": "2150427051"}]}])
+```
+
+Three levels of nesting, discovered one error at a time, because each
+rejection only named the next missing layer:
+
+| Sent | Error |
+|---|---|
+| `[{"has_tag_id": "..."}]` | missing required properties: filters |
+| `[{"filters": {"has_tag_id": "..."}}]` | filters is not an array |
+| `[{"filters": [{"has_tag_id": "..."}]}]` | missing required properties: key, value |
+| `[{"filters": [{"key": "has_tag_id", "value": "..."}]}]` | accepted |
+
+Note the filter is a generic `{key, value}` pair, not a named field. The same
+shape should carry any allowlisted filter (`has_offer_id`, `submitted_form_id`
+and so on).
+
+### Verified after the write
+
+`updated_at` moved from `2026-10-30T23:58:48Z` to `2026-10-31T00:17:32Z`.
+Still `published`, `errors: []`, `total_enrolled: 0`. All six nodes and five
+edges intact, both email bodies byte-identical. The edit changed only what it
+was meant to change.
+
+### The loop is now closed
+
+```
+Buy $27          → tag gut-foundations-customer, welcome email
+                 → wait 2 days
+Finish lesson 01 → tag foundations-started          [1388767]
+                 → contact exits 1388764 before the nudge
+Never start      → nudge sends on day 2
+```

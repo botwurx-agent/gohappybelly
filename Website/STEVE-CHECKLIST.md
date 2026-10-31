@@ -5,9 +5,10 @@ first. Times are honest estimates.
 
 ---
 
-## 1. Finish the exit condition (2 minutes)
+## 1. Finish the exit condition — DONE 2026-10-31 00:17Z
 
-The only loose end from tonight's build.
+Applied by the agent, not by hand. Nothing for Steve to do here.
+Left in place as a record; the steps below are still live.
 
 **Where:** https://app.kajabi.com/admin/workflows/1388764/edit
 
