@@ -480,3 +480,82 @@ welcome email duplicates it. The fix would be to drop its "Getting in"
 paragraph and lead with "Where to start" instead, since that is the part no
 system template covers. Not changed yet: it needs the actual template text
 first, and guessing is what put the inline logo at risk of doubling.
+
+### Template contents read, 2026-10-31
+
+Steve supplied screenshots of the Branding tab and three templates.
+
+#### URGENT: the global email button fails contrast at 1.78
+
+Sampled from the screenshots, the button is **`#9ACEAA`** with white text in
+all three template previews **and** in the Branding tab's Button Color
+swatch, confirming one global setting.
+
+| | Contrast vs white | AA |
+|---|---|---|
+| `#9ACEAA` button, white text | **1.78** | fails 4.5 and even 3.0 |
+
+Same class of defect as the login page button fixed 2026-10-29 (1.47 to
+4.80), in a worse place: it renders as **"Set up password"** on Member
+Welcome Email, the single most important button in the funnel. A buyer who
+cannot see it cannot get in, and will not report it.
+
+**Cheapest fix is the Font Color swatch, not Button Color**, keeping the
+existing green:
+
+| Font colour on `#9ACEAA` | Ratio |
+|---|---|
+| White (current) | 1.78 |
+| Forest `#162E28` | **8.10** |
+| Body `#2E4438` | 5.89 |
+
+Alternative, white text on a darker button: `#A85F3E` 4.80, `#162E28` 14.43.
+Brand terracotta `#C07A5A` only reaches 3.40 and brand sage `#7AAE86` 2.55,
+so neither passes. Note this is the same two-terracotta question already open
+in the design system.
+
+#### Offer Purchase Confirmation is wrong for first-time buyers
+
+> You can login with your **email and password** at the link below. [Login]
+
+A new buyer has no password. That is exactly what Member Welcome Email
+exists to supply (`{{invite_url}}`, "set up a password"). So the receipt
+sends them to a login they cannot pass, while the email that works arrives
+separately, and order of arrival is not controlled.
+
+#### The three templates, as they stand
+
+| Template | Subject | Sign-off |
+|---|---|---|
+| Member Welcome Email | `Your New {{site.title}} Account` | `-- {{site.title}}` |
+| Offer Purchase Confirmation | `Purchase confirmation for '{{offer.title}}'` | `-- {{site.title}}` |
+| Abandoned Checkout | `Looks  Like You Left Something In Your Cart!` | `Alina Nazari / {{site.title}} / support@` |
+
+None uses the locked sign-off. Abandoned Checkout's subject contains a
+**double space** between "Looks" and "Like", and it opens "Hey There!",
+which is not Alina's voice. It is live and sending now.
+
+**Constraint on any rewrite:** these templates allow `<a>` tags only, stated
+in the UI as "Only html &lt;a&gt; tags are allowed. Please no images, divs,
+etc." So no sage accent line, no inline styling. The Branding tab (logo,
+button colour, button font colour) is the only design lever.
+
+Liquid available per template, from the UI:
+- Member Welcome Email: `{{member}}`, `{{site}}`, `{{site_login_url}}`, `{{invite_url}}`
+- Offer Purchase Confirmation: `{{member}}`, `{{offer}}`, `{{site}}`, `{{site_login_url}}`
+- Abandoned Checkout: `{{email}}`, `{{offer}}`, `{{site}}`, `{{offer_checkout_url}}`
+
+#### Consequence for the automation's welcome email
+
+Confirmed: Member Welcome Email carries the invite link, so a buyer receives
+**three** different login instructions. The automation's welcome email should
+drop its "Getting in" paragraph and lead with "Where to start", the only part
+no system template covers. Not changed yet, to avoid rewriting it twice
+before the two issues above are settled.
+
+#### Logo, still unresolved
+
+The Branding logo is active and appears atop all three previews, and it is
+the same file used inline in the automation emails
+(`Go_happy_belly_4-ai_1_.png`). Whether Branding also wraps automation emails
+is still unknown; the test purchase settles it.
