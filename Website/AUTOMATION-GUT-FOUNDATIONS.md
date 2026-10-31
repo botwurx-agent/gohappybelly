@@ -330,3 +330,68 @@ Finish lesson 01 → tag foundations-started          [1388767]
                  → contact exits 1388764 before the nudge
 Never start      → nudge sends on day 2
 ```
+
+---
+
+## Logo added to both emails, 2026-10-31 01:51Z
+
+Steve, asked whether the emails were resolved including design: "at a minimum
+it should have the logo."
+
+```html
+<p style="text-align: center;"><img src="...Go_happy_belly_4-ai_1_.png" alt="Go Happy Belly" width="180"></p>
+```
+
+Prepended to both email bodies. Nothing else changed.
+
+**180px wide matches the locked Mailchimp email spec** ("Logo at top, 180px
+wide, centered"). Deliberate: the reader does not know there are two email
+platforms, and the 35 archetype emails they may already have received use that
+treatment.
+
+**The logo is the Kajabi-hosted site header asset**, not the Mailchimp CDN
+file recorded in CLAUDE.md under Key URLs. Same brand mark, but a Kajabi email
+depending on Mailchimp's CDN is a needless cross-platform dependency. Source
+is 1000x625 and renders at 180, so it stays crisp on retina. Verified
+reachable: HTTP 200, `image/png`, 31,116 bytes.
+
+**Stopped at the logo on purpose.** The locked Mailchimp treatment also has a
+sage accent line below the logo, a cream outer wrapper and a white inner card.
+Steve said "at a minimum the logo", and the agent had already made one
+unilateral design call on these emails, so it did not add the rest. The sage
+line is the obvious next element if he wants it.
+
+### Verified after the edit
+
+| Check | Result |
+|---|---|
+| `<img>` through the sanitizer | survived, both emails |
+| `style="text-align: center;"` | survived, so it is centred |
+| `width="180"` | survived |
+| Node ids | `6618395`-`6618400` unchanged, step identity preserved |
+| Wait | still 2 days |
+| Exit condition | preserved, echoed back on the write |
+| Status | published, `errors: []`, `total_enrolled: 0` |
+
+Edge ids changed (`52107xx` to `52138xx`), so edges are recreated on a steps
+replace while nodes are not. Graph shape identical.
+
+### Reusable finding: the sanitizer keeps style attributes
+
+The `email_send` body documents its allowed **tags** (`a p strong em u text img
+br h1 h2 h3 span li ul ol`) and says nothing about attributes. Confirmed by
+read-back that `style`, `width`, `alt` and `href` all survive. So inline
+styling is available in automation emails, which means the full locked email
+treatment could be built here without `using_theme: true` if that is ever
+wanted.
+
+### Still unresolved, and not ours
+
+The other emails a buyer receives in the same minute are still unread: the
+Kajabi purchase/receipt email (U2), any offer grant email, and whatever the
+$10 Gut Fix bump sends (U1). `get_offer` exposes no email settings at all, so
+none of this is visible from here. The test purchase is what answers it.
+
+Confirmed from `get_offer` while checking: post-purchase preference is
+`landing_page` pointing at `2152353598`, the correct thank-you page. Whether a
+Purchase Flow overrides that is still U3.
