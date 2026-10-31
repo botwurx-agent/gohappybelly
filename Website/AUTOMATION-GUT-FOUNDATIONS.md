@@ -433,3 +433,50 @@ site-level email presets exist, but those attach to *themed* emails
 whether any preset or template wraps them is genuinely unknown.
 
 The test purchase answers all three by showing what actually lands.
+
+### The template list, supplied by Steve 2026-10-31
+
+61 transactional templates. **Exactly one is "Customized"; every other is
+"Default".** Answers to the three questions above:
+
+**1. Three Default templates fire on a $27 purchase.**
+
+| Template | Kajabi's description | Status |
+|---|---|---|
+| Offer Purchase Confirmation | Sent to members after completing a purchase | Default |
+| Offer Grant Confirmation | Sent to members when they are granted a new product | Default |
+| Member Welcome Email | Sent when a member doesn't create an account after purchase, or when an offer is granted manually, through automations, or via webhooks | Default |
+
+**Member Welcome Email is almost certainly the login email**, on its
+description alone. That makes it the thing both thank-you pages' promise
+("your login details are on their way") actually rests on, and it has never
+been read.
+
+**The real problem is the pile-up, not any single email.** A buyer may receive
+three system emails plus the automation's welcome email within the same
+minute, and a fourth if the $10 bump grants The Gut Fix separately.
+
+**2. There is a Branding tab** alongside Templates. That is the global layer,
+so the double-logo risk recorded above is live, not hypothetical. Check it
+before deciding whether the inline `<img>` in `1388764` stays.
+
+**3. Automation emails are NOT in this list.** It is transactional templates
+only. The automation's two emails live in the workflow, which is why MCP can
+read and write them while this page cannot. Whether the Branding tab wraps
+them anyway is still unknown.
+
+### Unrelated find: an unreviewed abandoned-cart email is live
+
+**"Abandoned Checkout" is the only Customized template on the site.** Someone
+wrote it at some point and it is sending now, to everyone who starts a
+checkout and does not finish, the $27 included. It appears nowhere in this
+project's notes. Worth reading on its own merits, independently of the
+launch work.
+
+### Likely consequence for the welcome email, once the above is read
+
+If Member Welcome Email already carries login details, the automation's
+welcome email duplicates it. The fix would be to drop its "Getting in"
+paragraph and lead with "Where to start" instead, since that is the part no
+system template covers. Not changed yet: it needs the actual template text
+first, and guessing is what put the inline logo at risk of doubling.
