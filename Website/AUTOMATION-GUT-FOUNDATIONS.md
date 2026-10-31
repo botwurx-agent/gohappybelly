@@ -220,7 +220,7 @@ two pieces, and **only the first is done.**
 |---|---|
 | Tag | `foundations-started`, id `2150427051` |
 | Automation | `1388767`, "Gut Foundations: mark started at lesson 01" |
-| Status | **draft**, publishable, `errors: []` |
+| Status | **published 2026-10-31 00:08Z** |
 | Admin | https://app.kajabi.com/admin/workflows/1388767/edit |
 
 ```
@@ -264,3 +264,30 @@ first buyer reaches day two. The tag has to exist on contacts for the exit
 condition to have anything to match. Nothing breaks if the order slips; the
 suppression simply does not kick in for anyone who finished lesson 01 while
 `1388767` was still a draft.
+
+### State check, 2026-10-31 00:1xZ
+
+Steve published both automations. Verified against Kajabi:
+
+| Automation | Status | Published |
+|---|---|---|
+| `1388764` deliver and onboard | published | 2026-10-30 23:58:48Z |
+| `1388767` mark started at lesson 01 | published | 2026-10-31 00:08:13Z |
+
+**The exit condition is still not applied.** `1388764` reports `updated_at:
+2026-10-30T23:58:48Z`, identical to its `published_at`, so nothing has edited
+it since it went live.
+
+This is worth stating plainly because it is an easy thing to think is done:
+publishing `1388767` does not apply the exit condition. The condition is a
+field on `1388764`, and the two are separate actions.
+
+Current behaviour: `1388767` tags buyers who finish lesson 01, and nothing
+reads that tag. The nudge still reaches everyone. No harm, just no suppression
+yet.
+
+**Note on reading this back.** `get_automation` does not return an
+`exit_conditions` field at all, so the only evidence available from here is
+the `updated_at` timestamp. Once the condition is applied by hand, `updated_at`
+will move and that is the signal to look for. It will not be possible to read
+the condition's contents through MCP.
