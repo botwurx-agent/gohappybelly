@@ -30,7 +30,12 @@ return exit conditions at all.
 
 ---
 
-## 2. Read Kajabi's built-in purchase email (10 minutes)
+## 2. Read Kajabi's built-in purchase email — DONE 2026-10-31
+
+All three were read, rewritten and pasted, and the button colour fixed. See
+`EMAIL-TEMPLATE-REWRITES.md`. Original step kept below for the record.
+
+### (original)
 
 **Where:** Kajabi Settings. Not visible to MCP at all, which is why this has
 sat open as U2 since the pre-launch audit.

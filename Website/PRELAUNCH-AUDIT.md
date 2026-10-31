@@ -86,6 +86,12 @@ container, so that test proved nothing. **Look at the picture.**
 
 ### B2. No automation or email sequence fires on a purchase
 
+**RESOLVED 2026-10-31.** Four automations now live, two per course. Detail in
+`AUTOMATION-GUT-FOUNDATIONS.md` and `AUTOMATION-GUT-RESET-COURSE.md`. The
+three transactional templates behind the "login details are on their way"
+promise were also read and rewritten, see `EMAIL-TEMPLATE-REWRITES.md`.
+The original finding is kept below as written.
+
 The whole site has **three** automations and **two** sequences:
 
 | Automation | Trigger |
@@ -247,3 +253,53 @@ unaudited.
 5. B2, build the onboarding sequences.
 6. U1 and U3 and U4, one test purchase covers all three.
 7. H1 to H4.
+
+---
+
+## B2 closed, 2026-10-31
+
+Seven automations on the site now, up from three. The four new ones:
+
+| id | name | trigger | published |
+|---|---|---|---|
+| `1388764` | Gut Foundations: deliver and onboard | Offer purchased: Gut Foundations | 2026-10-30 23:58:48Z |
+| `1388767` | Gut Foundations: mark started at lesson 01 | Lesson completed: 01. Understanding Your Gut | 2026-10-31 00:08:13Z |
+| `1390135` | Gut Reset Course: mark pattern found at the quiz | Lesson completed: The Gut Pattern Quiz | 2026-10-31 05:10:45Z |
+| `1390134` | Gut Reset Course: deliver and onboard | Offer purchased: Gut Reset Course | 2026-10-31 05:10:47Z |
+
+Steve published the Gut Reset pair in the right order, the tagger two seconds
+before the delivery automation, so the tag was already landing when the exit
+condition went live.
+
+Four new tags: `gut-foundations-customer` (`2150427047`),
+`foundations-started` (`2150427051`), `gut-reset-customer` (`2150427430`),
+`gut-reset-pattern-found` (`2150427431`).
+
+### What also changed along the way
+
+- The three transactional templates behind the promise were read for the
+  first time and rewritten. **Offer Purchase Confirmation carried a live
+  defect**: it told first-time buyers to log in with a password they did not
+  yet have. Fixed.
+- The global email button was `#9ACEAA` with white text at **1.78** contrast,
+  on "Set up password", the most important button in the funnel. Changed to
+  `#A85F3E`, matching the login page, at 4.80.
+- **Abandoned Checkout**, the only Customized template on the site, turned out
+  to be live and unreviewed, with a double-spaced subject and a non-locked
+  sign-off. Rewritten.
+
+### One thing that cannot be verified from here
+
+`get_automation` does not return `exit_conditions`, so the exit condition on
+`1390134` cannot be read back. It was set at creation and echoed in the create
+response, and publishing does not clear it, but the only confirmation
+available is the Kajabi builder. Same for `1388764`, whose condition was
+applied by a later update that also echoed it back.
+
+### What this does not cover
+
+None of this proves an email actually arrives. **The test purchase is still
+the only thing that does**, and it now has more to show: four system and
+automation emails landing in sequence, the new button colour rendering, and
+whether Kajabi's Branding logo doubles up with the inline logo in the
+automation emails.
