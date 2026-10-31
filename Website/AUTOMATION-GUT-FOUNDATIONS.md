@@ -395,3 +395,41 @@ none of this is visible from here. The test purchase is what answers it.
 Confirmed from `get_offer` while checking: post-purchase preference is
 `landing_page` pointing at `2152353598`, the correct thank-you page. Whether a
 Purchase Flow overrides that is still U3.
+
+---
+
+## U2 located: the email templates page, 2026-10-31
+
+Steve: "all email templates can be customized here:
+https://app.kajabi.com/admin/sites/2148204891/email_templates"
+
+That is where the built-in transactional emails live. **The agent cannot
+reach it.** Searched the full Kajabi MCP tool surface for an email-template
+tool and found none; the `emails` toolset covers broadcasts and sequences
+only. The URL is behind admin auth, so WebFetch cannot read it either. Same
+class as Purchase Flows: visible to Steve, invisible from here.
+
+### The risk this creates right now
+
+**Two logos.** The logo was added inline to both automation email bodies on
+the assumption that no template layer existed. If that page sets a global
+header carrying the logo, a buyer sees it twice.
+
+If there is a global wrapper, the correct fix is to brand the template once
+and **remove the inline `<img>` from both emails in `1388764`**, not to keep
+both. One line to strip, whenever it is confirmed.
+
+### What is needed from that page before changing anything
+
+1. Is there a purchase or receipt template, and does it carry login details?
+2. Is there a global header/footer wrapping every send, or is each template
+   standalone?
+3. Do automation emails appear in that list, or only transactional ones?
+
+Question 3 is the one that decides the inline logo. Note the broadcast and
+sequence tools both refer to "the site's default email preset", which implies
+site-level email presets exist, but those attach to *themed* emails
+(`using_theme: true`). The two automation emails here are not themed, so
+whether any preset or template wraps them is genuinely unknown.
+
+The test purchase answers all three by showing what actually lands.
