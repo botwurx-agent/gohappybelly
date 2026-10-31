@@ -12,11 +12,39 @@ behind admin auth so WebFetch cannot read it.
 
 ## Do this first, before any paste
 
-**Fix the button contrast on the Branding tab.** Every button below renders
-in `#9ACEAA` with white text at **1.78:1**, which fails AA at any text size.
-Change **Font Color** to forest `#162E28` and it becomes **8.10:1**, keeping
-the green. Rewriting the copy while the buttons stay unreadable fixes the
-smaller half of the problem.
+**Fix the button on the Branding tab.** Every button below renders in
+`#9ACEAA` with white text at **1.78:1**, which fails AA at any text size.
+
+**SUPERSEDED 2026-10-31.** This section first advised keeping the green and
+changing **Font Color** to forest `#162E28` (8.10). Steve then said he does
+not like the green, so the recommendation is now:
+
+> **Button Color `#A85F3E`, Font Color `#FFFFFF`.** 4.80, passes AA.
+
+**Do not do both.** Forest text on `#A85F3E` measures **3.00** and fails for
+normal-size text, reintroducing the problem from the other direction.
+
+Why `#A85F3E`: it is the exact colour already on the login page button, read
+back from the site theme (`2156348838`, section `login`,
+`btn_background_color: "#A85F3E"`, `btn_text_color: "#FFFFFF"`). A buyer
+clicking "Set up password" in an email then lands on a login page with an
+identical button.
+
+| White text on | Ratio | |
+|---|---|---|
+| `#9ACEAA` current | 1.78 | fails |
+| `#A85F3E` dark terracotta | **4.80** | passes, matches login page |
+| `#C07A5A` brand terracotta | 3.40 | large text only |
+| `#162E28` forest | 14.43 | passes, reads more severe |
+
+`#C07A5A` is what `DESIGN-SYSTEM.md` locks for website primary buttons, but
+at 3.40 it clears only the large-text bar and these buttons render at normal
+size.
+
+**Open design-system question, now on three surfaces.** Website buttons use
+`#C07A5A`; the login page and now the transactional emails use `#A85F3E`.
+Two of the three use the darker one, and only the darker one passes AA. Worth
+settling deliberately rather than letting it drift.
 
 ## Constraints these are written to
 
