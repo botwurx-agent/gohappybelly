@@ -150,8 +150,7 @@ Then add `has_tag_id: foundations-started` as an **exit condition** on this
 automation, and the nudge suppresses itself for anyone who has begun. Exit
 conditions are free (not premium) and allow tag filters.
 
-Not built, because it was not asked for. Recommended as the immediate
-follow-up.
+**Built 2026-10-31**, see below. Half applied.
 
 ## Checks run against brand rules
 
@@ -204,3 +203,64 @@ three of the four attempts down the wrong path:
 
 Neither `amount` as a bare integer nor the keys at the top level of `wait`
 are accepted. Both must be strings under `options`.
+
+---
+
+## The started-tag follow-up, 2026-10-31
+
+Steve published `1388764` on 2026-10-30 at 23:58Z. It is live. Confirmed
+published with `total_enrolled: 0` and the five-edge chain intact.
+
+This follow-up stops the day-2 nudge reaching people who already began. It is
+two pieces, and **only the first is done.**
+
+### Done: tag and starter automation
+
+| | |
+|---|---|
+| Tag | `foundations-started`, id `2150427051` |
+| Automation | `1388767`, "Gut Foundations: mark started at lesson 01" |
+| Status | **draft**, publishable, `errors: []` |
+| Admin | https://app.kajabi.com/admin/workflows/1388767/edit |
+
+```
+TRIGGER  Lesson is completed  →  "01. Understanding Your Gut" (post 2201324060)
+STEP 1   Add tag              →  foundations-started
+```
+
+Read back and confirmed: three nodes, two edges, trigger resolved to the right
+lesson by name.
+
+### NOT done: the exit condition on 1388764
+
+This is the half that actually does the suppressing. The call
+
+```
+update_automation(1388764, exit_conditions: [{"has_tag_id": "2150427051"}])
+```
+
+was refused by the session's permission layer. Reasonable: it edits a
+**published, live** automation, which is a different risk class from creating
+a draft.
+
+**Until this is applied, `1388767` tags people and nothing reads the tag.**
+The nudge still goes to everyone. That is the same behaviour as before, not
+worse, and the nudge's opening line still covers it ("if you have already
+started, ignore this one").
+
+### Applying it by hand
+
+In the builder for `1388764`, add an exit condition (Kajabi calls it a
+disqualification) of **has tag: foundations-started**. One field.
+
+Editing a published automation is safe here: Kajabi's one-graph save preserves
+in-flight enrollments, and adding an exit condition removes no steps. With
+`total_enrolled: 0` there is nobody mid-flight to disturb in any case.
+
+### Publish order matters, slightly
+
+Publish `1388767` **before** adding the exit condition, or at least before the
+first buyer reaches day two. The tag has to exist on contacts for the exit
+condition to have anything to match. Nothing breaks if the order slips; the
+suppression simply does not kick in for anyone who finished lesson 01 while
+`1388767` was still a draft.
