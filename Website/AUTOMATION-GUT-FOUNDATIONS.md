@@ -559,3 +559,64 @@ The Branding logo is active and appears atop all three previews, and it is
 the same file used inline in the automation emails
 (`Go_happy_belly_4-ai_1_.png`). Whether Branding also wraps automation emails
 is still unknown; the test purchase settles it.
+
+---
+
+## Welcome email rewritten after the templates landed, 2026-10-31 04:36Z
+
+Steve pasted all three transactional rewrites. With Member Welcome Email now
+carrying the invite link properly and Offer Purchase Confirmation no longer
+telling new buyers to use a password they do not have, the automation's
+welcome email no longer needs to explain access at all.
+
+**Removed:** the whole "Getting in" paragraph, which was the third and now
+redundant set of login instructions.
+
+**The email now leads with "Where to start"**, the only thing no system
+template covers.
+
+**Kept, but moved and shortened**, down with the troubleshooting lines rather
+than up front as a section:
+
+> Not set your password yet? There is a separate email, "Set up your Go Happy
+> Belly password". Start there and all of this will be waiting.
+
+That is a pointer, not a competing instruction. It routes a stuck reader to
+the email that actually works instead of giving them a fourth method, and it
+names that email by the exact subject now live on the template.
+
+### Both emails now link to /library, not /login
+
+Re-verified before shipping it: `https://www.gohappybelly.com/library` returns
+200, redirects a logged-out visitor to `/login`, and that page has a working
+password form. So one link serves both cases. A member lands in their library;
+anyone else gets the login page. `/login` only ever served the second.
+
+### Verified after the edit
+
+| Check | Result |
+|---|---|
+| "Getting in" paragraph | gone |
+| Opens on "Where to start" | yes |
+| `/library` links | both emails |
+| Password pointer | present, in the troubleshooting block |
+| Logo | intact, both emails |
+| Node ids | `6618395`-`6618400` unchanged |
+| Wait | 2 days |
+| Exit condition | preserved |
+| Status | published, `errors: []`, `total_enrolled: 0` |
+
+### Coupling to watch
+
+The welcome email quotes the Member Welcome Email's subject line verbatim
+("Set up your Go Happy Belly password"). If that template's subject changes,
+this quote has to change with it, or it points a stuck buyer at an email they
+cannot find. Same coupling already noted between the two transactional
+templates in `EMAIL-TEMPLATE-REWRITES.md`.
+
+### Observed in passing
+
+The `/library` check returned the page title
+`Expert Gut Nutritionist | Heal Your Gut with Proven Courses & Coaching`,
+so the site-wide SEO string is still unchanged. Step 5 in
+`STEVE-CHECKLIST.md` is still outstanding.
