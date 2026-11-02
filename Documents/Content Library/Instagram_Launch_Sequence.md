@@ -2,6 +2,7 @@
 
 **Prepared for:** Alina (to film) and Steve (to schedule, design, and manage DMs)
 **Length:** 9 posts over 3 weeks (Mon / Wed / Fri), plus daily Stories
+**Full scripts:** `Instagram_Launch_Scripts.md` (and the designed `Instagram_Launch_Scripts.pdf` for Alina)
 **Goal:** move Instagram viewers to the Link in Bio (`gohappybelly.com/links`) and into card 1, **Gut Foundations ($27)**, the front door of the ladder
 
 > **Built on Steve's 2026-10-28 decision** (recorded in CLAUDE.md on branch `claude/brave-franklin-umtndq`): the $27 is the front door, sold ungated on social, sitting as card 1 ("Start here") on the Link in Bio. Zero sales in its first five days came from it never having an ungated path. This sequence is that path.
