@@ -1,148 +1,183 @@
-# Instagram Launch Sequence: Driving Traffic to the Link in Bio
+# Instagram Launch Sequence: Selling Gut Foundations ($27) from the Link in Bio
 
 **Prepared for:** Alina (to film) and Steve (to schedule, design, and manage DMs)
 **Length:** 9 posts over 3 weeks (Mon / Wed / Fri), plus daily Stories
-**Goal:** move the existing 8K followers (and new Reels viewers) from "I watch her" to "I took the quiz," then to the first paid offer
+**Goal:** move Instagram viewers to the Link in Bio (`gohappybelly.com/links`) and into card 1, **Gut Foundations ($27)**, the front door of the ladder
+
+> **Built on Steve's 2026-10-28 decision** (recorded in CLAUDE.md on branch `claude/brave-franklin-umtndq`): the $27 is the front door, sold ungated on social, sitting as card 1 ("Start here") on the Link in Bio. Zero sales in its first five days came from it never having an ungated path. This sequence is that path.
 
 ---
 
 ## The Short Version
 
-Don't open with a sell. Open with three posts that give real value and ask for nothing except a comment. That warms the audience back up, tells the algorithm the account is active, and (most importantly) gets women to raise their hand in the comments before you ever mention a link.
+Don't open with a sell. Open with three posts that give real value and ask for nothing except a comment. That warms the audience back up, tells the algorithm the account is active, and gets women to say "this is me" in the comments before a link is ever mentioned.
 
-Then introduce the quiz softly in week 2, and ask directly in week 3.
+Then introduce Gut Foundations in week 2, and ask directly in week 3.
 
 | Week | Phase | What the audience hears | CTA strength |
 |------|-------|------------------------|--------------|
-| 1 | **Give** | "She gets it. She explains things nobody else has." | None. Comment / save only |
-| 2 | **Introduce** | "She made a free tool that tells me which pattern I am." | Soft. One line at the end |
-| 3 | **Ask** | "I should take it. And here's what happens after." | Direct. Whole video is the CTA |
+| 1 | **Give** | "She explains what nobody else has. That's exactly my week." | None. Comment / save only |
+| 2 | **Introduce** | "She wrote down what she explains on every first call, and it's $27." | Soft, then the launch post |
+| 3 | **Ask** | "This is the place to start." | Direct |
 
-After week 3, settle into a steady rhythm of **2 value posts for every 1 direct-CTA post**.
+After week 3, settle into **2 value posts for every 1 direct-CTA post**.
 
 ---
 
 ## Why This Order
 
-1. **Reels go mostly to non-followers.** A cold viewer who sees "link in bio" in her first exposure to Alina scrolls past. A cold viewer who hears her exact frustration explained follows. The first posts need to earn the follow.
-2. **The quiz is the right first step from Instagram, not the $27 offer.** Asking a stranger for $27 off a Reel converts poorly. Asking for 2 minutes and an email converts well, and the quiz tags her with her pattern so every email afterward is written for her. The $27 offer should be the first thing she sees *after* the quiz (results page and email sequence), and it gets its own Reel in week 3 once people know the quiz exists.
-3. **Post 2 sets up everything after it.** The "5 patterns" carousel asks people to pick a number. A woman who comments "4" has already self-identified. When the quiz launches in week 2, she's already curious which pattern is really hers.
-4. **Comments in week 1 become warm DMs.** Every "this is me" comment is a person you can reply to by DM. That's a soft sell with zero selling on the grid.
+1. **Reels go mostly to non-followers.** Someone seeing Alina for the first time won't buy from her first video. The first posts have to earn the follow and the trust.
+2. **Gut Foundations is what Alina explains in the first hour of every client call, written down.** That's the content of the whole sequence. Every value post is a free sample of the course, and the launch post says "there's more of this, it's $27."
+3. **Write for the $27 buyer, not the $1,497 buyer.** Per the Gut Foundations page rules: the $27 audience is Avatars 2, 3, 4 and 5 (Burned-Out Professional, Postpartum Rebuilder, Frustrated Dieter, Health-Conscious Optimizer). Most have never had a test run. So nothing in this sequence assumes labs. The "Your labs are normal" video (existing Video 1) is held back for later, pointed at the call and `/private-coaching`, because that's the Dismissed Patient's ladder rung.
+4. **Their shared pain, in one line:** they've been trying things and nothing converges. Something helps for two weeks and stops. They changed three things at once and can't tell which one mattered. The honest promise of the course is to turn guessing into knowing what you're working with.
+5. **Post 2 sets up everything after it.** The "5 patterns" carousel asks people to pick a number. Lesson 3 of Gut Foundations is the five patterns, so every woman who comments "4" is already halfway into the course.
 
 ---
 
 ## How the Link Gets Clicked (Read This, Steve)
 
-- **Reels can't carry a clickable link.** The paths to the quiz are: link in bio, a DM, or a Story link sticker. Stories are the most direct click path, so every post from week 2 on gets a matching Story with a link sticker to the quiz.
-- **ManyChat isn't built yet.** The existing scripts end with "Comment QUIZ and I'll send it." That still works without ManyChat if someone replies to each comment by DM manually. At 8K followers that's realistic (expect tens of comments, not hundreds). Recommendation: use "Comment QUIZ" from post 4 onward, reply by hand within a few hours, and build the ManyChat keyword flow before week 3 so it's automatic by the time the direct-ask posts go out.
-- **Every CTA says both:** "Comment QUIZ and I'll send it to you, or tap the link in my bio." Covers people who don't comment.
-- **Bio line during the launch:** "Free 2-min quiz: find your gut pattern ↓" directly above the link.
+- **Reels can't carry a clickable link.** The paths are: the Link in Bio, a DM, or a Story link sticker.
+- **Every CTA points at one place:** "Tap the link in my bio. It's the first one, Gut Foundations." The page already says "Start here," so the spoken CTA and the page match.
+- **Story link stickers go straight to `gohappybelly.com/gut-foundations`**, skipping the Link in Bio step. Stories are where followers actually click, so from week 2, every post gets a matching Story with that sticker.
+- **Comment keyword: START.** ManyChat isn't built, so reply to each "START" comment by DM by hand with the `/gut-foundations` link. At 8K followers that's realistic. Build the ManyChat keyword flow before week 3, when the direct posts go out.
+- **Bio line during the launch:** "Not sure where to start with your gut? Start here ↓"
+- **The quiz is the backup, not the lead.** Some people want to know their pattern before paying anything. Mention the quiz in Stories ("not sure? the free quiz is the second link"). Its results pages point to the $27 too, **once the copy in `Website/QUIZ-RESULTS-CTA-COPY.md` is pasted into ScoreApp.** Steve, check that's done before week 2.
+
+---
+
+## Facts the Posts Can Say (and Nothing Beyond Them)
+
+From `Website/GUT-FOUNDATIONS-PAGE.md`, all verified against the course:
+
+- 11 lessons: 8 foundations + 3 bonus modules (midlife, high stress, a system on alert)
+- About 10 minutes each, about 2 hours total
+- **Written lessons, no video.** Say it plainly; it's on the sales page three times.
+- 12 reflection prompts
+- Private group included
+- Yours to keep, access doesn't expire
+- $27, one time
+
+**No testimonials for Gut Foundations exist yet.** Don't use 1:1 coaching client stories to sell the $27; that implies course results the course hasn't earned. The first real course testimonial becomes a post the week it arrives.
+
+**Compliance:** pattern language only. No "you have," no "heal," "cure" or "treat," no outcome promises ("you'll finally be bloat-free"). Promise clarity, not results.
 
 ---
 
 ## The 9 Posts
 
-Posts that reuse an existing script reference `GoHappyBelly_Quiz_Video_Scripts.pdf` (same folder). For those, film the existing script and **swap only the ending** as noted here.
+Posts that reuse an existing script reference `GoHappyBelly_Quiz_Video_Scripts.pdf` (same folder). For those, film the existing script and **swap only the ending** as noted here. The original endings all say "Comment QUIZ"; none of them stay as written.
 
 ---
 
 ### WEEK 1: GIVE (no sell)
 
-#### Post 1 (Mon): Reel, "Your Labs Are Normal"
-- **Avatar:** Dismissed Patient (40-55), Post-Menopausal (55-65)
-- **Source:** Existing Video 1 script, reels 0 to 50 sec as written
-- **Why first:** Highest-urgency avatar, most emotional hook, the core reason the practice exists. Pure validation.
-- **New ending (replace the quiz CTA):**
-  > "So if you've been told it's stress, or aging, or in your head, it's not. Tell me in the comments: how many doctors have you seen about this? I read every one."
-- **On-screen text at end:** "How many doctors have you seen? 👇"
+#### Post 1 (Mon): Reel, "The Drawer"
+- **Avatar:** Burned-Out Professional, Health-Conscious Optimizer
+- **Why first:** The most visual version of the shared pain. Every woman in the target audience owns this drawer.
+- **New script (~45 sec):**
+  - **Hook (0-3s):** *[VISUAL: Alina opens a drawer or cabinet full of supplement bottles]* "If you have a drawer that looks like this, I need you to hear something."
+    *[TEXT: Do you have a drawer like this?]*
+  - **Pain (3-18s):** "Half-finished probiotics. The magnesium a friend swore by. The digestive enzyme that helped for about two weeks. And every time one stops working, you buy the next one."
+    *[TEXT: It helped for two weeks. Then it stopped.]*
+  - **Reframe (18-38s):** "You haven't failed at any of this. You've been guessing, because nobody ever explained what you're actually working with. When you change three things in the same week and you feel better, you have no idea which one mattered. So it never adds up."
+    *[TEXT: You're not failing. You're guessing.]*
+  - **Close (38-45s):** "Tell me in the comments: how many bottles are in yours? Be honest. Mine used to be a lot."
+    *[TEXT: How many are in yours? 👇]*
 - **Caption:**
-  > "Your labs are normal" doesn't mean you're fine. It means the right things weren't tested.
+  > The drawer of half-finished bottles. The thing that helped for two weeks and then stopped.
   >
-  > How many doctors have you seen about your symptoms? Tell me below. I read every comment.
-- **Steve:** reply to every comment within a few hours. Short, warm, human ("Four. That's exhausting, and it's not in your head."). No links yet.
+  > That's not a willpower problem. It's what happens when nobody tells you what you're working with.
+  >
+  > How many bottles are in yours? 👇
+- **Steve:** reply to every comment within a few hours. Warm and human, no links yet.
+- **Alina:** only say "mine used to be a lot" if it's true. Otherwise cut it.
 
 #### Post 2 (Wed): Carousel, "The 5 Gut Patterns I See Over and Over"
-- **Avatar:** All (broad awareness)
-- **Why:** Primes the quiz without mentioning it. Built to be saved and shared.
+- **Avatar:** All
+- **Why:** Primes the course without mentioning it. Built to be saved and shared. Uses the same lines and analogies as the Gut Foundations page, so the carousel and the page feel like one thing.
 - **Slides:**
-  1. "I've worked with hundreds of women. The same 5 gut patterns keep showing up. Which one are you?"
-  2. **1. The Wired-and-Tired Gut.** Exhausted no matter what you eat. Crash every afternoon. Stress hits your stomach first.
-  3. **2. The Reactive Gut.** Reacting to foods you used to tolerate. The list keeps growing.
-  4. **3. The Sugar-Driven Gut.** Cravings that feel like they have a life of their own.
-  5. **4. The Underactive Gut.** Meals sit heavy for hours. Full after a few bites.
-  6. **5. The Bloated and Backed-Up Gut.** Flat in the morning, bloated by 2pm, every day.
-  7. "Most women have one dominant pattern and don't know it. Comment your number 👇"
-- **Design:** cream background (#FAF6F0), navy headings (#1B2D4F), sage accent (#7BA987). Photo of Alina on slide 1.
+  1. "I've worked with hundreds of women. The same 5 gut patterns keep showing up. Which one are you?" (photo of Alina)
+  2. **1. Wired-and-Tired.** "Same lunch on a calm day and a bad day, and only one of them hurts." Like a car with the engine timing off.
+  3. **2. Reactive.** "My safe food list keeps getting shorter." Like a torn screen door, letting through what it should keep out.
+  4. **3. Sugar-Driven.** "The 3pm craving doesn't feel like a choice I'm making." Like squatters in the house, asking to be fed.
+  5. **4. Underactive.** "Food sits like a stone for hours." Like a stove that never gets hot enough.
+  6. **5. Bloated and Backed-Up.** "Flat in the morning, bloated by evening. Every day." Like bacteria that moved to the wrong neighborhood.
+  7. "Four of these aren't you. Comment your number 👇"
+- **Design:** use the five cut-paper analogy illustrations from the Gut Foundations page (car, screen door, kitchen, stove, basement). Cream background, navy headings, sage accent.
 - **Caption:**
-  > Most women have one dominant gut pattern and no idea which one. Each one has a different root cause, which is why the same advice works for your friend and does nothing for you.
+  > Most women have one dominant gut pattern and no idea which one. Each one works differently, which is why the advice that worked for your friend did nothing for you.
   >
   > Which number sounds like you? Comment 1 through 5. Save this so you can come back to it.
-- **Steve:** this is the most important post of the launch. Note who comments which number. In week 2, those people get a personal DM: "You said you're a 4. I just made a quiz that confirms it in 2 minutes, want the link?"
+- **Steve:** note who comments which number. Those people get a personal DM after Post 5: "You said you're a 4. Lesson 3 of the course I just put out goes through all five. Want the link?"
 - **Pin to profile.**
 
-#### Post 3 (Fri): Reel, "Bloated by 2pm"
-- **Avatar:** Dismissed Patient, Post-Menopausal
-- **Source:** Existing Video 7 script
-- **Why:** The most universal, relatable symptom. Teaches something real (location problem vs speed problem) and leaves an open loop.
-- **New ending (replace the quiz CTA):**
-  > "Two different patterns, two completely different approaches. If you've been treating one when it's actually the other, that's why nothing has stuck. Save this one, and next week I'm going to show you how to figure out which one is yours."
-- **On-screen text at end:** "Which one is yours? Next week 👀"
+#### Post 3 (Fri): Reel, "Bloated by Evening"
+- **Avatar:** Frustrated Dieter, Postpartum Rebuilder (broad)
+- **Source:** Existing Video 7 script (swap "six months pregnant by 2pm" to "by evening" if Alina prefers; either works)
+- **Why:** The most universal symptom. Teaches something real (a location problem vs a speed problem) and leaves an open loop.
+- **New ending:**
+  > "Two different patterns, two completely different approaches. If you've been working on one when it's actually the other, that's why nothing has stuck. Save this one. Next week I'm going to show you where to start."
+- **On-screen text at end:** "Where to start? Next week 👀"
 - **Caption:**
-  > Flat in the morning. Six months pregnant by 2pm. There are two completely different reasons this happens, and they need opposite approaches.
+  > Flat in the morning. Bloated by evening. There are two completely different reasons this happens, and they need opposite approaches.
   >
-  > Save this. Next week I'll show you how to figure out which one is yours.
-- **Note:** the "next week" promise is deliberate. It's paid off by Post 5.
+  > Save this. Next week I'll show you where to start.
+- **Note:** the "next week" promise is deliberate. Post 5 pays it off.
 
 ---
 
-### WEEK 2: INTRODUCE (soft CTA)
+### WEEK 2: INTRODUCE
 
 #### Post 4 (Mon): Reel, "Why Your Elimination Diet Didn't Work"
-- **Avatar:** Burned-Out Professional (28-40), Frustrated Dieter (35-55)
+- **Avatar:** Burned-Out Professional, Frustrated Dieter
 - **Source:** Existing Video 3 script (Reactive Gut, screen-door analogy)
-- **Why:** Reaches the younger avatars weeks 1 didn't target. Myth-busting gets shared.
-- **Ending (soft, one line, after the value lands):**
-  > "If this sounds like you, I made a free 2-minute quiz that tells you your pattern. Comment QUIZ and I'll send it, or it's in my bio."
+- **New ending (soft, one line, after the value lands):**
+  > "This is one of five patterns, and I explain all five in a short course I just put together. It's the first link in my bio."
 - **Caption:**
-  > Cutting gluten didn't fix it. Cutting dairy didn't fix it. That's not a willpower problem. The foods aren't the problem. The barrier is.
+  > Cutting gluten didn't fix it. Cutting dairy didn't fix it. The foods aren't the problem. The barrier is.
   >
-  > Comment QUIZ and I'll send you my free Gut Pattern Quiz.
-- **Story the same day:** quiz link sticker, "the quiz I mentioned 👆"
+  > I explain all five gut patterns in Gut Foundations. First link in my bio.
+- **Story the same day:** "The course I mentioned 👆" with a link sticker to `/gut-foundations`.
 
-#### Post 5 (Wed): Reel, "I Made You Something" (the quiz launch)
-- **Avatar:** All
-- **Why:** The official quiz announcement and the payoff of Post 3's promise. This is the one to pin.
-- **New script (~45 sec):**
-  - **Hook (0-3s):** "Last week I told you I'd show you how to figure out which gut pattern is yours. Here it is."
-    *[TEXT: Which gut pattern is yours?]*
-  - **Why (3-20s):** "Every week I get messages from women who've tried everything. Probiotics, elimination diets, cutting sugar. And the reason it didn't work is almost always the same: it wasn't matched to their pattern. So I took the questions I ask on every first call and turned them into a quiz."
-    *[TEXT: The questions I ask on every first call]*
-  - **What it is (20-35s):** *[VISUAL: phone screen recording scrolling through the quiz]* "Twelve questions, about two minutes. At the end you get your pattern, what's usually driving it, and what it tends to respond to. It's free."
-    *[TEXT: 12 questions. 2 minutes. Free.]*
-  - **CTA (35-45s):** "Comment QUIZ and I'll send it to you right now, or tap the link in my bio. And when you get your result, come back and tell me which one you got."
-    *[TEXT: Comment QUIZ 👇]*
+#### Post 5 (Wed): Reel, "Start Here" (the Gut Foundations launch)
+- **Avatar:** All four $27 avatars
+- **Why:** The official launch and the payoff of Post 3's promise. Pin it.
+- **New script (~50 sec):**
+  - **Hook (0-3s):** "Last week I said I'd show you where to start. This is it."
+    *[TEXT: Where to start with your gut]*
+  - **Why it exists (3-20s):** "The first hour of every single client call, I explain the same things. How your gut actually works. Why it affects your energy, your skin, your mood. And the five patterns I see over and over. Most women tell me nobody has ever explained it to them before."
+    *[TEXT: What I explain on every first call]*
+  - **What it is (20-38s):** *[VISUAL: phone screen recording scrolling the course or sales page]* "So I wrote it all down. It's called Gut Foundations. Eleven short lessons, about ten minutes each. They're written, not videos, so you can read them on your lunch break. You get reflection prompts and a private group, and it's yours to keep."
+    *[TEXT: 11 lessons. ~10 min each. $27.]*
+  - **Honest close (38-50s):** "It won't diagnose you and it won't fix everything in a weekend. What it does is stop the guessing, because you'll finally know what you're working with. It's $27, and it's the first link in my bio. Or comment START and I'll send it to you."
+    *[TEXT: Comment START 👇]*
 - **Caption:**
-  > I took the questions I ask on every first call and turned them into a free 2-minute quiz.
+  > The first hour of every client call, I explain how the gut works and the five patterns I see over and over. I finally wrote it down.
   >
-  > At the end you'll know your gut pattern, what usually drives it, and what it tends to respond to. No more guessing which advice applies to you.
+  > Gut Foundations: 11 short written lessons, about 10 minutes each, reflection prompts, a private group, and it's yours to keep. $27.
   >
-  > Comment QUIZ and I'll send it, or tap the link in my bio. Then come back and tell me which pattern you got 👇
-- **Story the same day:** 3-frame Story. (1) "Did you take it yet?" with link sticker, (2) poll: "Which pattern did you get?", (3) Alina's own short selfie video: "I want to know what you got."
-- **Steve:** DM everyone who commented a number on Post 2.
+  > It won't diagnose you. It will stop the guessing.
+  >
+  > Comment START and I'll send you the link, or tap the first link in my bio.
+- **Story the same day:** 3 frames. (1) the Reel, (2) link sticker "Start here," (3) Alina's selfie video: "If you've got questions about it, send them to me. I'll answer them this week." (That collects the objections for Post 9.)
+- **Steve:** DM everyone who commented a number on Post 2. Reply to every START comment.
 - **Pin to profile.**
 
-#### Post 6 (Fri): Carousel or Reel, Client Story
-- **Avatar:** Dismissed Patient or Caregiver (pick whichever testimonial fits best)
-- **Why:** Proof. After two weeks of "here's how it works," show that it does.
-- **Format:** carousel (easiest) or Alina telling the story to camera.
-  1. A one-line quote pulled from the testimonial, big text
-  2. Where she was: symptoms, how long, how many doctors
-  3. What changed when her pattern was identified (pattern language only)
-  4. Where she is now, in her words
-  5. "Her pattern was [archetype]. Want to know yours? Comment QUIZ."
-- **Source:** testimonials from Linda, Karen, Hanna, Phyllis, or Tiffani in the funnel handoff doc. **Confirm the client is OK being named publicly on Instagram** (email permission doesn't automatically cover social). If not, use first initial and age.
-- **Compliance:** describe what she felt and what changed. No "she had SIBO," no "cured."
-- **Pin to profile** (replace Post 2 or keep all three).
+#### Post 6 (Fri): Carousel, "What It Is (and What It Isn't)"
+- **Avatar:** Health-Conscious Optimizer (needs trust before buying)
+- **Why:** The Optimizer has bought plenty of things that overpromised. Telling her exactly what she's getting, including what she's not getting, is the trust step.
+- **Slides:**
+  1. "Before you buy my $27 course, here's exactly what it is. And what it isn't."
+  2. **It isn't:** a diagnosis. A meal plan. A video course. A fix-everything-in-a-weekend promise.
+  3. **It is:** 11 written lessons, about 10 minutes each. How your gut works, how it connects to your whole body, and the five patterns.
+  4. **Inside:** daily habits, nutrition foundations, the gut-brain connection, the gut-liver connection, putting it all together.
+  5. **Bonus lessons:** midlife, high stress, and a system on alert.
+  6. **Plus:** 12 reflection prompts, a private group, and access that doesn't expire.
+  7. "If you're tired of guessing, start here. First link in my bio."
+- **Caption:**
+  > I'd rather you know exactly what you're buying than be surprised after. So here it is, all of it.
+  >
+  > Gut Foundations, $27, first link in my bio. Or comment START.
 
 ---
 
@@ -150,83 +185,86 @@ Posts that reuse an existing script reference `GoHappyBelly_Quiz_Video_Scripts.p
 
 #### Post 7 (Mon): Reel, "The Cravings Aren't Yours"
 - **Avatar:** Frustrated Dieter, Burned-Out Professional
-- **Source:** Existing Video 6 script, ending as written (Comment QUIZ)
-- **Why:** Strongest aha line of the five ("The cravings aren't yours. They're something else's, broadcasting through you."). High share potential.
+- **Source:** Existing Video 6 script
+- **Why:** The strongest aha line of the five ("The cravings aren't yours. They're something else's, broadcasting through you.") and very shareable.
+- **New ending:**
+  > "That's the Sugar-Driven pattern, and it's one of five. If you want to understand which one is driving yours, start with Gut Foundations. It's $27 and it's the first link in my bio. Comment START and I'll send it."
 - **Story:** link sticker.
 
 #### Post 8 (Wed): Reel, "The 3pm Crash"
-- **Avatar:** Dismissed Patient, Health-Conscious Optimizer (30-50)
-- **Source:** Existing Video 4 script, ending as written (Comment QUIZ)
-- **Why:** Brings in the Optimizer avatar, who already eats well and is confused why she still crashes.
+- **Avatar:** Health-Conscious Optimizer, Burned-Out Professional
+- **Source:** Existing Video 4 script (Wired-and-Tired)
+- **New ending:**
+  > "There's a whole bonus lesson in Gut Foundations on what high stress does to your gut, because I see this so often. First link in my bio, or comment START."
 - **Story:** link sticker.
 
-#### Post 9 (Fri): Reel, "What Happens After the Quiz" (the $27 offer)
-- **Avatar:** All, aimed at people who've already taken the quiz or nearly did
-- **Why:** The first time the $27 offer is mentioned on Instagram, and it's framed as the natural next step after the quiz, not a cold pitch.
-- **Script outline (~45 sec), to be finalized once the offer details are confirmed:**
-  - **Hook:** "A lot of you took the quiz this week. Here's the question I keep getting: okay, I know my pattern, now what?"
-  - **Middle:** what the $27 [OFFER NAME] is, what's in it, and who it's for. Framed as "the first step for your pattern."
-  - **CTA:** "If you haven't taken the quiz yet, start there. It's free and it tells you which version is yours. Comment QUIZ or tap the link in my bio."
-- **Note:** even this post sends people to the quiz first. The quiz results page and emails do the selling. That keeps the CTA consistent and gets every buyer tagged with her pattern.
+#### Post 9 (Fri): Reel, "Your Questions About Gut Foundations"
+- **Avatar:** Everyone who's been on the fence
+- **Why:** Uses the real questions collected from Post 5's Story. Answering objections out loud in Alina's voice closes more than another pitch.
+- **Script outline (~60 sec), finalize with the real questions:** likely questions and the honest answers:
+  - *"Is it videos?"* No, written lessons, about ten minutes each. Read them whenever.
+  - *"Will it tell me my pattern?"* It explains all five so you can recognize yours. If you want a quick read first, the free quiz is the second link in my bio.
+  - *"Should I get this or your $147 course?"* Start here. This one explains what each pattern is. The $147 course is what to do about it, week by week.
+  - *"Is it for me if I've never had any testing?"* Yes. Most people who start here haven't.
+  - **Close:** "$27, first link in my bio. Or comment START."
 
 ---
 
-## Daily Stories (the quiet workhorse)
-
-Stories are where followers actually click. Light, low-effort, every day:
+## Daily Stories
 
 | Day | Story |
 |-----|-------|
-| Post days | Share the post to Stories. From week 2, add a quiz link sticker. |
-| Tue | Poll or question box: "What's your #1 gut symptom right now?" / "Bloated by 2pm, yes or no?" |
-| Thu | Behind the scenes: Alina's day, a client call setup (no client info), what she's eating |
-| Sat/Sun | Rest, or reshare a comment/DM (with permission) |
+| Post days | Share the post. From week 2, add a link sticker to `/gut-foundations`. |
+| Tue | Poll or question box: "Bloated by evening, yes or no?" / "What's your #1 gut symptom?" |
+| Thu | Behind the scenes: Alina's day, what she's eating, prepping a client call (no client info) |
+| Weekend | Rest, or reshare a comment or DM (with permission) |
+| Any day, week 2 on | "Not sure where to start? Free quiz, second link in my bio." |
 
-From week 2 on, make a **"Quiz" Story Highlight** with the quiz announcement and a link sticker so it's permanently one tap from the profile.
+From week 2, make a **"Start Here" Story Highlight** with the launch Reel and a link sticker, so it's always one tap from the profile.
 
 ---
 
 ## Filming Plan
 
-One session covers everything filmable now:
+One session covers almost everything:
 
 | Film now | Script |
 |----------|--------|
-| Post 1 | Video 1 + new ending (above) |
-| Post 3 | Video 7 + new ending (above) |
-| Post 4 | Video 3 + soft ending (above) |
-| Post 5 | New script (above) + a screen recording of the quiz |
-| Post 7 | Video 6 as written |
-| Post 8 | Video 4 as written |
+| Post 1 | New script (above). Needs a real drawer of bottles as the prop |
+| Post 3 | Video 7 + new ending |
+| Post 4 | Video 3 + new ending |
+| Post 5 | New script + a screen recording of the course or sales page |
+| Post 7 | Video 6 + new ending |
+| Post 8 | Video 4 + new ending |
 
-Film Post 9 after the $27 offer details are locked. Posts 2 and 6 are carousels Steve designs.
+Post 9 gets filmed at the end of week 2, once the real questions are in. Posts 2 and 6 are carousels Steve designs.
 
-Same filming notes as before: natural light, direct to camera, relatable over polished, 45 to 75 seconds.
+Filming style: natural light, direct to camera, relatable over polished, 45 to 75 seconds.
 
 ---
 
 ## What to Watch (and When to Adjust)
 
-Check at the end of week 1 and week 3:
-
 | Metric | Where | What it tells you |
 |--------|-------|-------------------|
-| Comments per post | Instagram | Did the hook land? Week 1 is judged on this alone. |
-| Saves and shares | Instagram Insights | Post 2 and 3 should lead. Saves mean "this taught me something." |
-| Profile visits and link taps | Insights (account) | Is the bio CTA working? |
-| `quiz-started` vs `quiz-completed` tags | Mailchimp | Starts low: CTA problem. Completions low vs starts: quiz length/friction. |
-| "QUIZ" comments | Instagram | Direct measure of CTA posts. |
-| $27 purchases | Checkout | Whether the results page and emails are selling it. |
+| Comments, saves, shares | Instagram Insights | Week 1 is judged on this alone. |
+| Link in Bio taps | Insights (account) | Are people getting to the page? |
+| START comments and DMs | Instagram | Direct demand from posts 5 to 9. |
+| `/gut-foundations` visits vs purchases | Kajabi | Visits but no sales means the page is the problem; few visits means the posts are. |
+| The Gut Fix ($10) bump attach rate | Kajabi | Average order value. |
+| $27 buyers who later buy the $147 | Kajabi | Whether the front door is passing people up the ladder. |
 
 **Rules of thumb:**
-- A post with strong comments but few link taps: the hook works, the CTA doesn't. Move the CTA earlier or put it in on-screen text.
-- Whichever pattern people report most in comments and quiz results gets more content the following month.
-- Re-post the best performer of the 9 as a fresh Reel (new hook, same body) in week 5.
+- Good comments but few taps: the hook works, the CTA doesn't. Put "first link in my bio" in on-screen text and say it earlier.
+- Taps but no sales: the Reels are fine. Look at the sales page and checkout.
+- The pattern number people comment most on Post 2 gets the most content the following month.
+- Re-post the best performer of the 9 with a fresh hook in week 5.
 
 ---
 
-## Open Items Before Week 3
+## Open Items
 
-1. **The $27 offer:** name, what's in it, and where it lives (quiz results page, email, a separate checkout). Needed for Post 9 and to confirm the quiz results page points to it.
-2. **ManyChat "QUIZ" keyword flow:** build before Post 7 so direct-CTA comments are answered automatically.
-3. **Testimonial permission** for Post 6.
+1. **ScoreApp:** paste the results-page CTA copy from `Website/QUIZ-RESULTS-CTA-COPY.md` so quiz takers also land on the $27 (before week 2).
+2. **ManyChat "START" keyword flow:** build before Post 7.
+3. **Ascension:** a $27 buyer currently reaches a thank-you page and is sold nothing further. This sequence will put people through the front door. Moving them on to the $147 matters more as soon as there are buyers to move. (Already flagged in CLAUDE.md.)
+4. **Later:** the "Your labs are normal" video (existing Video 1), aimed at the Dismissed Patient and pointed at the call and `/private-coaching`.
