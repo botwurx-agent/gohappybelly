@@ -120,6 +120,39 @@ third-party script completing a call. Before reporting a payment, analytics or
 embed problem seen through it, check whether the phrase exists in the raw HTML
 and whether the relay logged failures for that vendor's domain.
 
+### CORRECTED 2026-11-09: that raw-HTML check does not prove payments work
+
+Steve: "if an offer comes back as payment paused it's because the Kajabi
+payments option hasn't been selected. In the pricing section."
+
+So **"Payments are paused" has two different causes** that look identical from
+here, and the note above only covered one:
+
+| Cause | Real? | Visible from this harness? |
+|---|---|---|
+| Stripe's scripts blocked by this container's proxy | no, artifact | the message appears |
+| The offer's **Payment providers** set to "None" instead of Kajabi Payments | **yes, blocks real money** | the message appears |
+
+**The "is the phrase in the raw HTML?" test cannot tell them apart.** Checked
+on 2026-11-09: the Kajabi checkout is a client-mounted React app
+(`data-pages-embedded-checkout-react-mounter-target`), the provider state is
+fetched after mount, and the raw HTML carries no payment-provider keys at all
+on any of the three checkouts tested. A phrase absent from the HTML therefore
+says nothing about whether a provider is selected.
+
+The agent used that test on 2026-11-09 and reported "payments are fine,
+confirmed". That conclusion was not supported by the evidence given for it.
+
+**The only reliable check is in the Kajabi admin**, per offer:
+Offer, Pricing, **Payment providers**, which must be set to **Kajabi Payments**
+rather than **None**. Steve confirmed it with a screenshot.
+
+**Treat this as a step on every new offer.** It belongs with the existing
+pre-publish item "Confirm a payment processor is connected", which this note
+now explains the reason for. If "None" is the default on an MCP-created offer,
+then every offer built this way is unable to take money until someone sets it,
+and the checkout gives no honest signal that is readable from here.
+
 ### A real defect the same render did find
 
 The pay button rendered `rgb(52, 51, 50)`, Kajabi's default `#343332`, not the

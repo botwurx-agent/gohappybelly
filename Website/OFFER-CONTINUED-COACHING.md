@@ -237,7 +237,14 @@ through MCP will have the same placeholder checkout and needs the same pass.**
 disabled in this environment, so its live colour could not be sampled. The
 setting is `#C07A5A`; worth one glance on a real browser.
 
-### The "Payments are paused" false alarm, again
+### The "Payments are paused" message: the agent got this wrong
+
+**Corrected 2026-11-09 by Steve**, who supplied the actual cause: the offer's
+**Payment providers** setting, under Pricing, must be **Kajabi Payments** and
+not **None**. He confirmed with a screenshot that it is set correctly on this
+offer.
+
+What the agent said, and why it was not good enough:
 
 The live render shows "Payments are paused on this site" with the pay button
 disabled. **This is the documented artifact, not a real state.** Per
@@ -245,9 +252,21 @@ disabled. **This is the documented artifact, not a real state.** Per
 refuse this container's proxy. Checked as that note prescribes: the phrase
 appears **zero** times in 55KB of raw HTML. Payments are connected.
 
-Noting it a second time because it is convincing every time it appears, and
-the same run reported it for this checkout but not for the $1,497, which is
-itself a sign it is a timing artifact rather than a setting.
+That reasoning was weaker than it was presented. The Kajabi checkout is a
+**client-mounted React app**, verified on 2026-11-09: the served HTML carries
+no payment-provider state on any checkout tested. So "the phrase is not in the
+raw HTML" only establishes that the message is not server-rendered, which is
+true of almost everything on that page. It cannot distinguish a proxy artifact
+from a genuinely unset provider, and it was reported as if it could.
+
+The one honest signal the agent did have was inconsistency: the same run
+reported the message for this checkout and not for the $1,497. That is
+suggestive, not conclusive, and it should have been described that way.
+
+**The check that actually works is in the admin**, per offer: Pricing,
+Payment providers, Kajabi Payments. It cannot be read through MCP: `get_offer`
+returns pricing, products and post-purchase settings, and no provider field.
+Full detail in `THE-GUT-FIX.md`.
 
 ---
 
