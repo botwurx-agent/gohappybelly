@@ -283,3 +283,116 @@ Full detail in `THE-GUT-FIX.md`.
 3. **The offer has no thumbnail**, so the checkout's order summary shows a
    grey placeholder icon next to the product name. Cosmetic, on an otherwise
    finished page.
+
+---
+
+## Thank-you page built, 2026-11-09
+
+Steve: "Just make sure the thank you page is taken care of and everything
+that's required is there... having a link for someone to set up a follow-up
+call should be necessary. Let me take a look at Calendly and see what we have."
+
+| | |
+|---|---|
+| Landing page | `2152392722` |
+| Theme | `2168205708` |
+| URL | https://www.gohappybelly.com/continued-coaching-thank-you |
+| Status | published, **hidden from search engines** |
+| Wired to | offer `2151501641` as its post-purchase page |
+
+The interim custom confirmation message is superseded. Kajabi keeps the old
+`body` text on the offer record, but `preference` is now `landing_page`, so
+the page is what buyers see.
+
+### Built from the Gut Foundations thank-you page
+
+Structure, chrome and `custom_css` mirror `2152353598` so the two match: same
+design system CSS, same sticky header, same forest footer with the
+root-cause strapline and the practitioner disclaimer, same locked sign-off.
+
+Two sections:
+
+1. **`1792120000001`** (`#F8FAF8`): "Welcome back." headline, then two steps
+   on a divider, "Book your next session" and "Your course access continues".
+2. **`1792120000002`** (`#EFF7F1`): how the nine months works, then the
+   sign-off.
+
+### The Calendly slot, which is deliberately not a placeholder
+
+The booking block is **block `1792120000001_b`** in section
+`1792120000001`. It currently reads:
+
+> **Book your next session.** Alina will be in touch to get your first session
+> in the diary. If you already know roughly when you want it, tell her which
+> week suits you and she will work around it.
+>
+> [Email Alina] → `mailto:support@gohappybelly.com`
+
+This is written so the page is **honest and complete today**, not a page with
+a hole in it. Nobody lands on "[booking link coming soon]".
+
+**When Steve supplies the Calendly link**, the change is two fields on that
+one block: `btn_text` to something like "Book my session", and `btn_action` to
+the Calendly URL. The paragraph above it then wants a light rewrite, since it
+currently promises Alina will reach out rather than telling them to book
+themselves. Roughly fifteen minutes of work, no restructuring.
+
+Worth noting for that decision: the existing coaching thank-you page embeds a
+**Google Calendar** appointment scheduler, not Calendly, for the New Client
+Consultation. `COACHING-THANK-YOU-PAGE.md` records that as an unresolved
+conflict. Whatever Steve picks here, the two pages should end up using the
+same tool, or support gets twice as confusing.
+
+### Verified live
+
+| Check | Result |
+|---|---|
+| Status | 200 |
+| `<h1>` | "Welcome back." |
+| Headings | Book your next session / Your course access continues / How the nine months works |
+| CTAs | "Email Alina" to mailto, "Go to my library" to `/library` |
+| `noindex` meta | present |
+| Horizontal overflow | none at 1280px or 390px |
+| Page height | 1,954px desktop, 2,000px mobile |
+
+Mobile was checked by measurement rather than by eye. The layout is a copy of
+a page already visually verified at that width, and no overflow was found.
+
+---
+
+## Also done, 2026-11-09
+
+### A tag for continuation clients
+
+Created, because there was no way to answer "who is on continued coaching?"
+without reading the purchase list.
+
+| | |
+|---|---|
+| Tag | `continued-coaching-customer` (`2150443898`) |
+| Automation | `1476147`, "Continued Coaching: tag the client" |
+| Status | **draft** |
+
+Trigger: offer `2151501641` purchased. One step: add the tag. **No email**,
+deliberately. Alina knows these clients by name and is contacting them
+personally, so an automated welcome would read oddly on top of her own
+message. The transactional Offer Purchase Confirmation already covers the
+receipt.
+
+Publish it in the admin when convenient. Nothing breaks while it is a draft;
+the tag simply does not get applied.
+
+---
+
+## Still open
+
+1. **The booking link.** Steve is checking Calendly. See the slot above.
+2. **Unused sessions at nine months.** Still undecided, and now visible in two
+   more places: the thank-you page says "there is no wrong way to spend them"
+   without saying what happens if some go unspent.
+3. **The offer has no thumbnail**, so the checkout's order summary shows a
+   grey placeholder icon. `update_offer` exposes no thumbnail field, so this
+   is admin-only. Cosmetic.
+4. **Whether a new MCP-created offer defaults to no payment provider.** Steve
+   has the answer; if it is the default, it becomes a mandatory step on every
+   offer built this way. See `THE-GUT-FIX.md`.
