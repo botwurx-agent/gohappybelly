@@ -317,7 +317,44 @@ Two sections:
 2. **`1792120000002`** (`#EFF7F1`): how the nine months works, then the
    sign-off.
 
-### The Calendly slot, which is deliberately not a placeholder
+### The Calendly link landed, 2026-11-09
+
+Steve supplied `https://calendly.com/gohappybelly/1-1-coaching-follow-up`.
+
+Verified before putting it on a page clients pay to reach: 200, and the event
+is **"Alina Nazari, 1:1 Coaching Follow-Up, 30 min"**. Exactly the right event,
+and the 30 minutes is a useful fact the copy did not have before.
+
+The booking block now reads:
+
+> **Book your next session.** Pick a time that suits you. Each session is 30
+> minutes, and you have six to use across the next nine months, so there is no
+> need to plan them all out now. Getting the first one in the diary is the
+> part that matters.
+>
+> [Book my session] to the Calendly, opening in a new tab.
+
+**Knock-on fix on the checkout.** Its last line said "After checkout, Alina
+will be in touch to get your next session in the diary." That became false the
+moment buyers book themselves, so it now reads "One payment of $997. You will
+book your first session on the next page." The bullet also gained the session
+length: "Six 30 minute sessions with Alina".
+
+That line is the kind of thing that rots quietly: it was true when written,
+and a change two steps away made it a small lie on a payment page.
+
+### Verified after the change
+
+| | |
+|---|---|
+| Thank-you CTA | "Book my session" to the Calendly URL, `target="_blank"` |
+| Second CTA | "Go to my library" to `/library`, same tab |
+| Overflow | none at 1280px |
+| Checkout placeholders | still absent |
+| Checkout last line | "You will book your first session on the next page." |
+| Checkout session length | "30 minute sessions" present |
+
+### The original slot, for the record
 
 The booking block is **block `1792120000001_b`** in section
 `1792120000001`. It currently reads:
@@ -331,11 +368,8 @@ The booking block is **block `1792120000001_b`** in section
 This is written so the page is **honest and complete today**, not a page with
 a hole in it. Nobody lands on "[booking link coming soon]".
 
-**When Steve supplies the Calendly link**, the change is two fields on that
-one block: `btn_text` to something like "Book my session", and `btn_action` to
-the Calendly URL. The paragraph above it then wants a light rewrite, since it
-currently promises Alina will reach out rather than telling them to book
-themselves. Roughly fifteen minutes of work, no restructuring.
+**Done 2026-11-09.** The estimate held: two fields plus a paragraph rewrite,
+and one line on the checkout that the estimate had missed.
 
 Worth noting for that decision: the existing coaching thank-you page embeds a
 **Google Calendar** appointment scheduler, not Calendly, for the New Client
@@ -386,7 +420,7 @@ the tag simply does not get applied.
 
 ## Still open
 
-1. **The booking link.** Steve is checking Calendly. See the slot above.
+1. ~~The booking link.~~ **Done 2026-11-09**, see above.
 2. **Unused sessions at nine months.** Still undecided, and now visible in two
    more places: the thank-you page says "there is no wrong way to spend them"
    without saying what happens if some go unspent.
@@ -396,3 +430,15 @@ the tag simply does not get applied.
 4. **Whether a new MCP-created offer defaults to no payment provider.** Steve
    has the answer; if it is the default, it becomes a mandatory step on every
    offer built this way. See `THE-GUT-FIX.md`.
+
+### Still worth reconciling: two booking tools
+
+This page now uses **Calendly**. The $1,497 thank-you page embeds a **Google
+Calendar** appointment scheduler for the New Client Consultation, and
+`COACHING-THANK-YOU-PAGE.md` records that as an open conflict Steve has not
+resolved.
+
+So the business now books a new client through Google Calendar and a
+continuing client through Calendly. That works, but it means two places to
+check availability and two sets of reminders. Worth collapsing to one
+eventually; not urgent, and not a reason to have held this page.
