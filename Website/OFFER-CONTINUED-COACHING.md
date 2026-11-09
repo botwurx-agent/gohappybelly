@@ -4,8 +4,9 @@ Created 2026-11-09 at Steve's request: a continuation for clients who have
 finished the 3-Month Gut Reset and want to keep working with Alina.
 $997, six 1 on 1 sessions across nine months.
 
-**Status: DRAFT.** Kajabi's `create_offer` only ever makes drafts; publishing
-is a human step in the admin.
+**Status: PUBLISHED 2026-11-09 18:56Z.** Created as a draft, then published
+via `update_offer` once Steve confirmed the shape. See "Why it was published"
+below: a draft checkout is not a sendable link.
 
 | | |
 |---|---|
@@ -24,7 +25,35 @@ misconfiguration.
 
 ---
 
-## THE ONE THING TO SETTLE BEFORE PUBLISHING
+## RESOLVED: Steve's confirmation, 2026-11-09
+
+Steve confirmed the shape and answered the open questions:
+
+- **Pricing logic is right.** A returning client pays less per session than a
+  new one. The ~$166 per session below is the intended rate.
+- **These are maintenance calls.** Someone who wants to keep going with Alina
+  and have follow-ups to check things are going as planned. Not a new
+  engagement.
+- **Upsells happen on the calls.** If a client needs further testing or
+  supplements, that comes up in conversation, not in the offer. The offer copy
+  already matches this: testing is framed as "an optional clinical
+  recommendation, decided between you and Alina, rather than something to
+  order up front."
+- **It is not placed anywhere.** No sales page, no site navigation, no funnel
+  position. It is a checkout link Alina sends directly to an existing client.
+
+### Why it was published
+
+A **draft offer's checkout URL does not work**. Verified: the draft link
+redirected to `/login` with "You need to sign in or sign up before
+continuing." Since the entire purpose is a link Alina can send to a client,
+publishing was required to deliver what was asked for.
+
+It is reversible: `update_offer` with `publish_at: null` reverts it to draft.
+Because it is placed nowhere, a published offer is only reachable by someone
+who has the link.
+
+## The booking gap, and how it was handled
 
 **There is no booking destination.** `post_purchase.preference` is `disabled`,
 so a buyer lands on Kajabi's default confirmation and is told nothing about
@@ -137,3 +166,101 @@ $997 over six sessions is about **$166 per session**. The $1,497 package
 includes a $497 GI-MAP, so roughly $1,000 buys four calls, about **$250 per
 session**. The continuation is cheaper per session, which is coherent for a
 renewal rate to an existing client who needs no intake.
+
+---
+
+## What changed on 2026-11-09, after Steve's confirmation
+
+### 1. A custom confirmation message replaced the blank default
+
+`post_purchase.preference` was `disabled`, so a buyer saw Kajabi's bare
+confirmation. Since Alina drives the booking personally, the page now says so
+rather than leaving them waiting:
+
+> Thank you, and welcome back.
+>
+> Alina will be in touch to get your next session in the diary. If you already
+> know roughly when you want it, reply to your receipt and say which week
+> suits you.
+>
+> Your six sessions are yours to place across the next nine months, so there
+> is no need to book them all now.
+>
+> Your Gut Reset Course access continues, and everything is where you left it
+> in your library.
+
+This is the cheap version of the three options recorded above. No page, one
+field. A dedicated booking page still has nowhere to point, because **no
+booking link for follow-up sessions exists anywhere in the business**: the
+only Calendly is the free 20-minute Gut Breakthrough Call and the Google
+Calendar embed is the New Client Consultation.
+
+### 2. The checkout page was still Kajabi's template
+
+**Caught only by loading the live page.** A new offer's checkout theme
+(`2168204747`) ships with placeholder copy, and it was serving verbatim:
+
+> [Offer title] · [ Insert a call to action statement... ] · [ Insert value 1 ]
+> · [ Insert value 2 ] · [ Insert value 3 ]
+
+Confirmed in the raw HTML, not just the render: `grep` found "Offer title"
+once and "Insert value" three times in the served markup. Alina would have
+sent a $997 payment link showing template text.
+
+Fixed in section `1744906803654`:
+
+- **Text block `1746107473790`**: real copy, restating the six sessions, the
+  nine-month window, the pacing, and that testing is decided on the calls.
+- **Image block `1744906803654_0`**: was empty. Now Alina's portrait at 320px,
+  the same CDN file used on the sales pages. A page selling her time should
+  show her.
+- **Pay button**: was `#343332`, Kajabi's default grey, not the brand
+  terracotta. Set to `#C07A5A` with border radius 2, matching this theme's own
+  `btn_background_color` token and the rest of the site.
+
+The $1,497 checkout was checked at the same time and is clean, so this is a
+new-offer default rather than a site-wide problem. **Any future offer created
+through MCP will have the same placeholder checkout and needs the same pass.**
+
+### 3. Verified on the live page
+
+| Check | Result |
+|---|---|
+| Checkout reachable logged out | 200, no login wall |
+| Placeholders | gone, in render and raw HTML |
+| Heading | "Continued coaching with Alina" |
+| Alina's portrait | 320x480, centred |
+| Price | $997.00, five places on the page |
+| Horizontal overflow | none |
+
+**Not verifiable from here: the pay button's colour.** The button renders
+disabled in this environment, so its live colour could not be sampled. The
+setting is `#C07A5A`; worth one glance on a real browser.
+
+### The "Payments are paused" false alarm, again
+
+The live render shows "Payments are paused on this site" with the pay button
+disabled. **This is the documented artifact, not a real state.** Per
+`THE-GUT-FIX.md`, the message is injected client side when Stripe's endpoints
+refuse this container's proxy. Checked as that note prescribes: the phrase
+appears **zero** times in 55KB of raw HTML. Payments are connected.
+
+Noting it a second time because it is convincing every time it appears, and
+the same run reported it for this checkout but not for the $1,497, which is
+itself a sign it is a timing artifact rather than a setting.
+
+---
+
+## Still open
+
+1. **Unused sessions at nine months.** Still undecided. The offer and the
+   checkout say nothing about it. This will arrive as a support email
+   eventually, and it is cheaper to decide now.
+2. **A tag for continuation clients.** No automation was built: this is a
+   high-touch sale where Alina knows the buyer by name, so an automated
+   welcome would read oddly. But a tag would still be worth having, to answer
+   "who is on continued coaching?" without digging through purchases. The two
+   courses both got one.
+3. **The offer has no thumbnail**, so the checkout's order summary shows a
+   grey placeholder icon next to the product name. Cosmetic, on an otherwise
+   finished page.
