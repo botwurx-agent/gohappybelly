@@ -153,7 +153,7 @@ Run this checklist on every new video idea before it gets scripted or filmed.
 - [ ] **One clear idea.** The video fully answers one question, no scope creep into a second topic.
 - [ ] **Archetype and/or avatar tagged internally, if a clean fit exists.** This is a quiet reference note for later funnel use only (for example, "internal note: relates to the Bloated-and-Backed-Up pattern, Avatar 4 The Frustrated Dieter"), never a driver of the topic and never part of the title. Leave blank rather than force a fit.
 - [ ] **Topic sits in a proven-demand category** from Section 5, or is a deliberate, clearly-labeled test outside those categories.
-- [ ] **Format is solo, 16-27 minutes.** No guest-interview format, per the locked cadence decision in Section 3.
+- [ ] **Format is solo, 16-27 minutes.** No guest-interview format, per the locked cadence decision in Section 3. **Check it by word count:** at Alina's pace (about 140 to 150 words per minute), 16 minutes needs at least 2,200 spoken words. Added 2026-11-17 after the launch review found the first scripts timed out near 12 minutes. See `Production_Protocol.md`.
 - [ ] **Non-diagnostic language check.** No "you have [condition]," no "cure," no "treat." Only "your pattern suggests," "this often shows up when," "the [Archetype] pattern," "address" or "work with" the pattern.
 - [ ] **No em dashes, no banned words** (transform, journey, empower, authentic, passionate, innovative, creative in the marketing sense, unique, elevate, synergy).
 - [ ] **Education comes before any pitch.** The Gut Breakthrough Call, the quiz, or Guthub is mentioned only after the title's question is fully answered.

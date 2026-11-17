@@ -1,4 +1,4 @@
-# Shoot Day Checklist: YT-002 (First Video)
+# Shoot Day Checklist: YT-002 (Challenge video, film after the 14-day cut)
 
 Everything needed to film and upload the first Go Happy Belly video. Print this or keep it open on set.
 

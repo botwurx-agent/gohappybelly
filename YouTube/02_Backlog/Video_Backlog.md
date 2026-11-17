@@ -3,6 +3,10 @@
 Prioritized topics with proven-demand packaging. Fuel for batch film days.
 Priority: P1 (film next batch), P2 (soon), P3 (parking lot).
 
+**Launch order (2026-11-17, pending Alina sign-off):** YT-016 is video #1, YT-005 is video #2, both filmed on Batch Day 1. Then YT-010 and YT-012. See `03_Videos/YT-016_the-real-reason-your-bloating-wont-go-away/first-video-brief.md` and `00_Strategy/Production_Protocol.md`.
+
+**Runtime flag (2026-11-17):** YT-005, YT-010, YT-012 (and YT-002) scripts have about 1,400 to 1,750 spoken words, about 12 minutes on camera, under the 16-minute floor. Each needs a v2 extension to at least 2,200 spoken words before Alina reviews it. YT-016 is already v2.
+
 **First batch (updated 2026-08-06):** shoot-now P1s (pure solo teach, no waiting): YT-005, YT-010, YT-012, YT-016, YT-018.
 
 **Challenge videos (need lead time, do NOT schedule for an immediate/first shoot):** YT-002, YT-007, YT-013, YT-015. These are personal-experiment videos in Ben's style, where Alina (and Steve) actually run the challenge and film behind-the-scenes moments across the full window before the video can be cut. Film these after completing the challenge, not on a normal batch day. YT-002 (14-day sugar cut) is packaged as an educational timeline for now; when Alina/Steve run the challenge, tell Claude and the script shifts to a first-person, BTS challenge format.

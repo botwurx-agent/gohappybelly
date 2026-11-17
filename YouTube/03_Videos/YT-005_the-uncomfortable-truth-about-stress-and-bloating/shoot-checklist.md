@@ -1,4 +1,4 @@
-# Shoot Day Checklist: YT-005 (First Video)
+# Shoot Day Checklist: YT-005 (Video #2, filmed on Batch Day 1 with YT-016)
 
 Everything needed to film and upload the first Go Happy Belly video. Print this or keep it open on set.
 

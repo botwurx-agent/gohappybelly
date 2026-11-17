@@ -4,6 +4,8 @@
 > Snapshot: 2026-08-06. Source of truth is `02_Backlog/Video_Backlog.md`.
 > A designed PDF version is here too: `YouTube_Video_Board.pdf`. Ask me to refresh either anytime the backlog changes.
 
+**Launch (2026-11-17):** YT-016 is video #1 and YT-005 is video #2 (pending Alina sign-off). Process: `00_Strategy/Production_Protocol.md`.
+
 **Totals:** 20 ideas &nbsp;|&nbsp; 5 fully packaged &nbsp;|&nbsp; 4 ready to shoot now (YT-005, 010, 012, 016) &nbsp;|&nbsp; 4 challenge videos (need lead time)
 
 **Status meaning:** `idea` = topic only. `packaged` = full script + thumbnail brief + repurposing plan + shoot PDF all built. `scripted` / `filmed` / `published` come later.
